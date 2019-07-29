@@ -6,7 +6,7 @@
 ## aia링크
 http://bitly.kr/Zwqi4v 
 
-##Copyright (c) 2019 INMD
+## Copyright (c) 2019 INMD
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
