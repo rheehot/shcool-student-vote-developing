@@ -1,5 +1,6 @@
 # shcool-vote-developing
 학생용을 개발을 완료 했습니다
+추후 선생님용과 서버관리자용 파일을 업로드 하겟습니다
 ## thunakable
 저에 앱은 thunkable기반으로 했기떄문에 aia를 파일을 다운받은후 thunkable에 적용하면 쉽게 조작이 가능합니다.
 
