@@ -18,7 +18,7 @@ http://bitly.kr/Zwqi4v
 
 추후 업데이트는 나중에 여기에 공지하겟습니다.
 
-## Copyright (c) 2019 INMD
+## Copyright (c) 2019 INMD1
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
