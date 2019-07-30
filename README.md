@@ -1,4 +1,4 @@
-# shcool-vote-developing
+# shcool-vote-developing(KR)
 학생용을 개발을 완료 했습니다
 추후 선생님용과 서버관리자용 파일을 업로드 하겟습니다
 ## thunakable
