@@ -6,6 +6,7 @@
 
 ## DB
 저희 앱은 Firebase로 DB서버를 운영하기 때문에 자신이 직접 fireabse 프로젝트를 만들어서 api값이랑 url를 가져오면 됨니다
+ 
  튜토리얼 링크: https://m.blog.naver.com/PostView.nhn?blogId=111days&logNo=221034492031&proxyReferer=https%3A%2F%2Fwww.google.com%2F
  
  *앱인벤터는 thunkable과 매우 비슷합니다.
