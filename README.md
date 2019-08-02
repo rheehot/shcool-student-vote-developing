@@ -15,21 +15,8 @@
 http://bitly.kr/Zwqi4v 
 
 ## 업데이트
-
-추후 업데이트는 나중에 여기에 공지하겟습니다.
-
-# shcool-vote-devoping(US)
-I've completed the development for students. I will upload file for you and server manager later.
-## Thunakable
-Because our app is based on a non-technical person, it can be easily manipulated if aia is downloaded and applied to the ununkable.
-## DB
-Our app runs a DB server with Firebase, so you can create your own fireabse project and bring the api value and url.
-Tutorial links: https://m. blog.naver.com/PostView.nhn?blogId=111 days&logNo=221034492031&proxyRefer=https%3A%2Fww.google.com%2F
-*Applicable is very similar to capable.
-## Aia Link
- http://bitly.kr/Zwqi4v
-## Update
-Further updates will be notified here later.
+2019/08/02 update note
+기타 오류를 수정했습니다
 
 ## Copyright (c) 2019 INMD1
 
