@@ -33,7 +33,7 @@
     .param p1, "this$1"    # Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     .prologue
-    .line 718
+    .line 730
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView$2;->this$1:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iput p2, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView$2;->val$specwidth:I
@@ -53,7 +53,7 @@
     .locals 4
 
     .prologue
-    .line 721
+    .line 733
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView$2;->this$1:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iget v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView$2;->val$specwidth:I
@@ -66,6 +66,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->access$000(Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;III)V
 
-    .line 722
+    .line 734
     return-void
 .end method

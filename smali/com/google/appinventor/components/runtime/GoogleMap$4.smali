@@ -33,7 +33,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 1441
+    .line 1442
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap$4;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     iput p2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$4;->val$markerId:I
@@ -53,7 +53,7 @@
     .locals 6
 
     .prologue
-    .line 1443
+    .line 1444
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap$4;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     const-string v1, "OnMarkerDragStart"
@@ -94,6 +94,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1444
+    .line 1445
     return-void
 .end method

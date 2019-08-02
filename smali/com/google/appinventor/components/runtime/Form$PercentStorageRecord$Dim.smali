@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 282
+    .line 289
     new-instance v0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
 
     const-string v1, "HEIGHT"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;->WIDTH:Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
 
-    .line 281
+    .line 288
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 281
+    .line 288
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -95,7 +95,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 281
+    .line 288
     const-class v0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 288
     sget-object v0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;->$VALUES:[Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
 
     invoke-virtual {v0}, [Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;->clone()Ljava/lang/Object;

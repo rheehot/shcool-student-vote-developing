@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 387
+    .line 392
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$2;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/high16 v3, 0x420c0000    # 35.0f
 
-    .line 390
+    .line 395
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$2;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$300(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Lorg/osmdroid/views/MapView;
@@ -64,7 +64,7 @@
 
     iget v0, v1, Landroid/util/DisplayMetrics;->density:F
 
-    .line 391
+    .line 396
     .local v0, "density":F
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$2;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -90,7 +90,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/osmdroid/views/overlay/compass/CompassOverlay;->setCompassCenter(FF)V
 
-    .line 392
+    .line 397
     const/4 v1, 0x1
 
     return v1

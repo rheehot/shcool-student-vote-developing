@@ -29,7 +29,7 @@
     .param p1, "this$1"    # Lcom/google/appinventor/components/runtime/Form$2;
 
     .prologue
-    .line 627
+    .line 634
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$2$1;->this$1:Lcom/google/appinventor/components/runtime/Form$2;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Form$2$1;->val$savedLayout:Landroid/widget/FrameLayout;
@@ -45,17 +45,17 @@
     .locals 1
 
     .prologue
-    .line 629
+    .line 636
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$2$1;->val$savedLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 630
+    .line 637
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$2$1;->val$savedLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 632
+    .line 639
     :cond_0
     return-void
 .end method

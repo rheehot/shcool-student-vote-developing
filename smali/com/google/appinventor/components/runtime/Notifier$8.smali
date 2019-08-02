@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/appinventor/components/runtime/Notifier;->textInputDialog(Ljava/lang/String;Ljava/lang/String;Z)V
+    value = Lcom/google/appinventor/components/runtime/Notifier;->textInputDialog(Ljava/lang/String;Ljava/lang/String;ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Notifier;
 
     .prologue
-    .line 337
+    .line 374
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Notifier$8;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Notifier$8;->val$input:Landroid/widget/EditText;
@@ -47,14 +47,14 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 339
+    .line 376
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Notifier$8;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Notifier$8;->val$input:Landroid/widget/EditText;
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/Notifier;->HideKeyboard(Landroid/view/View;)V
 
-    .line 340
+    .line 377
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Notifier$8;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Notifier$8;->val$input:Landroid/widget/EditText;
@@ -69,6 +69,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/Notifier;->AfterTextInput(Ljava/lang/String;)V
 
-    .line 341
+    .line 378
     return-void
 .end method

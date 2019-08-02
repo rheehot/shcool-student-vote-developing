@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 1577
+    .line 1578
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap$11;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     iput-wide p2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$11;->val$lat:D
@@ -49,7 +49,7 @@
     .locals 6
 
     .prologue
-    .line 1579
+    .line 1580
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap$11;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     const-string v1, "OnMapClick"
@@ -80,6 +80,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1580
+    .line 1581
     return-void
 .end method

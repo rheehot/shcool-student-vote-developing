@@ -65,34 +65,34 @@
 
     const/high16 v1, -0x40800000    # -1.0f
 
-    .line 190
+    .line 192
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 225
+    .line 227
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
-    .line 229
+    .line 231
     iput v1, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startX:F
 
-    .line 230
+    .line 232
     iput v1, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startY:F
 
-    .line 233
+    .line 235
     iput v1, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastX:F
 
-    .line 234
+    .line 236
     iput v1, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastY:F
 
-    .line 238
+    .line 240
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->isDrag:Z
 
-    .line 240
+    .line 242
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->drag:Z
 
     return-void
@@ -105,14 +105,14 @@
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 243
+    .line 245
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/Canvas;->Width()I
 
     move-result v11
 
-    .line 244
+    .line 246
     .local v11, "width":I
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
@@ -120,7 +120,7 @@
 
     move-result v0
 
-    .line 250
+    .line 252
     .local v0, "height":I
     const/4 v3, 0x0
 
@@ -148,7 +148,7 @@
 
     move-result v12
 
-    .line 251
+    .line 253
     .local v12, "x":F
     const/4 v3, 0x0
 
@@ -176,7 +176,7 @@
 
     move-result v13
 
-    .line 255
+    .line 257
     .local v13, "y":F
     new-instance v1, Lcom/google/appinventor/components/runtime/util/BoundingBox;
 
@@ -186,7 +186,7 @@
 
     add-int/lit8 v4, v4, -0xc
 
-    .line 256
+    .line 258
     invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -199,7 +199,7 @@
 
     add-int/lit8 v5, v5, -0xc
 
-    .line 257
+    .line 259
     invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v4
@@ -212,7 +212,7 @@
 
     add-int/lit8 v7, v7, 0xc
 
-    .line 258
+    .line 260
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v6
@@ -225,7 +225,7 @@
 
     add-int/lit8 v9, v9, 0xc
 
-    .line 259
+    .line 261
     invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
 
     move-result v8
@@ -234,7 +234,7 @@
 
     invoke-direct/range {v1 .. v9}, Lcom/google/appinventor/components/runtime/util/BoundingBox;-><init>(DDDD)V
 
-    .line 261
+    .line 263
     .local v1, "rect":Lcom/google/appinventor/components/runtime/util/BoundingBox;
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -242,40 +242,40 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 358
+    .line 360
     :cond_0
     :goto_0
     return-void
 
-    .line 263
+    .line 265
     :pswitch_0
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 264
+    .line 266
     iput v12, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startX:F
 
-    .line 265
+    .line 267
     iput v13, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startY:F
 
-    .line 266
+    .line 268
     iput v12, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastX:F
 
-    .line 267
+    .line 269
     iput v13, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastY:F
 
-    .line 268
+    .line 270
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->drag:Z
 
-    .line 269
+    .line 271
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->isDrag:Z
 
-    .line 270
+    .line 272
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-static {v3}, Lcom/google/appinventor/components/runtime/Canvas;->access$000(Lcom/google/appinventor/components/runtime/Canvas;)Ljava/util/List;
@@ -300,7 +300,7 @@
 
     check-cast v2, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 271
+    .line 273
     .local v2, "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Sprite;->Enabled()Z
 
@@ -320,12 +320,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 272
+    .line 274
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
     invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 273
+    .line 275
     iget v4, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startX:F
 
     iget v5, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startY:F
@@ -334,7 +334,7 @@
 
     goto :goto_1
 
-    .line 276
+    .line 278
     .end local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     :cond_2
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
@@ -347,7 +347,7 @@
 
     goto :goto_0
 
-    .line 281
+    .line 283
     :pswitch_1
     iget v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startX:F
 
@@ -381,7 +381,7 @@
 
     if-nez v3, :cond_4
 
-    .line 282
+    .line 284
     :cond_3
     const-string v3, "Canvas"
 
@@ -405,7 +405,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 287
+    .line 289
     :cond_4
     iget-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->isDrag:Z
 
@@ -415,7 +415,7 @@
 
     sub-float v3, v12, v3
 
-    .line 288
+    .line 290
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -440,18 +440,18 @@
 
     if-ltz v3, :cond_0
 
-    .line 292
+    .line 294
     :cond_5
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->isDrag:Z
 
-    .line 293
+    .line 295
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->drag:Z
 
-    .line 297
+    .line 299
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-static {v3}, Lcom/google/appinventor/components/runtime/Canvas;->access$000(Lcom/google/appinventor/components/runtime/Canvas;)Ljava/util/List;
@@ -476,7 +476,7 @@
 
     check-cast v2, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 298
+    .line 300
     .restart local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
@@ -486,7 +486,7 @@
 
     if-nez v4, :cond_6
 
-    .line 299
+    .line 301
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Sprite;->Enabled()Z
 
     move-result v4
@@ -499,26 +499,26 @@
 
     if-eqz v4, :cond_6
 
-    .line 300
+    .line 302
     invoke-virtual {v2, v1}, Lcom/google/appinventor/components/runtime/Sprite;->intersectsWith(Lcom/google/appinventor/components/runtime/util/BoundingBox;)Z
 
     move-result v4
 
     if-eqz v4, :cond_6
 
-    .line 301
+    .line 303
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
     invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 306
+    .line 308
     .end local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     :cond_7
     const/4 v10, 0x0
 
-    .line 307
+    .line 309
     .local v10, "handled":Z
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
@@ -540,7 +540,7 @@
 
     check-cast v2, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 308
+    .line 310
     .restart local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Sprite;->Enabled()Z
 
@@ -554,7 +554,7 @@
 
     if-eqz v3, :cond_8
 
-    .line 309
+    .line 311
     iget v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startX:F
 
     iget v4, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startY:F
@@ -569,12 +569,12 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/google/appinventor/components/runtime/Sprite;->Dragged(FFFFFF)V
 
-    .line 310
+    .line 312
     const/4 v10, 0x1
 
     goto :goto_3
 
-    .line 315
+    .line 317
     .end local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     :cond_9
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
@@ -593,25 +593,25 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/google/appinventor/components/runtime/Canvas;->Dragged(FFFFFFZ)V
 
-    .line 316
+    .line 318
     iput v12, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastX:F
 
-    .line 317
+    .line 319
     iput v13, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastY:F
 
     goto/16 :goto_0
 
-    .line 324
+    .line 326
     .end local v10    # "handled":Z
     :pswitch_2
     iget-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->drag:Z
 
     if-nez v3, :cond_d
 
-    .line 326
+    .line 328
     const/4 v10, 0x0
 
-    .line 327
+    .line 329
     .restart local v10    # "handled":Z
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
@@ -633,7 +633,7 @@
 
     check-cast v2, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 328
+    .line 330
     .restart local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Sprite;->Enabled()Z
 
@@ -647,59 +647,59 @@
 
     if-eqz v4, :cond_a
 
-    .line 329
+    .line 331
     invoke-virtual {v2, v12, v13}, Lcom/google/appinventor/components/runtime/Sprite;->Touched(FF)V
 
-    .line 330
+    .line 332
     invoke-virtual {v2, v12, v13}, Lcom/google/appinventor/components/runtime/Sprite;->TouchUp(FF)V
 
-    .line 331
+    .line 333
     const/4 v10, 0x1
 
     goto :goto_4
 
-    .line 335
+    .line 337
     .end local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     :cond_b
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-virtual {v3, v12, v13, v10}, Lcom/google/appinventor/components/runtime/Canvas;->Touched(FFZ)V
 
-    .line 348
+    .line 350
     .end local v10    # "handled":Z
     :cond_c
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-virtual {v3, v12, v13}, Lcom/google/appinventor/components/runtime/Canvas;->TouchUp(FF)V
 
-    .line 351
+    .line 353
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->drag:Z
 
-    .line 352
+    .line 354
     const/high16 v3, -0x40800000    # -1.0f
 
     iput v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startX:F
 
-    .line 353
+    .line 355
     const/high16 v3, -0x40800000    # -1.0f
 
     iput v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->startY:F
 
-    .line 354
+    .line 356
     const/high16 v3, -0x40800000    # -1.0f
 
     iput v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastX:F
 
-    .line 355
+    .line 357
     const/high16 v3, -0x40800000    # -1.0f
 
     iput v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->lastY:F
 
     goto/16 :goto_0
 
-    .line 338
+    .line 340
     :cond_d
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;->draggedSprites:Ljava/util/List;
 
@@ -721,7 +721,7 @@
 
     check-cast v2, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 339
+    .line 341
     .restart local v2    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Sprite;->Enabled()Z
 
@@ -735,15 +735,15 @@
 
     if-eqz v4, :cond_e
 
-    .line 340
+    .line 342
     invoke-virtual {v2, v12, v13}, Lcom/google/appinventor/components/runtime/Sprite;->Touched(FF)V
 
-    .line 341
+    .line 343
     invoke-virtual {v2, v12, v13}, Lcom/google/appinventor/components/runtime/Sprite;->TouchUp(FF)V
 
     goto :goto_5
 
-    .line 261
+    .line 263
     nop
 
     :pswitch_data_0

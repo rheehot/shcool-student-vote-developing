@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 223
+    .line 227
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;
 
     .prologue
-    .line 223
+    .line 227
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)V
 
     return-void
@@ -50,16 +50,16 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 227
+    .line 231
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 243
+    .line 247
     :goto_0
     return-void
 
-    .line 229
+    .line 233
     :pswitch_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -85,14 +85,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 230
+    .line 234
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$102(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Z)Z
 
-    .line 231
+    .line 235
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$200(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Lcom/google/appinventor/components/runtime/Form;
@@ -105,7 +105,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/Form;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 240
+    .line 244
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 227
+    .line 231
     nop
 
     :pswitch_data_0

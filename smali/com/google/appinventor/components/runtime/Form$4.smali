@@ -33,7 +33,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 1131
+    .line 1157
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$4;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Form$4;->val$component:Lcom/google/appinventor/components/runtime/Component;
@@ -53,7 +53,7 @@
     .locals 4
 
     .prologue
-    .line 1134
+    .line 1160
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$4;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$4;->val$component:Lcom/google/appinventor/components/runtime/Component;
@@ -64,6 +64,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/Form;->PermissionDenied(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1135
+    .line 1161
     return-void
 .end method

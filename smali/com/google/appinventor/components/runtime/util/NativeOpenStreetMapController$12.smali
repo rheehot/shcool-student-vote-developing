@@ -41,7 +41,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 975
+    .line 982
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$12;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$12;->val$callback:Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;
@@ -60,7 +60,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 978
+    .line 985
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$12;->val$callback:Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$12;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
@@ -73,7 +73,7 @@
 
     invoke-interface {v0, v1}, Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;->onSuccess(Ljava/lang/Object;)V
 
-    .line 979
+    .line 986
     return-void
 .end method
 
@@ -82,12 +82,12 @@
     .param p1, "result"    # Landroid/graphics/drawable/BitmapDrawable;
 
     .prologue
-    .line 983
+    .line 990
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$12;->val$callback:Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;
 
     invoke-interface {v0, p1}, Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;->onSuccess(Ljava/lang/Object;)V
 
-    .line 984
+    .line 991
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .locals 0
 
     .prologue
-    .line 975
+    .line 982
     check-cast p1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$12;->onSuccess(Landroid/graphics/drawable/BitmapDrawable;)V

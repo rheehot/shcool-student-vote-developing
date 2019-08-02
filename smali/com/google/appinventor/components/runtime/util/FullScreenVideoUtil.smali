@@ -59,13 +59,11 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/appinventor/components/runtime/Form;Landroid/os/Handler;)V
-    .locals 5
+    .locals 4
     .param p1, "form"    # Lcom/google/appinventor/components/runtime/Form;
     .param p2, "handler"    # Landroid/os/Handler;
 
     .prologue
-    const v4, 0x1030007
-
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -94,38 +92,18 @@
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mHandler:Landroid/os/Handler;
 
     .line 106
-    invoke-static {}, Lcom/google/appinventor/components/runtime/util/SdkLevel;->getLevel()I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-le v0, v1, :cond_0
-
-    .line 107
     new-instance v0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$1;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
-    invoke-direct {v0, p0, v1, v4}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$1;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;Landroid/content/Context;I)V
+    const v2, 0x1030007
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$1;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;Landroid/content/Context;I)V
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoDialog:Landroid/app/Dialog;
 
-    .line 150
-    :goto_0
+    .line 127
     return-void
-
-    .line 129
-    :cond_0
-    new-instance v0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$2;
-
-    iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
-
-    invoke-direct {v0, p0, v1, v4}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$2;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;Landroid/content/Context;I)V
-
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoDialog:Landroid/app/Dialog;
-
-    goto :goto_0
 .end method
 
 .method static synthetic access$000(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;)Landroid/widget/VideoView;
@@ -175,7 +153,7 @@
 
     const/4 v4, 0x0
 
-    .line 265
+    .line 242
     const-string v1, "Form.doFullScreenVideoAction"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -208,18 +186,18 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
+    .line 243
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 267
+    .line 244
     .local v0, "result":Landroid/os/Bundle;
     const-string v1, "ActionSuccess"
 
     invoke-virtual {v0, v1, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 268
+    .line 245
     const-string v1, "FullScreenKey"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -228,13 +206,13 @@
 
     if-ne v1, v5, :cond_1
 
-    .line 269
+    .line 246
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenPlayer:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
-    .line 270
+    .line 247
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
-    .line 271
+    .line 248
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoDialog:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->isShowing()Z
@@ -243,34 +221,34 @@
 
     if-nez v1, :cond_0
 
-    .line 272
+    .line 249
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v1, v6}, Lcom/google/appinventor/components/runtime/Form;->showDialog(I)V
 
-    .line 298
+    .line 275
     :goto_0
     return-object v0
 
-    .line 275
+    .line 252
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v1}, Landroid/widget/VideoView;->pause()V
 
-    .line 276
+    .line 253
     const-string v1, "ActionSuccess"
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     const-string v3, "SourceKey"
 
-    .line 277
+    .line 254
     invoke-virtual {v2, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 276
+    .line 253
     invoke-virtual {p0, v2, v4}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->setSource(Ljava/lang/String;Z)Z
 
     move-result v2
@@ -279,7 +257,7 @@
 
     goto :goto_0
 
-    .line 281
+    .line 258
     :cond_1
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
@@ -287,61 +265,61 @@
 
     if-eqz v1, :cond_2
 
-    .line 282
+    .line 259
     const-string v1, "PlayingKey"
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
-    .line 283
+    .line 260
     invoke-virtual {v2}, Landroid/widget/VideoView;->isPlaying()Z
 
     move-result v2
 
-    .line 282
+    .line 259
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 284
+    .line 261
     const-string v1, "PositionKey"
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
-    .line 285
+    .line 262
     invoke-virtual {v2}, Landroid/widget/VideoView;->getCurrentPosition()I
 
     move-result v2
 
-    .line 284
+    .line 261
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 286
+    .line 263
     const-string v1, "SourceKey"
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     const-string v3, "SourceKey"
 
-    .line 288
+    .line 265
     invoke-virtual {v2, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 286
+    .line 263
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 290
+    .line 267
     iput-object v7, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenPlayer:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
-    .line 291
+    .line 268
     iput-object v7, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
-    .line 293
+    .line 270
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v1, v6}, Lcom/google/appinventor/components/runtime/Form;->dismissDialog(I)V
 
     goto :goto_0
 
-    .line 297
+    .line 274
     :cond_2
     const-string v1, "ActionSuccess"
 
@@ -362,19 +340,19 @@
 
     const/4 v3, -0x1
 
-    .line 308
+    .line 285
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     if-nez v1, :cond_0
 
-    .line 309
+    .line 286
     const-string v1, "Form.createFullScreenVideoDialog"
 
     const-string v2, "mFullScreenVideoBundle is null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 311
+    .line 288
     :cond_0
     new-instance v1, Landroid/widget/VideoView;
 
@@ -384,7 +362,7 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
-    .line 312
+    .line 289
     new-instance v1, Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
@@ -393,7 +371,7 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
 
-    .line 313
+    .line 290
     new-instance v1, Lcom/google/appinventor/components/runtime/util/CustomMediaController;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
@@ -402,7 +380,7 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoController:Lcom/google/appinventor/components/runtime/util/CustomMediaController;
 
-    .line 315
+    .line 292
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
@@ -413,7 +391,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setId(I)V
 
-    .line 316
+    .line 293
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
@@ -424,37 +402,37 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setId(I)V
 
-    .line 318
+    .line 295
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoController:Lcom/google/appinventor/components/runtime/util/CustomMediaController;
 
     invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setMediaController(Landroid/widget/MediaController;)V
 
-    .line 320
+    .line 297
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
-    new-instance v2, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$3;
+    new-instance v2, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$2;
 
-    invoke-direct {v2, p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$3;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;)V
+    invoke-direct {v2, p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$2;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 328
+    .line 305
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoController:Lcom/google/appinventor/components/runtime/util/CustomMediaController;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v1, v2}, Lcom/google/appinventor/components/runtime/util/CustomMediaController;->setAnchorView(Landroid/view/View;)V
 
-    .line 330
+    .line 307
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/Form;->ScreenOrientation()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 331
+    .line 308
     .local v0, "orientation":Ljava/lang/String;
     const-string v1, "landscape"
 
@@ -466,7 +444,7 @@
 
     const-string v1, "sensorLandscape"
 
-    .line 332
+    .line 309
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -475,14 +453,14 @@
 
     const-string v1, "reverseLandscape"
 
-    .line 333
+    .line 310
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 334
+    .line 311
     :cond_1
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
@@ -492,7 +470,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 342
+    .line 319
     :goto_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
 
@@ -500,17 +478,17 @@
 
     invoke-direct {v2, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 343
+    .line 320
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 347
+    .line 324
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 350
+    .line 327
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoController:Lcom/google/appinventor/components/runtime/util/CustomMediaController;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
@@ -519,19 +497,19 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/google/appinventor/components/runtime/util/CustomMediaController;->addTo(Landroid/view/ViewGroup;Landroid/view/ViewGroup$LayoutParams;)Z
 
-    .line 353
+    .line 330
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoDialog:Landroid/app/Dialog;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoHolder:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
-    .line 354
+    .line 331
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoDialog:Landroid/app/Dialog;
 
     return-object v1
 
-    .line 338
+    .line 315
     :cond_2
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
@@ -548,7 +526,7 @@
     .locals 1
 
     .prologue
-    .line 373
+    .line 350
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
@@ -569,17 +547,17 @@
     .param p1, "arg0"    # Landroid/media/MediaPlayer;
 
     .prologue
-    .line 426
+    .line 403
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenPlayer:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 427
+    .line 404
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenPlayer:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Completed()V
 
-    .line 429
+    .line 406
     :cond_0
     return-void
 .end method
@@ -589,7 +567,7 @@
     .param p1, "arg0"    # Landroid/media/MediaPlayer;
 
     .prologue
-    .line 436
+    .line 413
     const-string v0, "FullScreenVideoUtil..onPrepared"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -606,7 +584,7 @@
 
     const-string v3, "PositionKey"
 
-    .line 440
+    .line 417
     invoke-virtual {v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v2
@@ -619,57 +597,57 @@
 
     move-result-object v1
 
-    .line 436
+    .line 413
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 441
+    .line 418
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     const-string v2, "PositionKey"
 
-    .line 442
+    .line 419
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 441
+    .line 418
     invoke-virtual {v0, v1}, Landroid/widget/VideoView;->seekTo(I)V
 
-    .line 443
+    .line 420
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     const-string v1, "PlayingKey"
 
-    .line 444
+    .line 421
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 445
+    .line 422
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v0}, Landroid/widget/VideoView;->start()V
 
-    .line 456
+    .line 433
     :goto_0
     return-void
 
-    .line 447
+    .line 424
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v0}, Landroid/widget/VideoView;->start()V
 
-    .line 448
+    .line 425
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$4;
+    new-instance v1, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$3;
 
-    invoke-direct {v1, p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$4;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;)V
+    invoke-direct {v1, p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil$3;-><init>(Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;)V
 
     const-wide/16 v2, 0x64
 
@@ -685,7 +663,7 @@
     .param p3, "data"    # Ljava/lang/Object;
 
     .prologue
-    .line 189
+    .line 166
     monitor-enter p0
 
     :try_start_0
@@ -743,12 +721,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 191
+    .line 168
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 192
+    .line 169
     .local v0, "result":Landroid/os/Bundle;
     const-string v2, "ActionSuccess"
 
@@ -756,15 +734,15 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 193
+    .line 170
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenPlayer:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
     if-ne p2, v2, :cond_7
 
-    .line 194
+    .line 171
     packed-switch p1, :pswitch_data_0
 
-    .line 257
+    .line 234
     :cond_0
     const-string v2, "ActionSuccess"
 
@@ -774,7 +752,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 258
+    .line 235
     .end local v0    # "result":Landroid/os/Bundle;
     .end local p3    # "data":Ljava/lang/Object;
     :goto_0
@@ -782,7 +760,7 @@
 
     return-object v0
 
-    .line 196
+    .line 173
     .restart local v0    # "result":Landroid/os/Bundle;
     .restart local p3    # "data":Ljava/lang/Object;
     :pswitch_0
@@ -796,7 +774,7 @@
 
     goto :goto_0
 
-    .line 198
+    .line 175
     .restart local p3    # "data":Ljava/lang/Object;
     :pswitch_1
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
@@ -805,7 +783,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 199
+    .line 176
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2}, Landroid/widget/VideoView;->pause()V
@@ -814,7 +792,7 @@
 
     goto :goto_0
 
-    .line 189
+    .line 166
     .end local v0    # "result":Landroid/os/Bundle;
     .end local p3    # "data":Ljava/lang/Object;
     :catchall_0
@@ -824,7 +802,7 @@
 
     throw v2
 
-    .line 202
+    .line 179
     .restart local v0    # "result":Landroid/os/Bundle;
     .restart local p3    # "data":Ljava/lang/Object;
     :cond_1
@@ -837,7 +815,7 @@
 
     goto :goto_0
 
-    .line 205
+    .line 182
     :pswitch_2
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
@@ -845,14 +823,14 @@
 
     if-eqz v2, :cond_2
 
-    .line 206
+    .line 183
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2}, Landroid/widget/VideoView;->start()V
 
     goto :goto_0
 
-    .line 209
+    .line 186
     :cond_2
     const-string v2, "ActionSuccess"
 
@@ -862,7 +840,7 @@
 
     goto :goto_0
 
-    .line 212
+    .line 189
     :pswitch_3
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
@@ -870,7 +848,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 213
+    .line 190
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     check-cast p3, Ljava/lang/Integer;
@@ -884,7 +862,7 @@
 
     goto :goto_0
 
-    .line 216
+    .line 193
     .restart local p3    # "data":Ljava/lang/Object;
     :cond_3
     const-string v2, "ActionSuccess"
@@ -895,7 +873,7 @@
 
     goto :goto_0
 
-    .line 219
+    .line 196
     :pswitch_4
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
@@ -903,14 +881,14 @@
 
     if-eqz v2, :cond_4
 
-    .line 220
+    .line 197
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2}, Landroid/widget/VideoView;->stopPlayback()V
 
     goto :goto_0
 
-    .line 223
+    .line 200
     :cond_4
     const-string v2, "ActionSuccess"
 
@@ -920,7 +898,7 @@
 
     goto :goto_0
 
-    .line 226
+    .line 203
     :pswitch_5
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
@@ -928,7 +906,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 227
+    .line 204
     const-string v2, "ActionSuccess"
 
     check-cast p3, Ljava/lang/String;
@@ -944,7 +922,7 @@
 
     goto :goto_0
 
-    .line 230
+    .line 207
     .restart local p3    # "data":Ljava/lang/Object;
     :cond_5
     const-string v2, "ActionSuccess"
@@ -955,7 +933,7 @@
 
     goto :goto_0
 
-    .line 233
+    .line 210
     :pswitch_6
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
@@ -963,7 +941,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 234
+    .line 211
     const-string v2, "ActionData"
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
@@ -976,7 +954,7 @@
 
     goto/16 :goto_0
 
-    .line 237
+    .line 214
     :cond_6
     const-string v2, "ActionSuccess"
 
@@ -986,13 +964,13 @@
 
     goto/16 :goto_0
 
-    .line 240
+    .line 217
     :cond_7
     const/16 v2, 0xc3
 
     if-ne p1, v2, :cond_0
 
-    .line 242
+    .line 219
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->showing()Z
 
     move-result v2
@@ -1003,59 +981,59 @@
 
     if-eqz v2, :cond_8
 
-    .line 243
+    .line 220
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 244
+    .line 221
     .local v1, "values":Landroid/os/Bundle;
     const-string v2, "PositionKey"
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
-    .line 245
+    .line 222
     invoke-virtual {v3}, Landroid/widget/VideoView;->getCurrentPosition()I
 
     move-result v3
 
-    .line 244
+    .line 221
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 246
+    .line 223
     const-string v2, "PlayingKey"
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
-    .line 247
+    .line 224
     invoke-virtual {v3}, Landroid/widget/VideoView;->isPlaying()Z
 
     move-result v3
 
-    .line 246
+    .line 223
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 248
+    .line 225
     const-string v2, "SourceKey"
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     const-string v4, "SourceKey"
 
-    .line 250
+    .line 227
     invoke-virtual {v3, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 248
+    .line 225
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 251
+    .line 228
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenPlayer:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
     invoke-virtual {v2, v1}, Lcom/google/appinventor/components/runtime/VideoPlayer;->fullScreenKilled(Landroid/os/Bundle;)V
 
-    .line 253
+    .line 230
     .end local v1    # "values":Landroid/os/Bundle;
     :cond_8
     check-cast p3, Landroid/os/Bundle;
@@ -1069,7 +1047,7 @@
 
     goto/16 :goto_0
 
-    .line 194
+    .line 171
     nop
 
     :pswitch_data_0
@@ -1089,17 +1067,17 @@
     .param p1, "dia"    # Landroid/app/Dialog;
 
     .prologue
-    .line 365
+    .line 342
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v0, p0}, Landroid/widget/VideoView;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    .line 366
+    .line 343
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v0, p0}, Landroid/widget/VideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 367
+    .line 344
     return-void
 .end method
 
@@ -1113,10 +1091,10 @@
 
     const/4 v1, 0x0
 
-    .line 402
+    .line 379
     if-eqz p2, :cond_0
 
-    .line 403
+    .line 380
     :try_start_0
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
@@ -1126,7 +1104,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 406
+    .line 383
     :cond_0
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
@@ -1134,7 +1112,7 @@
 
     invoke-static {v3, v4, p1}, Lcom/google/appinventor/components/runtime/util/MediaUtil;->loadVideoView(Landroid/widget/VideoView;Lcom/google/appinventor/components/runtime/Form;Ljava/lang/String;)V
 
-    .line 408
+    .line 385
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoBundle:Landroid/os/Bundle;
 
     const-string v4, "SourceKey"
@@ -1146,15 +1124,15 @@
 
     move v1, v2
 
-    .line 417
+    .line 394
     :goto_0
     return v1
 
-    .line 411
+    .line 388
     :catch_0
     move-exception v0
 
-    .line 412
+    .line 389
     .local v0, "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
@@ -1166,12 +1144,12 @@
 
     goto :goto_0
 
-    .line 414
+    .line 391
     .end local v0    # "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     :catch_1
     move-exception v0
 
-    .line 415
+    .line 392
     .local v0, "e":Ljava/io/IOException;
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
@@ -1194,7 +1172,7 @@
     .locals 1
 
     .prologue
-    .line 381
+    .line 358
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->dialogInitialized()Z
 
     move-result v0
@@ -1224,7 +1202,7 @@
     .locals 9
 
     .prologue
-    .line 463
+    .line 440
     :try_start_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mFullScreenVideoView:Landroid/widget/VideoView;
 
@@ -1234,26 +1212,26 @@
 
     const-string v4, "SourceKey"
 
-    .line 465
+    .line 442
     invoke-virtual {v3, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 463
+    .line 440
     invoke-static {v1, v2, v3}, Lcom/google/appinventor/components/runtime/util/MediaUtil;->loadVideoView(Landroid/widget/VideoView;Lcom/google/appinventor/components/runtime/Form;Ljava/lang/String;)V
     :try_end_0
     .catch Lcom/google/appinventor/components/runtime/errors/PermissionException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 474
+    .line 451
     :goto_0
     return-void
 
-    .line 466
+    .line 443
     :catch_0
     move-exception v0
 
-    .line 467
+    .line 444
     .local v0, "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
@@ -1265,12 +1243,12 @@
 
     goto :goto_0
 
-    .line 468
+    .line 445
     .end local v0    # "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     :catch_1
     move-exception v0
 
-    .line 469
+    .line 446
     .local v0, "e":Ljava/io/IOException;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/FullScreenVideoUtil;->mForm:Lcom/google/appinventor/components/runtime/Form;
 
@@ -1290,14 +1268,14 @@
 
     const-string v8, "SourceKey"
 
-    .line 471
+    .line 448
     invoke-virtual {v7, v8}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v5, v6
 
-    .line 469
+    .line 446
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_0

@@ -20,6 +20,10 @@
 
 
 # static fields
+.field private static final ANCHOR_HORIZONTAL:[F
+
+.field private static final ANCHOR_VERTICAL:[F
+
 .field private static final SPECIFIED_FILL:J = 0x1L
 
 .field private static final SPECIFIED_FILL_OPACITY:J = 0x4L
@@ -96,10 +100,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 96
+    const/4 v1, 0x4
+
+    .line 97
     const-class v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -108,7 +114,39 @@
 
     sput-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
+    .line 118
+    new-array v0, v1, [F
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ANCHOR_HORIZONTAL:[F
+
+    .line 119
+    new-array v0, v1, [F
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ANCHOR_VERTICAL:[F
+
     return-void
+
+    .line 118
+    :array_0
+    .array-data 4
+        0x7fc00000    # Float.NaN
+        0x0
+        0x3f800000    # 1.0f
+        0x3f000000    # 0.5f
+    .end array-data
+
+    .line 119
+    :array_1
+    .array-data 4
+        0x7fc00000    # Float.NaN
+        0x0
+        0x3f000000    # 0.5f
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
 .method constructor <init>(Lcom/google/appinventor/components/runtime/Form;)V
@@ -122,52 +160,63 @@
 
     const/4 v4, 0x0
 
-    .line 265
+    .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
+    .line 105
     iput-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
-    .line 106
+    .line 107
     iput-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rotation:Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
-    .line 107
+    .line 108
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->eventListeners:Ljava/util/Set;
 
-    .line 108
+    .line 109
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
-    .line 109
+    .line 110
     iput-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultMarkerSVG:Lcom/caverock/androidsvg/SVG;
 
-    .line 110
+    .line 111
     iput-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->touch:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;
 
-    .line 111
+    .line 112
     iput-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultInfoWindow:Lorg/osmdroid/views/overlay/infowindow/OverlayInfoWindow;
 
-    .line 112
+    .line 113
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ready:Z
 
-    .line 113
+    .line 114
     iput-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
-    .line 114
+    .line 115
     const/high16 v2, 0x7fc00000    # Float.NaN
 
     iput v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->lastAzimuth:F
 
-    .line 266
+    .line 270
+    invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/Form;->getApplication()Landroid/app/Application;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/app/Application;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lorg/osmdroid/tileprovider/constants/OpenStreetMapTileProviderConstants;->setUserAgentValue(Ljava/lang/String;)V
+
+    .line 271
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/Form;->getCacheDir()Ljava/io/File;
@@ -178,7 +227,7 @@
 
     invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 267
+    .line 272
     .local v0, "osmdroid":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -192,7 +241,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 268
+    .line 273
     :cond_0
     invoke-static {}, Lorg/osmdroid/config/Configuration;->getInstance()Lorg/osmdroid/config/IConfigurationProvider;
 
@@ -200,14 +249,14 @@
 
     invoke-interface {v2, v0}, Lorg/osmdroid/config/IConfigurationProvider;->setOsmdroidBasePath(Ljava/io/File;)V
 
-    .line 269
+    .line 274
     new-instance v1, Ljava/io/File;
 
     const-string v2, "tiles"
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 270
+    .line 275
     .local v1, "osmdroidTiles":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -221,7 +270,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 271
+    .line 276
     :cond_1
     invoke-static {}, Lorg/osmdroid/config/Configuration;->getInstance()Lorg/osmdroid/config/IConfigurationProvider;
 
@@ -229,22 +278,22 @@
 
     invoke-interface {v2, v1}, Lorg/osmdroid/config/IConfigurationProvider;->setOsmdroidTileCache(Ljava/io/File;)V
 
-    .line 272
+    .line 277
     iput-boolean v5, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->caches:Z
 
-    .line 275
+    .line 280
     .end local v1    # "osmdroidTiles":Ljava/io/File;
     :cond_2
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->form:Lcom/google/appinventor/components/runtime/Form;
 
-    .line 276
+    .line 281
     new-instance v2, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;
 
     invoke-direct {v2, p0, v4}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;)V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->touch:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;
 
-    .line 277
+    .line 282
     new-instance v2, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$CustomMapView;
 
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/Form;->getApplicationContext()Landroid/content/Context;
@@ -255,14 +304,14 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
-    .line 278
+    .line 283
     new-instance v2, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;
 
     invoke-direct {v2, v4}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;)V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->locationProvider:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;
 
-    .line 279
+    .line 284
     new-instance v2, Lorg/osmdroid/views/overlay/infowindow/OverlayInfoWindow;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -271,17 +320,17 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultInfoWindow:Lorg/osmdroid/views/overlay/infowindow/OverlayInfoWindow;
 
-    .line 280
+    .line 285
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v2, v5}, Lorg/osmdroid/views/MapView;->setTilesScaledToDpi(Z)V
 
-    .line 281
+    .line 286
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v2, p0}, Lorg/osmdroid/views/MapView;->setMapListener(Lorg/osmdroid/events/MapListener;)V
 
-    .line 282
+    .line 287
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v2}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -292,7 +341,7 @@
 
     invoke-interface {v2, v3}, Lorg/osmdroid/views/overlay/OverlayManager;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 288
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     new-instance v3, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;
@@ -301,7 +350,7 @@
 
     invoke-virtual {v2, v3}, Lorg/osmdroid/views/MapView;->addOnTapListener(Lorg/osmdroid/views/MapView$OnTapListener;)V
 
-    .line 298
+    .line 303
     new-instance v2, Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -310,7 +359,7 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
-    .line 299
+    .line 304
     new-instance v2, Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->locationProvider:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;
@@ -321,7 +370,7 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->userLocation:Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;
 
-    .line 300
+    .line 305
     new-instance v2, Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -330,22 +379,22 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
-    .line 301
+    .line 306
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
     invoke-virtual {v2, v5}, Lorg/osmdroid/views/overlay/ScaleBarOverlay;->setAlignBottom(Z)V
 
-    .line 302
+    .line 307
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
     invoke-virtual {v2, v5}, Lorg/osmdroid/views/overlay/ScaleBarOverlay;->setAlignRight(Z)V
 
-    .line 303
+    .line 308
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
     invoke-virtual {v2}, Lorg/osmdroid/views/overlay/ScaleBarOverlay;->disableScaleBar()V
 
-    .line 304
+    .line 309
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v2}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -356,19 +405,19 @@
 
     invoke-interface {v2, v3}, Lorg/osmdroid/views/overlay/OverlayManager;->add(Ljava/lang/Object;)Z
 
-    .line 306
+    .line 311
     new-instance v2, Landroid/widget/RelativeLayout;
 
     invoke-direct {v2, p1}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->containerView:Landroid/widget/RelativeLayout;
 
-    .line 307
+    .line 312
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->containerView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v2, v5}, Landroid/widget/RelativeLayout;->setClipChildren(Z)V
 
-    .line 308
+    .line 313
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->containerView:Landroid/widget/RelativeLayout;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -379,21 +428,21 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 309
+    .line 314
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->containerView:Landroid/widget/RelativeLayout;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
     invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
 
-    .line 310
+    .line 315
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Lcom/google/appinventor/components/runtime/view/ZoomControlView;->setVisibility(I)V
 
-    .line 311
+    .line 316
     return-void
 .end method
 
@@ -402,7 +451,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->eventListeners:Ljava/util/Set;
 
     return-object v0
@@ -413,7 +462,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 87
+    .line 88
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ready:Z
 
     return v0
@@ -426,7 +475,7 @@
     .param p2, "x2"    # Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;
 
     .prologue
-    .line 87
+    .line 88
     invoke-direct {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getMarkerDrawable(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
     return-void
@@ -438,7 +487,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 87
+    .line 88
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ready:Z
 
     return p1
@@ -450,7 +499,7 @@
     .param p1, "x1"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     .prologue
-    .line 87
+    .line 88
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getDefaultMarkerDrawable(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -463,7 +512,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->form:Lcom/google/appinventor/components/runtime/Form;
 
     return-object v0
@@ -474,7 +523,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     return-object v0
@@ -485,7 +534,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     return-object v0
@@ -495,7 +544,7 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 88
     sget-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -507,40 +556,40 @@
     .param p2, "polygon"    # Lorg/osmdroid/views/overlay/Polygon;
 
     .prologue
-    .line 616
+    .line 621
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 617
+    .line 622
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$6;
 
     invoke-direct {v0, p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$6;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
     invoke-virtual {p2, v0}, Lorg/osmdroid/views/overlay/Polygon;->setOnClickListener(Lorg/osmdroid/views/overlay/Polygon$OnClickListener;)V
 
-    .line 637
+    .line 642
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;
 
     invoke-direct {v0, p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
     invoke-virtual {p2, v0}, Lorg/osmdroid/views/overlay/Polygon;->setOnDragListener(Lorg/osmdroid/views/overlay/Polygon$OnDragListener;)V
 
-    .line 689
+    .line 694
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Visible()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 690
+    .line 695
     invoke-virtual {p0, p2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->showOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
-    .line 694
+    .line 699
     :goto_0
     return-void
 
-    .line 692
+    .line 697
     :cond_0
     invoke-virtual {p0, p2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->hideOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
@@ -552,16 +601,16 @@
     .param p1, "aiCircle"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;
 
     .prologue
-    .line 1126
+    .line 1133
     new-instance v0, Lorg/osmdroid/views/overlay/Polygon;
 
     invoke-direct {v0}, Lorg/osmdroid/views/overlay/Polygon;-><init>()V
 
-    .line 1127
+    .line 1134
     .local v0, "osmPolygon":Lorg/osmdroid/views/overlay/Polygon;
     invoke-direct {p0, v0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createPolygon(Lorg/osmdroid/views/overlay/Polygon;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 1128
+    .line 1135
     new-instance v1, Lorg/osmdroid/util/GeoPoint;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;->Latitude()D
@@ -584,7 +633,7 @@
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polygon;->setPoints(Ljava/util/List;)V
 
-    .line 1129
+    .line 1136
     return-object v0
 .end method
 
@@ -603,7 +652,7 @@
     .end annotation
 
     .prologue
-    .line 1074
+    .line 1081
     .local p2, "callback":Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;, "Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair<Lorg/osmdroid/views/overlay/Marker;>;"
     new-instance v0, Lorg/osmdroid/views/overlay/Marker;
 
@@ -611,34 +660,34 @@
 
     invoke-direct {v0, v1}, Lorg/osmdroid/views/overlay/Marker;-><init>(Lorg/osmdroid/views/MapView;)V
 
-    .line 1075
+    .line 1082
     .local v0, "osmMarker":Lorg/osmdroid/views/overlay/Marker;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1076
+    .line 1083
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Draggable()Z
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Marker;->setDraggable(Z)V
 
-    .line 1077
+    .line 1084
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Title()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Marker;->setTitle(Ljava/lang/String;)V
 
-    .line 1078
+    .line 1085
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Description()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Marker;->setSnippet(Ljava/lang/String;)V
 
-    .line 1079
+    .line 1086
     new-instance v1, Lorg/osmdroid/util/GeoPoint;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Latitude()D
@@ -653,21 +702,21 @@
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Marker;->setPosition(Lorg/osmdroid/util/GeoPoint;)V
 
-    .line 1080
+    .line 1087
     const/high16 v1, 0x3f000000    # 0.5f
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1, v2}, Lorg/osmdroid/views/overlay/Marker;->setAnchor(FF)V
 
-    .line 1081
+    .line 1088
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;
 
     invoke-direct {v1, p0, p2, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;Lorg/osmdroid/views/overlay/Marker;)V
 
     invoke-direct {p0, p1, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getMarkerDrawable(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
-    .line 1093
+    .line 1100
     return-void
 .end method
 
@@ -676,30 +725,30 @@
     .param p1, "aiPolygon"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;
 
     .prologue
-    .line 1118
+    .line 1125
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
 
     invoke-direct {v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;-><init>()V
 
-    .line 1119
+    .line 1126
     .local v0, "osmPolygon":Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
     invoke-direct {p0, v0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createPolygon(Lorg/osmdroid/views/overlay/Polygon;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 1120
+    .line 1127
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getPoints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;->setMultiPoints(Ljava/util/List;)V
 
-    .line 1121
+    .line 1128
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getHolePoints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;->setMultiHoles(Ljava/util/List;)V
 
-    .line 1122
+    .line 1129
     return-object v0
 .end method
 
@@ -708,12 +757,12 @@
     .param p1, "aiLineString"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
 
     .prologue
-    .line 1096
+    .line 1103
     new-instance v0, Lorg/osmdroid/views/overlay/Polyline;
 
     invoke-direct {v0}, Lorg/osmdroid/views/overlay/Polyline;-><init>()V
 
-    .line 1097
+    .line 1104
     .local v0, "osmLine":Lorg/osmdroid/views/overlay/Polyline;
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->Draggable()Z
 
@@ -721,35 +770,35 @@
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setDraggable(Z)V
 
-    .line 1098
+    .line 1105
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->Title()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setTitle(Ljava/lang/String;)V
 
-    .line 1099
+    .line 1106
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->Description()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setSnippet(Ljava/lang/String;)V
 
-    .line 1100
+    .line 1107
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->getPoints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setPoints(Ljava/util/List;)V
 
-    .line 1101
+    .line 1108
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->StrokeColor()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setColor(I)V
 
-    .line 1102
+    .line 1109
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->StrokeWidth()I
 
     move-result v1
@@ -758,12 +807,12 @@
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setWidth(F)V
 
-    .line 1103
+    .line 1110
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultInfoWindow:Lorg/osmdroid/views/overlay/infowindow/OverlayInfoWindow;
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setInfoWindow(Lorg/osmdroid/views/overlay/infowindow/InfoWindow;)V
 
-    .line 1104
+    .line 1111
     return-object v0
 .end method
 
@@ -772,7 +821,7 @@
     .param p1, "aiRectangle"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;
 
     .prologue
-    .line 1133
+    .line 1140
     new-instance v1, Lorg/osmdroid/util/BoundingBox;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->NorthLatitude()D
@@ -783,7 +832,7 @@
 
     move-result-wide v4
 
-    .line 1134
+    .line 1141
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->SouthLatitude()D
 
     move-result-wide v6
@@ -794,17 +843,17 @@
 
     invoke-direct/range {v1 .. v9}, Lorg/osmdroid/util/BoundingBox;-><init>(DDDD)V
 
-    .line 1135
+    .line 1142
     .local v1, "bbox":Lorg/osmdroid/util/BoundingBox;
     new-instance v0, Lorg/osmdroid/views/overlay/Polygon;
 
     invoke-direct {v0}, Lorg/osmdroid/views/overlay/Polygon;-><init>()V
 
-    .line 1136
+    .line 1143
     .local v0, "osmPolygon":Lorg/osmdroid/views/overlay/Polygon;
     invoke-direct {p0, v0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createPolygon(Lorg/osmdroid/views/overlay/Polygon;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 1137
+    .line 1144
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-static {v1}, Lorg/osmdroid/views/overlay/Polygon;->pointsAsRect(Lorg/osmdroid/util/BoundingBox;)Ljava/util/ArrayList;
@@ -815,7 +864,7 @@
 
     invoke-virtual {v0, v2}, Lorg/osmdroid/views/overlay/Polygon;->setPoints(Ljava/util/List;)V
 
-    .line 1138
+    .line 1145
     return-object v0
 .end method
 
@@ -825,21 +874,21 @@
     .param p2, "aiFeature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1108
+    .line 1115
     invoke-interface {p2}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Draggable()Z
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Polygon;->setDraggable(Z)V
 
-    .line 1109
+    .line 1116
     invoke-interface {p2}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Title()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Polygon;->setTitle(Ljava/lang/String;)V
 
-    .line 1110
+    .line 1117
     invoke-interface {p2}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Description()Ljava/lang/String;
 
     move-result-object v0
@@ -848,7 +897,7 @@
 
     move-object v0, p2
 
-    .line 1111
+    .line 1118
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeColor()I
@@ -859,7 +908,7 @@
 
     move-object v0, p2
 
-    .line 1112
+    .line 1119
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeWidth()I
@@ -870,7 +919,7 @@
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Polygon;->setStrokeWidth(F)V
 
-    .line 1113
+    .line 1120
     check-cast p2, Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;
 
     .end local p2    # "aiFeature":Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
@@ -880,12 +929,12 @@
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Polygon;->setFillColor(I)V
 
-    .line 1114
+    .line 1121
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultInfoWindow:Lorg/osmdroid/views/overlay/infowindow/OverlayInfoWindow;
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Polygon;->setInfoWindow(Lorg/osmdroid/views/overlay/infowindow/InfoWindow;)V
 
-    .line 1115
+    .line 1122
     return-void
 .end method
 
@@ -894,36 +943,36 @@
     .param p0, "svg"    # Lcom/caverock/androidsvg/SVG$Svg;
 
     .prologue
-    .line 1003
+    .line 1010
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->height:Lcom/caverock/androidsvg/SVG$Length;
 
     if-eqz v0, :cond_0
 
-    .line 1004
+    .line 1011
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->height:Lcom/caverock/androidsvg/SVG$Length;
 
     invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG$Length;->floatValue()F
 
     move-result v0
 
-    .line 1008
+    .line 1015
     :goto_0
     return v0
 
-    .line 1005
+    .line 1012
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     if-eqz v0, :cond_1
 
-    .line 1006
+    .line 1013
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     iget v0, v0, Lcom/caverock/androidsvg/SVG$Box;->height:F
 
     goto :goto_0
 
-    .line 1008
+    .line 1015
     :cond_1
     const/high16 v0, 0x42480000    # 50.0f
 
@@ -935,36 +984,36 @@
     .param p0, "svg"    # Lcom/caverock/androidsvg/SVG$Svg;
 
     .prologue
-    .line 993
+    .line 1000
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->width:Lcom/caverock/androidsvg/SVG$Length;
 
     if-eqz v0, :cond_0
 
-    .line 994
+    .line 1001
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->width:Lcom/caverock/androidsvg/SVG$Length;
 
     invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG$Length;->floatValue()F
 
     move-result v0
 
-    .line 998
+    .line 1005
     :goto_0
     return v0
 
-    .line 995
+    .line 1002
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     if-eqz v0, :cond_1
 
-    .line 996
+    .line 1003
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     iget v0, v0, Lcom/caverock/androidsvg/SVG$Box;->width:F
 
     goto :goto_0
 
-    .line 998
+    .line 1005
     :cond_1
     const/high16 v0, 0x41f00000    # 30.0f
 
@@ -976,7 +1025,7 @@
     .param p1, "aiMarker"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     .prologue
-    .line 989
+    .line 996
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultMarkerSVG:Lcom/caverock/androidsvg/SVG;
 
     invoke-direct {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rasterizeSVG(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/caverock/androidsvg/SVG;)Landroid/graphics/drawable/Drawable;
@@ -1001,13 +1050,13 @@
     .end annotation
 
     .prologue
-    .line 915
+    .line 922
     .local p2, "callback":Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;, "Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair<Landroid/graphics/drawable/Drawable;>;"
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->ImageAsset()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 916
+    .line 923
     .local v0, "assetPath":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -1025,15 +1074,15 @@
 
     if-eqz v1, :cond_1
 
-    .line 917
+    .line 924
     :cond_0
     invoke-direct {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getMarkerDrawableVector(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
-    .line 921
+    .line 928
     :goto_0
     return-void
 
-    .line 919
+    .line 926
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getMarkerDrawableRaster(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
@@ -1055,7 +1104,7 @@
     .end annotation
 
     .prologue
-    .line 974
+    .line 981
     .local p2, "callback":Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;, "Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair<Landroid/graphics/drawable/Drawable;>;"
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -1069,7 +1118,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/appinventor/components/runtime/util/MediaUtil;->getBitmapDrawableAsync(Lcom/google/appinventor/components/runtime/Form;Ljava/lang/String;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
-    .line 986
+    .line 993
     return-void
 .end method
 
@@ -1088,17 +1137,17 @@
     .end annotation
 
     .prologue
-    .line 925
+    .line 932
     .local p2, "callback":Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;, "Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair<Landroid/graphics/drawable/Drawable;>;"
     const/4 v3, 0x0
 
-    .line 926
+    .line 933
     .local v3, "markerSvg":Lcom/caverock/androidsvg/SVG;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultMarkerSVG:Lcom/caverock/androidsvg/SVG;
 
     if-nez v4, :cond_1
 
-    .line 928
+    .line 935
     :try_start_0
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
@@ -1121,7 +1170,7 @@
     .catch Lcom/caverock/androidsvg/SVGParseException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 934
+    .line 941
     :goto_0
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultMarkerSVG:Lcom/caverock/androidsvg/SVG;
 
@@ -1135,7 +1184,7 @@
 
     if-nez v4, :cond_1
 
-    .line 935
+    .line 942
     :cond_0
     new-instance v4, Ljava/lang/IllegalStateException;
 
@@ -1145,11 +1194,11 @@
 
     throw v4
 
-    .line 929
+    .line 936
     :catch_0
     move-exception v0
 
-    .line 930
+    .line 937
     .local v0, "e":Lcom/caverock/androidsvg/SVGParseException;
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
@@ -1159,12 +1208,12 @@
 
     goto :goto_0
 
-    .line 931
+    .line 938
     .end local v0    # "e":Lcom/caverock/androidsvg/SVGParseException;
     :catch_1
     move-exception v0
 
-    .line 932
+    .line 939
     .local v0, "e":Ljava/io/IOException;
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
@@ -1174,14 +1223,14 @@
 
     goto :goto_0
 
-    .line 938
+    .line 945
     .end local v0    # "e":Ljava/io/IOException;
     :cond_1
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->ImageAsset()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 939
+    .line 946
     .local v2, "markerAsset":Ljava/lang/String;
     if-eqz v2, :cond_2
 
@@ -1191,7 +1240,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 941
+    .line 948
     :try_start_1
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
@@ -1210,14 +1259,14 @@
 
     move-result-object v3
 
-    .line 947
+    .line 954
     :goto_1
     if-nez v3, :cond_2
 
-    .line 949
+    .line 956
     const/4 v1, 0x0
 
-    .line 951
+    .line 958
     .local v1, "is":Ljava/io/InputStream;
     :try_start_2
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->form:Lcom/google/appinventor/components/runtime/Form;
@@ -1226,7 +1275,7 @@
 
     move-result-object v1
 
-    .line 952
+    .line 959
     invoke-static {v1}, Lcom/caverock/androidsvg/SVG;->getFromInputStream(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
     :try_end_2
     .catch Lcom/caverock/androidsvg/SVGParseException; {:try_start_2 .. :try_end_2} :catch_4
@@ -1235,21 +1284,21 @@
 
     move-result-object v3
 
-    .line 958
+    .line 965
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
     invoke-static {v4, v1}, Lcom/google/appinventor/components/runtime/util/IOUtils;->closeQuietly(Ljava/lang/String;Ljava/io/Closeable;)V
 
-    .line 962
+    .line 969
     .end local v1    # "is":Ljava/io/InputStream;
     :cond_2
     :goto_2
     if-nez v3, :cond_3
 
-    .line 963
+    .line 970
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->defaultMarkerSVG:Lcom/caverock/androidsvg/SVG;
 
-    .line 966
+    .line 973
     :cond_3
     :try_start_3
     invoke-direct {p0, p1, v3}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rasterizeSVG(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/caverock/androidsvg/SVG;)Landroid/graphics/drawable/Drawable;
@@ -1260,15 +1309,15 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_6
 
-    .line 970
+    .line 977
     :goto_3
     return-void
 
-    .line 942
+    .line 949
     :catch_2
     move-exception v0
 
-    .line 943
+    .line 950
     .local v0, "e":Lcom/caverock/androidsvg/SVGParseException;
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
@@ -1278,12 +1327,12 @@
 
     goto :goto_1
 
-    .line 944
+    .line 951
     .end local v0    # "e":Lcom/caverock/androidsvg/SVGParseException;
     :catch_3
     move-exception v0
 
-    .line 945
+    .line 952
     .local v0, "e":Ljava/io/IOException;
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
@@ -1293,13 +1342,13 @@
 
     goto :goto_1
 
-    .line 953
+    .line 960
     .end local v0    # "e":Ljava/io/IOException;
     .restart local v1    # "is":Ljava/io/InputStream;
     :catch_4
     move-exception v0
 
-    .line 954
+    .line 961
     .local v0, "e":Lcom/caverock/androidsvg/SVGParseException;
     :try_start_4
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
@@ -1310,19 +1359,19 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 958
+    .line 965
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
     invoke-static {v4, v1}, Lcom/google/appinventor/components/runtime/util/IOUtils;->closeQuietly(Ljava/lang/String;Ljava/io/Closeable;)V
 
     goto :goto_2
 
-    .line 955
+    .line 962
     .end local v0    # "e":Lcom/caverock/androidsvg/SVGParseException;
     :catch_5
     move-exception v0
 
-    .line 956
+    .line 963
     .local v0, "e":Ljava/io/IOException;
     :try_start_5
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
@@ -1333,7 +1382,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 958
+    .line 965
     sget-object v4, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->TAG:Ljava/lang/String;
 
     invoke-static {v4, v1}, Lcom/google/appinventor/components/runtime/util/IOUtils;->closeQuietly(Ljava/lang/String;Ljava/io/Closeable;)V
@@ -1348,15 +1397,15 @@
 
     invoke-static {v5, v1}, Lcom/google/appinventor/components/runtime/util/IOUtils;->closeQuietly(Ljava/lang/String;Ljava/io/Closeable;)V
 
-    .line 959
+    .line 966
     throw v4
 
-    .line 967
+    .line 974
     .end local v1    # "is":Ljava/io/InputStream;
     :catch_6
     move-exception v0
 
-    .line 968
+    .line 975
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -1373,12 +1422,12 @@
     .param p2, "markerSvg"    # Lcom/caverock/androidsvg/SVG;
 
     .prologue
-    .line 1013
+    .line 1020
     invoke-virtual/range {p2 .. p2}, Lcom/caverock/androidsvg/SVG;->getRootElement()Lcom/caverock/androidsvg/SVG$Svg;
 
     move-result-object v17
 
-    .line 1014
+    .line 1021
     .local v17, "svg":Lcom/caverock/androidsvg/SVG$Svg;
     move-object/from16 v0, p0
 
@@ -1402,7 +1451,7 @@
 
     iget v5, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 1015
+    .line 1022
     .local v5, "density":F
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Height()I
 
@@ -1414,7 +1463,7 @@
 
     move-result v8
 
-    .line 1016
+    .line 1023
     .local v8, "height":F
     :goto_0
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Width()I
@@ -1427,7 +1476,7 @@
 
     move-result v18
 
-    .line 1017
+    .line 1024
     .local v18, "width":F
     :goto_1
     invoke-static/range {v17 .. v17}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getBestGuessHeight(Lcom/caverock/androidsvg/SVG$Svg;)F
@@ -1436,7 +1485,7 @@
 
     div-float v12, v8, v19
 
-    .line 1018
+    .line 1025
     .local v12, "scaleH":F
     invoke-static/range {v17 .. v17}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->getBestGuessWidth(Lcom/caverock/androidsvg/SVG$Svg;)F
 
@@ -1444,7 +1493,7 @@
 
     div-float v13, v18, v19
 
-    .line 1019
+    .line 1026
     .local v13, "scaleW":F
     mul-float v19, v12, v12
 
@@ -1466,19 +1515,19 @@
 
     double-to-float v11, v0
 
-    .line 1022
+    .line 1029
     .local v11, "scale":F
     new-instance v7, Landroid/graphics/Paint;
 
     invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1023
+    .line 1030
     .local v7, "fillPaint":Landroid/graphics/Paint;
     new-instance v15, Landroid/graphics/Paint;
 
     invoke-direct {v15}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1024
+    .line 1031
     .local v15, "strokePaint":Landroid/graphics/Paint;
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->FillColor()I
 
@@ -1488,7 +1537,7 @@
 
     invoke-static {v7, v0}, Lcom/google/appinventor/components/runtime/util/PaintUtil;->changePaint(Landroid/graphics/Paint;I)V
 
-    .line 1025
+    .line 1032
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->StrokeColor()I
 
     move-result v19
@@ -1497,7 +1546,7 @@
 
     invoke-static {v15, v0}, Lcom/google/appinventor/components/runtime/util/PaintUtil;->changePaint(Landroid/graphics/Paint;I)V
 
-    .line 1026
+    .line 1033
     new-instance v16, Lcom/caverock/androidsvg/SVG$Length;
 
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->StrokeWidth()I
@@ -1518,7 +1567,7 @@
 
     invoke-direct {v0, v1}, Lcom/caverock/androidsvg/SVG$Length;-><init>(F)V
 
-    .line 1027
+    .line 1034
     .local v16, "strokeWidth":Lcom/caverock/androidsvg/SVG$Length;
     invoke-virtual/range {v17 .. v17}, Lcom/caverock/androidsvg/SVG$Svg;->getChildren()Ljava/util/List;
 
@@ -1542,7 +1591,7 @@
 
     check-cast v6, Lcom/caverock/androidsvg/SVG$SvgObject;
 
-    .line 1028
+    .line 1035
     .local v6, "element":Lcom/caverock/androidsvg/SVG$SvgObject;
     instance-of v0, v6, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;
 
@@ -1552,10 +1601,10 @@
 
     move-object v9, v6
 
-    .line 1029
+    .line 1036
     check-cast v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;
 
-    .line 1030
+    .line 1037
     .local v9, "path":Lcom/caverock/androidsvg/SVG$SvgConditionalElement;
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->baseStyle:Lcom/caverock/androidsvg/SVG$Style;
 
@@ -1575,7 +1624,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->fill:Lcom/caverock/androidsvg/SVG$SvgPaint;
 
-    .line 1031
+    .line 1038
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->baseStyle:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1604,7 +1653,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->fillOpacity:Ljava/lang/Float;
 
-    .line 1032
+    .line 1039
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->baseStyle:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1623,7 +1672,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->stroke:Lcom/caverock/androidsvg/SVG$SvgPaint;
 
-    .line 1033
+    .line 1040
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->baseStyle:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1652,7 +1701,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->strokeOpacity:Ljava/lang/Float;
 
-    .line 1034
+    .line 1041
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->baseStyle:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1663,14 +1712,14 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->strokeWidth:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1035
+    .line 1042
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
 
     if-eqz v20, :cond_0
 
-    .line 1036
+    .line 1043
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1691,7 +1740,7 @@
 
     if-nez v20, :cond_1
 
-    .line 1037
+    .line 1044
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1710,7 +1759,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->fill:Lcom/caverock/androidsvg/SVG$SvgPaint;
 
-    .line 1038
+    .line 1045
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1731,7 +1780,7 @@
 
     iput-wide v0, v2, Lcom/caverock/androidsvg/SVG$Style;->specifiedFlags:J
 
-    .line 1040
+    .line 1047
     :cond_1
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
@@ -1753,7 +1802,7 @@
 
     if-nez v20, :cond_2
 
-    .line 1041
+    .line 1048
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1782,7 +1831,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->fillOpacity:Ljava/lang/Float;
 
-    .line 1042
+    .line 1049
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1803,7 +1852,7 @@
 
     iput-wide v0, v2, Lcom/caverock/androidsvg/SVG$Style;->specifiedFlags:J
 
-    .line 1044
+    .line 1051
     :cond_2
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
@@ -1825,7 +1874,7 @@
 
     if-nez v20, :cond_3
 
-    .line 1045
+    .line 1052
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1844,7 +1893,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->stroke:Lcom/caverock/androidsvg/SVG$SvgPaint;
 
-    .line 1046
+    .line 1053
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1865,7 +1914,7 @@
 
     iput-wide v0, v2, Lcom/caverock/androidsvg/SVG$Style;->specifiedFlags:J
 
-    .line 1048
+    .line 1055
     :cond_3
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
@@ -1887,7 +1936,7 @@
 
     if-nez v20, :cond_4
 
-    .line 1049
+    .line 1056
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1916,7 +1965,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->strokeOpacity:Ljava/lang/Float;
 
-    .line 1050
+    .line 1057
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1937,7 +1986,7 @@
 
     iput-wide v0, v2, Lcom/caverock/androidsvg/SVG$Style;->specifiedFlags:J
 
-    .line 1052
+    .line 1059
     :cond_4
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
@@ -1959,7 +2008,7 @@
 
     if-nez v20, :cond_0
 
-    .line 1053
+    .line 1060
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1970,7 +2019,7 @@
 
     iput-object v0, v1, Lcom/caverock/androidsvg/SVG$Style;->strokeWidth:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1054
+    .line 1061
     iget-object v0, v9, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->style:Lcom/caverock/androidsvg/SVG$Style;
 
     move-object/from16 v20, v0
@@ -1993,7 +2042,7 @@
 
     goto/16 :goto_2
 
-    .line 1015
+    .line 1022
     .end local v6    # "element":Lcom/caverock/androidsvg/SVG$SvgObject;
     .end local v7    # "fillPaint":Landroid/graphics/Paint;
     .end local v8    # "height":F
@@ -2015,7 +2064,7 @@
 
     goto/16 :goto_0
 
-    .line 1016
+    .line 1023
     .restart local v8    # "height":F
     :cond_6
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Width()I
@@ -2030,7 +2079,7 @@
 
     goto/16 :goto_1
 
-    .line 1061
+    .line 1068
     .restart local v7    # "fillPaint":Landroid/graphics/Paint;
     .restart local v11    # "scale":F
     .restart local v12    # "scaleH":F
@@ -2043,13 +2092,13 @@
 
     move-result-object v10
 
-    .line 1062
+    .line 1069
     .local v10, "picture":Landroid/graphics/Picture;
     new-instance v14, Landroid/graphics/Picture;
 
     invoke-direct {v14}, Landroid/graphics/Picture;-><init>()V
 
-    .line 1063
+    .line 1070
     .local v14, "scaledPicture":Landroid/graphics/Picture;
     const/high16 v19, 0x40000000    # 2.0f
 
@@ -2077,7 +2126,7 @@
 
     const/high16 v20, 0x40000000    # 2.0f
 
-    .line 1064
+    .line 1071
     invoke-interface/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->StrokeWidth()I
 
     move-result v21
@@ -2100,7 +2149,7 @@
 
     move/from16 v20, v0
 
-    .line 1063
+    .line 1070
     move/from16 v0, v19
 
     move/from16 v1, v20
@@ -2109,7 +2158,7 @@
 
     move-result-object v4
 
-    .line 1065
+    .line 1072
     .local v4, "canvas":Landroid/graphics/Canvas;
     mul-float v19, v5, v13
 
@@ -2121,7 +2170,7 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 1066
+    .line 1073
     invoke-virtual/range {v16 .. v16}, Lcom/caverock/androidsvg/SVG$Length;->floatValue()F
 
     move-result v19
@@ -2136,13 +2185,13 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1067
+    .line 1074
     invoke-virtual {v10, v4}, Landroid/graphics/Picture;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1068
+    .line 1075
     invoke-virtual {v14}, Landroid/graphics/Picture;->endRecording()V
 
-    .line 1069
+    .line 1076
     new-instance v19, Landroid/graphics/drawable/PictureDrawable;
 
     move-object/from16 v0, v19
@@ -2159,12 +2208,12 @@
     .param p1, "listener"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
     .prologue
-    .line 491
+    .line 496
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->eventListeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 492
+    .line 497
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ready:Z
 
     if-nez v0, :cond_0
@@ -2190,15 +2239,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 493
+    .line 498
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ready:Z
 
-    .line 494
+    .line 499
     invoke-interface {p1, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;->onReady(Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;)V
 
-    .line 496
+    .line 501
     :cond_1
     return-void
 .end method
@@ -2208,14 +2257,14 @@
     .param p1, "aiCircle"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;
 
     .prologue
-    .line 703
+    .line 708
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createNativeCircle(Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;)Lorg/osmdroid/views/overlay/Polygon;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->configurePolygon(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;Lorg/osmdroid/views/overlay/Polygon;)V
 
-    .line 704
+    .line 709
     return-void
 .end method
 
@@ -2224,46 +2273,46 @@
     .param p1, "aiPolyline"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
 
     .prologue
-    .line 563
+    .line 568
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createNativePolyline(Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;)Lorg/osmdroid/views/overlay/Polyline;
 
     move-result-object v0
 
-    .line 564
+    .line 569
     .local v0, "polyline":Lorg/osmdroid/views/overlay/Polyline;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 565
+    .line 570
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;
 
     invoke-direct {v1, p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;)V
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setOnClickListener(Lorg/osmdroid/views/overlay/Polyline$OnClickListener;)V
 
-    .line 585
+    .line 590
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$5;
 
     invoke-direct {v1, p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$5;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;)V
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setOnDragListener(Lorg/osmdroid/views/overlay/Polyline$OnDragListener;)V
 
-    .line 608
+    .line 613
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->Visible()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 609
+    .line 614
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->showOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
-    .line 613
+    .line 618
     :goto_0
     return-void
 
-    .line 611
+    .line 616
     :cond_0
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->hideOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
@@ -2275,14 +2324,14 @@
     .param p1, "aiMarker"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     .prologue
-    .line 500
+    .line 505
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
     invoke-direct {v0, p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;)V
 
     invoke-direct {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createNativeMarker(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
-    .line 559
+    .line 564
     return-void
 .end method
 
@@ -2291,14 +2340,14 @@
     .param p1, "aiPolygon"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;
 
     .prologue
-    .line 698
+    .line 703
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createNativePolygon(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->configurePolygon(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;Lorg/osmdroid/views/overlay/Polygon;)V
 
-    .line 699
+    .line 704
     return-void
 .end method
 
@@ -2307,14 +2356,14 @@
     .param p1, "aiRectangle"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;
 
     .prologue
-    .line 708
+    .line 713
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->createNativeRectangle(Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;)Lorg/osmdroid/views/overlay/Polygon;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->configurePolygon(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;Lorg/osmdroid/views/overlay/Polygon;)V
 
-    .line 709
+    .line 714
     return-void
 .end method
 
@@ -2322,7 +2371,7 @@
     .locals 1
 
     .prologue
-    .line 1187
+    .line 1194
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getBoundingBox()Lorg/osmdroid/util/BoundingBox;
@@ -2336,7 +2385,7 @@
     .locals 2
 
     .prologue
-    .line 320
+    .line 325
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getMapCenter()Lorg/osmdroid/api/IGeoPoint;
@@ -2354,7 +2403,7 @@
     .locals 1
 
     .prologue
-    .line 1215
+    .line 1222
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->locationProvider:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;
 
     return-object v0
@@ -2364,7 +2413,7 @@
     .locals 2
 
     .prologue
-    .line 325
+    .line 330
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getMapCenter()Lorg/osmdroid/api/IGeoPoint;
@@ -2382,7 +2431,7 @@
     .locals 1
 
     .prologue
-    .line 380
+    .line 385
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->tileType:Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;
 
     return-object v0
@@ -2392,7 +2441,7 @@
     .locals 2
 
     .prologue
-    .line 1220
+    .line 1227
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -2403,7 +2452,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/Object;)V
 
-    .line 1221
+    .line 1228
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlays()Ljava/util/List;
@@ -2421,7 +2470,7 @@
     .locals 1
 
     .prologue
-    .line 1231
+    .line 1238
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getMapOrientation()F
@@ -2435,7 +2484,7 @@
     .locals 2
 
     .prologue
-    .line 1262
+    .line 1269
     sget-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$14;->$SwitchMap$org$osmdroid$views$overlay$ScaleBarOverlay$UnitsOfMeasure:[I
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
@@ -2452,7 +2501,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1268
+    .line 1275
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Somehow we have an unallowed unit system"
@@ -2461,11 +2510,11 @@
 
     throw v0
 
-    .line 1264
+    .line 1271
     :pswitch_0
     sget-object v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapScaleUnits;->IMPERIAL:Lcom/google/appinventor/components/runtime/util/MapFactory$MapScaleUnits;
 
-    .line 1266
+    .line 1273
     :goto_0
     return-object v0
 
@@ -2474,7 +2523,7 @@
 
     goto :goto_0
 
-    .line 1262
+    .line 1269
     nop
 
     :pswitch_data_0
@@ -2488,7 +2537,7 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 320
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->containerView:Landroid/widget/RelativeLayout;
 
     return-object v0
@@ -2498,7 +2547,7 @@
     .locals 2
 
     .prologue
-    .line 343
+    .line 348
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     const/4 v1, 0x1
@@ -2517,7 +2566,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1153
+    .line 1160
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2528,7 +2577,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->hideOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
-    .line 1154
+    .line 1161
     return-void
 .end method
 
@@ -2537,7 +2586,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1175
+    .line 1182
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2546,11 +2595,11 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 1176
+    .line 1183
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/OverlayWithIW;->closeInfoWindow()V
 
-    .line 1177
+    .line 1184
     return-void
 .end method
 
@@ -2559,7 +2608,7 @@
     .param p1, "overlay"    # Lorg/osmdroid/views/overlay/OverlayWithIW;
 
     .prologue
-    .line 1157
+    .line 1164
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -2568,12 +2617,12 @@
 
     invoke-interface {v0, p1}, Lorg/osmdroid/views/overlay/OverlayManager;->remove(Ljava/lang/Object;)Z
 
-    .line 1158
+    .line 1165
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 1159
+    .line 1166
     return-void
 .end method
 
@@ -2581,7 +2630,7 @@
     .locals 1
 
     .prologue
-    .line 414
+    .line 419
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     if-eqz v0, :cond_0
@@ -2610,7 +2659,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1163
+    .line 1170
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2619,7 +2668,7 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 1164
+    .line 1171
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     if-eqz v0, :cond_0
 
@@ -2651,7 +2700,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1181
+    .line 1188
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2660,7 +2709,7 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 1182
+    .line 1189
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     if-eqz v0, :cond_0
 
@@ -2685,7 +2734,7 @@
     .locals 1
 
     .prologue
-    .line 475
+    .line 480
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->touch:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->access$800(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;)Z
@@ -2699,7 +2748,7 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 470
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rotation:Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
     if-eqz v0, :cond_0
@@ -2727,7 +2776,7 @@
     .locals 1
 
     .prologue
-    .line 1242
+    .line 1249
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/ScaleBarOverlay;->isEnabled()Z
@@ -2741,7 +2790,7 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 450
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->userLocation:Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;
 
     if-eqz v0, :cond_0
@@ -2769,7 +2818,7 @@
     .locals 1
 
     .prologue
-    .line 428
+    .line 433
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControlEnabled:Z
 
     return v0
@@ -2779,7 +2828,7 @@
     .locals 1
 
     .prologue
-    .line 354
+    .line 359
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomEnabled:Z
 
     return v0
@@ -2790,7 +2839,7 @@
     .param p1, "event"    # Lorg/osmdroid/events/ScrollEvent;
 
     .prologue
-    .line 1198
+    .line 1205
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->eventListeners:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -2810,13 +2859,13 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 1199
+    .line 1206
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;->onBoundsChanged()V
 
     goto :goto_0
 
-    .line 1201
+    .line 1208
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     const/4 v1, 0x1
@@ -2829,12 +2878,12 @@
     .param p1, "event"    # Lorg/osmdroid/events/ZoomEvent;
 
     .prologue
-    .line 1206
+    .line 1213
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/view/ZoomControlView;->updateButtons()V
 
-    .line 1207
+    .line 1214
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->eventListeners:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -2854,13 +2903,13 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 1208
+    .line 1215
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;->onZoom()V
 
     goto :goto_0
 
-    .line 1210
+    .line 1217
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     const/4 v1, 0x1
@@ -2876,7 +2925,7 @@
     .param p6, "seconds"    # D
 
     .prologue
-    .line 480
+    .line 485
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->getController()Lorg/osmdroid/api/IMapController;
@@ -2889,7 +2938,7 @@
 
     invoke-interface {v1, v2}, Lorg/osmdroid/api/IMapController;->animateTo(Lorg/osmdroid/api/IGeoPoint;)V
 
-    .line 481
+    .line 486
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->getController()Lorg/osmdroid/api/IMapController;
@@ -2904,18 +2953,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 482
+    .line 487
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->getAnimation()Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    .line 483
+    .line 488
     .local v0, "animation":Landroid/view/animation/Animation;
     if-eqz v0, :cond_0
 
-    .line 484
+    .line 489
     const-wide v2, 0x408f400000000000L    # 1000.0
 
     mul-double/2addr v2, p6
@@ -2924,7 +2973,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 487
+    .line 492
     .end local v0    # "animation":Landroid/view/animation/Animation;
     :cond_0
     return-void
@@ -2935,7 +2984,7 @@
     .param p1, "aiFeature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 713
+    .line 718
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -2950,12 +2999,12 @@
 
     invoke-interface {v0, v1}, Lorg/osmdroid/views/overlay/OverlayManager;->remove(Ljava/lang/Object;)Z
 
-    .line 714
+    .line 719
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 715
+    .line 720
     return-void
 .end method
 
@@ -2964,7 +3013,7 @@
     .param p1, "bbox"    # Lorg/osmdroid/util/BoundingBox;
 
     .prologue
-    .line 1192
+    .line 1199
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getController()Lorg/osmdroid/api/IMapController;
@@ -2977,7 +3026,7 @@
 
     invoke-interface {v0, v1}, Lorg/osmdroid/api/IMapController;->setCenter(Lorg/osmdroid/api/IGeoPoint;)V
 
-    .line 1193
+    .line 1200
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getController()Lorg/osmdroid/api/IMapController;
@@ -2994,7 +3043,7 @@
 
     invoke-interface {v0, v2, v3, v4, v5}, Lorg/osmdroid/api/IMapController;->zoomToSpan(DD)V
 
-    .line 1194
+    .line 1201
     return-void
 .end method
 
@@ -3004,7 +3053,7 @@
     .param p3, "longitude"    # D
 
     .prologue
-    .line 330
+    .line 335
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getController()Lorg/osmdroid/api/IMapController;
@@ -3017,7 +3066,7 @@
 
     invoke-interface {v0, v1}, Lorg/osmdroid/api/IMapController;->setCenter(Lorg/osmdroid/api/IGeoPoint;)V
 
-    .line 331
+    .line 336
     return-void
 .end method
 
@@ -3026,14 +3075,14 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 385
+    .line 390
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     if-nez v0, :cond_0
 
-    .line 386
+    .line 391
     new-instance v0, Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -3048,7 +3097,7 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
-    .line 387
+    .line 392
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -3061,7 +3110,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 395
+    .line 400
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -3072,16 +3121,16 @@
 
     invoke-interface {v0, v1}, Lorg/osmdroid/views/overlay/OverlayManager;->add(Ljava/lang/Object;)Z
 
-    .line 397
+    .line 402
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     if-eqz v0, :cond_1
 
-    .line 398
+    .line 403
     if-eqz p1, :cond_3
 
-    .line 399
+    .line 404
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/compass/CompassOverlay;->getOrientationProvider()Lorg/osmdroid/views/overlay/compass/IOrientationProvider;
@@ -3090,12 +3139,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 400
+    .line 405
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/compass/CompassOverlay;->enableCompass()Z
 
-    .line 404
+    .line 409
     :goto_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
@@ -3105,12 +3154,12 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/osmdroid/views/overlay/compass/CompassOverlay;->onOrientationChanged(FLorg/osmdroid/views/overlay/compass/IOrientationProvider;)V
 
-    .line 410
+    .line 415
     :cond_1
     :goto_1
     return-void
 
-    .line 402
+    .line 407
     :cond_2
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
@@ -3128,7 +3177,7 @@
 
     goto :goto_0
 
-    .line 406
+    .line 411
     :cond_3
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
@@ -3138,7 +3187,7 @@
 
     iput v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->lastAzimuth:F
 
-    .line 407
+    .line 412
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->compass:Lorg/osmdroid/views/overlay/compass/CompassOverlay;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/compass/CompassOverlay;->disableCompass()V
@@ -3151,7 +3200,7 @@
     .param p1, "type"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;
 
     .prologue
-    .line 359
+    .line 364
     sget-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$14;->$SwitchMap$com$google$appinventor$components$runtime$util$MapFactory$MapType:[I
 
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;->ordinal()I
@@ -3162,15 +3211,15 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 376
+    .line 381
     :goto_0
     return-void
 
-    .line 361
+    .line 366
     :pswitch_0
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->tileType:Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;
 
-    .line 362
+    .line 367
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     sget-object v1, Lorg/osmdroid/tileprovider/tilesource/TileSourceFactory;->MAPNIK:Lorg/osmdroid/tileprovider/tilesource/OnlineTileSourceBase;
@@ -3179,11 +3228,11 @@
 
     goto :goto_0
 
-    .line 365
+    .line 370
     :pswitch_1
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->tileType:Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;
 
-    .line 366
+    .line 371
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     sget-object v1, Lorg/osmdroid/tileprovider/tilesource/TileSourceFactory;->USGS_SAT:Lorg/osmdroid/tileprovider/tilesource/OnlineTileSourceBase;
@@ -3192,11 +3241,11 @@
 
     goto :goto_0
 
-    .line 369
+    .line 374
     :pswitch_2
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->tileType:Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;
 
-    .line 370
+    .line 375
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     sget-object v1, Lorg/osmdroid/tileprovider/tilesource/TileSourceFactory;->USGS_TOPO:Lorg/osmdroid/tileprovider/tilesource/OnlineTileSourceBase;
@@ -3205,7 +3254,7 @@
 
     goto :goto_0
 
-    .line 359
+    .line 364
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -3219,12 +3268,12 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 470
+    .line 475
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->touch:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;
 
     invoke-static {v0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->access$802(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;Z)Z
 
-    .line 471
+    .line 476
     return-void
 .end method
 
@@ -3233,12 +3282,12 @@
     .param p1, "Rotation"    # F
 
     .prologue
-    .line 1226
+    .line 1233
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/MapView;->setMapOrientation(F)V
 
-    .line 1227
+    .line 1234
     return-void
 .end method
 
@@ -3247,14 +3296,14 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 450
+    .line 455
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rotation:Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
     if-nez v0, :cond_0
 
-    .line 451
+    .line 456
     new-instance v0, Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
@@ -3263,21 +3312,21 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rotation:Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
-    .line 453
+    .line 458
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rotation:Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
     if-eqz v0, :cond_1
 
-    .line 454
+    .line 459
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->rotation:Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/overlay/gestures/RotationGestureOverlay;->setEnabled(Z)V
 
-    .line 455
+    .line 460
     if-eqz p1, :cond_2
 
-    .line 456
+    .line 461
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -3288,12 +3337,12 @@
 
     invoke-interface {v0, v1}, Lorg/osmdroid/views/overlay/OverlayManager;->add(Ljava/lang/Object;)Z
 
-    .line 461
+    .line 466
     :cond_1
     :goto_0
     return-void
 
-    .line 458
+    .line 463
     :cond_2
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
@@ -3313,7 +3362,7 @@
     .param p1, "units"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapScaleUnits;
 
     .prologue
-    .line 1247
+    .line 1254
     sget-object v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$14;->$SwitchMap$com$google$appinventor$components$runtime$util$MapFactory$MapScaleUnits:[I
 
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapScaleUnits;->ordinal()I
@@ -3324,7 +3373,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1255
+    .line 1262
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3349,7 +3398,7 @@
 
     throw v0
 
-    .line 1249
+    .line 1256
     :pswitch_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
@@ -3357,16 +3406,16 @@
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/ScaleBarOverlay;->setUnitsOfMeasure(Lorg/osmdroid/views/overlay/ScaleBarOverlay$UnitsOfMeasure;)V
 
-    .line 1257
+    .line 1264
     :goto_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 1258
+    .line 1265
     return-void
 
-    .line 1252
+    .line 1259
     :pswitch_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
@@ -3376,7 +3425,7 @@
 
     goto :goto_0
 
-    .line 1247
+    .line 1254
     nop
 
     :pswitch_data_0
@@ -3391,17 +3440,17 @@
     .param p1, "show"    # Z
 
     .prologue
-    .line 1236
+    .line 1243
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->scaleBar:Lorg/osmdroid/views/overlay/ScaleBarOverlay;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/overlay/ScaleBarOverlay;->setEnabled(Z)V
 
-    .line 1237
+    .line 1244
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 1238
+    .line 1245
     return-void
 .end method
 
@@ -3410,20 +3459,20 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 433
+    .line 438
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->userLocation:Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;->setEnabled(Z)V
 
-    .line 434
+    .line 439
     if-eqz p1, :cond_0
 
-    .line 435
+    .line 440
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->userLocation:Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;->enableMyLocation()Z
 
-    .line 436
+    .line 441
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -3434,17 +3483,17 @@
 
     invoke-interface {v0, v1}, Lorg/osmdroid/views/overlay/OverlayManager;->add(Ljava/lang/Object;)Z
 
-    .line 441
+    .line 446
     :goto_0
     return-void
 
-    .line 438
+    .line 443
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->userLocation:Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/mylocation/MyLocationNewOverlay;->disableMyLocation()V
 
-    .line 439
+    .line 444
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -3463,7 +3512,7 @@
     .param p1, "zoom"    # I
 
     .prologue
-    .line 335
+    .line 340
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getController()Lorg/osmdroid/api/IMapController;
@@ -3474,12 +3523,12 @@
 
     invoke-interface {v0, v2, v3}, Lorg/osmdroid/api/IMapController;->setZoom(D)D
 
-    .line 336
+    .line 341
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/view/ZoomControlView;->updateButtons()V
 
-    .line 337
+    .line 342
     return-void
 .end method
 
@@ -3488,12 +3537,12 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 419
+    .line 424
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControlEnabled:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 420
+    .line 425
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControls:Lcom/google/appinventor/components/runtime/view/ZoomControlView;
 
     if-eqz p1, :cond_1
@@ -3503,19 +3552,19 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/google/appinventor/components/runtime/view/ZoomControlView;->setVisibility(I)V
 
-    .line 421
+    .line 426
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomControlEnabled:Z
 
-    .line 422
+    .line 427
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->containerView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/widget/RelativeLayout;->invalidate()V
 
-    .line 424
+    .line 429
     :cond_0
     return-void
 
-    .line 420
+    .line 425
     :cond_1
     const/16 v0, 0x8
 
@@ -3527,15 +3576,15 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 348
+    .line 353
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->zoomEnabled:Z
 
-    .line 349
+    .line 354
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/MapView;->setMultiTouchControls(Z)V
 
-    .line 350
+    .line 355
     return-void
 .end method
 
@@ -3544,7 +3593,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1143
+    .line 1150
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3555,7 +3604,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->showOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
-    .line 1144
+    .line 1151
     return-void
 .end method
 
@@ -3564,7 +3613,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 1169
+    .line 1176
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3573,11 +3622,11 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 1170
+    .line 1177
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     invoke-virtual {v0}, Lorg/osmdroid/views/overlay/OverlayWithIW;->showInfoWindow()V
 
-    .line 1171
+    .line 1178
     return-void
 .end method
 
@@ -3586,7 +3635,7 @@
     .param p1, "overlay"    # Lorg/osmdroid/views/overlay/OverlayWithIW;
 
     .prologue
-    .line 1147
+    .line 1154
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->getOverlayManager()Lorg/osmdroid/views/overlay/OverlayManager;
@@ -3595,12 +3644,12 @@
 
     invoke-interface {v0, p1}, Lorg/osmdroid/views/overlay/OverlayManager;->add(Ljava/lang/Object;)Z
 
-    .line 1148
+    .line 1155
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 1149
+    .line 1156
     return-void
 .end method
 
@@ -3609,7 +3658,7 @@
     .param p1, "aiFeature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 867
+    .line 874
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3618,18 +3667,18 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 868
+    .line 875
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     if-eqz v0, :cond_0
 
-    .line 869
+    .line 876
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Draggable()Z
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/OverlayWithIW;->setDraggable(Z)V
 
-    .line 871
+    .line 878
     :cond_0
     return-void
 .end method
@@ -3639,7 +3688,7 @@
     .param p1, "aiFeature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;
 
     .prologue
-    .line 778
+    .line 785
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3648,15 +3697,15 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 779
+    .line 786
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     if-nez v0, :cond_0
 
-    .line 811
+    .line 818
     :goto_0
     return-void
 
-    .line 782
+    .line 789
     :cond_0
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;
 
@@ -3672,7 +3721,7 @@
     .param p1, "aiPolygon"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;
 
     .prologue
-    .line 746
+    .line 753
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3681,23 +3730,23 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
 
-    .line 747
+    .line 754
     .local v0, "polygon":Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
     if-eqz v0, :cond_0
 
-    .line 748
+    .line 755
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getHolePoints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;->setMultiHoles(Ljava/util/List;)V
 
-    .line 749
+    .line 756
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 751
+    .line 758
     :cond_0
     return-void
 .end method
@@ -3707,7 +3756,7 @@
     .param p1, "aiMarker"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     .prologue
-    .line 875
+    .line 882
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3716,15 +3765,15 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/Marker;
 
-    .line 876
+    .line 883
     .local v0, "marker":Lorg/osmdroid/views/overlay/Marker;
     if-nez v0, :cond_0
 
-    .line 891
+    .line 898
     :goto_0
     return-void
 
-    .line 879
+    .line 886
     :cond_0
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$10;
 
@@ -3740,7 +3789,7 @@
     .param p1, "aiCircle"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;
 
     .prologue
-    .line 755
+    .line 762
     new-instance v0, Lorg/osmdroid/util/GeoPoint;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;->Latitude()D
@@ -3753,7 +3802,7 @@
 
     invoke-direct {v0, v4, v5, v6, v7}, Lorg/osmdroid/util/GeoPoint;-><init>(DD)V
 
-    .line 756
+    .line 763
     .local v0, "center":Lorg/osmdroid/util/GeoPoint;
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
@@ -3763,11 +3812,11 @@
 
     check-cast v2, Lorg/osmdroid/views/overlay/Polygon;
 
-    .line 757
+    .line 764
     .local v2, "polygon":Lorg/osmdroid/views/overlay/Polygon;
     if-eqz v2, :cond_0
 
-    .line 758
+    .line 765
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;->Radius()D
 
     move-result-wide v4
@@ -3776,16 +3825,16 @@
 
     move-result-object v1
 
-    .line 759
+    .line 766
     .local v1, "geopoints":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     invoke-virtual {v2, v1}, Lorg/osmdroid/views/overlay/Polygon;->setPoints(Ljava/util/List;)V
 
-    .line 760
+    .line 767
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v3}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 762
+    .line 769
     .end local v1    # "geopoints":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     :cond_0
     return-void
@@ -3796,7 +3845,7 @@
     .param p1, "aiPolyline"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
 
     .prologue
-    .line 728
+    .line 735
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3805,23 +3854,23 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/Polyline;
 
-    .line 729
+    .line 736
     .local v0, "overlay":Lorg/osmdroid/views/overlay/Polyline;
     if-eqz v0, :cond_0
 
-    .line 730
+    .line 737
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->getPoints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Polyline;->setPoints(Ljava/util/List;)V
 
-    .line 731
+    .line 738
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 733
+    .line 740
     :cond_0
     return-void
 .end method
@@ -3831,7 +3880,7 @@
     .param p1, "aiMarker"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     .prologue
-    .line 719
+    .line 724
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3840,11 +3889,32 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/Marker;
 
-    .line 720
+    .line 725
     .local v0, "marker":Lorg/osmdroid/views/overlay/Marker;
     if-eqz v0, :cond_0
 
-    .line 721
+    .line 726
+    sget-object v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ANCHOR_HORIZONTAL:[F
+
+    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->AnchorHorizontal()I
+
+    move-result v2
+
+    aget v1, v1, v2
+
+    sget-object v2, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->ANCHOR_VERTICAL:[F
+
+    .line 727
+    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->AnchorVertical()I
+
+    move-result v3
+
+    aget v2, v2, v3
+
+    .line 726
+    invoke-virtual {v0, v1, v2}, Lorg/osmdroid/views/overlay/Marker;->setAnchor(FF)V
+
+    .line 728
     new-instance v1, Lorg/osmdroid/util/GeoPoint;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Latitude()D
@@ -3859,12 +3929,12 @@
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/Marker;->setPosition(Lorg/osmdroid/util/GeoPoint;)V
 
-    .line 722
+    .line 729
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 724
+    .line 731
     :cond_0
     return-void
 .end method
@@ -3874,7 +3944,7 @@
     .param p1, "aiPolygon"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;
 
     .prologue
-    .line 737
+    .line 744
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3883,23 +3953,23 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
 
-    .line 738
+    .line 745
     .local v0, "polygon":Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;
     if-eqz v0, :cond_0
 
-    .line 739
+    .line 746
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getPoints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MultiPolygon;->setMultiPoints(Ljava/util/List;)V
 
-    .line 740
+    .line 747
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 742
+    .line 749
     :cond_0
     return-void
 .end method
@@ -3909,7 +3979,7 @@
     .param p1, "aiRectangle"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;
 
     .prologue
-    .line 767
+    .line 774
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3918,18 +3988,18 @@
 
     check-cast v10, Lorg/osmdroid/views/overlay/Polygon;
 
-    .line 768
+    .line 775
     .local v10, "polygon":Lorg/osmdroid/views/overlay/Polygon;
     if-eqz v10, :cond_0
 
-    .line 769
+    .line 776
     new-instance v1, Lorg/osmdroid/util/BoundingBox;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->NorthLatitude()D
 
     move-result-wide v2
 
-    .line 770
+    .line 777
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->EastLongitude()D
 
     move-result-wide v4
@@ -3944,21 +4014,21 @@
 
     invoke-direct/range {v1 .. v9}, Lorg/osmdroid/util/BoundingBox;-><init>(DDDD)V
 
-    .line 769
+    .line 776
     invoke-static {v1}, Lorg/osmdroid/views/overlay/Polygon;->pointsAsRect(Lorg/osmdroid/util/BoundingBox;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 771
+    .line 778
     .local v0, "geopoints":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     invoke-virtual {v10, v0}, Lorg/osmdroid/views/overlay/Polygon;->setPoints(Ljava/util/List;)V
 
-    .line 772
+    .line 779
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->view:Lorg/osmdroid/views/MapView;
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 774
+    .line 781
     .end local v0    # "geopoints":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     :cond_0
     return-void
@@ -3969,7 +4039,7 @@
     .param p1, "aiMarker"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     .prologue
-    .line 895
+    .line 902
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3978,15 +4048,15 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/Marker;
 
-    .line 896
+    .line 903
     .local v0, "marker":Lorg/osmdroid/views/overlay/Marker;
     if-nez v0, :cond_0
 
-    .line 911
+    .line 918
     :goto_0
     return-void
 
-    .line 899
+    .line 906
     :cond_0
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$11;
 
@@ -4002,7 +4072,7 @@
     .param p1, "aiFeature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     .prologue
-    .line 815
+    .line 822
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4011,15 +4081,15 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 816
+    .line 823
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     if-nez v0, :cond_0
 
-    .line 854
+    .line 861
     :goto_0
     return-void
 
-    .line 819
+    .line 826
     :cond_0
     new-instance v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;
 
@@ -4035,7 +4105,7 @@
     .param p1, "aiFeature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 858
+    .line 865
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->featureOverlays:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4044,25 +4114,25 @@
 
     check-cast v0, Lorg/osmdroid/views/overlay/OverlayWithIW;
 
-    .line 859
+    .line 866
     .local v0, "overlay":Lorg/osmdroid/views/overlay/OverlayWithIW;
     if-eqz v0, :cond_0
 
-    .line 860
+    .line 867
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Title()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/OverlayWithIW;->setTitle(Ljava/lang/String;)V
 
-    .line 861
+    .line 868
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Description()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/osmdroid/views/overlay/OverlayWithIW;->setSnippet(Ljava/lang/String;)V
 
-    .line 863
+    .line 870
     :cond_0
     return-void
 .end method

@@ -80,6 +80,8 @@
 
 .field public static final ERROR_CANVAS_BITMAP_ERROR:I = 0x3e9
 
+.field public static final ERROR_CANVAS_DRAW_SHAPE_BAD_ARGUMENT:I = 0x3ec
+
 .field public static final ERROR_CANVAS_HEIGHT_ERROR:I = 0x3eb
 
 .field public static final ERROR_CANVAS_WIDTH_ERROR:I = 0x3ea
@@ -153,6 +155,8 @@
 .field public static final ERROR_INVALID_ANCHOR_HORIZONTAL:I = 0xd59
 
 .field public static final ERROR_INVALID_ANCHOR_VERTICAL:I = 0xd58
+
+.field public static final ERROR_INVALID_CONFIGURATION_VALUE:I = 0xe74
 
 .field public static final ERROR_INVALID_GEOJSON:I = 0xd53
 
@@ -394,14 +398,14 @@
     .locals 3
 
     .prologue
-    .line 272
+    .line 276
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
-    .line 274
+    .line 278
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/4 v1, 0x1
@@ -414,7 +418,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 277
+    .line 281
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/4 v1, 0x2
@@ -427,7 +431,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 280
+    .line 284
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/4 v1, 0x3
@@ -440,7 +444,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 283
+    .line 287
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/4 v1, 0x4
@@ -453,7 +457,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 286
+    .line 290
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/4 v1, 0x5
@@ -466,7 +470,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 290
+    .line 294
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x65
@@ -479,7 +483,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 292
+    .line 296
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x66
@@ -492,7 +496,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 294
+    .line 298
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x67
@@ -505,7 +509,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 297
+    .line 301
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc9
@@ -518,7 +522,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 300
+    .line 304
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x12d
@@ -531,7 +535,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 302
+    .line 306
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x12e
@@ -544,7 +548,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 306
+    .line 310
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x12f
@@ -557,7 +561,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 308
+    .line 312
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x130
@@ -570,7 +574,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 310
+    .line 314
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x131
@@ -583,7 +587,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 312
+    .line 316
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x132
@@ -596,7 +600,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 314
+    .line 318
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x133
@@ -609,7 +613,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 316
+    .line 320
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x134
@@ -622,7 +626,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 318
+    .line 322
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x135
@@ -635,7 +639,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 320
+    .line 324
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x136
@@ -648,7 +652,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 322
+    .line 326
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x137
@@ -661,7 +665,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 324
+    .line 328
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x138
@@ -674,7 +678,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 326
+    .line 330
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x139
@@ -687,7 +691,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 328
+    .line 332
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x13a
@@ -700,7 +704,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 330
+    .line 334
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x13b
@@ -713,7 +717,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 333
+    .line 337
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x191
@@ -726,7 +730,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 335
+    .line 339
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x192
@@ -739,7 +743,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 337
+    .line 341
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x193
@@ -752,7 +756,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 339
+    .line 343
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x194
@@ -765,7 +769,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 341
+    .line 345
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x195
@@ -778,7 +782,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 343
+    .line 347
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x196
@@ -791,7 +795,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 345
+    .line 349
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x197
@@ -804,7 +808,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 347
+    .line 351
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x198
@@ -817,7 +821,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 349
+    .line 353
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x199
@@ -830,7 +834,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 351
+    .line 355
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x19a
@@ -843,7 +847,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 353
+    .line 357
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x19b
@@ -856,7 +860,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 355
+    .line 359
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x19c
@@ -869,7 +873,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 357
+    .line 361
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x19d
@@ -882,7 +886,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 359
+    .line 363
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x19e
@@ -895,7 +899,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 361
+    .line 365
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x19f
@@ -908,7 +912,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 363
+    .line 367
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1a0
@@ -921,7 +925,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 365
+    .line 369
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1a1
@@ -934,7 +938,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 367
+    .line 371
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1a2
@@ -947,7 +951,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 369
+    .line 373
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1a3
@@ -960,7 +964,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 372
+    .line 376
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc1c
@@ -973,7 +977,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 374
+    .line 378
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc1d
@@ -986,7 +990,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 376
+    .line 380
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc1e
@@ -999,7 +1003,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 378
+    .line 382
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc1f
@@ -1012,7 +1016,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 380
+    .line 384
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc20
@@ -1025,7 +1029,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 382
+    .line 386
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc21
@@ -1038,7 +1042,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 385
+    .line 389
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1f5
@@ -1051,7 +1055,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 387
+    .line 391
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1f6
@@ -1064,7 +1068,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 389
+    .line 393
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1f7
@@ -1077,7 +1081,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 391
+    .line 395
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1f8
@@ -1090,7 +1094,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 393
+    .line 397
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1f9
@@ -1103,7 +1107,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 395
+    .line 399
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1fa
@@ -1116,7 +1120,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 397
+    .line 401
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1fb
@@ -1129,7 +1133,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 399
+    .line 403
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1fc
@@ -1142,7 +1146,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 401
+    .line 405
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1fd
@@ -1155,7 +1159,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 403
+    .line 407
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1fe
@@ -1168,7 +1172,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 405
+    .line 409
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x1ff
@@ -1181,7 +1185,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 407
+    .line 411
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x200
@@ -1194,7 +1198,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 409
+    .line 413
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x201
@@ -1207,7 +1211,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 411
+    .line 415
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x202
@@ -1220,7 +1224,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 413
+    .line 417
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x203
@@ -1233,7 +1237,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 415
+    .line 419
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x204
@@ -1246,7 +1250,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 417
+    .line 421
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x205
@@ -1259,7 +1263,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 419
+    .line 423
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x206
@@ -1272,7 +1276,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 421
+    .line 425
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x207
@@ -1285,7 +1289,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 424
+    .line 428
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x259
@@ -1298,7 +1302,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 426
+    .line 430
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x25a
@@ -1311,7 +1315,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 429
+    .line 433
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2bd
@@ -1324,7 +1328,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 431
+    .line 435
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2be
@@ -1337,7 +1341,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 433
+    .line 437
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2bf
@@ -1350,7 +1354,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 435
+    .line 439
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c0
@@ -1363,7 +1367,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 437
+    .line 441
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c1
@@ -1376,7 +1380,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 439
+    .line 443
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c2
@@ -1389,7 +1393,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 441
+    .line 445
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c3
@@ -1402,7 +1406,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 443
+    .line 447
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c4
@@ -1415,7 +1419,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 444
+    .line 448
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c5
@@ -1428,7 +1432,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 446
+    .line 450
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c6
@@ -1441,7 +1445,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 447
+    .line 451
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c7
@@ -1454,7 +1458,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 448
+    .line 452
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2c8
@@ -1467,7 +1471,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 450
+    .line 454
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x321
@@ -1480,7 +1484,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 451
+    .line 455
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x322
@@ -1493,7 +1497,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 452
+    .line 456
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x323
@@ -1506,7 +1510,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 453
+    .line 457
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x324
@@ -1519,7 +1523,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 454
+    .line 458
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x325
@@ -1532,7 +1536,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 455
+    .line 459
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x326
@@ -1545,7 +1549,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 457
+    .line 461
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x385
@@ -1558,7 +1562,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 459
+    .line 463
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x386
@@ -1571,7 +1575,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 460
+    .line 464
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x387
@@ -1584,7 +1588,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 462
+    .line 466
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x388
@@ -1597,7 +1601,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 464
+    .line 468
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x389
@@ -1610,7 +1614,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 466
+    .line 470
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x38a
@@ -1623,7 +1627,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 468
+    .line 472
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x38b
@@ -1636,7 +1640,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 470
+    .line 474
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x38c
@@ -1649,7 +1653,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 473
+    .line 477
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x3e9
@@ -1662,7 +1666,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 474
+    .line 478
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x3ea
@@ -1675,7 +1679,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 475
+    .line 479
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x3eb
@@ -1688,7 +1692,20 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 477
+    .line 480
+    sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
+
+    const/16 v1, 0x3ec
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Canvas cannot draw the shape with a bad point list"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 482
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x44d
@@ -1701,7 +1718,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 479
+    .line 484
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x44e
@@ -1714,7 +1731,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 481
+    .line 486
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x44f
@@ -1727,7 +1744,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 483
+    .line 488
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x450
@@ -1740,7 +1757,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 485
+    .line 490
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x451
@@ -1753,7 +1770,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 487
+    .line 492
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x452
@@ -1766,7 +1783,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 489
+    .line 494
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x45b
@@ -1779,7 +1796,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 491
+    .line 496
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x455
@@ -1792,7 +1809,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 493
+    .line 498
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x456
@@ -1805,7 +1822,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 495
+    .line 500
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x457
@@ -1818,7 +1835,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 497
+    .line 502
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x458
@@ -1831,7 +1848,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 499
+    .line 504
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x459
@@ -1844,7 +1861,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 501
+    .line 506
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x45a
@@ -1857,7 +1874,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 504
+    .line 509
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x453
@@ -1870,7 +1887,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 506
+    .line 511
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x454
@@ -1883,7 +1900,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 509
+    .line 514
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x45c
@@ -1896,7 +1913,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 511
+    .line 516
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x4b1
@@ -1909,7 +1926,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 514
+    .line 519
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x515
@@ -1922,7 +1939,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 516
+    .line 521
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x516
@@ -1935,7 +1952,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 518
+    .line 523
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x517
@@ -1948,7 +1965,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 521
+    .line 526
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x579
@@ -1961,7 +1978,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 524
+    .line 529
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x57a
@@ -1974,7 +1991,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 527
+    .line 532
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x5dd
@@ -1987,7 +2004,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 529
+    .line 534
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x641
@@ -2000,7 +2017,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 531
+    .line 536
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x642
@@ -2013,7 +2030,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 533
+    .line 538
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xca
@@ -2026,7 +2043,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 536
+    .line 541
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x6a5
@@ -2039,7 +2056,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 538
+    .line 543
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x6a6
@@ -2052,7 +2069,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 540
+    .line 545
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x6a7
@@ -2065,7 +2082,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 542
+    .line 547
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x709
@@ -2078,7 +2095,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 545
+    .line 550
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x76d
@@ -2091,7 +2108,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 549
+    .line 554
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x7d1
@@ -2104,7 +2121,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 552
+    .line 557
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x835
@@ -2117,7 +2134,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 553
+    .line 558
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x836
@@ -2130,7 +2147,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 554
+    .line 559
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x837
@@ -2143,7 +2160,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 555
+    .line 560
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x838
@@ -2156,7 +2173,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 556
+    .line 561
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x839
@@ -2169,7 +2186,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 557
+    .line 562
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x83a
@@ -2182,7 +2199,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 559
+    .line 564
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x899
@@ -2195,7 +2212,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 561
+    .line 566
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x89a
@@ -2208,7 +2225,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 563
+    .line 568
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x89b
@@ -2221,7 +2238,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 566
+    .line 571
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x8fd
@@ -2234,7 +2251,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 567
+    .line 572
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x8fe
@@ -2247,7 +2264,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 569
+    .line 574
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x961
@@ -2260,7 +2277,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 570
+    .line 575
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x9c5
@@ -2273,7 +2290,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 572
+    .line 577
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xa29
@@ -2286,7 +2303,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 575
+    .line 580
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xa8d
@@ -2299,7 +2316,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 578
+    .line 583
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xaf1
@@ -2312,7 +2329,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 580
+    .line 585
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xbb9
@@ -2325,7 +2342,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 582
+    .line 587
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2eeb
@@ -2338,7 +2355,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 583
+    .line 588
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2ef0
@@ -2351,7 +2368,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 584
+    .line 589
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2eea
@@ -2364,7 +2381,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 585
+    .line 590
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2eec
@@ -2377,7 +2394,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 586
+    .line 591
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2eed
@@ -2390,7 +2407,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 587
+    .line 592
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2eee
@@ -2403,7 +2420,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 589
+    .line 594
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2eef
@@ -2416,7 +2433,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 590
+    .line 595
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2ef1
@@ -2429,7 +2446,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 592
+    .line 597
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2ef2
@@ -2442,7 +2459,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 594
+    .line 599
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2ef3
@@ -2455,7 +2472,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 595
+    .line 600
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2ef5
@@ -2468,7 +2485,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 596
+    .line 601
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0x2ef6
@@ -2481,7 +2498,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 599
+    .line 604
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xc80
@@ -2494,7 +2511,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 602
+    .line 607
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xce4
@@ -2507,7 +2524,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 605
+    .line 610
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd49
@@ -2520,7 +2537,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 607
+    .line 612
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd4a
@@ -2533,7 +2550,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 609
+    .line 614
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd4b
@@ -2546,7 +2563,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 611
+    .line 616
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd4c
@@ -2559,7 +2576,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 613
+    .line 618
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd4d
@@ -2572,7 +2589,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 615
+    .line 620
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd4e
@@ -2585,7 +2602,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 617
+    .line 622
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd4f
@@ -2598,7 +2615,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 619
+    .line 624
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd50
@@ -2611,7 +2628,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 621
+    .line 626
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd51
@@ -2624,7 +2641,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 623
+    .line 628
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd52
@@ -2637,7 +2654,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 625
+    .line 630
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd53
@@ -2650,7 +2667,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 627
+    .line 632
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd54
@@ -2663,7 +2680,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 629
+    .line 634
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd55
@@ -2676,7 +2693,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 631
+    .line 636
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd56
@@ -2689,7 +2706,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 633
+    .line 638
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd57
@@ -2702,7 +2719,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 635
+    .line 640
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd58
@@ -2715,7 +2732,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 637
+    .line 642
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd59
@@ -2728,7 +2745,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 639
+    .line 644
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd5a
@@ -2741,7 +2758,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 641
+    .line 646
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd5b
@@ -2754,7 +2771,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 643
+    .line 648
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd5c
@@ -2767,7 +2784,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 645
+    .line 650
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xd5d
@@ -2780,7 +2797,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 649
+    .line 654
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xdad
@@ -2793,7 +2810,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 653
+    .line 658
     sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     const/16 v1, 0xe11
@@ -2806,7 +2823,20 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 655
+    .line 662
+    sget-object v0, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
+
+    const/16 v1, 0xe74
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v2, "Invalid value %1$d given for ARConfigurationType.  Valid settings are 1, 2, or 3."
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 664
     return-void
 .end method
 
@@ -2814,7 +2844,7 @@
     .locals 0
 
     .prologue
-    .line 657
+    .line 666
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -2826,7 +2856,7 @@
     .param p1, "messageArgs"    # [Ljava/lang/Object;
 
     .prologue
-    .line 660
+    .line 669
     sget-object v1, Lcom/google/appinventor/components/runtime/util/ErrorMessages;->errorMessages:Ljava/util/Map;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2839,7 +2869,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 661
+    .line 670
     .local v0, "format":Ljava/lang/String;
     invoke-static {v0, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 

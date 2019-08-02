@@ -35,7 +35,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 610
+    .line 611
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap$2;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     iput p2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$2;->val$id:I
@@ -57,7 +57,7 @@
     .locals 6
 
     .prologue
-    .line 612
+    .line 613
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap$2;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     const-string v1, "FinishedDraggingCircle"
@@ -70,7 +70,7 @@
 
     iget v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap$2;->val$id:I
 
-    .line 613
+    .line 614
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -107,9 +107,9 @@
 
     aput-object v4, v2, v3
 
-    .line 612
+    .line 613
     invoke-static {v0, v1, v2}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 614
+    .line 615
     return-void
 .end method

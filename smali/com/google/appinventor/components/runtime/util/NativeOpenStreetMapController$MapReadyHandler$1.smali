@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;
 
     .prologue
-    .line 231
+    .line 235
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 234
+    .line 238
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;
 
     iget-object v1, v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
@@ -67,7 +67,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 235
+    .line 239
     .local v0, "l":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;
 
@@ -77,7 +77,7 @@
 
     goto :goto_0
 
-    .line 237
+    .line 241
     .end local v0    # "l":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     return-void

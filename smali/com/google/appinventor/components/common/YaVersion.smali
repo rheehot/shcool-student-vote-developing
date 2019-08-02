@@ -20,7 +20,7 @@
 
 .field public static final BARCODESCANNER_COMPONENT_VERSION:I = 0x2
 
-.field public static final BLOCKS_LANGUAGE_VERSION:I = 0x17
+.field public static final BLOCKS_LANGUAGE_VERSION:I = 0x1a
 
 .field public static final BLUETOOTHCLIENT_COMPONENT_VERSION:I = 0x5
 
@@ -32,13 +32,13 @@
 
 .field public static final CAMERA_COMPONENT_VERSION:I = 0x3
 
-.field public static final CANVAS_COMPONENT_VERSION:I = 0xa
+.field public static final CANVAS_COMPONENT_VERSION:I = 0xb
 
 .field public static final CHECKBOX_COMPONENT_VERSION:I = 0x2
 
 .field public static final CIRCLE_COMPONENT_VERSION:I = 0x1
 
-.field public static final CLOCK_COMPONENT_VERSION:I = 0x3
+.field public static final CLOCK_COMPONENT_VERSION:I = 0x4
 
 .field public static final CLOUDDB_COMPONENT_VERSION:I = 0x1
 
@@ -124,7 +124,7 @@
 
 .field public static final NEARFIELD_COMPONENT_VERSION:I = 0x1
 
-.field public static final NOTIFIER_COMPONENT_VERSION:I = 0x5
+.field public static final NOTIFIER_COMPONENT_VERSION:I = 0x6
 
 .field public static final NXT_COLORSENSOR_COMPONENT_VERSION:I = 0x1
 
@@ -158,7 +158,7 @@
 
 .field public static final POLYGON_COMPONENT_VERSION:I = 0x1
 
-.field public static final PREFERRED_COMPANION:Ljava/lang/String; = "4.02"
+.field public static final PREFERRED_COMPANION:Ljava/lang/String; = "5.00"
 
 .field public static final PROXIMITYSENSOR_COMPONENT_VERSION:I = 0x1
 
@@ -180,6 +180,8 @@
 
 .field public static final SPLASH_SURVEY:I = 0x1
 
+.field public static final SWITCH_COMPONENT_VERSION:I = 0x1
+
 .field public static final TABLEARRANGEMENT_COMPONENT_VERSION:I = 0x1
 
 .field public static final TEXTBOX_COMPONENT_VERSION:I = 0x5
@@ -200,7 +202,7 @@
 
 .field public static final VERTICALSCROLLARRANGEMENT_COMPONENT_VERSION:I = 0x1
 
-.field public static final VIDEOPLAYER_COMPONENT_VERSION:I = 0x5
+.field public static final VIDEOPLAYER_COMPONENT_VERSION:I = 0x6
 
 .field public static final VOTING_COMPONENT_VERSION:I = 0x1
 
@@ -210,7 +212,7 @@
 
 .field public static final YANDEX_COMPONENT_VERSION:I = 0x1
 
-.field public static final YOUNG_ANDROID_VERSION:I = 0xae
+.field public static final YOUNG_ANDROID_VERSION:I = 0xaf
 
 
 # direct methods
@@ -218,26 +220,20 @@
     .locals 3
 
     .prologue
-    .line 1260
-    const/4 v0, 0x3
+    .line 1289
+    const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    const-string v2, "4.01"
+    const-string v2, "5.00"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x1
 
-    const-string v2, "4.02"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "4.03"
+    const-string v2, "5.01"
 
     aput-object v2, v0, v1
 

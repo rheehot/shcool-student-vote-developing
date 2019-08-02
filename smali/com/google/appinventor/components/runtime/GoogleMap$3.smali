@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 753
+    .line 754
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
     .locals 5
 
     .prologue
-    .line 755
+    .line 756
     const/4 v0, 0x0
 
-    .line 756
+    .line 757
     .local v0, "dispatchEventNow":Z
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
@@ -54,14 +54,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 757
+    .line 758
     const/4 v0, 0x1
 
-    .line 759
+    .line 760
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 762
+    .line 763
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     invoke-static {v2}, Lcom/google/appinventor/components/runtime/GoogleMap;->access$200(Lcom/google/appinventor/components/runtime/GoogleMap;)Lcom/google/appinventor/components/runtime/Form;
@@ -72,12 +72,12 @@
 
     move-result-object v2
 
-    .line 763
+    .line 764
     invoke-virtual {v2}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v1
 
-    .line 765
+    .line 766
     .local v1, "fragmentTransaction":Landroid/support/v4/app/FragmentTransaction;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
@@ -91,7 +91,7 @@
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
-    .line 766
+    .line 767
     invoke-static {v3}, Lcom/google/appinventor/components/runtime/GoogleMap;->access$300(Lcom/google/appinventor/components/runtime/GoogleMap;)Lcom/google/android/gms/maps/SupportMapFragment;
 
     move-result-object v3
@@ -102,23 +102,23 @@
 
     move-result-object v4
 
-    .line 765
+    .line 766
     invoke-virtual {v1, v2, v3, v4}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 767
+    .line 768
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
-    .line 769
+    .line 770
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 
     invoke-static {v2}, Lcom/google/appinventor/components/runtime/GoogleMap;->access$600(Lcom/google/appinventor/components/runtime/GoogleMap;)V
 
-    .line 774
+    .line 775
     .end local v1    # "fragmentTransaction":Landroid/support/v4/app/FragmentTransaction;
     :goto_0
     return-void
 
-    .line 772
+    .line 773
     :cond_1
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap$3;->this$0:Lcom/google/appinventor/components/runtime/GoogleMap;
 

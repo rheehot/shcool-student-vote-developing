@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 50
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 80
+    .line 82
     const/4 v0, 0x1
 
     aget-object v0, p2, v0
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 81
+    .line 83
     aget-object v0, p2, v1
 
     check-cast v0, Lcom/google/appinventor/components/runtime/Polygon;
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    .line 83
+    .line 85
     :goto_0
     return-object v0
 
@@ -102,7 +102,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 62
+    .line 64
     const/4 v0, 0x1
 
     aget-object v0, p2, v0
@@ -115,7 +115,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 63
+    .line 65
     aget-object v0, p2, v1
 
     check-cast v0, Lcom/google/appinventor/components/runtime/Polygon;
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    .line 65
+    .line 67
     :goto_0
     return-object v0
 
@@ -156,7 +156,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 53
+    .line 55
     const/4 v0, 0x1
 
     aget-object v0, p2, v0
@@ -169,7 +169,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 54
+    .line 56
     aget-object v0, p2, v1
 
     check-cast v0, Lcom/google/appinventor/components/runtime/Polygon;
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    .line 56
+    .line 58
     :goto_0
     return-object v0
 
@@ -210,7 +210,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 71
+    .line 73
     const/4 v0, 0x1
 
     aget-object v0, p2, v0
@@ -223,7 +223,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 72
+    .line 74
     aget-object v0, p2, v1
 
     check-cast v0, Lcom/google/appinventor/components/runtime/Polygon;
@@ -236,7 +236,7 @@
 
     move-result-object v0
 
-    .line 74
+    .line 76
     :goto_0
     return-object v0
 
@@ -264,7 +264,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 89
+    .line 91
     const/4 v0, 0x1
 
     aget-object v0, p2, v0
@@ -277,7 +277,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 92
     aget-object v0, p2, v1
 
     check-cast v0, Lcom/google/appinventor/components/runtime/Polygon;
@@ -290,7 +290,7 @@
 
     move-result-object v0
 
-    .line 92
+    .line 94
     :goto_0
     return-object v0
 
@@ -314,7 +314,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 52
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/Polygon$1;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;[Ljava/lang/Object;)Ljava/lang/Double;
 
     move-result-object v0
@@ -326,7 +326,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 52
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/Polygon$1;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;[Ljava/lang/Object;)Ljava/lang/Double;
 
     move-result-object v0
@@ -338,7 +338,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 52
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/Polygon$1;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;[Ljava/lang/Object;)Ljava/lang/Double;
 
     move-result-object v0
@@ -350,7 +350,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 52
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/Polygon$1;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;[Ljava/lang/Object;)Ljava/lang/Double;
 
     move-result-object v0
@@ -362,7 +362,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 52
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/Polygon$1;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;[Ljava/lang/Object;)Ljava/lang/Double;
 
     move-result-object v0

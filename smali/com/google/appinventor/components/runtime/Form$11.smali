@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 2382
+    .line 2408
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$11;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
-    .line 2384
+    .line 2410
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$11;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/Form;->access$700(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 2385
+    .line 2411
     const/4 v0, 0x1
 
     return v0

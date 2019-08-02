@@ -18,7 +18,7 @@
     docUri = "sensors/clock"
     iconName = "images/clock.png"
     nonVisible = true
-    version = 0x3
+    version = 0x4
 .end annotation
 
 .annotation runtime Lcom/google/appinventor/components/annotations/SimpleObject;
@@ -44,22 +44,22 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 84
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidNonvisibleComponent;-><init>(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 49
+    .line 58
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerAlwaysFires:Z
 
-    .line 50
+    .line 59
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->onScreen:Z
 
-    .line 77
+    .line 86
     return-void
 .end method
 
@@ -70,22 +70,22 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 58
+    .line 67
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidNonvisibleComponent;-><init>(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 49
+    .line 58
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/Clock;->timerAlwaysFires:Z
 
-    .line 50
+    .line 59
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->onScreen:Z
 
-    .line 59
+    .line 68
     new-instance v0, Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     const/16 v1, 0x3e8
@@ -94,32 +94,32 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
-    .line 62
+    .line 71
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnResume(Lcom/google/appinventor/components/runtime/OnResumeListener;)V
 
-    .line 63
+    .line 72
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnStop(Lcom/google/appinventor/components/runtime/OnStopListener;)V
 
-    .line 64
+    .line 73
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnDestroy(Lcom/google/appinventor/components/runtime/OnDestroyListener;)V
 
-    .line 66
+    .line 75
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
 
     instance-of v0, v0, Lcom/google/appinventor/components/runtime/ReplForm;
 
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 78
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/Clock;->onScreen:Z
 
-    .line 71
+    .line 80
     :cond_0
     return-void
 .end method
@@ -133,20 +133,20 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 365
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 266
+    .line 366
     .local v0, "newInstant":Ljava/util/Calendar;
     const/4 v1, 0x5
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 267
+    .line 367
     return-object v0
 .end method
 
@@ -159,18 +159,18 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 337
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 238
+    .line 338
     .local v0, "newInstant":Ljava/util/Calendar;
     invoke-static {v0, p1, p2}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAddInMillis(Ljava/util/Calendar;J)V
 
-    .line 239
+    .line 339
     return-object v0
 .end method
 
@@ -183,20 +183,20 @@
     .end annotation
 
     .prologue
-    .line 258
+    .line 358
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 259
+    .line 359
     .local v0, "newInstant":Ljava/util/Calendar;
     const/16 v1, 0xb
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 260
+    .line 360
     return-object v0
 .end method
 
@@ -209,20 +209,20 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 351
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 252
+    .line 352
     .local v0, "newInstant":Ljava/util/Calendar;
     const/16 v1, 0xc
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 253
+    .line 353
     return-object v0
 .end method
 
@@ -235,20 +235,20 @@
     .end annotation
 
     .prologue
-    .line 279
+    .line 379
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 280
+    .line 380
     .local v0, "newInstant":Ljava/util/Calendar;
     const/4 v1, 0x2
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 281
+    .line 381
     return-object v0
 .end method
 
@@ -261,20 +261,20 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 344
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 245
+    .line 345
     .local v0, "newInstant":Ljava/util/Calendar;
     const/16 v1, 0xd
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 246
+    .line 346
     return-object v0
 .end method
 
@@ -287,20 +287,20 @@
     .end annotation
 
     .prologue
-    .line 272
+    .line 372
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 273
+    .line 373
     .local v0, "newInstant":Ljava/util/Calendar;
     const/4 v1, 0x3
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 274
+    .line 374
     return-object v0
 .end method
 
@@ -313,20 +313,20 @@
     .end annotation
 
     .prologue
-    .line 286
+    .line 386
     invoke-virtual {p0}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Calendar;
 
-    .line 287
+    .line 387
     .local v0, "newInstant":Ljava/util/Calendar;
     const/4 v1, 0x1
 
     invoke-static {v0, v1, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->DateAdd(Ljava/util/Calendar;II)V
 
-    .line 288
+    .line 388
     return-object v0
 .end method
 
@@ -338,7 +338,7 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 499
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Day(Ljava/util/Calendar;)I
 
     move-result v0
@@ -355,7 +355,7 @@
     .end annotation
 
     .prologue
-    .line 300
+    .line 400
     invoke-virtual {p1}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
@@ -377,7 +377,7 @@
     .end annotation
 
     .prologue
-    .line 344
+    .line 444
     const/4 v0, 0x5
 
     invoke-static {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/Dates;->ConvertDuration(JI)J
@@ -395,7 +395,7 @@
     .end annotation
 
     .prologue
-    .line 333
+    .line 433
     const/16 v0, 0xb
 
     invoke-static {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/Dates;->ConvertDuration(JI)J
@@ -413,7 +413,7 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 422
     const/16 v0, 0xc
 
     invoke-static {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/Dates;->ConvertDuration(JI)J
@@ -431,7 +431,7 @@
     .end annotation
 
     .prologue
-    .line 311
+    .line 411
     const/16 v0, 0xd
 
     invoke-static {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/Dates;->ConvertDuration(JI)J
@@ -449,7 +449,7 @@
     .end annotation
 
     .prologue
-    .line 355
+    .line 455
     const/4 v0, 0x3
 
     invoke-static {p0, p1, v0}, Lcom/google/appinventor/components/runtime/util/Dates;->ConvertDuration(JI)J
@@ -468,7 +468,7 @@
     .end annotation
 
     .prologue
-    .line 489
+    .line 589
     :try_start_0
     invoke-static {p0, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->FormatDate(Ljava/util/Calendar;Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
@@ -478,11 +478,11 @@
 
     return-object v1
 
-    .line 490
+    .line 590
     :catch_0
     move-exception v0
 
-    .line 491
+    .line 591
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
 
@@ -504,7 +504,7 @@
     .end annotation
 
     .prologue
-    .line 470
+    .line 570
     :try_start_0
     invoke-static {p0, p1}, Lcom/google/appinventor/components/runtime/util/Dates;->FormatDateTime(Ljava/util/Calendar;Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
@@ -514,11 +514,11 @@
 
     return-object v1
 
-    .line 471
+    .line 571
     :catch_0
     move-exception v0
 
-    .line 472
+    .line 572
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
 
@@ -539,7 +539,7 @@
     .end annotation
 
     .prologue
-    .line 506
+    .line 606
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->FormatTime(Ljava/util/Calendar;)Ljava/lang/String;
 
     move-result-object v0
@@ -555,7 +555,7 @@
     .end annotation
 
     .prologue
-    .line 232
+    .line 332
     invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
@@ -571,7 +571,7 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 488
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Hour(Ljava/util/Calendar;)I
 
     move-result v0
@@ -587,7 +587,7 @@
     .end annotation
 
     .prologue
-    .line 203
+    .line 212
     :try_start_0
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->DateValue(Ljava/lang/String;)Ljava/util/Calendar;
     :try_end_0
@@ -597,11 +597,11 @@
 
     return-object v1
 
-    .line 204
+    .line 213
     :catch_0
     move-exception v0
 
-    .line 205
+    .line 214
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
 
@@ -622,16 +622,16 @@
     .end annotation
 
     .prologue
-    .line 219
+    .line 319
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/Dates;->Now()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 220
+    .line 320
     .local v0, "instant":Ljava/util/Calendar;
     invoke-virtual {v0, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 221
+    .line 321
     return-object v0
 .end method
 
@@ -643,7 +643,7 @@
     .end annotation
 
     .prologue
-    .line 377
+    .line 477
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Minute(Ljava/util/Calendar;)I
 
     move-result v0
@@ -659,7 +659,7 @@
     .end annotation
 
     .prologue
-    .line 434
+    .line 534
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Month(Ljava/util/Calendar;)I
 
     move-result v0
@@ -677,7 +677,7 @@
     .end annotation
 
     .prologue
-    .line 445
+    .line 545
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->MonthName(Ljava/util/Calendar;)Ljava/lang/String;
 
     move-result-object v0
@@ -692,7 +692,7 @@
     .end annotation
 
     .prologue
-    .line 187
+    .line 196
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/Dates;->Now()Ljava/util/Calendar;
 
     move-result-object v0
@@ -708,7 +708,7 @@
     .end annotation
 
     .prologue
-    .line 366
+    .line 466
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Second(Ljava/util/Calendar;)I
 
     move-result v0
@@ -723,7 +723,7 @@
     .end annotation
 
     .prologue
-    .line 181
+    .line 190
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/Dates;->Timer()J
 
     move-result-wide v0
@@ -739,7 +739,7 @@
     .end annotation
 
     .prologue
-    .line 411
+    .line 511
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Weekday(Ljava/util/Calendar;)I
 
     move-result v0
@@ -755,7 +755,7 @@
     .end annotation
 
     .prologue
-    .line 422
+    .line 522
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->WeekdayName(Ljava/util/Calendar;)Ljava/lang/String;
 
     move-result-object v0
@@ -771,7 +771,7 @@
     .end annotation
 
     .prologue
-    .line 456
+    .line 556
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/Dates;->Year(Ljava/util/Calendar;)I
 
     move-result v0
@@ -781,6 +781,255 @@
 
 
 # virtual methods
+.method public MakeDate(III)Ljava/util/Calendar;
+    .locals 8
+    .param p1, "year"    # I
+    .param p2, "month"    # I
+    .param p3, "day"    # I
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Allows the user to set the clock to be a date value.\nValid values for the month field are 1-12 and 1-31 for the day field.\n"
+    .end annotation
+
+    .prologue
+    const/4 v7, 0x0
+
+    .line 231
+    add-int/lit8 v3, p2, -0x1
+
+    .line 233
+    .local v3, "jMonth":I
+    :try_start_0
+    new-instance v0, Ljava/util/GregorianCalendar;
+
+    invoke-direct {v0, p1, v3, p3}, Ljava/util/GregorianCalendar;-><init>(III)V
+
+    .line 234
+    .local v0, "cal":Ljava/util/GregorianCalendar;
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v4}, Ljava/util/GregorianCalendar;->setLenient(Z)V
+
+    .line 238
+    invoke-virtual {v0}, Ljava/util/GregorianCalendar;->getTime()Ljava/util/Date;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 243
+    .end local v0    # "cal":Ljava/util/GregorianCalendar;
+    :goto_0
+    invoke-static {p1, p2, p3}, Lcom/google/appinventor/components/runtime/util/Dates;->DateInstant(III)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    .line 244
+    .local v2, "instant":Ljava/util/Calendar;
+    return-object v2
+
+    .line 239
+    .end local v2    # "instant":Ljava/util/Calendar;
+    :catch_0
+    move-exception v1
+
+    .line 240
+    .local v1, "e":Ljava/lang/IllegalArgumentException;
+    iget-object v4, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    const-string v5, "MakeDate"
+
+    const/16 v6, 0x961
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    invoke-virtual {v4, p0, v5, v6, v7}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
+
+    goto :goto_0
+.end method
+
+.method public MakeInstantFromParts(IIIIII)Ljava/util/Calendar;
+    .locals 9
+    .param p1, "year"    # I
+    .param p2, "month"    # I
+    .param p3, "day"    # I
+    .param p4, "hour"    # I
+    .param p5, "minute"    # I
+    .param p6, "second"    # I
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Allows the user to set the date and time to be displayed when the clock opens.\nValid values for the month field are 1-12 and 1-31 for the day field.\n"
+    .end annotation
+
+    .prologue
+    const/16 v8, 0x961
+
+    const/4 v7, 0x0
+
+    .line 283
+    add-int/lit8 v3, p2, -0x1
+
+    .line 284
+    .local v3, "jMonth":I
+    const/4 v1, 0x0
+
+    .line 286
+    .local v1, "instant":Ljava/util/Calendar;
+    :try_start_0
+    new-instance v2, Ljava/util/GregorianCalendar;
+
+    invoke-direct {v2, p1, v3, p3}, Ljava/util/GregorianCalendar;-><init>(III)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 287
+    .end local v1    # "instant":Ljava/util/Calendar;
+    .local v2, "instant":Ljava/util/Calendar;
+    const/4 v4, 0x0
+
+    :try_start_1
+    invoke-virtual {v2, v4}, Ljava/util/Calendar;->setLenient(Z)V
+
+    .line 291
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_2
+
+    move-object v1, v2
+
+    .line 296
+    .end local v2    # "instant":Ljava/util/Calendar;
+    .restart local v1    # "instant":Ljava/util/Calendar;
+    :goto_0
+    invoke-static {p1, p2, p3}, Lcom/google/appinventor/components/runtime/util/Dates;->DateInstant(III)Ljava/util/Calendar;
+
+    move-result-object v1
+
+    .line 299
+    const/16 v4, 0xb
+
+    :try_start_2
+    invoke-virtual {v1, v4, p4}, Ljava/util/Calendar;->set(II)V
+
+    .line 300
+    const/16 v4, 0xc
+
+    invoke-virtual {v1, v4, p5}, Ljava/util/Calendar;->set(II)V
+
+    .line 301
+    const/16 v4, 0xd
+
+    invoke-virtual {v1, v4, p6}, Ljava/util/Calendar;->set(II)V
+    :try_end_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
+
+    .line 307
+    :goto_1
+    return-object v1
+
+    .line 292
+    :catch_0
+    move-exception v0
+
+    .line 293
+    .local v0, "e":Ljava/lang/IllegalArgumentException;
+    :goto_2
+    iget-object v4, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    const-string v5, "MakeInstantFromParts"
+
+    new-array v6, v7, [Ljava/lang/Object;
+
+    invoke-virtual {v4, p0, v5, v8, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 303
+    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
+    :catch_1
+    move-exception v0
+
+    .line 304
+    .restart local v0    # "e":Ljava/lang/IllegalArgumentException;
+    iget-object v4, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    const-string v5, "MakeInstantFromParts"
+
+    new-array v6, v7, [Ljava/lang/Object;
+
+    invoke-virtual {v4, p0, v5, v8, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .line 292
+    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
+    .end local v1    # "instant":Ljava/util/Calendar;
+    .restart local v2    # "instant":Ljava/util/Calendar;
+    :catch_2
+    move-exception v0
+
+    move-object v1, v2
+
+    .end local v2    # "instant":Ljava/util/Calendar;
+    .restart local v1    # "instant":Ljava/util/Calendar;
+    goto :goto_2
+.end method
+
+.method public MakeTime(III)Ljava/util/Calendar;
+    .locals 6
+    .param p1, "hour"    # I
+    .param p2, "minute"    # I
+    .param p3, "second"    # I
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Allows the user to set the time of the clock - Valid format is hh:mm:ss\n"
+    .end annotation
+
+    .prologue
+    .line 257
+    new-instance v1, Ljava/util/GregorianCalendar;
+
+    invoke-direct {v1}, Ljava/util/GregorianCalendar;-><init>()V
+
+    .line 259
+    .local v1, "instant":Ljava/util/Calendar;
+    const/16 v2, 0xb
+
+    :try_start_0
+    invoke-virtual {v1, v2, p1}, Ljava/util/Calendar;->set(II)V
+
+    .line 260
+    const/16 v2, 0xc
+
+    invoke-virtual {v1, v2, p2}, Ljava/util/Calendar;->set(II)V
+
+    .line 261
+    const/16 v2, 0xd
+
+    invoke-virtual {v1, v2, p3}, Ljava/util/Calendar;->set(II)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 265
+    :goto_0
+    return-object v1
+
+    .line 262
+    :catch_0
+    move-exception v0
+
+    .line 263
+    .local v0, "e":Ljava/lang/IllegalArgumentException;
+    iget-object v2, p0, Lcom/google/appinventor/components/runtime/Clock;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    const-string v3, "MakeTime"
+
+    const/16 v4, 0x961
+
+    const/4 v5, 0x0
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    invoke-virtual {v2, p0, v3, v4, v5}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
+
+    goto :goto_0
+.end method
+
 .method public Timer()V
     .locals 2
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleEvent;
@@ -788,7 +1037,7 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 94
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerAlwaysFires:Z
 
     if-nez v0, :cond_0
@@ -797,7 +1046,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 86
+    .line 95
     :cond_0
     const-string v0, "Timer"
 
@@ -807,7 +1056,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 88
+    .line 97
     :cond_1
     return-void
 .end method
@@ -824,10 +1073,10 @@
     .end annotation
 
     .prologue
-    .line 164
+    .line 173
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/Clock;->timerAlwaysFires:Z
 
-    .line 165
+    .line 174
     return-void
 .end method
 
@@ -839,7 +1088,7 @@
     .end annotation
 
     .prologue
-    .line 152
+    .line 161
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerAlwaysFires:Z
 
     return v0
@@ -857,12 +1106,12 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 147
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/util/TimerInternal;->Enabled(Z)V
 
-    .line 139
+    .line 148
     return-void
 .end method
 
@@ -874,7 +1123,7 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 134
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/util/TimerInternal;->Enabled()Z
@@ -892,7 +1141,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 108
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/util/TimerInternal;->Interval()I
@@ -914,12 +1163,12 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 121
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/util/TimerInternal;->Interval(I)V
 
-    .line 113
+    .line 122
     return-void
 .end method
 
@@ -927,10 +1176,10 @@
     .locals 0
 
     .prologue
-    .line 171
+    .line 180
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Clock;->Timer()V
 
-    .line 172
+    .line 181
     return-void
 .end method
 
@@ -938,14 +1187,14 @@
     .locals 2
 
     .prologue
-    .line 526
+    .line 626
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/util/TimerInternal;->Enabled(Z)V
 
-    .line 527
+    .line 627
     return-void
 .end method
 
@@ -953,14 +1202,14 @@
     .locals 2
 
     .prologue
-    .line 521
+    .line 621
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Clock;->timerInternal:Lcom/google/appinventor/components/runtime/util/TimerInternal;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/util/TimerInternal;->Enabled(Z)V
 
-    .line 522
+    .line 622
     return-void
 .end method
 
@@ -968,12 +1217,12 @@
     .locals 1
 
     .prologue
-    .line 516
+    .line 616
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->onScreen:Z
 
-    .line 517
+    .line 617
     return-void
 .end method
 
@@ -981,11 +1230,11 @@
     .locals 1
 
     .prologue
-    .line 511
+    .line 611
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Clock;->onScreen:Z
 
-    .line 512
+    .line 612
     return-void
 .end method

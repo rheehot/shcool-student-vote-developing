@@ -33,10 +33,10 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 122
+    .line 126
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->enabled:Z
@@ -49,7 +49,7 @@
     .param p1, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;
 
     .prologue
-    .line 117
+    .line 121
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;-><init>()V
 
     return-void
@@ -61,12 +61,12 @@
     .locals 1
 
     .prologue
-    .line 191
+    .line 195
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->consumer:Lorg/osmdroid/views/overlay/mylocation/IMyLocationConsumer;
 
-    .line 192
+    .line 196
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 190
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->lastLocation:Landroid/location/Location;
 
     return-object v0
@@ -85,7 +85,7 @@
     .param p1, "distance"    # I
 
     .prologue
-    .line 144
+    .line 148
     return-void
 .end method
 
@@ -94,20 +94,20 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 148
+    .line 152
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->lastLocation:Landroid/location/Location;
 
-    .line 149
+    .line 153
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->consumer:Lorg/osmdroid/views/overlay/mylocation/IMyLocationConsumer;
 
     if-eqz v0, :cond_0
 
-    .line 150
+    .line 154
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->consumer:Lorg/osmdroid/views/overlay/mylocation/IMyLocationConsumer;
 
     invoke-interface {v0, p1, p0}, Lorg/osmdroid/views/overlay/mylocation/IMyLocationConsumer;->onLocationChanged(Landroid/location/Location;Lorg/osmdroid/views/overlay/mylocation/IMyLocationProvider;)V
 
-    .line 152
+    .line 156
     :cond_0
     return-void
 .end method
@@ -117,7 +117,7 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 164
+    .line 168
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .param p1, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 160
+    .line 164
     return-void
 .end method
 
@@ -137,7 +137,7 @@
     .param p3, "bundle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 156
+    .line 160
     return-void
 .end method
 
@@ -146,7 +146,7 @@
     .param p1, "time"    # I
 
     .prologue
-    .line 140
+    .line 144
     return-void
 .end method
 
@@ -155,39 +155,39 @@
     .param p1, "source"    # Lcom/google/appinventor/components/runtime/LocationSensor;
 
     .prologue
-    .line 126
+    .line 130
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     if-ne v0, p1, :cond_1
 
-    .line 136
+    .line 140
     :cond_0
     :goto_0
     return-void
 
-    .line 129
+    .line 133
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     if-eqz v0, :cond_2
 
-    .line 130
+    .line 134
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/LocationSensor;->Enabled(Z)V
 
-    .line 132
+    .line 136
     :cond_2
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
-    .line 133
+    .line 137
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     if-eqz v0, :cond_0
 
-    .line 134
+    .line 138
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->enabled:Z
@@ -204,23 +204,23 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 168
+    .line 172
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->consumer:Lorg/osmdroid/views/overlay/mylocation/IMyLocationConsumer;
 
-    .line 169
+    .line 173
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 174
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/LocationSensor;->Enabled(Z)V
 
-    .line 171
+    .line 175
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->enabled:Z
 
-    .line 173
+    .line 177
     :cond_0
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->enabled:Z
 
@@ -233,20 +233,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 178
+    .line 182
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 183
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->source:Lcom/google/appinventor/components/runtime/LocationSensor;
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/LocationSensor;->Enabled(Z)V
 
-    .line 181
+    .line 185
     :cond_0
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$AppInventorLocationSensorAdapter;->enabled:Z
 
-    .line 182
+    .line 186
     return-void
 .end method

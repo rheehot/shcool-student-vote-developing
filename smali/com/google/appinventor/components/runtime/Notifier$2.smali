@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Notifier;
 
     .prologue
-    .line 219
+    .line 234
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Notifier$2;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Notifier$2;->val$button1Text:Ljava/lang/String;
@@ -45,7 +45,7 @@
     .locals 2
 
     .prologue
-    .line 219
+    .line 234
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Notifier$2;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Notifier$2;->val$button1Text:Ljava/lang/String;

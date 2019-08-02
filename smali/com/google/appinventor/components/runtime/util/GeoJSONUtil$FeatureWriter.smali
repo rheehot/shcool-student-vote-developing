@@ -37,13 +37,13 @@
     .param p1, "out"    # Ljava/io/PrintStream;
 
     .prologue
-    .line 416
+    .line 418
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 417
+    .line 419
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
-    .line 418
+    .line 420
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .param p2, "x1"    # Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$1;
 
     .prologue
-    .line 412
+    .line 414
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;-><init>(Ljava/io/PrintStream;)V
 
     return-void
@@ -64,7 +64,7 @@
     .param p0, "point"    # Lorg/osmdroid/util/GeoPoint;
 
     .prologue
-    .line 642
+    .line 644
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0}, Lorg/osmdroid/util/GeoPoint;->getAltitude()D
@@ -94,31 +94,31 @@
     .param p2, "color"    # I
 
     .prologue
-    .line 447
+    .line 449
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v3, ",\""
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 448
+    .line 450
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v2, p1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 449
+    .line 451
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v3, "\":\"&H"
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 450
+    .line 452
     invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 451
+    .line 453
     .local v1, "unpadded":Ljava/lang/String;
     const/16 v0, 0x8
 
@@ -130,32 +130,32 @@
 
     if-le v0, v2, :cond_0
 
-    .line 452
+    .line 454
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v3, "0"
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 451
+    .line 453
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 454
+    .line 456
     :cond_0
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v2, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 455
+    .line 457
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v3, "\""
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 456
+    .line 458
     return-void
 .end method
 
@@ -164,28 +164,28 @@
     .param p1, "lineString"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
 
     .prologue
-    .line 509
+    .line 511
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "\"geometry\":{\"type\":\"LineString\",\"coordinates\":["
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 510
+    .line 512
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;->getPoints()Ljava/util/List;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePoints(Ljava/util/List;)V
 
-    .line 511
+    .line 513
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "]}"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 512
+    .line 514
     return-void
 .end method
 
@@ -194,14 +194,14 @@
     .param p1, "polygon"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;
 
     .prologue
-    .line 515
+    .line 517
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v5, "\"geometry\":{\"type\":\"MultiPolygon\",\"coordinates\":["
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 516
+    .line 518
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getPoints()Ljava/util/List;
 
     move-result-object v4
@@ -210,7 +210,7 @@
 
     move-result-object v3
 
-    .line 517
+    .line 519
     .local v3, "pointIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;"
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getHolePoints()Ljava/util/List;
 
@@ -220,11 +220,11 @@
 
     move-result-object v1
 
-    .line 518
+    .line 520
     .local v1, "holePointIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;>;"
     const/4 v0, 0x1
 
-    .line 519
+    .line 521
     .local v0, "first":Z
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -233,7 +233,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 520
+    .line 522
     if-nez v0, :cond_0
 
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
@@ -242,7 +242,7 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 521
+    .line 523
     :cond_0
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -250,7 +250,7 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 522
+    .line 524
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
@@ -259,14 +259,14 @@
 
     invoke-direct {p0, v4}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePoints(Ljava/util/List;)V
 
-    .line 523
+    .line 525
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 524
+    .line 526
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
@@ -290,7 +290,7 @@
 
     check-cast v2, Ljava/util/List;
 
-    .line 525
+    .line 527
     .local v2, "holePoints":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     iget-object v5, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -298,12 +298,12 @@
 
     invoke-virtual {v5, v6}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 526
+    .line 528
     invoke-direct {p0, v2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePoints(Ljava/util/List;)V
 
     goto :goto_1
 
-    .line 529
+    .line 531
     .end local v2    # "holePoints":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     :cond_1
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
@@ -312,12 +312,12 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 530
+    .line 532
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 532
+    .line 534
     :cond_2
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -325,7 +325,7 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 533
+    .line 535
     return-void
 .end method
 
@@ -334,14 +334,14 @@
     .param p1, "point"    # Lorg/osmdroid/util/GeoPoint;
 
     .prologue
-    .line 459
+    .line 461
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "\"geometry\":{\"type\":\"Point\",\"coordinates\":["
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 460
+    .line 462
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {p1}, Lorg/osmdroid/util/GeoPoint;->getLongitude()D
@@ -350,14 +350,14 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/io/PrintStream;->print(D)V
 
-    .line 461
+    .line 463
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, ","
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 462
+    .line 464
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {p1}, Lorg/osmdroid/util/GeoPoint;->getLatitude()D
@@ -366,21 +366,21 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/io/PrintStream;->print(D)V
 
-    .line 463
+    .line 465
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->hasAltitude(Lorg/osmdroid/util/GeoPoint;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 464
+    .line 466
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, ","
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 465
+    .line 467
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {p1}, Lorg/osmdroid/util/GeoPoint;->getAltitude()D
@@ -389,7 +389,7 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/io/PrintStream;->print(D)V
 
-    .line 467
+    .line 469
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -397,7 +397,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 468
+    .line 470
     return-void
 .end method
 
@@ -414,11 +414,11 @@
     .end annotation
 
     .prologue
-    .line 492
+    .line 494
     .local p1, "points":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     const/4 v0, 0x1
 
-    .line 493
+    .line 495
     .local v0, "first":Z
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -437,7 +437,7 @@
 
     check-cast v1, Lorg/osmdroid/util/GeoPoint;
 
-    .line 494
+    .line 496
     .local v1, "p":Lorg/osmdroid/util/GeoPoint;
     if-nez v0, :cond_0
 
@@ -447,7 +447,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/PrintStream;->print(C)V
 
-    .line 495
+    .line 497
     :cond_0
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -455,7 +455,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 496
+    .line 498
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v1}, Lorg/osmdroid/util/GeoPoint;->getLongitude()D
@@ -464,14 +464,14 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintStream;->print(D)V
 
-    .line 497
+    .line 499
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v4, ","
 
     invoke-virtual {v3, v4}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 498
+    .line 500
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v1}, Lorg/osmdroid/util/GeoPoint;->getLatitude()D
@@ -480,21 +480,21 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintStream;->print(D)V
 
-    .line 499
+    .line 501
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->hasAltitude(Lorg/osmdroid/util/GeoPoint;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 500
+    .line 502
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v4, ","
 
     invoke-virtual {v3, v4}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 501
+    .line 503
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v1}, Lorg/osmdroid/util/GeoPoint;->getAltitude()D
@@ -503,7 +503,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintStream;->print(D)V
 
-    .line 503
+    .line 505
     :cond_1
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -511,13 +511,13 @@
 
     invoke-virtual {v3, v4}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 504
+    .line 506
     const/4 v0, 0x0
 
-    .line 505
+    .line 507
     goto :goto_0
 
-    .line 506
+    .line 508
     .end local v1    # "p":Lorg/osmdroid/util/GeoPoint;
     :cond_2
     return-void
@@ -528,7 +528,7 @@
     .param p1, "polygon"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;
 
     .prologue
-    .line 548
+    .line 550
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getPoints()Ljava/util/List;
 
     move-result-object v0
@@ -541,14 +541,14 @@
 
     if-le v0, v1, :cond_0
 
-    .line 549
+    .line 551
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeMultipolygonGeometryNoHoles(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 553
+    .line 555
     :goto_0
     return-void
 
-    .line 551
+    .line 553
     :cond_0
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePolygonGeometryNoHoles(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
@@ -562,14 +562,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 536
+    .line 538
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v2, "\"geometry\":{\"type\":\"Polygon\",\"coordinates\":["
 
     invoke-virtual {v1, v2}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 537
+    .line 539
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getPoints()Ljava/util/List;
 
     move-result-object v1
@@ -582,7 +582,7 @@
 
     invoke-direct {p0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePoints(Ljava/util/List;)V
 
-    .line 538
+    .line 540
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getHolePoints()Ljava/util/List;
 
     move-result-object v1
@@ -593,7 +593,7 @@
 
     if-nez v1, :cond_0
 
-    .line 539
+    .line 541
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->getHolePoints()Ljava/util/List;
 
     move-result-object v1
@@ -621,7 +621,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 540
+    .line 542
     .local v0, "points":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -629,12 +629,12 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 541
+    .line 543
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePoints(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 544
+    .line 546
     .end local v0    # "points":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
@@ -643,7 +643,7 @@
 
     invoke-virtual {v1, v2}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 545
+    .line 547
     return-void
 .end method
 
@@ -652,7 +652,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;
 
     .prologue
-    .line 488
+    .line 490
     const-string v0, "fill"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;->FillColor()I
@@ -661,7 +661,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeColorProperty(Ljava/lang/String;I)V
 
-    .line 489
+    .line 491
     return-void
 .end method
 
@@ -670,7 +670,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     .prologue
-    .line 483
+    .line 485
     const-string v0, "stroke"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeColor()I
@@ -679,7 +679,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeColorProperty(Ljava/lang/String;I)V
 
-    .line 484
+    .line 486
     const-string v0, "stroke-width"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeWidth()I
@@ -692,7 +692,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 485
+    .line 487
     return-void
 .end method
 
@@ -701,7 +701,7 @@
     .param p1, "feature"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
     .prologue
-    .line 475
+    .line 477
     const-string v0, "description"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Description()Ljava/lang/String;
@@ -710,7 +710,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 476
+    .line 478
     const-string v0, "draggable"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Draggable()Z
@@ -723,7 +723,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 477
+    .line 479
     const-string v0, "infobox"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->EnableInfobox()Z
@@ -736,7 +736,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 478
+    .line 480
     const-string v0, "title"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Title()Ljava/lang/String;
@@ -745,7 +745,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 479
+    .line 481
     const-string v0, "visible"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->Visible()Z
@@ -758,7 +758,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 480
+    .line 482
     return-void
 .end method
 
@@ -767,7 +767,7 @@
     .param p1, "runtimeType"    # Ljava/lang/String;
 
     .prologue
-    .line 471
+    .line 473
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -796,7 +796,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 472
+    .line 474
     return-void
 .end method
 
@@ -806,13 +806,13 @@
     .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
-    .line 428
+    .line 430
     :try_start_0
     invoke-static {p2}, Lcom/google/appinventor/components/runtime/util/JsonUtil;->getJsonRepresentation(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 429
+    .line 431
     .local v1, "result":Ljava/lang/String;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
@@ -820,35 +820,35 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 430
+    .line 432
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v2, p1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 431
+    .line 433
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v3, "\":"
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 432
+    .line 434
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v2, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 436
+    .line 438
     .end local v1    # "result":Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 433
+    .line 435
     :catch_0
     move-exception v0
 
-    .line 434
+    .line 436
     .local v0, "e":Lorg/json/JSONException;
     const-string v2, "GeoJSONUtil"
 
@@ -887,7 +887,7 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 439
+    .line 441
     if-eqz p2, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -896,12 +896,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 444
+    .line 446
     :cond_0
     :goto_0
     return-void
 
-    .line 443
+    .line 445
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -913,26 +913,26 @@
     .param p1, "type"    # Ljava/lang/String;
 
     .prologue
-    .line 421
+    .line 423
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "\"type\":\""
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 422
+    .line 424
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v0, p1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 423
+    .line 425
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "\""
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 424
+    .line 426
     return-void
 .end method
 
@@ -942,7 +942,7 @@
     .locals 1
 
     .prologue
-    .line 412
+    .line 414
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;[Ljava/lang/Object;)Ljava/lang/Void;
 
     move-result-object v0
@@ -954,7 +954,7 @@
     .locals 1
 
     .prologue
-    .line 412
+    .line 414
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;[Ljava/lang/Object;)Ljava/lang/Void;
 
     move-result-object v0
@@ -966,7 +966,7 @@
     .locals 1
 
     .prologue
-    .line 412
+    .line 414
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;[Ljava/lang/Object;)Ljava/lang/Void;
 
     move-result-object v0
@@ -978,7 +978,7 @@
     .locals 1
 
     .prologue
-    .line 412
+    .line 414
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;[Ljava/lang/Object;)Ljava/lang/Void;
 
     move-result-object v0
@@ -990,7 +990,7 @@
     .locals 1
 
     .prologue
-    .line 412
+    .line 414
     invoke-virtual {p0, p1, p2}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;[Ljava/lang/Object;)Ljava/lang/Void;
 
     move-result-object v0
@@ -1004,33 +1004,33 @@
     .param p2, "arguments"    # [Ljava/lang/Object;
 
     .prologue
-    .line 603
+    .line 605
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 604
+    .line 606
     const-string v0, "Feature"
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeType(Ljava/lang/String;)V
 
-    .line 605
+    .line 607
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const/16 v1, 0x2c
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(C)V
 
-    .line 606
+    .line 608
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;->getCentroid()Lorg/osmdroid/util/GeoPoint;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePointGeometry(Lorg/osmdroid/util/GeoPoint;)V
 
-    .line 607
+    .line 609
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1041,23 +1041,23 @@
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePropertiesHeader(Ljava/lang/String;)V
 
-    .line 608
+    .line 610
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 609
+    .line 611
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;)V
 
-    .line 610
+    .line 612
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;)V
 
-    .line 611
+    .line 613
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 612
+    .line 614
     const/4 v0, 0x0
 
     return-object v0
@@ -1069,29 +1069,29 @@
     .param p2, "arguments"    # [Ljava/lang/Object;
 
     .prologue
-    .line 576
+    .line 578
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 577
+    .line 579
     const-string v0, "Feature"
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeType(Ljava/lang/String;)V
 
-    .line 578
+    .line 580
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const/16 v1, 0x2c
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(C)V
 
-    .line 579
+    .line 581
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeLineGeometry(Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;)V
 
-    .line 580
+    .line 582
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1102,20 +1102,20 @@
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePropertiesHeader(Ljava/lang/String;)V
 
-    .line 581
+    .line 583
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 582
+    .line 584
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;)V
 
-    .line 583
+    .line 585
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 584
+    .line 586
     const/4 v0, 0x0
 
     return-object v0
@@ -1127,33 +1127,33 @@
     .param p2, "arguments"    # [Ljava/lang/Object;
 
     .prologue
-    .line 557
+    .line 559
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 558
+    .line 560
     const-string v0, "Feature"
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeType(Ljava/lang/String;)V
 
-    .line 559
+    .line 561
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const/16 v1, 0x2c
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(C)V
 
-    .line 560
+    .line 562
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->getCentroid()Lorg/osmdroid/util/GeoPoint;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePointGeometry(Lorg/osmdroid/util/GeoPoint;)V
 
-    .line 561
+    .line 563
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1164,16 +1164,16 @@
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePropertiesHeader(Ljava/lang/String;)V
 
-    .line 562
+    .line 564
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 563
+    .line 565
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;)V
 
-    .line 564
+    .line 566
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;)V
 
-    .line 565
+    .line 567
     const-string v0, "anchorHorizontal"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->AnchorHorizontal()I
@@ -1186,7 +1186,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 566
+    .line 568
     const-string v0, "anchorVertical"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->AnchorVertical()I
@@ -1199,7 +1199,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 567
+    .line 569
     const-string v0, "height"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Height()I
@@ -1212,7 +1212,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 568
+    .line 570
     const-string v0, "image"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->ImageAsset()Ljava/lang/String;
@@ -1221,7 +1221,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 569
+    .line 571
     const-string v0, "width"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Width()I
@@ -1234,14 +1234,14 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 570
+    .line 572
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 571
+    .line 573
     const/4 v0, 0x0
 
     return-object v0
@@ -1253,29 +1253,29 @@
     .param p2, "arguments"    # [Ljava/lang/Object;
 
     .prologue
-    .line 589
+    .line 591
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 590
+    .line 592
     const-string v0, "Feature"
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeType(Ljava/lang/String;)V
 
-    .line 591
+    .line 593
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const/16 v1, 0x2c
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(C)V
 
-    .line 592
+    .line 594
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePolygonGeometry(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 593
+    .line 595
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1286,23 +1286,23 @@
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePropertiesHeader(Ljava/lang/String;)V
 
-    .line 594
+    .line 596
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 595
+    .line 597
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;)V
 
-    .line 596
+    .line 598
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;)V
 
-    .line 597
+    .line 599
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 598
+    .line 600
     const/4 v0, 0x0
 
     return-object v0
@@ -1314,26 +1314,26 @@
     .param p2, "arguments"    # [Ljava/lang/Object;
 
     .prologue
-    .line 617
+    .line 619
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 618
+    .line 620
     const-string v0, "Feature"
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeType(Ljava/lang/String;)V
 
-    .line 619
+    .line 621
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, ",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":["
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 620
+    .line 622
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1361,100 +1361,6 @@
     move-result-object v1
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->NorthLatitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "],"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
-
-    .line 621
-    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "["
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->WestLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ","
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->SouthLatitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "],"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
-
-    .line 622
-    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "["
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->EastLongitude()D
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ","
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->SouthLatitude()D
 
     move-result-wide v2
 
@@ -1487,6 +1393,100 @@
 
     move-result-object v1
 
+    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->WestLongitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->SouthLatitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "],"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
+
+    .line 624
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "["
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->EastLongitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->SouthLatitude()D
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "],"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
+
+    .line 625
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "["
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->EastLongitude()D
 
     move-result-wide v2
@@ -1521,7 +1521,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 624
+    .line 626
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1568,7 +1568,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 625
+    .line 627
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1579,16 +1579,16 @@
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writePropertiesHeader(Ljava/lang/String;)V
 
-    .line 626
+    .line 628
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 627
+    .line 629
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;)V
 
-    .line 628
+    .line 630
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperties(Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;)V
 
-    .line 629
+    .line 631
     const-string v0, "NorthLatitude"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->NorthLatitude()D
@@ -1601,7 +1601,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 630
+    .line 632
     const-string v0, "WestLongitude"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->WestLongitude()D
@@ -1614,7 +1614,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 631
+    .line 633
     const-string v0, "SouthLatitude"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->SouthLatitude()D
@@ -1627,7 +1627,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 632
+    .line 634
     const-string v0, "EastLongitude"
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapRectangle;->EastLongitude()D
@@ -1640,14 +1640,14 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->writeProperty(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 633
+    .line 635
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;->out:Ljava/io/PrintStream;
 
     const-string v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 634
+    .line 636
     const/4 v0, 0x0
 
     return-object v0

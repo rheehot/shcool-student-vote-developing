@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 299
+    .line 306
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .param p1, "x0"    # Lcom/google/appinventor/components/runtime/Form$1;
 
     .prologue
-    .line 299
+    .line 306
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/Form$MultiDexInstaller;-><init>()V
 
     return-void
@@ -60,26 +60,26 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 304
+    .line 311
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Form$MultiDexInstaller;->ourForm:Lcom/google/appinventor/components/runtime/Form;
 
-    .line 305
+    .line 312
     const-string v0, "Form"
 
     const-string v1, "Doing Full MultiDex Install"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 306
+    .line 313
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$MultiDexInstaller;->ourForm:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v0, v2}, Lcom/google/appinventor/components/runtime/multidex/MultiDex;->install(Landroid/content/Context;Z)Z
 
-    .line 307
+    .line 314
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 306
     check-cast p1, [Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/Form$MultiDexInstaller;->doInBackground([Lcom/google/appinventor/components/runtime/Form;)Ljava/lang/Boolean;
@@ -106,12 +106,12 @@
     .param p1, "v"    # Ljava/lang/Boolean;
 
     .prologue
-    .line 311
+    .line 318
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$MultiDexInstaller;->ourForm:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Form;->onCreateFinish()V
 
-    .line 312
+    .line 319
     return-void
 .end method
 
@@ -119,7 +119,7 @@
     .locals 0
 
     .prologue
-    .line 299
+    .line 306
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/Form$MultiDexInstaller;->onPostExecute(Ljava/lang/Boolean;)V

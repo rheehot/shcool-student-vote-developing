@@ -25,12 +25,12 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 199
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-direct {p0}, Lorg/osmdroid/views/overlay/Overlay;-><init>()V
 
-    .line 196
+    .line 200
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->scrollEnabled:Z
@@ -44,7 +44,7 @@
     .param p2, "x1"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;
 
     .prologue
-    .line 195
+    .line 199
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)V
 
     return-void
@@ -55,7 +55,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;
 
     .prologue
-    .line 195
+    .line 199
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->scrollEnabled:Z
 
     return v0
@@ -67,7 +67,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 195
+    .line 199
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->scrollEnabled:Z
 
     return p1
@@ -82,7 +82,7 @@
     .param p3, "arg2"    # Z
 
     .prologue
-    .line 199
+    .line 203
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .param p5, "mapView"    # Lorg/osmdroid/views/MapView;
 
     .prologue
-    .line 203
+    .line 207
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->scrollEnabled:Z
 
     if-nez v0, :cond_0
@@ -117,7 +117,7 @@
     .param p2, "pMapView"    # Lorg/osmdroid/views/MapView;
 
     .prologue
-    .line 213
+    .line 217
     invoke-virtual {p2}, Lorg/osmdroid/views/MapView;->getProjection()Lorg/osmdroid/views/Projection;
 
     move-result-object v6
@@ -138,19 +138,19 @@
 
     move-result-object v1
 
-    .line 214
+    .line 218
     .local v1, "p":Lorg/osmdroid/api/IGeoPoint;
     invoke-interface {v1}, Lorg/osmdroid/api/IGeoPoint;->getLatitude()D
 
     move-result-wide v2
 
-    .line 215
+    .line 219
     .local v2, "lat":D
     invoke-interface {v1}, Lorg/osmdroid/api/IGeoPoint;->getLongitude()D
 
     move-result-wide v4
 
-    .line 216
+    .line 220
     .local v4, "lng":D
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -175,13 +175,13 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 217
+    .line 221
     .local v0, "l":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     invoke-interface {v0, v2, v3, v4, v5}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;->onLongPress(DD)V
 
     goto :goto_0
 
-    .line 219
+    .line 223
     .end local v0    # "l":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     const/4 v6, 0x0
@@ -198,7 +198,7 @@
     .param p5, "mapView"    # Lorg/osmdroid/views/MapView;
 
     .prologue
-    .line 208
+    .line 212
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$TouchOverlay;->scrollEnabled:Z
 
     if-nez v0, :cond_0

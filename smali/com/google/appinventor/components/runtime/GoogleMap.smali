@@ -20,6 +20,7 @@
 # annotations
 .annotation runtime Lcom/google/appinventor/components/annotations/DesignerComponent;
     category = .enum Lcom/google/appinventor/components/common/ComponentCategory;->MAPVIZ:Lcom/google/appinventor/components/common/ComponentCategory;
+    description = "Google Map component that provides MyLocation, drawing markers on the map, and more."
     docUri = "location/google-maps"
     version = 0x3
 .end annotation
@@ -180,63 +181,63 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 152
+    .line 153
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     sput-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->snextCircleId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 157
+    .line 158
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     sput-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->snextPolylineId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 162
+    .line 163
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     sput-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->sNextGeneratedId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 163
+    .line 164
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     sput-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->snextMarkerId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 171
+    .line 172
     invoke-static {}, Lcom/google/android/gms/location/LocationRequest;->create()Lcom/google/android/gms/location/LocationRequest;
 
     move-result-object v0
 
     const-wide/16 v2, 0x1388
 
-    .line 172
+    .line 173
     invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/location/LocationRequest;->setInterval(J)Lcom/google/android/gms/location/LocationRequest;
 
     move-result-object v0
 
     const-wide/16 v2, 0x10
 
-    .line 173
+    .line 174
     invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/location/LocationRequest;->setFastestInterval(J)Lcom/google/android/gms/location/LocationRequest;
 
     move-result-object v0
 
     const/16 v1, 0x64
 
-    .line 174
+    .line 175
     invoke-virtual {v0, v1}, Lcom/google/android/gms/location/LocationRequest;->setPriority(I)Lcom/google/android/gms/location/LocationRequest;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->REQUEST:Lcom/google/android/gms/location/LocationRequest;
 
-    .line 171
+    .line 172
     return-void
 .end method
 
@@ -256,116 +257,116 @@
 
     const/4 v2, 0x0
 
-    .line 177
+    .line 178
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;-><init>(Lcom/google/appinventor/components/runtime/ComponentContainer;)V
 
-    .line 117
+    .line 118
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isScreenInitialized:Z
 
-    .line 118
+    .line 119
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isMapReady:Z
 
-    .line 119
+    .line 120
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isMapIsReadyDispatched:Z
 
-    .line 126
+    .line 127
     const-string v1, "standard"
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->theme:Ljava/lang/String;
 
-    .line 127
+    .line 128
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->theme:Ljava/lang/String;
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialTheme:Ljava/lang/String;
 
-    .line 130
+    .line 131
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
-    .line 133
+    .line 134
     iput v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
-    .line 134
+    .line 135
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->myLocationEnabled:Z
 
-    .line 135
+    .line 136
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->compassEnabled:Z
 
-    .line 136
+    .line 137
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->rotateEnabled:Z
 
-    .line 137
+    .line 138
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->scrollEnabled:Z
 
-    .line 138
+    .line 139
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->zoomControlEnabled:Z
 
-    .line 139
+    .line 140
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->zoomGesturesEnabled:Z
 
-    .line 142
+    .line 143
     const v1, -0xde690d
 
     iput v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMarkerColor:I
 
-    .line 143
+    .line 144
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMarkerDraggable:Z
 
-    .line 146
+    .line 147
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapClickListener:Z
 
-    .line 147
+    .line 148
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapLongClickListener:Z
 
-    .line 148
+    .line 149
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableCameraChangeListener:Z
 
-    .line 153
+    .line 154
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
-    .line 154
+    .line 155
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mCircles:Ljava/util/List;
 
-    .line 158
+    .line 159
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->polylinesByIds:Ljava/util/HashMap;
 
-    .line 164
+    .line 165
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->androidUIHandler:Landroid/os/Handler;
 
-    .line 178
+    .line 179
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
-    .line 179
+    .line 180
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
-    .line 180
+    .line 181
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/Form;->getOnCreateBundle()Landroid/os/Bundle;
@@ -374,7 +375,7 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->savedInstanceState:Landroid/os/Bundle;
 
-    .line 181
+    .line 182
     new-instance v1, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
@@ -387,7 +388,7 @@
 
     move-result-object v1
 
-    .line 182
+    .line 183
     invoke-virtual {v1, p0}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->addConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
     move-result-object v1
@@ -402,7 +403,7 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-    .line 185
+    .line 186
     new-instance v1, Landroid/widget/LinearLayout;
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
@@ -411,7 +412,7 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->viewLayout:Landroid/widget/LinearLayout;
 
-    .line 186
+    .line 187
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->viewLayout:Landroid/widget/LinearLayout;
 
     invoke-static {}, Lcom/google/appinventor/components/runtime/GoogleMap;->generateViewId()I
@@ -420,7 +421,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setId(I)V
 
-    .line 188
+    .line 189
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -445,13 +446,13 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->MAP_FRAGMENT_TAG:Ljava/lang/String;
 
-    .line 191
+    .line 192
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->checkGooglePlayServiceSDK()V
 
-    .line 192
+    .line 193
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->checkGoogleMapInstalled()V
 
-    .line 194
+    .line 195
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/Form;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -460,7 +461,7 @@
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->MAP_FRAGMENT_TAG:Ljava/lang/String;
 
-    .line 195
+    .line 196
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 
     move-result-object v1
@@ -469,22 +470,22 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMapFragment:Lcom/google/android/gms/maps/SupportMapFragment;
 
-    .line 198
+    .line 199
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMapFragment:Lcom/google/android/gms/maps/SupportMapFragment;
 
     if-nez v1, :cond_0
 
-    .line 200
+    .line 201
     invoke-static {}, Lcom/google/android/gms/maps/SupportMapFragment;->newInstance()Lcom/google/android/gms/maps/SupportMapFragment;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMapFragment:Lcom/google/android/gms/maps/SupportMapFragment;
 
-    .line 202
+    .line 203
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
-    .line 203
+    .line 204
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/Form;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v1
@@ -493,7 +494,7 @@
 
     move-result-object v0
 
-    .line 205
+    .line 206
     .local v0, "fragmentTransaction":Landroid/support/v4/app/FragmentTransaction;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->viewLayout:Landroid/widget/LinearLayout;
 
@@ -507,32 +508,27 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/FragmentTransaction;->replace(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
-    .line 206
+    .line 207
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
-    .line 209
+    .line 210
     .end local v0    # "fragmentTransaction":Landroid/support/v4/app/FragmentTransaction;
     :cond_0
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
-    .line 210
+    .line 211
     invoke-interface {p1, p0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$add(Lcom/google/appinventor/components/runtime/AndroidViewComponent;)V
 
-    .line 211
+    .line 212
     invoke-virtual {p0, v4}, Lcom/google/appinventor/components/runtime/GoogleMap;->Width(I)V
 
-    .line 212
-    invoke-virtual {p0, v4}, Lcom/google/appinventor/components/runtime/GoogleMap;->Height(I)V
-
     .line 213
-    iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
-
-    invoke-virtual {v1, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnInitialize(Lcom/google/appinventor/components/runtime/util/OnInitializeListener;)V
+    invoke-virtual {p0, v4}, Lcom/google/appinventor/components/runtime/GoogleMap;->Height(I)V
 
     .line 214
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
-    invoke-virtual {v1, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnResume(Lcom/google/appinventor/components/runtime/OnResumeListener;)V
+    invoke-virtual {v1, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnInitialize(Lcom/google/appinventor/components/runtime/util/OnInitializeListener;)V
 
     .line 215
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
@@ -542,9 +538,14 @@
     .line 216
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
-    invoke-virtual {v1, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnPause(Lcom/google/appinventor/components/runtime/OnPauseListener;)V
+    invoke-virtual {v1, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnResume(Lcom/google/appinventor/components/runtime/OnResumeListener;)V
 
     .line 217
+    iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    invoke-virtual {v1, p0}, Lcom/google/appinventor/components/runtime/Form;->registerForOnPause(Lcom/google/appinventor/components/runtime/OnPauseListener;)V
+
+    .line 218
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
 
     move-result-object v1
@@ -557,7 +558,7 @@
 
     invoke-static {v1, v2}, Lcom/google/appinventor/components/runtime/util/MobileAnalytics;->fabricTracking(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 218
+    .line 219
     return-void
 .end method
 
@@ -566,7 +567,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     return-object v0
@@ -578,7 +579,7 @@
     .param p1, "x1"    # Lcom/google/android/gms/maps/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     return-object p1
@@ -589,7 +590,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMap()V
 
     return-void
@@ -600,7 +601,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
     return-object v0
@@ -611,7 +612,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMapFragment:Lcom/google/android/gms/maps/SupportMapFragment;
 
     return-object v0
@@ -622,7 +623,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->viewLayout:Landroid/widget/LinearLayout;
 
     return-object v0
@@ -633,7 +634,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->MAP_FRAGMENT_TAG:Ljava/lang/String;
 
     return-object v0
@@ -644,7 +645,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
     return-void
@@ -655,7 +656,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/GoogleMap;
 
     .prologue
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->androidUIHandler:Landroid/os/Handler;
 
     return-object v0
@@ -667,7 +668,7 @@
     .param p1, "x1"    # D
 
     .prologue
-    .line 99
+    .line 100
     invoke-static {p0, p1, p2}, Lcom/google/appinventor/components/runtime/GoogleMap;->toRadiusLatLng(Lcom/google/android/gms/maps/model/LatLng;D)Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
@@ -681,7 +682,7 @@
     .param p1, "x1"    # Lcom/google/android/gms/maps/model/LatLng;
 
     .prologue
-    .line 99
+    .line 100
     invoke-static {p0, p1}, Lcom/google/appinventor/components/runtime/GoogleMap;->toRadiusMeters(Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;)D
 
     move-result-wide v0
@@ -701,15 +702,15 @@
     .param p8, "draggable"    # Z
 
     .prologue
-    .line 1070
+    .line 1071
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez v6, :cond_0
 
-    .line 1071
+    .line 1072
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
-    .line 1074
+    .line 1075
     :cond_0
     new-instance v4, Lcom/google/android/gms/maps/model/LatLng;
 
@@ -723,7 +724,7 @@
 
     invoke-direct {v4, v6, v7, v8, v9}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    .line 1075
+    .line 1076
     .local v4, "latlng":Lcom/google/android/gms/maps/model/LatLng;
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
@@ -731,17 +732,17 @@
 
     invoke-direct {v7}, Lcom/google/android/gms/maps/model/MarkerOptions;-><init>()V
 
-    .line 1076
+    .line 1077
     invoke-virtual {v7, v4}, Lcom/google/android/gms/maps/model/MarkerOptions;->position(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/MarkerOptions;
 
     move-result-object v7
 
-    .line 1075
+    .line 1076
     invoke-virtual {v6, v7}, Lcom/google/android/gms/maps/GoogleMap;->addMarker(Lcom/google/android/gms/maps/model/MarkerOptions;)Lcom/google/android/gms/maps/model/Marker;
 
     move-result-object v5
 
-    .line 1078
+    .line 1079
     .local v5, "marker":Lcom/google/android/gms/maps/model/Marker;
     invoke-virtual {p5}, Ljava/lang/String;->isEmpty()Z
 
@@ -749,7 +750,7 @@
 
     if-nez v6, :cond_3
 
-    .line 1082
+    .line 1083
     :try_start_0
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -763,7 +764,7 @@
 
     move-result-object v2
 
-    .line 1088
+    .line 1089
     .local v2, "iconBitmap":Landroid/graphics/Bitmap;
     :goto_0
     invoke-static {v2}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->fromBitmap(Landroid/graphics/Bitmap;)Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -772,7 +773,7 @@
 
     invoke-virtual {v5, v6}, Lcom/google/android/gms/maps/model/Marker;->setIcon(Lcom/google/android/gms/maps/model/BitmapDescriptor;)V
 
-    .line 1093
+    .line 1094
     .end local v2    # "iconBitmap":Landroid/graphics/Bitmap;
     :goto_1
     invoke-virtual/range {p6 .. p6}, Ljava/lang/String;->isEmpty()Z
@@ -781,12 +782,12 @@
 
     if-nez v6, :cond_1
 
-    .line 1094
+    .line 1095
     move-object/from16 v0, p6
 
     invoke-virtual {v5, v0}, Lcom/google/android/gms/maps/model/Marker;->setTitle(Ljava/lang/String;)V
 
-    .line 1096
+    .line 1097
     :cond_1
     invoke-virtual/range {p7 .. p7}, Ljava/lang/String;->isEmpty()Z
 
@@ -794,18 +795,18 @@
 
     if-nez v6, :cond_2
 
-    .line 1097
+    .line 1098
     move-object/from16 v0, p7
 
     invoke-virtual {v5, v0}, Lcom/google/android/gms/maps/model/Marker;->setSnippet(Ljava/lang/String;)V
 
-    .line 1099
+    .line 1100
     :cond_2
     move/from16 v0, p8
 
     invoke-virtual {v5, v0}, Lcom/google/android/gms/maps/model/Marker;->setDraggable(Z)V
 
-    .line 1100
+    .line 1101
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -814,14 +815,14 @@
 
     invoke-virtual {v6, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1101
+    .line 1102
     return p3
 
-    .line 1083
+    .line 1084
     :catch_0
     move-exception v3
 
-    .line 1084
+    .line 1085
     .local v3, "ioe":Ljava/io/IOException;
     const-string v6, "GoogleMap"
 
@@ -845,13 +846,13 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1085
+    .line 1086
     const/4 v2, 0x0
 
     .restart local v2    # "iconBitmap":Landroid/graphics/Bitmap;
     goto :goto_0
 
-    .line 1091
+    .line 1092
     .end local v2    # "iconBitmap":Landroid/graphics/Bitmap;
     .end local v3    # "ioe":Ljava/io/IOException;
     :cond_3
@@ -870,7 +871,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 425
+    .line 426
     :try_start_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
@@ -886,15 +887,15 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 432
+    .line 433
     :goto_0
     return-void
 
-    .line 427
+    .line 428
     :catch_0
     move-exception v0
 
-    .line 429
+    .line 430
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -915,23 +916,23 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 401
+    .line 402
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     invoke-static {v1}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->isGooglePlayServicesAvailable(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 403
+    .line 404
     .local v0, "googlePlayServicesAvailable":I
     packed-switch v0, :pswitch_data_0
 
-    .line 421
+    .line 422
     :goto_0
     :pswitch_0
     return-void
 
-    .line 405
+    .line 406
     :pswitch_1
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -945,7 +946,7 @@
 
     goto :goto_0
 
-    .line 409
+    .line 410
     :pswitch_2
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -959,7 +960,7 @@
 
     goto :goto_0
 
-    .line 413
+    .line 414
     :pswitch_3
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -973,7 +974,7 @@
 
     goto :goto_0
 
-    .line 417
+    .line 418
     :pswitch_4
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -987,7 +988,7 @@
 
     goto :goto_0
 
-    .line 403
+    .line 404
     nop
 
     :pswitch_data_0
@@ -1009,7 +1010,7 @@
     .param p0, "point"    # Lcom/google/appinventor/components/runtime/util/YailList;
 
     .prologue
-    .line 619
+    .line 620
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
 
     const/4 v0, 0x0
@@ -1057,12 +1058,12 @@
     .end annotation
 
     .prologue
-    .line 623
+    .line 624
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 625
+    .line 626
     .local v1, "latLngs":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/maps/model/LatLng;>;"
     const/4 v0, 0x0
 
@@ -1074,7 +1075,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 626
+    .line 627
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/util/YailList;->getObject(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1087,12 +1088,12 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 625
+    .line 626
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 628
+    .line 629
     :cond_0
     return-object v1
 .end method
@@ -1101,7 +1102,7 @@
     .locals 1
 
     .prologue
-    .line 1048
+    .line 1049
     sget-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->snextCircleId:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
@@ -1115,7 +1116,7 @@
     .locals 1
 
     .prologue
-    .line 1040
+    .line 1041
     sget-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->snextMarkerId:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
@@ -1129,7 +1130,7 @@
     .locals 1
 
     .prologue
-    .line 1056
+    .line 1057
     sget-object v0, Lcom/google/appinventor/components/runtime/GoogleMap;->snextPolylineId:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
@@ -1143,7 +1144,7 @@
     .locals 3
 
     .prologue
-    .line 228
+    .line 229
     .local v0, "newValue":I
     .local v1, "result":I
     :cond_0
@@ -1153,17 +1154,17 @@
 
     move-result v1
 
-    .line 230
+    .line 231
     add-int/lit8 v0, v1, 0x1
 
-    .line 231
+    .line 232
     const v2, 0xffffff
 
     if-le v0, v2, :cond_1
 
     const/4 v0, 0x1
 
-    .line 232
+    .line 233
     :cond_1
     sget-object v2, Lcom/google/appinventor/components/runtime/GoogleMap;->sNextGeneratedId:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -1173,7 +1174,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 233
+    .line 234
     return v1
 .end method
 
@@ -1182,7 +1183,7 @@
     .param p1, "circleId"    # I
 
     .prologue
-    .line 480
+    .line 481
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1193,11 +1194,11 @@
 
     move-result-object v0
 
-    .line 481
+    .line 482
     .local v0, "circle":Ljava/lang/Object;
     if-nez v0, :cond_0
 
-    .line 482
+    .line 483
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
     const-string v2, "getCircleIfExisted"
@@ -1210,20 +1211,20 @@
 
     const/4 v5, 0x0
 
-    .line 483
+    .line 484
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v6
 
     aput-object v6, v4, v5
 
-    .line 482
+    .line 483
     invoke-virtual {v1, p0, v2, v3, v4}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 484
+    .line 485
     const/4 v0, 0x0
 
-    .line 486
+    .line 487
     .end local v0    # "circle":Ljava/lang/Object;
     :cond_0
     return-object v0
@@ -1244,7 +1245,7 @@
     .end annotation
 
     .prologue
-    .line 1514
+    .line 1515
     .local p1, "map":Ljava/util/Map;, "Ljava/util/Map<TT;TE;>;"
     .local p2, "value":Ljava/lang/Object;, "TE;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -1268,7 +1269,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 1515
+    .line 1516
     .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TT;TE;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1280,12 +1281,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 1516
+    .line 1517
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1519
+    .line 1520
     .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TT;TE;>;"
     :goto_0
     return-object v1
@@ -1301,7 +1302,7 @@
     .param p1, "markerId"    # I
 
     .prologue
-    .line 1363
+    .line 1364
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1314,7 +1315,7 @@
 
     check-cast v0, Lcom/google/android/gms/maps/model/Marker;
 
-    .line 1365
+    .line 1366
     .local v0, "marker":Lcom/google/android/gms/maps/model/Marker;
     const/4 v1, 0x0
 
@@ -1324,7 +1325,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1366
+    .line 1367
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
     const-string v2, "getMarkerIfExisted"
@@ -1337,17 +1338,17 @@
 
     const/4 v5, 0x0
 
-    .line 1367
+    .line 1368
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v6
 
     aput-object v6, v4, v5
 
-    .line 1366
+    .line 1367
     invoke-virtual {v1, p0, v2, v3, v4}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1369
+    .line 1370
     :cond_0
     return-object v0
 .end method
@@ -1356,14 +1357,14 @@
     .locals 2
 
     .prologue
-    .line 752
+    .line 753
     invoke-static {}, Lcom/google/android/gms/maps/SupportMapFragment;->newInstance()Lcom/google/android/gms/maps/SupportMapFragment;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMapFragment:Lcom/google/android/gms/maps/SupportMapFragment;
 
-    .line 753
+    .line 754
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->androidUIHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$3;
@@ -1372,7 +1373,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 776
+    .line 777
     return-void
 .end method
 
@@ -1380,12 +1381,12 @@
     .locals 2
 
     .prologue
-    .line 285
+    .line 286
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     if-nez v0, :cond_0
 
-    .line 286
+    .line 287
     new-instance v0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
@@ -1398,7 +1399,7 @@
 
     move-result-object v0
 
-    .line 287
+    .line 288
     invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->addConnectionCallbacks(Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;)Lcom/google/android/gms/common/api/GoogleApiClient$Builder;
 
     move-result-object v0
@@ -1413,7 +1414,7 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-    .line 289
+    .line 290
     :cond_0
     return-void
 .end method
@@ -1422,7 +1423,7 @@
     .locals 3
 
     .prologue
-    .line 292
+    .line 293
     new-instance v0, Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
@@ -1433,24 +1434,24 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;-><init>(Lcom/google/android/gms/maps/model/CameraPosition;)V
 
-    .line 293
+    .line 294
     .local v0, "cameraPositionBuilder":Lcom/google/android/gms/maps/model/CameraPosition$Builder;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialLocation:Lcom/google/android/gms/maps/model/LatLng;
 
     if-eqz v1, :cond_0
 
-    .line 294
+    .line 295
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialLocation:Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->target(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
-    .line 295
+    .line 296
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialCameraZoomLevel:Ljava/lang/Float;
 
     if-eqz v1, :cond_1
 
-    .line 296
+    .line 297
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialCameraZoomLevel:Ljava/lang/Float;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -1459,13 +1460,13 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->zoom(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
-    .line 297
+    .line 298
     :cond_1
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialCameraTiltDegrees:Ljava/lang/Float;
 
     if-eqz v1, :cond_2
 
-    .line 298
+    .line 299
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialCameraTiltDegrees:Ljava/lang/Float;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -1474,13 +1475,13 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->tilt(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
-    .line 299
+    .line 300
     :cond_2
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialCameraBearingDegrees:Ljava/lang/Float;
 
     if-eqz v1, :cond_3
 
-    .line 300
+    .line 301
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialCameraBearingDegrees:Ljava/lang/Float;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -1489,7 +1490,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/model/CameraPosition$Builder;->bearing(F)Lcom/google/android/gms/maps/model/CameraPosition$Builder;
 
-    .line 301
+    .line 302
     :cond_3
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
@@ -1503,34 +1504,34 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 303
+    .line 304
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialStyleJson:Ljava/lang/String;
 
     if-eqz v1, :cond_5
 
-    .line 304
+    .line 305
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialStyleJson:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Lcom/google/appinventor/components/runtime/GoogleMap;->Style(Ljava/lang/String;)V
 
-    .line 309
+    .line 310
     :cond_4
     :goto_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v1, p0}, Lcom/google/android/gms/maps/GoogleMap;->setOnMarkerClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;)V
 
-    .line 310
+    .line 311
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v1, p0}, Lcom/google/android/gms/maps/GoogleMap;->setOnInfoWindowClickListener(Lcom/google/android/gms/maps/GoogleMap$OnInfoWindowClickListener;)V
 
-    .line 311
+    .line 312
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v1, p0}, Lcom/google/android/gms/maps/GoogleMap;->setOnMarkerDragListener(Lcom/google/android/gms/maps/GoogleMap$OnMarkerDragListener;)V
 
-    .line 318
+    .line 319
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v1}, Lcom/google/android/gms/maps/GoogleMap;->getUiSettings()Lcom/google/android/gms/maps/UiSettings;
@@ -1539,53 +1540,53 @@
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
-    .line 319
+    .line 320
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->compassEnabled:Z
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/UiSettings;->setCompassEnabled(Z)V
 
-    .line 320
+    .line 321
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->rotateEnabled:Z
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/UiSettings;->setRotateGesturesEnabled(Z)V
 
-    .line 321
+    .line 322
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->scrollEnabled:Z
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/UiSettings;->setScrollGesturesEnabled(Z)V
 
-    .line 322
+    .line 323
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->zoomControlEnabled:Z
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/UiSettings;->setZoomControlsEnabled(Z)V
 
-    .line 323
+    .line 324
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->zoomGesturesEnabled:Z
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/maps/UiSettings;->setZoomGesturesEnabled(Z)V
 
-    .line 326
+    .line 327
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isMapReady:Z
 
-    .line 327
+    .line 328
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->MapIsReady()V
 
-    .line 328
+    .line 329
     return-void
 
-    .line 305
+    .line 306
     :cond_5
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialTheme:Ljava/lang/String;
 
@@ -1593,7 +1594,7 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 306
+    .line 307
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialTheme:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Lcom/google/appinventor/components/runtime/GoogleMap;->Theme(Ljava/lang/String;)V
@@ -1605,26 +1606,26 @@
     .locals 2
 
     .prologue
-    .line 259
+    .line 260
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->myLocationEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 260
+    .line 261
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpLocationClientIfNeeded()V
 
-    .line 261
+    .line 262
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->connect()V
 
-    .line 265
+    .line 266
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez v0, :cond_1
 
-    .line 267
+    .line 268
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMapFragment:Lcom/google/android/gms/maps/SupportMapFragment;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$1;
@@ -1633,7 +1634,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/SupportMapFragment;->getMapAsync(Lcom/google/android/gms/maps/OnMapReadyCallback;)V
 
-    .line 282
+    .line 283
     :cond_1
     return-void
 .end method
@@ -1644,7 +1645,7 @@
     .param p1, "radius"    # D
 
     .prologue
-    .line 1703
+    .line 1704
     const-wide v2, 0x41584db040000000L    # 6371009.0
 
     div-double v2, p1, v2
@@ -1655,7 +1656,7 @@
 
     iget-wide v4, p0, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
-    .line 1704
+    .line 1705
     invoke-static {v4, v5}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v4
@@ -1666,7 +1667,7 @@
 
     div-double v0, v2, v4
 
-    .line 1705
+    .line 1706
     .local v0, "radiusAngle":D
     new-instance v2, Lcom/google/android/gms/maps/model/LatLng;
 
@@ -1687,12 +1688,12 @@
     .param p1, "radius"    # Lcom/google/android/gms/maps/model/LatLng;
 
     .prologue
-    .line 1709
+    .line 1710
     const/4 v0, 0x1
 
     new-array v8, v0, [F
 
-    .line 1710
+    .line 1711
     .local v8, "result":[F
     iget-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
@@ -1704,7 +1705,7 @@
 
     invoke-static/range {v0 .. v8}, Landroid/location/Location;->distanceBetween(DDDD[F)V
 
-    .line 1712
+    .line 1713
     const/4 v0, 0x0
 
     aget v0, v8, v0
@@ -1731,7 +1732,7 @@
     .end annotation
 
     .prologue
-    .line 450
+    .line 451
     invoke-static {}, Lcom/google/appinventor/components/runtime/GoogleMap;->generateCircleId()I
 
     move-result v1
@@ -1755,7 +1756,7 @@
 
     move/from16 v12, p11
 
-    .line 451
+    .line 452
     invoke-virtual/range {v0 .. v12}, Lcom/google/appinventor/components/runtime/GoogleMap;->AddCircle2(IDDDIFFIZ)I
 
     move-result v0
@@ -1776,7 +1777,7 @@
     .param p12, "draggable"    # Z
 
     .prologue
-    .line 455
+    .line 456
     const/4 v2, 0x3
 
     new-array v2, v2, [F
@@ -1820,7 +1821,7 @@
 
     move/from16 v13, p12
 
-    .line 456
+    .line 457
     invoke-virtual/range {v2 .. v13}, Lcom/google/appinventor/components/runtime/GoogleMap;->AddCircle3(IDDDIFIZ)I
 
     move-result v2
@@ -1840,10 +1841,10 @@
     .param p11, "draggable"    # Z
 
     .prologue
-    .line 460
+    .line 461
     if-eqz p11, :cond_0
 
-    .line 462
+    .line 463
     new-instance v3, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
     new-instance v5, Lcom/google/android/gms/maps/model/LatLng;
@@ -1864,18 +1865,18 @@
 
     invoke-direct/range {v3 .. v10}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;-><init>(Lcom/google/appinventor/components/runtime/GoogleMap;Lcom/google/android/gms/maps/model/LatLng;DFII)V
 
-    .line 463
+    .line 464
     .local v3, "circle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->setRadiusMarker(Lcom/google/android/gms/maps/model/Marker;)V
 
-    .line 464
+    .line 465
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mCircles:Ljava/util/List;
 
     invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 465
+    .line 466
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1884,12 +1885,12 @@
 
     invoke-virtual {v4, v3, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 476
+    .line 477
     .end local v3    # "circle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     :goto_0
     return p1
 
-    .line 468
+    .line 469
     :cond_0
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
@@ -1903,45 +1904,45 @@
 
     invoke-direct {v6, p2, p3, v0, v1}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    .line 469
+    .line 470
     invoke-virtual {v5, v6}, Lcom/google/android/gms/maps/model/CircleOptions;->center(Lcom/google/android/gms/maps/model/LatLng;)Lcom/google/android/gms/maps/model/CircleOptions;
 
     move-result-object v5
 
-    .line 470
+    .line 471
     move-wide/from16 v0, p6
 
     invoke-virtual {v5, v0, v1}, Lcom/google/android/gms/maps/model/CircleOptions;->radius(D)Lcom/google/android/gms/maps/model/CircleOptions;
 
     move-result-object v5
 
-    .line 471
+    .line 472
     move/from16 v0, p9
 
     invoke-virtual {v5, v0}, Lcom/google/android/gms/maps/model/CircleOptions;->strokeWidth(F)Lcom/google/android/gms/maps/model/CircleOptions;
 
     move-result-object v5
 
-    .line 472
+    .line 473
     move/from16 v0, p10
 
     invoke-virtual {v5, v0}, Lcom/google/android/gms/maps/model/CircleOptions;->strokeColor(I)Lcom/google/android/gms/maps/model/CircleOptions;
 
     move-result-object v5
 
-    .line 473
+    .line 474
     move/from16 v0, p8
 
     invoke-virtual {v5, v0}, Lcom/google/android/gms/maps/model/CircleOptions;->fillColor(I)Lcom/google/android/gms/maps/model/CircleOptions;
 
     move-result-object v5
 
-    .line 468
+    .line 469
     invoke-virtual {v4, v5}, Lcom/google/android/gms/maps/GoogleMap;->addCircle(Lcom/google/android/gms/maps/model/CircleOptions;)Lcom/google/android/gms/maps/model/Circle;
 
     move-result-object v2
 
-    .line 474
+    .line 475
     .local v2, "plainCircle":Lcom/google/android/gms/maps/model/Circle;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
@@ -1967,7 +1968,7 @@
     .end annotation
 
     .prologue
-    .line 1131
+    .line 1132
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v1
@@ -2012,18 +2013,18 @@
     .end annotation
 
     .prologue
-    .line 1118
+    .line 1119
     const/4 v1, 0x3
 
     new-array v10, v1, [F
 
-    .line 1120
+    .line 1121
     .local v10, "hsv":[F
     move/from16 v0, p5
 
     invoke-static {v0, v10}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1122
+    .line 1123
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v2
@@ -2062,18 +2063,18 @@
     .param p1, "markers"    # Lcom/google/appinventor/components/runtime/util/YailList;
 
     .prologue
-    .line 960
+    .line 961
     const/4 v2, 0x3
 
     new-array v14, v2, [F
 
-    .line 962
+    .line 963
     .local v14, "hsv":[F
     new-instance v18, Ljava/util/ArrayList;
 
     invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
 
-    .line 963
+    .line 964
     .local v18, "markerIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-virtual/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/YailList;->toArray()[Ljava/lang/Object;
 
@@ -2098,11 +2099,11 @@
 
     aget-object v17, v20, v19
 
-    .line 964
+    .line 965
     .local v17, "marker":Ljava/lang/Object;
     const/4 v11, 0x1
 
-    .line 965
+    .line 966
     .local v11, "addOne":Z
     move-object/from16 v0, v17
 
@@ -2112,7 +2113,7 @@
 
     move-object/from16 v2, v17
 
-    .line 966
+    .line 967
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -2123,13 +2124,13 @@
 
     if-ge v2, v6, :cond_0
 
-    .line 967
+    .line 968
     const/4 v11, 0x0
 
     :cond_0
     move-object/from16 v2, v17
 
-    .line 970
+    .line 971
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x0
@@ -2141,7 +2142,7 @@
     .local v15, "latObj":Ljava/lang/Object;
     move-object/from16 v2, v17
 
-    .line 971
+    .line 972
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x1
@@ -2150,7 +2151,7 @@
 
     move-result-object v16
 
-    .line 972
+    .line 973
     .local v16, "lngObj":Ljava/lang/Object;
     new-instance v3, Ljava/lang/Double;
 
@@ -2158,7 +2159,7 @@
 
     invoke-direct {v3, v6, v7}, Ljava/lang/Double;-><init>(D)V
 
-    .line 973
+    .line 974
     .local v3, "lat":Ljava/lang/Double;
     new-instance v4, Ljava/lang/Double;
 
@@ -2166,7 +2167,7 @@
 
     invoke-direct {v4, v6, v7}, Ljava/lang/Double;-><init>(D)V
 
-    .line 975
+    .line 976
     .local v4, "lng":Ljava/lang/Double;
     instance-of v2, v15, Lgnu/math/DFloNum;
 
@@ -2178,11 +2179,11 @@
 
     if-nez v2, :cond_9
 
-    .line 976
+    .line 977
     :cond_1
     const/4 v11, 0x0
 
-    .line 982
+    .line 983
     .end local v15    # "latObj":Ljava/lang/Object;
     .end local v16    # "lngObj":Ljava/lang/Object;
     :goto_1
@@ -2226,25 +2227,25 @@
 
     if-lez v2, :cond_3
 
-    .line 983
+    .line 984
     :cond_2
     const/4 v11, 0x0
 
-    .line 987
+    .line 988
     :cond_3
     move-object/from16 v0, p0
 
     iget v12, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMarkerColor:I
 
-    .line 988
+    .line 989
     .local v12, "color":I
     const-string v8, ""
 
-    .line 989
+    .line 990
     .local v8, "title":Ljava/lang/String;
     const-string v9, ""
 
-    .line 990
+    .line 991
     .local v9, "snippet":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -2253,7 +2254,7 @@
     .local v10, "draggable":Z
     move-object/from16 v2, v17
 
-    .line 992
+    .line 993
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -2266,7 +2267,7 @@
 
     move-object/from16 v2, v17
 
-    .line 994
+    .line 995
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x2
@@ -2275,7 +2276,7 @@
 
     move-result-object v13
 
-    .line 995
+    .line 996
     .local v13, "colorObj":Ljava/lang/Object;
     instance-of v2, v13, Lgnu/math/IntNum;
 
@@ -2283,7 +2284,7 @@
 
     move-object/from16 v2, v17
 
-    .line 996
+    .line 997
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x2
@@ -2303,7 +2304,7 @@
     :goto_2
     move-object/from16 v2, v17
 
-    .line 1002
+    .line 1003
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -2316,7 +2317,7 @@
 
     move-object/from16 v2, v17
 
-    .line 1003
+    .line 1004
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x3
@@ -2332,7 +2333,7 @@
     :cond_5
     move-object/from16 v2, v17
 
-    .line 1006
+    .line 1007
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -2345,7 +2346,7 @@
 
     move-object/from16 v2, v17
 
-    .line 1007
+    .line 1008
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x4
@@ -2361,7 +2362,7 @@
     :cond_6
     move-object/from16 v2, v17
 
-    .line 1010
+    .line 1011
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -2374,7 +2375,7 @@
 
     move-object/from16 v2, v17
 
-    .line 1011
+    .line 1012
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v6, 0x5
@@ -2387,7 +2388,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 1012
+    .line 1013
     check-cast v17, Lcom/google/appinventor/components/runtime/util/YailList;
 
     .end local v17    # "marker":Ljava/lang/Object;
@@ -2405,20 +2406,20 @@
 
     move-result v10
 
-    .line 1019
+    .line 1020
     :cond_7
     :goto_3
     invoke-static {v12, v14}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1020
+    .line 1021
     if-eqz v11, :cond_8
 
-    .line 1021
+    .line 1022
     invoke-static {}, Lcom/google/appinventor/components/runtime/GoogleMap;->generateMarkerId()I
 
     move-result v5
 
-    .line 1022
+    .line 1023
     .local v5, "uniqueId":I
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2428,7 +2429,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1023
+    .line 1024
     const/4 v2, 0x0
 
     aget v6, v14, v2
@@ -2439,7 +2440,7 @@
 
     invoke-direct/range {v2 .. v10}, Lcom/google/appinventor/components/runtime/GoogleMap;->addMarkerToMap(Ljava/lang/Double;Ljava/lang/Double;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)I
 
-    .line 963
+    .line 964
     .end local v3    # "lat":Ljava/lang/Double;
     .end local v4    # "lng":Ljava/lang/Double;
     .end local v5    # "uniqueId":I
@@ -2455,7 +2456,7 @@
 
     goto/16 :goto_0
 
-    .line 978
+    .line 979
     .restart local v3    # "lat":Ljava/lang/Double;
     .restart local v4    # "lng":Ljava/lang/Double;
     .restart local v15    # "latObj":Ljava/lang/Object;
@@ -2473,7 +2474,7 @@
 
     move-result-object v3
 
-    .line 979
+    .line 980
     check-cast v16, Lgnu/math/DFloNum;
 
     .end local v16    # "lngObj":Ljava/lang/Object;
@@ -2487,7 +2488,7 @@
 
     goto/16 :goto_1
 
-    .line 998
+    .line 999
     .restart local v8    # "title":Ljava/lang/String;
     .restart local v9    # "snippet":Ljava/lang/String;
     .restart local v10    # "draggable":Z
@@ -2498,14 +2499,14 @@
 
     goto/16 :goto_2
 
-    .line 1015
+    .line 1016
     .end local v13    # "colorObj":Ljava/lang/Object;
     :cond_b
     const/4 v11, 0x0
 
     goto :goto_3
 
-    .line 1027
+    .line 1028
     .end local v3    # "lat":Ljava/lang/Double;
     .end local v4    # "lng":Ljava/lang/Double;
     .end local v8    # "title":Ljava/lang/String;
@@ -2543,7 +2544,7 @@
 
     goto :goto_4
 
-    .line 1032
+    .line 1033
     .end local v11    # "addOne":Z
     .end local v17    # "marker":Ljava/lang/Object;
     :cond_d
@@ -2562,24 +2563,24 @@
     .end annotation
 
     .prologue
-    .line 1142
+    .line 1143
     new-instance v23, Ljava/util/ArrayList;
 
     invoke-direct/range {v23 .. v23}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1143
+    .line 1144
     .local v23, "markerIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     new-instance v26, Lcom/google/gson/JsonParser;
 
     invoke-direct/range {v26 .. v26}, Lcom/google/gson/JsonParser;-><init>()V
 
-    .line 1144
+    .line 1145
     .local v26, "parser":Lcom/google/gson/JsonParser;
     const/4 v2, 0x3
 
     new-array v14, v2, [F
 
-    .line 1148
+    .line 1149
     .local v14, "hsv":[F
     :try_start_0
     move-object/from16 v0, v26
@@ -2590,7 +2591,7 @@
 
     move-result-object v25
 
-    .line 1149
+    .line 1150
     .local v25, "markerList":Lcom/google/gson/JsonElement;
     invoke-virtual/range {v25 .. v25}, Lcom/google/gson/JsonElement;->isJsonArray()Z
 
@@ -2598,12 +2599,12 @@
 
     if-eqz v2, :cond_e
 
-    .line 1150
+    .line 1151
     invoke-virtual/range {v25 .. v25}, Lcom/google/gson/JsonElement;->getAsJsonArray()Lcom/google/gson/JsonArray;
 
     move-result-object v22
 
-    .line 1151
+    .line 1152
     .local v22, "markerArray":Lcom/google/gson/JsonArray;
     invoke-virtual/range {v22 .. v22}, Lcom/google/gson/JsonArray;->iterator()Ljava/util/Iterator;
 
@@ -2623,11 +2624,11 @@
 
     check-cast v17, Lcom/google/gson/JsonElement;
 
-    .line 1152
+    .line 1153
     .local v17, "marker":Lcom/google/gson/JsonElement;
     const/4 v11, 0x1
 
-    .line 1154
+    .line 1155
     .local v11, "addOne":Z
     invoke-virtual/range {v17 .. v17}, Lcom/google/gson/JsonElement;->isJsonObject()Z
 
@@ -2635,12 +2636,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 1155
+    .line 1156
     invoke-virtual/range {v17 .. v17}, Lcom/google/gson/JsonElement;->getAsJsonObject()Lcom/google/gson/JsonObject;
 
     move-result-object v24
 
-    .line 1156
+    .line 1157
     .local v24, "markerJson":Lcom/google/gson/JsonObject;
     const-string v2, "lat"
 
@@ -2662,13 +2663,13 @@
 
     if-nez v2, :cond_2
 
-    .line 1157
+    .line 1158
     :cond_1
     const/4 v11, 0x0
 
     goto :goto_0
 
-    .line 1160
+    .line 1161
     :cond_2
     const-string v2, "lat"
 
@@ -2680,7 +2681,7 @@
 
     check-cast v15, Lcom/google/gson/JsonPrimitive;
 
-    .line 1161
+    .line 1162
     .local v15, "jpLat":Lcom/google/gson/JsonPrimitive;
     const-string v2, "lng"
 
@@ -2694,15 +2695,15 @@
     :try_end_0
     .catch Lcom/google/gson/JsonSyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1163
+    .line 1164
     .local v16, "jpLng":Lcom/google/gson/JsonPrimitive;
     const-wide/16 v18, 0x0
 
-    .line 1164
+    .line 1165
     .local v18, "latitude":D
     const-wide/16 v20, 0x0
 
-    .line 1167
+    .line 1168
     .local v20, "longitude":D
     :try_start_1
     invoke-virtual {v15}, Lcom/google/gson/JsonPrimitive;->isString()Z
@@ -2717,7 +2718,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 1168
+    .line 1169
     new-instance v2, Ljava/lang/Double;
 
     invoke-virtual {v15}, Lcom/google/gson/JsonPrimitive;->getAsString()Ljava/lang/String;
@@ -2730,7 +2731,7 @@
 
     move-result-wide v18
 
-    .line 1169
+    .line 1170
     new-instance v2, Ljava/lang/Double;
 
     invoke-virtual/range {v16 .. v16}, Lcom/google/gson/JsonPrimitive;->getAsString()Ljava/lang/String;
@@ -2746,7 +2747,7 @@
 
     move-result-wide v20
 
-    .line 1179
+    .line 1180
     :goto_1
     const-wide v2, -0x3fa9800000000000L    # -90.0
 
@@ -2772,11 +2773,11 @@
 
     if-lez v2, :cond_4
 
-    .line 1180
+    .line 1181
     :cond_3
     const/4 v11, 0x0
 
-    .line 1183
+    .line 1184
     :cond_4
     :try_start_2
     move-object/from16 v0, p0
@@ -2785,12 +2786,12 @@
 
     invoke-static {v2, v14}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1184
+    .line 1185
     const/4 v2, 0x0
 
     aget v12, v14, v2
 
-    .line 1185
+    .line 1186
     .local v12, "defaultColor":F
     const-string v2, "color"
 
@@ -2804,7 +2805,7 @@
 
     move v6, v12
 
-    .line 1187
+    .line 1188
     .local v6, "color":F
     :goto_2
     const/4 v2, 0x0
@@ -2819,11 +2820,11 @@
 
     if-lez v2, :cond_6
 
-    .line 1188
+    .line 1189
     :cond_5
     const/4 v11, 0x0
 
-    .line 1191
+    .line 1192
     :cond_6
     const-string v2, "icon"
 
@@ -2837,7 +2838,7 @@
 
     const-string v7, ""
 
-    .line 1192
+    .line 1193
     .local v7, "icon":Ljava/lang/String;
     :goto_3
     const-string v2, "title"
@@ -2852,7 +2853,7 @@
 
     const-string v8, ""
 
-    .line 1193
+    .line 1194
     .local v8, "title":Ljava/lang/String;
     :goto_4
     const-string v2, "snippet"
@@ -2867,7 +2868,7 @@
 
     const-string v9, ""
 
-    .line 1194
+    .line 1195
     .local v9, "snippet":Ljava/lang/String;
     :goto_5
     const-string v2, "draggable"
@@ -2884,17 +2885,17 @@
 
     iget-boolean v10, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMarkerDraggable:Z
 
-    .line 1196
+    .line 1197
     .local v10, "draggable":Z
     :goto_6
     if-eqz v11, :cond_0
 
-    .line 1197
+    .line 1198
     invoke-static {}, Lcom/google/appinventor/components/runtime/GoogleMap;->generateMarkerId()I
 
     move-result v5
 
-    .line 1198
+    .line 1199
     .local v5, "uniqueId":I
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2904,7 +2905,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1199
+    .line 1200
     invoke-static/range {v18 .. v19}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v3
@@ -2921,7 +2922,7 @@
 
     goto/16 :goto_0
 
-    .line 1210
+    .line 1211
     .end local v5    # "uniqueId":I
     .end local v6    # "color":F
     .end local v7    # "icon":Ljava/lang/String;
@@ -2941,7 +2942,7 @@
     :catch_0
     move-exception v13
 
-    .line 1211
+    .line 1212
     .local v13, "e":Lcom/google/gson/JsonSyntaxException;
     move-object/from16 v0, p0
 
@@ -2969,7 +2970,7 @@
 
     invoke-virtual {v2, v0, v3, v4, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1213
+    .line 1214
     invoke-static/range {v23 .. v23}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v2
@@ -2978,7 +2979,7 @@
 
     iput-object v2, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->markersList:Lcom/google/appinventor/components/runtime/util/YailList;
 
-    .line 1215
+    .line 1216
     .end local v13    # "e":Lcom/google/gson/JsonSyntaxException;
     :cond_7
     :goto_7
@@ -2990,10 +2991,10 @@
 
     iput-object v2, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->markersList:Lcom/google/appinventor/components/runtime/util/YailList;
 
-    .line 1216
+    .line 1217
     return-void
 
-    .line 1172
+    .line 1173
     .restart local v11    # "addOne":Z
     .restart local v15    # "jpLat":Lcom/google/gson/JsonPrimitive;
     .restart local v16    # "jpLng":Lcom/google/gson/JsonPrimitive;
@@ -3017,7 +3018,7 @@
 
     move-result-wide v18
 
-    .line 1173
+    .line 1174
     const-string v2, "lng"
 
     move-object/from16 v0, v24
@@ -3035,17 +3036,17 @@
 
     goto/16 :goto_1
 
-    .line 1175
+    .line 1176
     :catch_1
     move-exception v13
 
-    .line 1176
+    .line 1177
     .local v13, "e":Ljava/lang/NumberFormatException;
     const/4 v11, 0x0
 
     goto/16 :goto_1
 
-    .line 1185
+    .line 1186
     .end local v13    # "e":Ljava/lang/NumberFormatException;
     .restart local v12    # "defaultColor":F
     :cond_9
@@ -3066,7 +3067,7 @@
 
     goto/16 :goto_2
 
-    .line 1191
+    .line 1192
     .restart local v6    # "color":F
     :cond_a
     const-string v2, "icon"
@@ -3083,7 +3084,7 @@
 
     goto/16 :goto_3
 
-    .line 1192
+    .line 1193
     .restart local v7    # "icon":Ljava/lang/String;
     :cond_b
     const-string v2, "title"
@@ -3100,7 +3101,7 @@
 
     goto/16 :goto_4
 
-    .line 1193
+    .line 1194
     .restart local v8    # "title":Ljava/lang/String;
     :cond_c
     const-string v2, "snippet"
@@ -3117,7 +3118,7 @@
 
     goto/16 :goto_5
 
-    .line 1194
+    .line 1195
     .restart local v9    # "snippet":Ljava/lang/String;
     :cond_d
     const-string v2, "draggable"
@@ -3134,7 +3135,7 @@
 
     goto/16 :goto_6
 
-    .line 1206
+    .line 1207
     .end local v6    # "color":F
     .end local v7    # "icon":Ljava/lang/String;
     .end local v8    # "title":Ljava/lang/String;
@@ -3177,7 +3178,7 @@
 
     invoke-virtual {v2, v0, v3, v4, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1208
+    .line 1209
     invoke-static/range {v23 .. v23}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v2
@@ -3196,12 +3197,12 @@
     .param p1, "markers"    # Lcom/google/appinventor/components/runtime/util/YailList;
 
     .prologue
-    .line 1226
+    .line 1227
     new-instance v16, Ljava/util/ArrayList;
 
     invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1228
+    .line 1229
     .local v16, "markerIds":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-virtual/range {p1 .. p1}, Lcom/google/appinventor/components/runtime/util/YailList;->toArray()[Ljava/lang/Object;
 
@@ -3226,11 +3227,11 @@
 
     aget-object v15, v19, v18
 
-    .line 1229
+    .line 1230
     .local v15, "marker":Ljava/lang/Object;
     const/4 v11, 0x1
 
-    .line 1230
+    .line 1231
     .local v11, "addOne":Z
     instance-of v2, v15, Lcom/google/appinventor/components/runtime/util/YailList;
 
@@ -3238,7 +3239,7 @@
 
     move-object v2, v15
 
-    .line 1231
+    .line 1232
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -3249,7 +3250,7 @@
 
     if-ge v2, v5, :cond_0
 
-    .line 1233
+    .line 1234
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
@@ -3278,13 +3279,13 @@
 
     invoke-virtual {v2, v0, v5, v7, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1235
+    .line 1236
     const/4 v11, 0x0
 
     :cond_0
     move-object v2, v15
 
-    .line 1239
+    .line 1240
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v5, 0x0
@@ -3296,7 +3297,7 @@
     .local v13, "latObj":Ljava/lang/Object;
     move-object v2, v15
 
-    .line 1240
+    .line 1241
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v5, 0x1
@@ -3305,7 +3306,7 @@
 
     move-result-object v14
 
-    .line 1241
+    .line 1242
     .local v14, "lngObj":Ljava/lang/Object;
     new-instance v3, Ljava/lang/Double;
 
@@ -3315,7 +3316,7 @@
 
     invoke-direct {v3, v0, v1}, Ljava/lang/Double;-><init>(D)V
 
-    .line 1242
+    .line 1243
     .local v3, "lat":Ljava/lang/Double;
     new-instance v4, Ljava/lang/Double;
 
@@ -3325,7 +3326,7 @@
 
     invoke-direct {v4, v0, v1}, Ljava/lang/Double;-><init>(D)V
 
-    .line 1244
+    .line 1245
     .local v4, "lng":Ljava/lang/Double;
     instance-of v2, v13, Lgnu/math/DFloNum;
 
@@ -3335,7 +3336,7 @@
 
     if-nez v2, :cond_9
 
-    .line 1245
+    .line 1246
     :cond_1
     move-object/from16 v0, p0
 
@@ -3365,10 +3366,10 @@
 
     invoke-virtual {v2, v0, v5, v7, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1247
+    .line 1248
     const/4 v11, 0x0
 
-    .line 1253
+    .line 1254
     .end local v13    # "latObj":Ljava/lang/Object;
     .end local v14    # "lngObj":Ljava/lang/Object;
     :goto_1
@@ -3412,11 +3413,11 @@
 
     if-lez v2, :cond_3
 
-    .line 1254
+    .line 1255
     :cond_2
     const/4 v11, 0x0
 
-    .line 1255
+    .line 1256
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
@@ -3445,7 +3446,7 @@
 
     invoke-virtual {v2, v0, v5, v7, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1259
+    .line 1260
     :cond_3
     invoke-static {}, Lcom/google/appinventor/components/runtime/GoogleMap;->generateMarkerId()I
 
@@ -3455,19 +3456,19 @@
 
     move-result-object v17
 
-    .line 1260
+    .line 1261
     .local v17, "uniqueId":Ljava/lang/Integer;
     const/high16 v6, 0x43700000    # 240.0f
 
-    .line 1261
+    .line 1262
     .local v6, "color":F
     const-string v8, ""
 
-    .line 1262
+    .line 1263
     .local v8, "title":Ljava/lang/String;
     const-string v9, ""
 
-    .line 1263
+    .line 1264
     .local v9, "snippet":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3476,7 +3477,7 @@
     .local v10, "draggable":Z
     move-object v2, v15
 
-    .line 1265
+    .line 1266
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -3489,7 +3490,7 @@
 
     move-object v2, v15
 
-    .line 1267
+    .line 1268
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v5, 0x2
@@ -3498,13 +3499,13 @@
 
     move-result-object v12
 
-    .line 1269
+    .line 1270
     .local v12, "colorObj":Ljava/lang/Object;
     instance-of v2, v12, Lgnu/math/IntNum;
 
     if-eqz v2, :cond_a
 
-    .line 1270
+    .line 1271
     new-instance v5, Ljava/lang/Float;
 
     move-object v2, v15
@@ -3536,7 +3537,7 @@
     :goto_2
     move-object v2, v15
 
-    .line 1278
+    .line 1279
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -3549,7 +3550,7 @@
 
     move-object v2, v15
 
-    .line 1279
+    .line 1280
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v5, 0x3
@@ -3565,7 +3566,7 @@
     :cond_5
     move-object v2, v15
 
-    .line 1282
+    .line 1283
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -3578,7 +3579,7 @@
 
     move-object v2, v15
 
-    .line 1283
+    .line 1284
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v5, 0x4
@@ -3594,7 +3595,7 @@
     :cond_6
     move-object v2, v15
 
-    .line 1286
+    .line 1287
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
@@ -3607,7 +3608,7 @@
 
     move-object v2, v15
 
-    .line 1287
+    .line 1288
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
     const/4 v5, 0x5
@@ -3620,7 +3621,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 1288
+    .line 1289
     check-cast v15, Lcom/google/appinventor/components/runtime/util/YailList;
 
     .end local v15    # "marker":Ljava/lang/Object;
@@ -3636,15 +3637,15 @@
 
     move-result v10
 
-    .line 1297
+    .line 1298
     :cond_7
     :goto_3
     if-eqz v11, :cond_8
 
-    .line 1298
+    .line 1299
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1299
+    .line 1300
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v5
@@ -3655,7 +3656,7 @@
 
     invoke-direct/range {v2 .. v10}, Lcom/google/appinventor/components/runtime/GoogleMap;->addMarkerToMap(Ljava/lang/Double;Ljava/lang/Double;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)I
 
-    .line 1228
+    .line 1229
     :cond_8
     add-int/lit8 v2, v18, 0x1
 
@@ -3663,7 +3664,7 @@
 
     goto/16 :goto_0
 
-    .line 1249
+    .line 1250
     .end local v6    # "color":F
     .end local v8    # "title":Ljava/lang/String;
     .end local v9    # "snippet":Ljava/lang/String;
@@ -3684,7 +3685,7 @@
 
     move-result-object v3
 
-    .line 1250
+    .line 1251
     check-cast v14, Lgnu/math/DFloNum;
 
     .end local v14    # "lngObj":Ljava/lang/Object;
@@ -3698,7 +3699,7 @@
 
     goto/16 :goto_1
 
-    .line 1272
+    .line 1273
     .restart local v6    # "color":F
     .restart local v8    # "title":Ljava/lang/String;
     .restart local v9    # "snippet":Ljava/lang/String;
@@ -3708,7 +3709,7 @@
     :cond_a
     const/4 v11, 0x0
 
-    .line 1273
+    .line 1274
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
@@ -3731,7 +3732,7 @@
 
     invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1274
+    .line 1275
     invoke-virtual {v12}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v24
@@ -3752,7 +3753,7 @@
 
     aput-object v23, v21, v22
 
-    .line 1273
+    .line 1274
     move-object/from16 v0, p0
 
     move-object/from16 v1, v21
@@ -3761,7 +3762,7 @@
 
     goto/16 :goto_2
 
-    .line 1291
+    .line 1292
     .end local v12    # "colorObj":Ljava/lang/Object;
     :cond_b
     move-object/from16 v0, p0
@@ -3792,12 +3793,12 @@
 
     invoke-virtual {v2, v0, v5, v7, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1293
+    .line 1294
     const/4 v11, 0x0
 
     goto :goto_3
 
-    .line 1304
+    .line 1305
     .end local v3    # "lat":Ljava/lang/Double;
     .end local v4    # "lng":Ljava/lang/Double;
     .end local v6    # "color":F
@@ -3834,12 +3835,12 @@
 
     invoke-virtual {v2, v0, v5, v7, v1}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1306
+    .line 1307
     invoke-static/range {v16 .. v16}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v2
 
-    .line 1309
+    .line 1310
     .end local v11    # "addOne":Z
     .end local v15    # "marker":Ljava/lang/Object;
     :goto_4
@@ -3863,14 +3864,14 @@
     .end annotation
 
     .prologue
-    .line 655
+    .line 656
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v3, Lcom/google/android/gms/maps/model/PolylineOptions;
 
     invoke-direct {v3}, Lcom/google/android/gms/maps/model/PolylineOptions;-><init>()V
 
-    .line 656
+    .line 657
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/GoogleMap;->convertPointsToLatLngs(Lcom/google/appinventor/components/runtime/util/YailList;)Ljava/util/List;
 
     move-result-object v4
@@ -3879,28 +3880,28 @@
 
     move-result-object v3
 
-    .line 657
+    .line 658
     invoke-virtual {v3, p2}, Lcom/google/android/gms/maps/model/PolylineOptions;->width(F)Lcom/google/android/gms/maps/model/PolylineOptions;
 
     move-result-object v3
 
-    .line 658
+    .line 659
     invoke-virtual {v3, p3}, Lcom/google/android/gms/maps/model/PolylineOptions;->color(I)Lcom/google/android/gms/maps/model/PolylineOptions;
 
     move-result-object v3
 
-    .line 655
+    .line 656
     invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/GoogleMap;->addPolyline(Lcom/google/android/gms/maps/model/PolylineOptions;)Lcom/google/android/gms/maps/model/Polyline;
 
     move-result-object v1
 
-    .line 660
+    .line 661
     .local v1, "polyline":Lcom/google/android/gms/maps/model/Polyline;
     invoke-static {}, Lcom/google/appinventor/components/runtime/GoogleMap;->generatePolylineId()I
 
     move-result v0
 
-    .line 662
+    .line 663
     .local v0, "id":I
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->polylinesByIds:Ljava/util/HashMap;
 
@@ -3910,7 +3911,7 @@
 
     invoke-virtual {v2, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 664
+    .line 665
     return v0
 .end method
 
@@ -3922,24 +3923,24 @@
     .param p7, "swLng"    # D
 
     .prologue
-    .line 1595
+    .line 1596
     new-instance v2, Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-direct {v2, p1, p2, p3, p4}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    .line 1596
+    .line 1597
     .local v2, "northeast":Lcom/google/android/gms/maps/model/LatLng;
     new-instance v3, Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-direct {v3, p5, p6, p7, p8}, Lcom/google/android/gms/maps/model/LatLng;-><init>(DD)V
 
-    .line 1597
+    .line 1598
     .local v3, "southwest":Lcom/google/android/gms/maps/model/LatLng;
     new-instance v0, Lcom/google/android/gms/maps/model/LatLngBounds;
 
     invoke-direct {v0, v2, v3}, Lcom/google/android/gms/maps/model/LatLngBounds;-><init>(Lcom/google/android/gms/maps/model/LatLng;Lcom/google/android/gms/maps/model/LatLng;)V
 
-    .line 1599
+    .line 1600
     .local v0, "bounds":Lcom/google/android/gms/maps/model/LatLngBounds;
     const/4 v4, 0x0
 
@@ -3947,13 +3948,13 @@
 
     move-result-object v1
 
-    .line 1600
+    .line 1601
     .local v1, "cameraUpdate":Lcom/google/android/gms/maps/CameraUpdate;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v4, v1}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 1601
+    .line 1602
     return-void
 .end method
 
@@ -3964,12 +3965,12 @@
     .end annotation
 
     .prologue
-    .line 1807
+    .line 1808
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1808
+    .line 1809
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/GoogleMap;->getCameraPosition()Lcom/google/android/gms/maps/model/CameraPosition;
@@ -3978,7 +3979,7 @@
 
     iget v0, v0, Lcom/google/android/gms/maps/model/CameraPosition;->bearing:F
 
-    .line 1810
+    .line 1811
     :goto_0
     return v0
 
@@ -4001,12 +4002,12 @@
     .end annotation
 
     .prologue
-    .line 1819
+    .line 1820
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1820
+    .line 1821
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v1, Lcom/google/android/gms/maps/model/CameraPosition$Builder;
@@ -4033,11 +4034,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 1823
+    .line 1824
     :goto_0
     return-void
 
-    .line 1822
+    .line 1823
     :cond_0
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -4057,7 +4058,7 @@
     .param p7, "zoom"    # F
 
     .prologue
-    .line 1543
+    .line 1544
     iget-object v9, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v0, Lcom/google/appinventor/components/runtime/GoogleMap$9;
@@ -4078,7 +4079,7 @@
 
     invoke-virtual {v9, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1548
+    .line 1549
     return-void
 .end method
 
@@ -4089,12 +4090,12 @@
     .end annotation
 
     .prologue
-    .line 1787
+    .line 1788
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1788
+    .line 1789
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/GoogleMap;->getCameraPosition()Lcom/google/android/gms/maps/model/CameraPosition;
@@ -4103,7 +4104,7 @@
 
     iget v0, v0, Lcom/google/android/gms/maps/model/CameraPosition;->tilt:F
 
-    .line 1790
+    .line 1791
     :goto_0
     return v0
 
@@ -4126,12 +4127,12 @@
     .end annotation
 
     .prologue
-    .line 1799
+    .line 1800
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1800
+    .line 1801
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v1, Lcom/google/android/gms/maps/model/CameraPosition$Builder;
@@ -4158,11 +4159,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 1803
+    .line 1804
     :goto_0
     return-void
 
-    .line 1802
+    .line 1803
     :cond_0
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -4180,12 +4181,12 @@
     .end annotation
 
     .prologue
-    .line 1767
+    .line 1768
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1768
+    .line 1769
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/GoogleMap;->getCameraPosition()Lcom/google/android/gms/maps/model/CameraPosition;
@@ -4194,7 +4195,7 @@
 
     iget v0, v0, Lcom/google/android/gms/maps/model/CameraPosition;->zoom:F
 
-    .line 1770
+    .line 1771
     :goto_0
     return v0
 
@@ -4217,12 +4218,12 @@
     .end annotation
 
     .prologue
-    .line 1779
+    .line 1780
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1780
+    .line 1781
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-static {p1}, Lcom/google/android/gms/maps/CameraUpdateFactory;->zoomTo(F)Lcom/google/android/gms/maps/CameraUpdate;
@@ -4231,11 +4232,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 1783
+    .line 1784
     :goto_0
     return-void
 
-    .line 1782
+    .line 1783
     :cond_0
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -4253,7 +4254,7 @@
     .end annotation
 
     .prologue
-    .line 339
+    .line 340
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/UiSettings;->isCompassEnabled()Z
@@ -4271,15 +4272,15 @@
     .end annotation
 
     .prologue
-    .line 333
+    .line 334
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->compassEnabled:Z
 
-    .line 334
+    .line 335
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setCompassEnabled(Z)V
 
-    .line 335
+    .line 336
     return-void
 .end method
 
@@ -4288,24 +4289,24 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 901
+    .line 902
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableCameraChangeListener:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 902
+    .line 903
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableCameraChangeListener:Z
 
-    .line 905
+    .line 906
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez v0, :cond_1
 
-    .line 906
+    .line 907
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
-    .line 908
+    .line 909
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
@@ -4315,10 +4316,10 @@
     :goto_0
     invoke-virtual {v0, p0}, Lcom/google/android/gms/maps/GoogleMap;->setOnCameraChangeListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraChangeListener;)V
 
-    .line 909
+    .line 910
     return-void
 
-    .line 908
+    .line 909
     .restart local p0    # "this":Lcom/google/appinventor/components/runtime/GoogleMap;
     :cond_2
     const/4 p0, 0x0
@@ -4334,24 +4335,24 @@
     .end annotation
 
     .prologue
-    .line 852
+    .line 853
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapClickListener:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 853
+    .line 854
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapClickListener:Z
 
-    .line 855
+    .line 856
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez v0, :cond_1
 
-    .line 856
+    .line 857
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
-    .line 858
+    .line 859
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
@@ -4361,10 +4362,10 @@
     :goto_0
     invoke-virtual {v0, p0}, Lcom/google/android/gms/maps/GoogleMap;->setOnMapClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMapClickListener;)V
 
-    .line 859
+    .line 860
     return-void
 
-    .line 858
+    .line 859
     .restart local p0    # "this":Lcom/google/appinventor/components/runtime/GoogleMap;
     :cond_2
     const/4 p0, 0x0
@@ -4380,24 +4381,24 @@
     .end annotation
 
     .prologue
-    .line 876
+    .line 877
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapLongClickListener:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 877
+    .line 878
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapLongClickListener:Z
 
-    .line 880
+    .line 881
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez v0, :cond_1
 
-    .line 881
+    .line 882
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
-    .line 883
+    .line 884
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
@@ -4407,10 +4408,10 @@
     :goto_0
     invoke-virtual {v0, p0}, Lcom/google/android/gms/maps/GoogleMap;->setOnMapLongClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMapLongClickListener;)V
 
-    .line 884
+    .line 885
     return-void
 
-    .line 883
+    .line 884
     .restart local p0    # "this":Lcom/google/appinventor/components/runtime/GoogleMap;
     :cond_2
     const/4 p0, 0x0
@@ -4426,24 +4427,24 @@
     .end annotation
 
     .prologue
-    .line 781
+    .line 782
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->myLocationEnabled:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 782
+    .line 783
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->myLocationEnabled:Z
 
-    .line 784
+    .line 785
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez v0, :cond_1
 
-    .line 785
+    .line 786
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpMapIfNeeded()V
 
-    .line 788
+    .line 789
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
@@ -4459,38 +4460,38 @@
 
     const-string v1, "android.permission.ACCESS_FINE_LOCATION"
 
-    .line 789
+    .line 790
     invoke-static {v0, v1}, Landroid/support/v4/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 799
+    .line 800
     :cond_2
     :goto_0
     return-void
 
-    .line 792
+    .line 793
     :cond_3
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/GoogleMap;->setMyLocationEnabled(Z)V
 
-    .line 793
+    .line 794
     if-eqz p1, :cond_4
 
-    .line 794
+    .line 795
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->setUpLocationClientIfNeeded()V
 
-    .line 795
+    .line 796
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->connect()V
 
     goto :goto_0
 
-    .line 797
+    .line 798
     :cond_4
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
@@ -4507,15 +4508,15 @@
     .end annotation
 
     .prologue
-    .line 345
+    .line 346
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->rotateEnabled:Z
 
-    .line 346
+    .line 347
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setRotateGesturesEnabled(Z)V
 
-    .line 347
+    .line 348
     return-void
 .end method
 
@@ -4527,15 +4528,15 @@
     .end annotation
 
     .prologue
-    .line 357
+    .line 358
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->scrollEnabled:Z
 
-    .line 358
+    .line 359
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setScrollGesturesEnabled(Z)V
 
-    .line 359
+    .line 360
     return-void
 .end method
 
@@ -4547,15 +4548,15 @@
     .end annotation
 
     .prologue
-    .line 369
+    .line 370
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->zoomControlEnabled:Z
 
-    .line 370
+    .line 371
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setZoomControlsEnabled(Z)V
 
-    .line 371
+    .line 372
     return-void
 .end method
 
@@ -4567,15 +4568,15 @@
     .end annotation
 
     .prologue
-    .line 381
+    .line 382
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->zoomGesturesEnabled:Z
 
-    .line 382
+    .line 383
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setZoomGesturesEnabled(Z)V
 
-    .line 383
+    .line 384
     return-void
 .end method
 
@@ -4587,7 +4588,7 @@
     .param p6, "radius"    # D
 
     .prologue
-    .line 610
+    .line 611
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$2;
@@ -4606,7 +4607,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 616
+    .line 617
     return-void
 .end method
 
@@ -4617,7 +4618,7 @@
     .end annotation
 
     .prologue
-    .line 598
+    .line 599
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -4638,7 +4639,7 @@
     .end annotation
 
     .prologue
-    .line 1359
+    .line 1360
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -4659,7 +4660,7 @@
     .end annotation
 
     .prologue
-    .line 732
+    .line 733
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->polylinesByIds:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -4680,7 +4681,7 @@
     .end annotation
 
     .prologue
-    .line 1109
+    .line 1110
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markersList:Lcom/google/appinventor/components/runtime/util/YailList;
 
     return-object v0
@@ -4695,12 +4696,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 809
+    .line 810
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 811
+    .line 812
     .local v0, "latLng":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Object;>;"
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
@@ -4714,7 +4715,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 812
+    .line 813
     sget-object v2, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
 
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -4723,11 +4724,11 @@
 
     move-result-object v1
 
-    .line 813
+    .line 814
     .local v1, "location":Landroid/location/Location;
     if-eqz v1, :cond_1
 
-    .line 814
+    .line 815
     invoke-virtual {v1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v2
@@ -4738,7 +4739,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 815
+    .line 816
     invoke-virtual {v1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v2
@@ -4749,7 +4750,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 816
+    .line 817
     invoke-virtual {v1}, Landroid/location/Location;->getAccuracy()F
 
     move-result v2
@@ -4760,7 +4761,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 823
+    .line 824
     .end local v1    # "location":Landroid/location/Location;
     :cond_0
     :goto_0
@@ -4770,7 +4771,7 @@
 
     return-object v2
 
-    .line 818
+    .line 819
     .restart local v1    # "location":Landroid/location/Location;
     :cond_1
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -4779,14 +4780,14 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 819
+    .line 820
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 820
+    .line 821
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v2
@@ -4804,17 +4805,17 @@
     .end annotation
 
     .prologue
-    .line 633
+    .line 634
     const/4 v2, 0x0
 
-    .line 636
+    .line 637
     .local v2, "points":Lcom/google/appinventor/components/runtime/util/YailList;
     :try_start_0
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 638
+    .line 639
     .local v3, "pointsList":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/JsonUtil;->getObjectFromJson(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -4837,7 +4838,7 @@
 
     move-result-object v1
 
-    .line 639
+    .line 640
     .local v1, "point":Ljava/lang/Object;
     check-cast v1, Ljava/util/List;
 
@@ -4852,12 +4853,12 @@
 
     goto :goto_0
 
-    .line 642
+    .line 643
     .end local v3    # "pointsList":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     :catch_0
     move-exception v0
 
-    .line 643
+    .line 644
     .local v0, "exception":Ljava/lang/Exception;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -4875,12 +4876,12 @@
 
     invoke-virtual {v4, p0, v5, v6, v7}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 646
+    .line 647
     .end local v0    # "exception":Ljava/lang/Exception;
     :goto_1
     return-object v2
 
-    .line 640
+    .line 641
     .restart local v3    # "pointsList":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     :cond_0
     :try_start_1
@@ -4900,19 +4901,19 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 252
     const/4 v0, -0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 252
+    .line 253
     const/4 p1, -0x2
 
-    .line 254
+    .line 255
     :cond_0
     invoke-super {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height(I)V
 
-    .line 255
+    .line 256
     return-void
 .end method
 
@@ -4921,7 +4922,7 @@
     .param p1, "markerId"    # I
 
     .prologue
-    .line 1478
+    .line 1479
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$8;
@@ -4930,7 +4931,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1483
+    .line 1484
     return-void
 .end method
 
@@ -4938,7 +4939,7 @@
     .locals 1
 
     .prologue
-    .line 917
+    .line 918
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableCameraChangeListener:Z
 
     return v0
@@ -4951,7 +4952,7 @@
     .end annotation
 
     .prologue
-    .line 867
+    .line 868
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapClickListener:Z
 
     return v0
@@ -4964,7 +4965,7 @@
     .end annotation
 
     .prologue
-    .line 393
+    .line 394
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isMapReady:Z
 
     if-eqz v0, :cond_0
@@ -4977,12 +4978,12 @@
 
     if-nez v0, :cond_0
 
-    .line 394
+    .line 395
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isMapIsReadyDispatched:Z
 
-    .line 395
+    .line 396
     const-string v0, "MapIsReady"
 
     const/4 v1, 0x0
@@ -4991,7 +4992,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 397
+    .line 398
     :cond_0
     return-void
 .end method
@@ -5003,7 +5004,7 @@
     .end annotation
 
     .prologue
-    .line 892
+    .line 893
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->enableMapLongClickListener:Z
 
     return v0
@@ -5013,42 +5014,42 @@
     .locals 1
 
     .prologue
-    .line 922
+    .line 923
     iget v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 932
+    .line 933
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 924
+    .line 925
     :pswitch_0
     const-string v0, "normal"
 
     goto :goto_0
 
-    .line 926
+    .line 927
     :pswitch_1
     const-string v0, "hybrid"
 
     goto :goto_0
 
-    .line 928
+    .line 929
     :pswitch_2
     const-string v0, "satellite"
 
     goto :goto_0
 
-    .line 930
+    .line 931
     :pswitch_3
     const-string v0, "terrain"
 
     goto :goto_0
 
-    .line 922
+    .line 923
     nop
 
     :pswitch_data_0
@@ -5067,7 +5068,7 @@
     .end annotation
 
     .prologue
-    .line 803
+    .line 804
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->myLocationEnabled:Z
 
     return v0
@@ -5082,7 +5083,7 @@
     .end annotation
 
     .prologue
-    .line 1737
+    .line 1738
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v0, Lcom/google/appinventor/components/runtime/GoogleMap$12;
@@ -5097,7 +5098,7 @@
 
     invoke-virtual {v6, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1742
+    .line 1743
     return-void
 .end method
 
@@ -5110,7 +5111,7 @@
     .end annotation
 
     .prologue
-    .line 1577
+    .line 1578
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v0, Lcom/google/appinventor/components/runtime/GoogleMap$11;
@@ -5125,7 +5126,7 @@
 
     invoke-virtual {v6, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1582
+    .line 1583
     return-void
 .end method
 
@@ -5138,7 +5139,7 @@
     .end annotation
 
     .prologue
-    .line 1563
+    .line 1564
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v0, Lcom/google/appinventor/components/runtime/GoogleMap$10;
@@ -5153,7 +5154,7 @@
 
     invoke-virtual {v6, v0}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1568
+    .line 1569
     return-void
 .end method
 
@@ -5167,7 +5168,7 @@
     .end annotation
 
     .prologue
-    .line 1469
+    .line 1470
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$7;
@@ -5184,7 +5185,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1474
+    .line 1475
     return-void
 .end method
 
@@ -5195,7 +5196,7 @@
     .param p4, "longitude"    # D
 
     .prologue
-    .line 1450
+    .line 1451
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$5;
@@ -5212,7 +5213,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1455
+    .line 1456
     return-void
 .end method
 
@@ -5223,7 +5224,7 @@
     .param p4, "longitude"    # D
 
     .prologue
-    .line 1460
+    .line 1461
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$6;
@@ -5240,7 +5241,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1465
+    .line 1466
     return-void
 .end method
 
@@ -5251,7 +5252,7 @@
     .param p4, "longitude"    # D
 
     .prologue
-    .line 1441
+    .line 1442
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->context:Landroid/app/Activity;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/GoogleMap$4;
@@ -5268,7 +5269,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1446
+    .line 1447
     return-void
 .end method
 
@@ -5280,7 +5281,7 @@
     .end annotation
 
     .prologue
-    .line 492
+    .line 493
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5291,23 +5292,23 @@
 
     move-result-object v0
 
-    .line 493
+    .line 494
     .local v0, "circle":Ljava/lang/Object;
     const/4 v1, 0x0
 
-    .line 495
+    .line 496
     .local v1, "isRemoved":Z
     if-nez v0, :cond_0
 
     move v2, v1
 
-    .line 508
+    .line 509
     .end local v1    # "isRemoved":Z
     .local v2, "isRemoved":I
     :goto_0
     return v2
 
-    .line 498
+    .line 499
     .end local v2    # "isRemoved":I
     .restart local v1    # "isRemoved":Z
     :cond_0
@@ -5317,17 +5318,17 @@
 
     move-object v3, v0
 
-    .line 499
+    .line 500
     check-cast v3, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
     invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->removeFromMap()V
 
-    .line 500
+    .line 501
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mCircles:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 502
+    .line 503
     :cond_1
     instance-of v3, v0, Lcom/google/android/gms/maps/model/Circle;
 
@@ -5335,23 +5336,23 @@
 
     move-object v3, v0
 
-    .line 503
+    .line 504
     check-cast v3, Lcom/google/android/gms/maps/model/Circle;
 
     invoke-virtual {v3}, Lcom/google/android/gms/maps/model/Circle;->remove()V
 
-    .line 505
+    .line 506
     :cond_2
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
     invoke-virtual {v3, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 506
+    .line 507
     const/4 v1, 0x1
 
     move v2, v1
 
-    .line 508
+    .line 509
     .restart local v2    # "isRemoved":I
     goto :goto_0
 .end method
@@ -5364,24 +5365,24 @@
     .end annotation
 
     .prologue
-    .line 1374
+    .line 1375
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/GoogleMap;->getMarkerIfExisted(I)Lcom/google/android/gms/maps/model/Marker;
 
     move-result-object v0
 
-    .line 1375
+    .line 1376
     .local v0, "marker":Lcom/google/android/gms/maps/model/Marker;
     if-eqz v0, :cond_0
 
-    .line 1376
+    .line 1377
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1377
+    .line 1378
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Marker;->remove()V
 
-    .line 1379
+    .line 1380
     :cond_0
     return-void
 .end method
@@ -5394,7 +5395,7 @@
     .end annotation
 
     .prologue
-    .line 670
+    .line 671
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->polylinesByIds:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5407,17 +5408,17 @@
 
     check-cast v0, Lcom/google/android/gms/maps/model/Polyline;
 
-    .line 672
+    .line 673
     .local v0, "polyline":Lcom/google/android/gms/maps/model/Polyline;
     if-eqz v0, :cond_0
 
-    .line 673
+    .line 674
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Polyline;->remove()V
 
-    .line 674
+    .line 675
     const/4 v1, 0x1
 
-    .line 677
+    .line 678
     :goto_0
     return v1
 
@@ -5434,7 +5435,7 @@
     .end annotation
 
     .prologue
-    .line 351
+    .line 352
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/UiSettings;->isRotateGesturesEnabled()Z
@@ -5451,7 +5452,7 @@
     .end annotation
 
     .prologue
-    .line 363
+    .line 364
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/UiSettings;->isScrollGesturesEnabled()Z
@@ -5471,7 +5472,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 829
+    .line 830
     const-string v0, "normal"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -5480,27 +5481,27 @@
 
     if-eqz v0, :cond_1
 
-    .line 830
+    .line 831
     iput v3, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
-    .line 841
+    .line 842
     :goto_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 842
+    .line 843
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     iget v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setMapType(I)V
 
-    .line 844
+    .line 845
     :cond_0
     return-void
 
-    .line 831
+    .line 832
     :cond_1
     const-string v0, "hybrid"
 
@@ -5510,14 +5511,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 832
+    .line 833
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
     goto :goto_0
 
-    .line 833
+    .line 834
     :cond_2
     const-string v0, "satellite"
 
@@ -5527,14 +5528,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 834
+    .line 835
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
     goto :goto_0
 
-    .line 835
+    .line 836
     :cond_3
     const-string v0, "terrain"
 
@@ -5544,14 +5545,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 836
+    .line 837
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mapType:I
 
     goto :goto_0
 
-    .line 838
+    .line 839
     :cond_4
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -5596,12 +5597,12 @@
     .end annotation
 
     .prologue
-    .line 1852
+    .line 1853
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_1
 
-    .line 1853
+    .line 1854
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v1, Lcom/google/android/gms/maps/model/MapStyleOptions;
@@ -5614,16 +5615,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 1854
+    .line 1855
     const-string v0, "custom"
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->theme:Ljava/lang/String;
 
-    .line 1860
+    .line 1861
     :goto_0
     return-void
 
-    .line 1856
+    .line 1857
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -5643,7 +5644,7 @@
 
     goto :goto_0
 
-    .line 1859
+    .line 1860
     :cond_1
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialStyleJson:Ljava/lang/String;
 
@@ -5657,7 +5658,7 @@
     .end annotation
 
     .prologue
-    .line 1827
+    .line 1828
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->theme:Ljava/lang/String;
 
     return-object v0
@@ -5680,12 +5681,12 @@
 
     const/4 v6, 0x0
 
-    .line 1836
+    .line 1837
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_2
 
-    .line 1837
+    .line 1838
     sget-object v0, Lcom/google/appinventor/components/runtime/GoogleMapStyleOptions;->JSON_BY_THEME:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -5694,7 +5695,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1838
+    .line 1839
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v2, Lcom/google/android/gms/maps/model/MapStyleOptions;
@@ -5715,14 +5716,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1839
+    .line 1840
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->theme:Ljava/lang/String;
 
-    .line 1848
+    .line 1849
     :goto_0
     return-void
 
-    .line 1841
+    .line 1842
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -5756,7 +5757,7 @@
 
     goto :goto_0
 
-    .line 1844
+    .line 1845
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -5772,7 +5773,7 @@
 
     goto :goto_0
 
-    .line 1847
+    .line 1848
     :cond_2
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialTheme:Ljava/lang/String;
 
@@ -5789,32 +5790,32 @@
     .end annotation
 
     .prologue
-    .line 515
+    .line 516
     const/4 v4, 0x3
 
     new-array v0, v4, [F
 
     move-object/from16 v23, v0
 
-    .line 516
+    .line 517
     .local v23, "hsv":[F
     invoke-direct/range {p0 .. p1}, Lcom/google/appinventor/components/runtime/GoogleMap;->getCircleIfExisted(I)Ljava/lang/Object;
 
     move-result-object v19
 
-    .line 517
+    .line 518
     .local v19, "circle":Ljava/lang/Object;
     const/16 v27, 0x0
 
-    .line 518
+    .line 519
     .local v27, "updateCircle":Lcom/google/android/gms/maps/model/Circle;
     const/16 v21, 0x0
 
-    .line 520
+    .line 521
     .local v21, "currentDraggable":Z
     if-eqz v19, :cond_c
 
-    .line 521
+    .line 522
     move-object/from16 v0, v19
 
     instance-of v4, v0, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
@@ -5823,17 +5824,17 @@
 
     move-object/from16 v4, v19
 
-    .line 522
+    .line 523
     check-cast v4, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
     invoke-virtual {v4}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->getCircle()Lcom/google/android/gms/maps/model/Circle;
 
     move-result-object v27
 
-    .line 523
+    .line 524
     const/16 v21, 0x1
 
-    .line 525
+    .line 526
     :cond_0
     move-object/from16 v0, v19
 
@@ -5843,10 +5844,10 @@
 
     move-object/from16 v27, v19
 
-    .line 526
+    .line 527
     check-cast v27, Lcom/google/android/gms/maps/model/Circle;
 
-    .line 529
+    .line 530
     :cond_1
     const/4 v4, 0x0
 
@@ -5855,7 +5856,7 @@
 
     move-result-object v28
 
-    .line 530
+    .line 531
     .local v28, "val":Ljava/lang/Float;
     const-string v4, "radius"
 
@@ -5889,7 +5890,7 @@
 
     const-string v4, "strokeWidth"
 
-    .line 531
+    .line 532
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -5898,7 +5899,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 532
+    .line 533
     :cond_2
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -5908,7 +5909,7 @@
 
     move-result-object v28
 
-    .line 534
+    .line 535
     :cond_3
     const-string v4, "alpha"
 
@@ -5920,12 +5921,12 @@
 
     if-eqz v4, :cond_5
 
-    .line 535
+    .line 536
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getFillColor()I
 
     move-result v20
 
-    .line 536
+    .line 537
     .local v20, "color":I
     move/from16 v0, v20
 
@@ -5933,7 +5934,7 @@
 
     invoke-static {v0, v1}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 537
+    .line 538
     invoke-virtual/range {v28 .. v28}, Ljava/lang/Float;->intValue()I
 
     move-result v4
@@ -5942,7 +5943,7 @@
 
     move-result-object v17
 
-    .line 538
+    .line 539
     .local v17, "alphaVal":Ljava/lang/Integer;
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
@@ -5954,7 +5955,7 @@
 
     move-result v24
 
-    .line 539
+    .line 540
     .local v24, "newColor":I
     move-object/from16 v0, v27
 
@@ -5962,7 +5963,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/model/Circle;->setFillColor(I)V
 
-    .line 594
+    .line 595
     .end local v17    # "alphaVal":Ljava/lang/Integer;
     .end local v19    # "circle":Ljava/lang/Object;
     .end local v20    # "color":I
@@ -5972,7 +5973,7 @@
     :goto_0
     return-void
 
-    .line 540
+    .line 541
     .restart local v19    # "circle":Ljava/lang/Object;
     .restart local v28    # "val":Ljava/lang/Float;
     :cond_5
@@ -5986,7 +5987,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 541
+    .line 542
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getFillColor()I
 
     move-result v4
@@ -5995,7 +5996,7 @@
 
     move-result v16
 
-    .line 542
+    .line 543
     .local v16, "alpha":I
     const/4 v4, 0x3
 
@@ -6027,7 +6028,7 @@
 
     move-result v24
 
-    .line 543
+    .line 544
     .restart local v24    # "newColor":I
     move-object/from16 v0, v27
 
@@ -6039,7 +6040,7 @@
 
     goto :goto_0
 
-    .line 585
+    .line 586
     .end local v16    # "alpha":I
     .end local v19    # "circle":Ljava/lang/Object;
     .end local v24    # "newColor":I
@@ -6047,7 +6048,7 @@
     :catch_0
     move-exception v22
 
-    .line 586
+    .line 587
     .local v22, "e":Ljava/lang/NumberFormatException;
     move-object/from16 v0, p0
 
@@ -6067,14 +6068,14 @@
 
     const/16 v32, 0x0
 
-    .line 587
+    .line 588
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v33
 
     aput-object v33, v31, v32
 
-    .line 586
+    .line 587
     move-object/from16 v0, p0
 
     move-object/from16 v1, v29
@@ -6087,7 +6088,7 @@
 
     goto :goto_0
 
-    .line 544
+    .line 545
     .end local v22    # "e":Ljava/lang/NumberFormatException;
     .restart local v19    # "circle":Ljava/lang/Object;
     .restart local v28    # "val":Ljava/lang/Float;
@@ -6103,10 +6104,10 @@
 
     if-eqz v4, :cond_7
 
-    .line 546
+    .line 547
     move-object/from16 v10, v28
 
-    .line 547
+    .line 548
     .local v10, "radius":Ljava/lang/Float;
     invoke-virtual {v10}, Ljava/lang/Float;->floatValue()F
 
@@ -6122,14 +6123,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/maps/model/Circle;->setRadius(D)V
 
-    .line 549
+    .line 550
     move-object/from16 v0, v19
 
     instance-of v4, v0, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
     if-eqz v4, :cond_4
 
-    .line 551
+    .line 552
     move-object/from16 v0, v19
 
     check-cast v0, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
@@ -6140,7 +6141,7 @@
 
     move-result-object v18
 
-    .line 552
+    .line 553
     .local v18, "centerMarker":Lcom/google/android/gms/maps/model/Marker;
     move-object/from16 v0, v19
 
@@ -6152,11 +6153,11 @@
 
     move-result-object v26
 
-    .line 553
+    .line 554
     .local v26, "oldMarker":Lcom/google/android/gms/maps/model/Marker;
     invoke-virtual/range {v26 .. v26}, Lcom/google/android/gms/maps/model/Marker;->remove()V
 
-    .line 554
+    .line 555
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
@@ -6165,7 +6166,7 @@
 
     invoke-direct/range {v29 .. v29}, Lcom/google/android/gms/maps/model/MarkerOptions;-><init>()V
 
-    .line 555
+    .line 556
     invoke-virtual/range {v18 .. v18}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v30
@@ -6194,14 +6195,14 @@
 
     const/16 v30, 0x1
 
-    .line 556
+    .line 557
     invoke-virtual/range {v29 .. v30}, Lcom/google/android/gms/maps/model/MarkerOptions;->draggable(Z)Lcom/google/android/gms/maps/model/MarkerOptions;
 
     move-result-object v29
 
     const/high16 v30, 0x43520000    # 210.0f
 
-    .line 557
+    .line 558
     invoke-static/range {v30 .. v30}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->defaultMarker(F)Lcom/google/android/gms/maps/model/BitmapDescriptor;
 
     move-result-object v30
@@ -6210,14 +6211,14 @@
 
     move-result-object v29
 
-    .line 554
+    .line 555
     move-object/from16 v0, v29
 
     invoke-virtual {v4, v0}, Lcom/google/android/gms/maps/GoogleMap;->addMarker(Lcom/google/android/gms/maps/model/MarkerOptions;)Lcom/google/android/gms/maps/model/Marker;
 
     move-result-object v25
 
-    .line 559
+    .line 560
     .local v25, "newMarker":Lcom/google/android/gms/maps/model/Marker;
     check-cast v19, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
@@ -6230,7 +6231,7 @@
 
     goto/16 :goto_0
 
-    .line 562
+    .line 563
     .end local v10    # "radius":Ljava/lang/Float;
     .end local v18    # "centerMarker":Lcom/google/android/gms/maps/model/Marker;
     .end local v25    # "newMarker":Lcom/google/android/gms/maps/model/Marker;
@@ -6247,7 +6248,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 563
+    .line 564
     invoke-virtual/range {v28 .. v28}, Ljava/lang/Float;->floatValue()F
 
     move-result v4
@@ -6258,7 +6259,7 @@
 
     goto/16 :goto_0
 
-    .line 564
+    .line 565
     :cond_8
     const-string v4, "strokeColor"
 
@@ -6270,7 +6271,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 565
+    .line 566
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -6279,7 +6280,7 @@
 
     move-result v20
 
-    .line 566
+    .line 567
     .restart local v20    # "color":I
     invoke-static/range {v20 .. v20}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -6295,7 +6296,7 @@
 
     goto/16 :goto_0
 
-    .line 567
+    .line 568
     .end local v20    # "color":I
     :cond_9
     const-string v4, "draggable"
@@ -6308,7 +6309,7 @@
 
     if-eqz v4, :cond_b
 
-    .line 568
+    .line 569
     invoke-virtual/range {p3 .. p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -6317,13 +6318,13 @@
 
     move-result v15
 
-    .line 569
+    .line 570
     .local v15, "draggable":Z
     if-eqz v21, :cond_a
 
     if-nez v15, :cond_4
 
-    .line 570
+    .line 571
     :cond_a
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getId()Ljava/lang/String;
 
@@ -6333,7 +6334,7 @@
 
     move-result v5
 
-    .line 571
+    .line 572
     .local v5, "uid":I
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getCenter()Lcom/google/android/gms/maps/model/LatLng;
 
@@ -6341,7 +6342,7 @@
 
     iget-wide v6, v4, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
 
-    .line 572
+    .line 573
     .local v6, "lat":D
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getCenter()Lcom/google/android/gms/maps/model/LatLng;
 
@@ -6349,31 +6350,31 @@
 
     iget-wide v8, v4, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
-    .line 573
+    .line 574
     .local v8, "lng":D
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getRadius()D
 
     move-result-wide v10
 
-    .line 574
+    .line 575
     .local v10, "radius":D
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getFillColor()I
 
     move-result v12
 
-    .line 575
+    .line 576
     .local v12, "fillColor":I
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getStrokeWidth()F
 
     move-result v13
 
-    .line 576
+    .line 577
     .local v13, "strokeWidth":F
     invoke-virtual/range {v27 .. v27}, Lcom/google/android/gms/maps/model/Circle;->getStrokeColor()I
 
     move-result v14
 
-    .line 577
+    .line 578
     .local v14, "strokeColor":I
     move-object/from16 v0, p0
 
@@ -6381,12 +6382,12 @@
 
     move-object/from16 v4, p0
 
-    .line 578
+    .line 579
     invoke-virtual/range {v4 .. v15}, Lcom/google/appinventor/components/runtime/GoogleMap;->AddCircle3(IDDDIFIZ)I
 
     goto/16 :goto_0
 
-    .line 582
+    .line 583
     .end local v5    # "uid":I
     .end local v6    # "lat":D
     .end local v8    # "lng":D
@@ -6430,7 +6431,7 @@
 
     goto/16 :goto_0
 
-    .line 591
+    .line 592
     .end local v28    # "val":Ljava/lang/Float;
     :cond_c
     move-object/from16 v0, p0
@@ -6451,14 +6452,14 @@
 
     const/16 v32, 0x0
 
-    .line 592
+    .line 593
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v33
 
     aput-object v33, v31, v32
 
-    .line 591
+    .line 592
     move-object/from16 v0, p0
 
     move-object/from16 v1, v29
@@ -6482,12 +6483,12 @@
     .end annotation
 
     .prologue
-    .line 1318
+    .line 1319
     invoke-virtual {p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1319
+    .line 1320
     .local v5, "property":Ljava/lang/String;
     invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6497,17 +6498,17 @@
 
     move-result-object v4
 
-    .line 1320
+    .line 1321
     .local v4, "propVal":Ljava/lang/String;
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/GoogleMap;->getMarkerIfExisted(I)Lcom/google/android/gms/maps/model/Marker;
 
     move-result-object v3
 
-    .line 1322
+    .line 1323
     .local v3, "marker":Lcom/google/android/gms/maps/model/Marker;
     if-eqz v3, :cond_5
 
-    .line 1323
+    .line 1324
     const-string v6, "color"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -6516,12 +6517,12 @@
 
     if-eqz v6, :cond_1
 
-    .line 1324
+    .line 1325
     new-instance v0, Ljava/lang/Float;
 
     invoke-direct {v0, v4}, Ljava/lang/Float;-><init>(Ljava/lang/String;)V
 
-    .line 1325
+    .line 1326
     .local v0, "hue":Ljava/lang/Float;
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
@@ -6543,7 +6544,7 @@
 
     if-lez v6, :cond_6
 
-    .line 1326
+    .line 1327
     :cond_0
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -6557,17 +6558,17 @@
 
     const/4 v10, 0x0
 
-    .line 1327
+    .line 1328
     invoke-virtual {v0}, Ljava/lang/Float;->toString()Ljava/lang/String;
 
     move-result-object v11
 
     aput-object v11, v9, v10
 
-    .line 1326
+    .line 1327
     invoke-virtual {v6, p0, v7, v8, v9}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1333
+    .line 1334
     .end local v0    # "hue":Ljava/lang/Float;
     :cond_1
     :goto_0
@@ -6579,7 +6580,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 1337
+    .line 1338
     :try_start_0
     iget-object v6, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -6593,7 +6594,7 @@
 
     move-result-object v1
 
-    .line 1343
+    .line 1344
     .local v1, "icon":Landroid/graphics/Bitmap;
     :goto_1
     invoke-static {v1}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->fromBitmap(Landroid/graphics/Bitmap;)Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -6602,7 +6603,7 @@
 
     invoke-virtual {v3, v6}, Lcom/google/android/gms/maps/model/Marker;->setIcon(Lcom/google/android/gms/maps/model/BitmapDescriptor;)V
 
-    .line 1345
+    .line 1346
     .end local v1    # "icon":Landroid/graphics/Bitmap;
     :cond_2
     const-string v6, "title"
@@ -6613,10 +6614,10 @@
 
     if-eqz v6, :cond_3
 
-    .line 1346
+    .line 1347
     invoke-virtual {v3, v4}, Lcom/google/android/gms/maps/model/Marker;->setTitle(Ljava/lang/String;)V
 
-    .line 1348
+    .line 1349
     :cond_3
     const-string v6, "snippet"
 
@@ -6626,10 +6627,10 @@
 
     if-eqz v6, :cond_4
 
-    .line 1349
+    .line 1350
     invoke-virtual {v3, v4}, Lcom/google/android/gms/maps/model/Marker;->setSnippet(Ljava/lang/String;)V
 
-    .line 1351
+    .line 1352
     :cond_4
     const-string v6, "draggable"
 
@@ -6639,7 +6640,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 1352
+    .line 1353
     new-instance v6, Ljava/lang/Boolean;
 
     invoke-direct {v6, v4}, Ljava/lang/Boolean;-><init>(Ljava/lang/String;)V
@@ -6650,11 +6651,11 @@
 
     invoke-virtual {v3, v6}, Lcom/google/android/gms/maps/model/Marker;->setDraggable(Z)V
 
-    .line 1355
+    .line 1356
     :cond_5
     return-void
 
-    .line 1330
+    .line 1331
     .restart local v0    # "hue":Ljava/lang/Float;
     :cond_6
     new-instance v6, Ljava/lang/Float;
@@ -6673,12 +6674,12 @@
 
     goto :goto_0
 
-    .line 1338
+    .line 1339
     .end local v0    # "hue":Ljava/lang/Float;
     :catch_0
     move-exception v2
 
-    .line 1339
+    .line 1340
     .local v2, "ioe":Ljava/io/IOException;
     const-string v6, "GoogleMap"
 
@@ -6702,7 +6703,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1340
+    .line 1341
     const/4 v1, 0x0
 
     .restart local v1    # "icon":Landroid/graphics/Bitmap;
@@ -6719,10 +6720,10 @@
     .end annotation
 
     .prologue
-    .line 685
+    .line 686
     const-string v1, "UpdatePolyline"
 
-    .line 686
+    .line 687
     .local v1, "UPDATE_POLYLINE":Ljava/lang/String;
     iget-object v8, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->polylinesByIds:Ljava/util/HashMap;
 
@@ -6736,15 +6737,15 @@
 
     check-cast v6, Lcom/google/android/gms/maps/model/Polyline;
 
-    .line 687
+    .line 688
     .local v6, "polyline":Lcom/google/android/gms/maps/model/Polyline;
     const/4 v4, 0x0
 
-    .line 689
+    .line 690
     .local v4, "invalidInput":Z
     if-eqz v6, :cond_5
 
-    .line 690
+    .line 691
     const-string v8, "points"
 
     move-object/from16 v0, p2
@@ -6755,10 +6756,10 @@
 
     if-eqz v8, :cond_2
 
-    .line 691
+    .line 692
     const/4 v5, 0x0
 
-    .line 693
+    .line 694
     .local v5, "latLngs":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/maps/model/LatLng;>;"
     :try_start_0
     move-object/from16 v0, p3
@@ -6773,20 +6774,20 @@
 
     move-result-object v5
 
-    .line 698
+    .line 699
     :goto_0
     if-eqz v5, :cond_0
 
-    .line 699
+    .line 700
     invoke-virtual {v6, v5}, Lcom/google/android/gms/maps/model/Polyline;->setPoints(Ljava/util/List;)V
 
-    .line 723
+    .line 724
     .end local v5    # "latLngs":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/maps/model/LatLng;>;"
     :cond_0
     :goto_1
     if-eqz v4, :cond_1
 
-    .line 724
+    .line 725
     iget-object v8, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
     const-string v9, "UpdatePolyline"
@@ -6807,23 +6808,23 @@
 
     invoke-virtual {v8, p0, v9, v10, v11}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 728
+    .line 729
     :cond_1
     :goto_2
     return-void
 
-    .line 695
+    .line 696
     .restart local v5    # "latLngs":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/maps/model/LatLng;>;"
     :catch_0
     move-exception v3
 
-    .line 696
+    .line 697
     .local v3, "exception":Ljava/lang/Exception;
     const/4 v4, 0x1
 
     goto :goto_0
 
-    .line 700
+    .line 701
     .end local v3    # "exception":Ljava/lang/Exception;
     .end local v5    # "latLngs":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/maps/model/LatLng;>;"
     :cond_2
@@ -6837,10 +6838,10 @@
 
     if-eqz v8, :cond_3
 
-    .line 701
+    .line 702
     const/4 v7, 0x0
 
-    .line 703
+    .line 704
     .local v7, "width":Ljava/lang/Float;
     :try_start_1
     move-object/from16 v0, p3
@@ -6859,11 +6860,11 @@
 
     move-result-object v7
 
-    .line 708
+    .line 709
     :goto_3
     if-eqz v7, :cond_0
 
-    .line 709
+    .line 710
     invoke-virtual {v7}, Ljava/lang/Float;->floatValue()F
 
     move-result v8
@@ -6872,17 +6873,17 @@
 
     goto :goto_1
 
-    .line 705
+    .line 706
     :catch_1
     move-exception v3
 
-    .line 706
+    .line 707
     .restart local v3    # "exception":Ljava/lang/Exception;
     const/4 v4, 0x1
 
     goto :goto_3
 
-    .line 710
+    .line 711
     .end local v3    # "exception":Ljava/lang/Exception;
     .end local v7    # "width":Ljava/lang/Float;
     :cond_3
@@ -6896,10 +6897,10 @@
 
     if-eqz v8, :cond_4
 
-    .line 711
+    .line 712
     const/4 v2, 0x0
 
-    .line 713
+    .line 714
     .local v2, "color":Ljava/lang/Integer;
     :try_start_2
     move-object/from16 v0, p3
@@ -6918,11 +6919,11 @@
 
     move-result-object v2
 
-    .line 718
+    .line 719
     :goto_4
     if-eqz v2, :cond_0
 
-    .line 719
+    .line 720
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v8
@@ -6931,17 +6932,17 @@
 
     goto :goto_1
 
-    .line 715
+    .line 716
     :catch_2
     move-exception v3
 
-    .line 716
+    .line 717
     .restart local v3    # "exception":Ljava/lang/Exception;
     const/4 v4, 0x1
 
     goto :goto_4
 
-    .line 721
+    .line 722
     .end local v2    # "color":Ljava/lang/Integer;
     .end local v3    # "exception":Ljava/lang/Exception;
     :cond_4
@@ -6963,7 +6964,7 @@
 
     goto :goto_1
 
-    .line 727
+    .line 728
     :cond_5
     iget-object v8, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -6995,19 +6996,19 @@
     .end annotation
 
     .prologue
-    .line 242
+    .line 243
     const/4 v0, -0x1
 
     if-ne p1, v0, :cond_0
 
-    .line 243
+    .line 244
     const/4 p1, -0x2
 
-    .line 245
+    .line 246
     :cond_0
     invoke-super {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width(I)V
 
-    .line 246
+    .line 247
     return-void
 .end method
 
@@ -7018,7 +7019,7 @@
     .end annotation
 
     .prologue
-    .line 375
+    .line 376
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/UiSettings;->isZoomControlsEnabled()Z
@@ -7035,7 +7036,7 @@
     .end annotation
 
     .prologue
-    .line 387
+    .line 388
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mUiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/UiSettings;->isZoomGesturesEnabled()Z
@@ -7049,7 +7050,7 @@
     .locals 1
 
     .prologue
-    .line 739
+    .line 740
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->viewLayout:Landroid/widget/LinearLayout;
 
     return-object v0
@@ -7065,12 +7066,12 @@
     .end annotation
 
     .prologue
-    .line 1757
+    .line 1758
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1758
+    .line 1759
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -7083,11 +7084,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 1763
+    .line 1764
     :goto_0
     return-void
 
-    .line 1760
+    .line 1761
     :cond_0
     new-instance v0, Lcom/google/android/gms/maps/model/LatLng;
 
@@ -7095,7 +7096,7 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->initialLocation:Lcom/google/android/gms/maps/model/LatLng;
 
-    .line 1761
+    .line 1762
     invoke-static {p5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
@@ -7114,12 +7115,12 @@
     .end annotation
 
     .prologue
-    .line 1749
+    .line 1750
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-eqz v0, :cond_0
 
-    .line 1750
+    .line 1751
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mMap:Lcom/google/android/gms/maps/GoogleMap;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -7132,11 +7133,11 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->moveCamera(Lcom/google/android/gms/maps/CameraUpdate;)V
 
-    .line 1753
+    .line 1754
     :goto_0
     return-void
 
-    .line 1752
+    .line 1753
     :cond_0
     new-instance v0, Lcom/google/android/gms/maps/model/LatLng;
 
@@ -7152,7 +7153,7 @@
     .param p1, "position"    # Lcom/google/android/gms/maps/model/CameraPosition;
 
     .prologue
-    .line 1524
+    .line 1525
     iget-object v1, p1, Lcom/google/android/gms/maps/model/CameraPosition;->target:Lcom/google/android/gms/maps/model/LatLng;
 
     iget-wide v2, v1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
@@ -7161,7 +7162,7 @@
 
     move-result-object v9
 
-    .line 1525
+    .line 1526
     .local v9, "lat":Ljava/lang/Double;
     iget-object v1, p1, Lcom/google/android/gms/maps/model/CameraPosition;->target:Lcom/google/android/gms/maps/model/LatLng;
 
@@ -7171,7 +7172,7 @@
 
     move-result-object v10
 
-    .line 1526
+    .line 1527
     .local v10, "lng":Ljava/lang/Double;
     iget v1, p1, Lcom/google/android/gms/maps/model/CameraPosition;->bearing:F
 
@@ -7179,7 +7180,7 @@
 
     move-result-object v0
 
-    .line 1527
+    .line 1528
     .local v0, "bearing":Ljava/lang/Float;
     iget v1, p1, Lcom/google/android/gms/maps/model/CameraPosition;->tilt:F
 
@@ -7187,7 +7188,7 @@
 
     move-result-object v11
 
-    .line 1528
+    .line 1529
     .local v11, "tilt":Ljava/lang/Float;
     iget v1, p1, Lcom/google/android/gms/maps/model/CameraPosition;->zoom:F
 
@@ -7195,7 +7196,7 @@
 
     move-result-object v12
 
-    .line 1529
+    .line 1530
     .local v12, "zoom":Ljava/lang/Float;
     invoke-virtual {v9}, Ljava/lang/Double;->doubleValue()D
 
@@ -7221,7 +7222,7 @@
 
     invoke-virtual/range {v1 .. v8}, Lcom/google/appinventor/components/runtime/GoogleMap;->CameraPositionChanged(DDFFF)V
 
-    .line 1530
+    .line 1531
     return-void
 .end method
 
@@ -7230,7 +7231,7 @@
     .param p1, "arg0"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1720
+    .line 1721
     sget-object v0, Lcom/google/android/gms/location/LocationServices;->FusedLocationApi:Lcom/google/android/gms/location/FusedLocationProviderApi;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
@@ -7239,7 +7240,7 @@
 
     invoke-interface {v0, v1, v2, p0}, Lcom/google/android/gms/location/FusedLocationProviderApi;->requestLocationUpdates(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/location/LocationRequest;Lcom/google/android/gms/location/LocationListener;)Lcom/google/android/gms/common/api/PendingResult;
 
-    .line 1721
+    .line 1722
     return-void
 .end method
 
@@ -7248,7 +7249,7 @@
     .param p1, "arg0"    # Lcom/google/android/gms/common/ConnectionResult;
 
     .prologue
-    .line 1716
+    .line 1717
     return-void
 .end method
 
@@ -7257,7 +7258,7 @@
     .param p1, "arg0"    # I
 
     .prologue
-    .line 1745
+    .line 1746
     return-void
 .end method
 
@@ -7266,7 +7267,7 @@
     .param p1, "marker"    # Lcom/google/android/gms/maps/model/Marker;
 
     .prologue
-    .line 1487
+    .line 1488
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7275,7 +7276,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1488
+    .line 1489
     .local v0, "markerId":Ljava/lang/Integer;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -7283,7 +7284,7 @@
 
     invoke-virtual {p0, v1}, Lcom/google/appinventor/components/runtime/GoogleMap;->InfoWindowClicked(I)V
 
-    .line 1489
+    .line 1490
     return-void
 .end method
 
@@ -7291,15 +7292,15 @@
     .locals 1
 
     .prologue
-    .line 747
+    .line 748
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->isScreenInitialized:Z
 
-    .line 748
+    .line 749
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/GoogleMap;->MapIsReady()V
 
-    .line 749
+    .line 750
     return-void
 .end method
 
@@ -7308,7 +7309,7 @@
     .param p1, "location"    # Landroid/location/Location;
 
     .prologue
-    .line 1732
+    .line 1733
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v0
@@ -7319,7 +7320,7 @@
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnLocationChanged(DD)V
 
-    .line 1733
+    .line 1734
     return-void
 .end method
 
@@ -7328,14 +7329,14 @@
     .param p1, "latLng"    # Lcom/google/android/gms/maps/model/LatLng;
 
     .prologue
-    .line 1572
+    .line 1573
     iget-wide v0, p1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
     iget-wide v2, p1, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnMapClick(DD)V
 
-    .line 1573
+    .line 1574
     return-void
 .end method
 
@@ -7344,14 +7345,14 @@
     .param p1, "latLng"    # Lcom/google/android/gms/maps/model/LatLng;
 
     .prologue
-    .line 1553
+    .line 1554
     iget-wide v0, p1, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
     iget-wide v2, p1, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnMapLongClick(DD)V
 
-    .line 1554
+    .line 1555
     return-void
 .end method
 
@@ -7360,7 +7361,7 @@
     .param p1, "marker"    # Lcom/google/android/gms/maps/model/Marker;
 
     .prologue
-    .line 1493
+    .line 1494
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7369,13 +7370,13 @@
 
     check-cast v7, Ljava/lang/Integer;
 
-    .line 1494
+    .line 1495
     .local v7, "markerId":Ljava/lang/Integer;
     invoke-virtual {p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v6
 
-    .line 1495
+    .line 1496
     .local v6, "latLng":Lcom/google/android/gms/maps/model/LatLng;
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
@@ -7389,7 +7390,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnMarkerClick(IDD)V
 
-    .line 1500
+    .line 1501
     const/4 v0, 0x0
 
     return v0
@@ -7400,7 +7401,7 @@
     .param p1, "marker"    # Lcom/google/android/gms/maps/model/Marker;
 
     .prologue
-    .line 1383
+    .line 1384
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7409,16 +7410,16 @@
 
     check-cast v8, Ljava/lang/Integer;
 
-    .line 1386
+    .line 1387
     .local v8, "markerId":Ljava/lang/Integer;
     if-eqz v8, :cond_0
 
-    .line 1387
+    .line 1388
     invoke-virtual {p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v7
 
-    .line 1388
+    .line 1389
     .local v7, "latlng":Lcom/google/android/gms/maps/model/LatLng;
     invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
@@ -7432,7 +7433,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnMarkerDrag(IDD)V
 
-    .line 1392
+    .line 1393
     .end local v7    # "latlng":Lcom/google/android/gms/maps/model/LatLng;
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mCircles:Ljava/util/List;
@@ -7455,7 +7456,7 @@
 
     check-cast v6, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
-    .line 1393
+    .line 1394
     .local v6, "dCircle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     invoke-virtual {v6}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->getCenterMarker()Lcom/google/android/gms/maps/model/Marker;
 
@@ -7477,13 +7478,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 1394
+    .line 1395
     :cond_2
     invoke-virtual {v6, p1}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->onMarkerMoved(Lcom/google/android/gms/maps/model/Marker;)Z
 
     goto :goto_0
 
-    .line 1397
+    .line 1398
     .end local v6    # "dCircle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     :cond_3
     return-void
@@ -7494,7 +7495,7 @@
     .param p1, "marker"    # Lcom/google/android/gms/maps/model/Marker;
 
     .prologue
-    .line 1401
+    .line 1402
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7503,16 +7504,16 @@
 
     check-cast v11, Ljava/lang/Integer;
 
-    .line 1404
+    .line 1405
     .local v11, "markerId":Ljava/lang/Integer;
     if-eqz v11, :cond_0
 
-    .line 1405
+    .line 1406
     invoke-virtual {p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v10
 
-    .line 1406
+    .line 1407
     .local v10, "latlng":Lcom/google/android/gms/maps/model/LatLng;
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
@@ -7526,7 +7527,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnMarkerDragEnd(IDD)V
 
-    .line 1410
+    .line 1411
     .end local v10    # "latlng":Lcom/google/android/gms/maps/model/LatLng;
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mCircles:Ljava/util/List;
@@ -7549,7 +7550,7 @@
 
     check-cast v9, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
-    .line 1411
+    .line 1412
     .local v9, "dCircle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     invoke-virtual {v9}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->getCenterMarker()Lcom/google/android/gms/maps/model/Marker;
 
@@ -7571,11 +7572,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 1412
+    .line 1413
     :cond_2
     invoke-virtual {v9, p1}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->onMarkerMoved(Lcom/google/android/gms/maps/model/Marker;)Z
 
-    .line 1414
+    .line 1415
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->circles:Ljava/util/HashMap;
 
     invoke-virtual {v0, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7588,7 +7589,7 @@
 
     move-result v1
 
-    .line 1415
+    .line 1416
     .local v1, "uid":I
     invoke-virtual {v9}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->getCenterMarker()Lcom/google/android/gms/maps/model/Marker;
 
@@ -7598,7 +7599,7 @@
 
     move-result-object v8
 
-    .line 1416
+    .line 1417
     .local v8, "center":Lcom/google/android/gms/maps/model/LatLng;
     iget-wide v2, v8, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
 
@@ -7618,7 +7619,7 @@
 
     goto :goto_0
 
-    .line 1419
+    .line 1420
     .end local v1    # "uid":I
     .end local v8    # "center":Lcom/google/android/gms/maps/model/LatLng;
     .end local v9    # "dCircle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
@@ -7631,7 +7632,7 @@
     .param p1, "marker"    # Lcom/google/android/gms/maps/model/Marker;
 
     .prologue
-    .line 1424
+    .line 1425
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->markers:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7640,16 +7641,16 @@
 
     check-cast v8, Ljava/lang/Integer;
 
-    .line 1426
+    .line 1427
     .local v8, "markerId":Ljava/lang/Integer;
     if-eqz v8, :cond_0
 
-    .line 1427
+    .line 1428
     invoke-virtual {p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v7
 
-    .line 1428
+    .line 1429
     .local v7, "latLng":Lcom/google/android/gms/maps/model/LatLng;
     invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
@@ -7663,7 +7664,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/appinventor/components/runtime/GoogleMap;->OnMarkerDragStart(IDD)V
 
-    .line 1432
+    .line 1433
     .end local v7    # "latLng":Lcom/google/android/gms/maps/model/LatLng;
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mCircles:Ljava/util/List;
@@ -7686,7 +7687,7 @@
 
     check-cast v6, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
 
-    .line 1433
+    .line 1434
     .local v6, "dCircle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     invoke-virtual {v6}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->getCenterMarker()Lcom/google/android/gms/maps/model/Marker;
 
@@ -7708,13 +7709,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 1434
+    .line 1435
     :cond_2
     invoke-virtual {v6, p1}, Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;->onMarkerMoved(Lcom/google/android/gms/maps/model/Marker;)Z
 
     goto :goto_0
 
-    .line 1437
+    .line 1438
     .end local v6    # "dCircle":Lcom/google/appinventor/components/runtime/GoogleMap$DraggableCircle;
     :cond_3
     return-void
@@ -7724,17 +7725,17 @@
     .locals 1
 
     .prologue
-    .line 1725
+    .line 1726
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     if-eqz v0, :cond_0
 
-    .line 1726
+    .line 1727
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/GoogleMap;->mGoogleApiClient:Lcom/google/android/gms/common/api/GoogleApiClient;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/api/GoogleApiClient;->disconnect()V
 
-    .line 1728
+    .line 1729
     :cond_0
     return-void
 .end method
@@ -7743,6 +7744,6 @@
     .locals 0
 
     .prologue
-    .line 743
+    .line 744
     return-void
 .end method

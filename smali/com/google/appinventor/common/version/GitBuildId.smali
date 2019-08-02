@@ -6,9 +6,9 @@
 # static fields
 .field public static final ACRA_URI:Ljava/lang/String; = "@acra.uri@"
 
-.field public static final ANT_BUILD_DATE:Ljava/lang/String; = "May 23 2019"
+.field public static final ANT_BUILD_DATE:Ljava/lang/String; = "July 30 2019"
 
-.field public static final GIT_BUILD_FINGERPRINT:Ljava/lang/String; = "5d146408e5efa1968edac25f4b3f382bbeb9fbb3"
+.field public static final GIT_BUILD_FINGERPRINT:Ljava/lang/String; = "8c5eb951d7763a476b0aa245d57b1bd8bf797000"
 
 .field public static final GIT_BUILD_VERSION:Ljava/lang/String; = "fatal: No names found, cannot describe anything."
 
@@ -62,7 +62,7 @@
 
     .prologue
     .line 44
-    const-string v0, "May 23 2019"
+    const-string v0, "July 30 2019"
 
     return-object v0
 .end method
@@ -72,7 +72,7 @@
 
     .prologue
     .line 40
-    const-string v0, "5d146408e5efa1968edac25f4b3f382bbeb9fbb3"
+    const-string v0, "8c5eb951d7763a476b0aa245d57b1bd8bf797000"
 
     return-object v0
 .end method

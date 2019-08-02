@@ -26,17 +26,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 247
+    .line 251
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$CustomMapView;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
-    .line 248
+    .line 252
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;
 
     invoke-direct {v0, p1, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$MapReadyHandler;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;)V
 
     invoke-direct {p0, p2, v1, v0}, Lorg/osmdroid/views/MapView;-><init>(Landroid/content/Context;Lorg/osmdroid/tileprovider/MapTileProviderBase;Landroid/os/Handler;)V
 
-    .line 249
+    .line 253
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 260
+    .line 264
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .param p4, "oldh"    # I
 
     .prologue
-    .line 253
+    .line 257
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$CustomMapView;->getScrollX()I
 
     move-result v0
@@ -81,9 +81,9 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$CustomMapView;->scrollTo(II)V
 
-    .line 254
+    .line 258
     invoke-super {p0, p1, p2, p3, p4}, Lorg/osmdroid/views/MapView;->onSizeChanged(IIII)V
 
-    .line 255
+    .line 259
     return-void
 .end method

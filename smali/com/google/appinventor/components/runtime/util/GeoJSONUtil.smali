@@ -616,34 +616,34 @@
     .param p1, "coordinates"    # Lcom/google/appinventor/components/runtime/util/YailList;
 
     .prologue
-    .line 355
+    .line 356
     new-instance v4, Lcom/google/appinventor/components/runtime/Polygon;
 
     invoke-direct {v4, p0}, Lcom/google/appinventor/components/runtime/Polygon;-><init>(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;)V
 
-    .line 356
+    .line 357
     .local v4, "polygon":Lcom/google/appinventor/components/runtime/Polygon;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 357
+    .line 358
     .local v3, "points":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 358
+    .line 359
     .local v0, "holePoints":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/YailList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 359
+    .line 360
     .local v1, "i":Ljava/util/Iterator;
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 360
+    .line 361
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -651,14 +651,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 361
+    .line 362
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
-    .line 362
+    .line 363
     .local v2, "list":Lcom/google/appinventor/components/runtime/util/YailList;
     const/4 v5, 0x1
 
@@ -674,7 +674,7 @@
 
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 363
+    .line 364
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/util/YailList;->getCdr()Ljava/lang/Object;
 
     move-result-object v5
@@ -699,7 +699,7 @@
 
     goto :goto_0
 
-    .line 365
+    .line 366
     .end local v2    # "list":Lcom/google/appinventor/components/runtime/util/YailList;
     :cond_0
     invoke-static {v3}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
@@ -708,14 +708,17 @@
 
     invoke-virtual {v4, v5}, Lcom/google/appinventor/components/runtime/Polygon;->Points(Lcom/google/appinventor/components/runtime/util/YailList;)V
 
-    .line 366
+    .line 367
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Lcom/google/appinventor/components/runtime/Polygon;->HolePoints(Lcom/google/appinventor/components/runtime/util/YailList;)V
 
-    .line 367
+    .line 368
+    invoke-virtual {v4}, Lcom/google/appinventor/components/runtime/Polygon;->Initialize()V
+
+    .line 369
     return-object v4
 .end method
 
@@ -726,12 +729,12 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 390
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
 
-    .line 389
+    .line 391
     check-cast p0, Ljava/lang/Boolean;
 
     .end local p0    # "value":Ljava/lang/Object;
@@ -739,18 +742,18 @@
 
     move-result v0
 
-    .line 393
+    .line 395
     .restart local p0    # "value":Ljava/lang/Object;
     :goto_0
     return v0
 
-    .line 390
+    .line 392
     :cond_0
     instance-of v0, p0, Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 391
+    .line 393
     const-string v1, "false"
 
     move-object v0, p0
@@ -781,14 +784,14 @@
 
     goto :goto_0
 
-    .line 392
+    .line 394
     .restart local p0    # "value":Ljava/lang/Object;
     :cond_2
     instance-of v0, p0, Lgnu/lists/FString;
 
     if-eqz v0, :cond_3
 
-    .line 393
+    .line 395
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -799,7 +802,7 @@
 
     goto :goto_0
 
-    .line 395
+    .line 397
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1108,12 +1111,12 @@
     .end annotation
 
     .prologue
-    .line 401
+    .line 403
     instance-of v0, p0, Ljava/lang/Number;
 
     if-eqz v0, :cond_0
 
-    .line 402
+    .line 404
     check-cast p0, Ljava/lang/Number;
 
     .end local p0    # "value":Ljava/lang/Object;
@@ -1121,18 +1124,18 @@
 
     move-result v0
 
-    .line 406
+    .line 408
     .restart local p0    # "value":Ljava/lang/Object;
     :goto_0
     return v0
 
-    .line 403
+    .line 405
     :cond_0
     instance-of v0, p0, Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 404
+    .line 406
     check-cast p0, Ljava/lang/String;
 
     .end local p0    # "value":Ljava/lang/Object;
@@ -1142,14 +1145,14 @@
 
     goto :goto_0
 
-    .line 405
+    .line 407
     .restart local p0    # "value":Ljava/lang/Object;
     :cond_1
     instance-of v0, p0, Lgnu/lists/FString;
 
     if-eqz v0, :cond_2
 
-    .line 406
+    .line 408
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1160,7 +1163,7 @@
 
     goto :goto_0
 
-    .line 408
+    .line 410
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1235,6 +1238,9 @@
 
     .line 350
     :cond_0
+    invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/Polygon;->Initialize()V
+
+    .line 351
     return-object v1
 .end method
 
@@ -1323,7 +1329,7 @@
     throw v0
 .end method
 
-.method public static processGeoJSONFeature(Ljava/lang/String;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;Lcom/google/appinventor/components/runtime/util/YailList;)Ljava/lang/Object;
+.method public static processGeoJSONFeature(Ljava/lang/String;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;Lcom/google/appinventor/components/runtime/util/YailList;)Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
     .locals 13
     .param p0, "logTag"    # Ljava/lang/String;
     .param p1, "container"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;
@@ -1659,7 +1665,7 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 372
+    .line 374
     invoke-virtual {p2}, Lcom/google/appinventor/components/runtime/util/YailList;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -1676,7 +1682,7 @@
 
     move-result-object v2
 
-    .line 373
+    .line 375
     .local v2, "o":Ljava/lang/Object;
     instance-of v5, v2, Lcom/google/appinventor/components/runtime/util/YailList;
 
@@ -1684,10 +1690,10 @@
 
     move-object v3, v2
 
-    .line 374
+    .line 376
     check-cast v3, Lcom/google/appinventor/components/runtime/util/YailList;
 
-    .line 375
+    .line 377
     .local v3, "pair":Lcom/google/appinventor/components/runtime/util/YailList;
     invoke-virtual {v3, v8}, Lcom/google/appinventor/components/runtime/util/YailList;->get(I)Ljava/lang/Object;
 
@@ -1697,7 +1703,7 @@
 
     move-result-object v1
 
-    .line 376
+    .line 378
     .local v1, "key":Ljava/lang/String;
     sget-object v5, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil;->SUPPORTED_PROPERTIES:Ljava/util/Map;
 
@@ -1711,11 +1717,11 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$PropertyApplication;
 
-    .line 377
+    .line 379
     .local v0, "application":Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$PropertyApplication;
     if-eqz v0, :cond_1
 
-    .line 378
+    .line 380
     const/4 v5, 0x2
 
     invoke-virtual {v3, v5}, Lcom/google/appinventor/components/runtime/util/YailList;->get(I)Ljava/lang/Object;
@@ -1726,7 +1732,7 @@
 
     goto :goto_0
 
-    .line 380
+    .line 382
     :cond_1
     const-string v5, "Ignoring GeoJSON property \"%s\""
 
@@ -1744,7 +1750,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 386
     .end local v0    # "application":Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$PropertyApplication;
     .end local v1    # "key":Ljava/lang/String;
     .end local v2    # "o":Ljava/lang/Object;
@@ -1758,16 +1764,16 @@
     .param p0, "coordinates"    # Lcom/google/appinventor/components/runtime/util/YailList;
 
     .prologue
-    .line 676
+    .line 678
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/util/YailList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 677
+    .line 679
     .local v1, "i":Ljava/util/Iterator;
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 678
+    .line 680
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1775,14 +1781,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 679
+    .line 681
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/YailList;
 
-    .line 680
+    .line 682
     .local v0, "coordinate":Lcom/google/appinventor/components/runtime/util/YailList;
     const/4 v4, 0x1
 
@@ -1790,7 +1796,7 @@
 
     move-result-object v3
 
-    .line 681
+    .line 683
     .local v3, "temp":Ljava/lang/Object;
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/util/YailList;->getCdr()Ljava/lang/Object;
 
@@ -1798,7 +1804,7 @@
 
     check-cast v2, Lgnu/lists/Pair;
 
-    .line 682
+    .line 684
     .local v2, "p":Lgnu/lists/Pair;
     const/4 v4, 0x2
 
@@ -1808,7 +1814,7 @@
 
     invoke-virtual {v2, v4}, Lgnu/lists/Pair;->setCar(Ljava/lang/Object;)V
 
-    .line 683
+    .line 685
     invoke-virtual {v2}, Lgnu/lists/Pair;->getCdr()Ljava/lang/Object;
 
     move-result-object v2
@@ -1816,13 +1822,13 @@
     .end local v2    # "p":Lgnu/lists/Pair;
     check-cast v2, Lgnu/lists/Pair;
 
-    .line 684
+    .line 686
     .restart local v2    # "p":Lgnu/lists/Pair;
     invoke-virtual {v2, v3}, Lgnu/lists/Pair;->setCar(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 686
+    .line 688
     .end local v0    # "coordinate":Lcom/google/appinventor/components/runtime/util/YailList;
     .end local v2    # "p":Lgnu/lists/Pair;
     .end local v3    # "temp":Ljava/lang/Object;
@@ -1835,10 +1841,10 @@
     .param p0, "coordinates"    # Lgnu/lists/LList;
 
     .prologue
-    .line 690
+    .line 692
     move-object v0, p0
 
-    .line 691
+    .line 693
     .local v0, "it":Lgnu/lists/LList;
     :goto_0
     invoke-virtual {v0}, Lgnu/lists/LList;->isEmpty()Z
@@ -1847,7 +1853,7 @@
 
     if-nez v1, :cond_0
 
-    .line 692
+    .line 694
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lgnu/lists/LList;->get(I)Ljava/lang/Object;
@@ -1858,7 +1864,7 @@
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil;->swapCoordinates(Lcom/google/appinventor/components/runtime/util/YailList;)Lcom/google/appinventor/components/runtime/util/YailList;
 
-    .line 693
+    .line 695
     check-cast v0, Lgnu/lists/Pair;
 
     .end local v0    # "it":Lgnu/lists/LList;
@@ -1871,7 +1877,7 @@
     .restart local v0    # "it":Lgnu/lists/LList;
     goto :goto_0
 
-    .line 695
+    .line 697
     :cond_0
     return-object p0
 .end method
@@ -1898,11 +1904,11 @@
     .end annotation
 
     .prologue
-    .line 647
+    .line 649
     .local p0, "featuresToSave":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;>;"
     const/4 v2, 0x0
 
-    .line 649
+    .line 651
     .local v2, "out":Ljava/io/PrintStream;
     :try_start_0
     new-instance v3, Ljava/io/PrintStream;
@@ -1915,7 +1921,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 650
+    .line 652
     .end local v2    # "out":Ljava/io/PrintStream;
     .local v3, "out":Ljava/io/PrintStream;
     :try_start_1
@@ -1925,18 +1931,18 @@
 
     invoke-direct {v4, v3, v5}, Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;-><init>(Ljava/io/PrintStream;Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$1;)V
 
-    .line 651
+    .line 653
     .local v4, "writer":Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;
     const-string v5, "{\"type\": \"FeatureCollection\", \"features\":["
 
     invoke-virtual {v3, v5}, Ljava/io/PrintStream;->print(Ljava/lang/String;)V
 
-    .line 653
+    .line 655
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 654
+    .line 656
     .local v1, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;>;"
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1944,14 +1950,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 655
+    .line 657
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
-    .line 656
+    .line 658
     .local v0, "feature":Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
     const/4 v5, 0x0
 
@@ -1959,7 +1965,7 @@
 
     invoke-interface {v0, v4, v5}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;->accept(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureVisitor;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 657
+    .line 659
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1967,7 +1973,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 658
+    .line 660
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -1975,13 +1981,13 @@
     .end local v0    # "feature":Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
-    .line 659
+    .line 661
     .restart local v0    # "feature":Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
     const/16 v5, 0x2c
 
     invoke-virtual {v3, v5}, Ljava/io/PrintStream;->print(C)V
 
-    .line 660
+    .line 662
     const/4 v5, 0x0
 
     new-array v5, v5, [Ljava/lang/Object;
@@ -1992,7 +1998,7 @@
 
     goto :goto_0
 
-    .line 665
+    .line 667
     .end local v0    # "feature":Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
     .end local v1    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;>;"
     .end local v4    # "writer":Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;
@@ -2008,10 +2014,10 @@
 
     invoke-static {v6, v2}, Lcom/google/appinventor/components/runtime/util/IOUtils;->closeQuietly(Ljava/lang/String;Ljava/io/Closeable;)V
 
-    .line 666
+    .line 668
     throw v5
 
-    .line 663
+    .line 665
     .end local v2    # "out":Ljava/io/PrintStream;
     .restart local v1    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;>;"
     .restart local v3    # "out":Ljava/io/PrintStream;
@@ -2024,15 +2030,15 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 665
+    .line 667
     const-string v5, "GeoJSONUtil"
 
     invoke-static {v5, v3}, Lcom/google/appinventor/components/runtime/util/IOUtils;->closeQuietly(Ljava/lang/String;Ljava/io/Closeable;)V
 
-    .line 667
+    .line 669
     return-void
 
-    .line 665
+    .line 667
     .end local v1    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;>;"
     .end local v3    # "out":Ljava/io/PrintStream;
     .end local v4    # "writer":Lcom/google/appinventor/components/runtime/util/GeoJSONUtil$FeatureWriter;

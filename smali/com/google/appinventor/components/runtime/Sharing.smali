@@ -127,7 +127,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_2
+    if-eqz v7, :cond_3
 
     .line 104
     const-string v7, "."
@@ -158,15 +158,22 @@
 
     move-result-object v6
 
-    .line 108
+    .line 107
     .local v6, "type":Ljava/lang/String;
+    if-nez v6, :cond_1
+
+    .line 109
+    const-string v6, "application/octet-stream"
+
+    .line 112
+    :cond_1
     iget-object v7, p0, Lcom/google/appinventor/components/runtime/Sharing;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v7, v2}, Lcom/google/appinventor/components/runtime/util/NougatUtil;->getPackageUri(Lcom/google/appinventor/components/runtime/Form;Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object v5
 
-    .line 109
+    .line 113
     .local v5, "shareableUri":Landroid/net/Uri;
     new-instance v4, Landroid/content/Intent;
 
@@ -174,37 +181,37 @@
 
     invoke-direct {v4, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 110
+    .line 114
     .local v4, "shareIntent":Landroid/content/Intent;
     const-string v7, "android.intent.extra.STREAM"
 
     invoke-virtual {v4, v7, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 111
+    .line 115
     invoke-virtual {v4, v9}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 112
+    .line 116
     invoke-virtual {v4, v6}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 113
+    .line 117
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v7
 
-    if-lez v7, :cond_1
+    if-lez v7, :cond_2
 
-    .line 114
+    .line 118
     const-string v7, "android.intent.extra.TEXT"
 
     invoke-virtual {v4, v7, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 118
-    :cond_1
+    .line 122
+    :cond_2
     iget-object v7, p0, Lcom/google/appinventor/components/runtime/Sharing;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v7, v4}, Lcom/google/appinventor/components/runtime/Form;->startActivity(Landroid/content/Intent;)V
 
-    .line 127
+    .line 131
     .end local v1    # "fileExtension":Ljava/lang/String;
     .end local v3    # "mime":Landroid/webkit/MimeTypeMap;
     .end local v4    # "shareIntent":Landroid/content/Intent;
@@ -213,11 +220,11 @@
     :goto_0
     return-void
 
-    .line 121
-    :cond_2
+    .line 125
+    :cond_3
     const-string v0, "ShareFile"
 
-    .line 122
+    .line 126
     .local v0, "eventName":Ljava/lang/String;
     const-string v7, ""
 
@@ -225,13 +232,13 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
-    .line 123
+    .line 127
     const-string v0, "ShareFileWithMessage"
 
-    .line 124
-    :cond_3
+    .line 128
+    :cond_4
     iget-object v7, p0, Lcom/google/appinventor/components/runtime/Sharing;->form:Lcom/google/appinventor/components/runtime/Form;
 
     const/16 v8, 0x7d1

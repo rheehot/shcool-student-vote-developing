@@ -67,6 +67,10 @@
 
 .field static final Lit124:Lgnu/mapping/SimpleSymbol;
 
+.field static final Lit125:Lgnu/mapping/SimpleSymbol;
+
+.field static final Lit126:Lgnu/mapping/SimpleSymbol;
+
 .field static final Lit13:Lgnu/lists/PairWithPosition;
 
 .field static final Lit14:Lgnu/mapping/SimpleSymbol;
@@ -293,6 +297,8 @@
 
 .field public final dispatchEvent:Lgnu/expr/ModuleMethod;
 
+.field public final dispatchGenericEvent:Lgnu/expr/ModuleMethod;
+
 .field public events$Mnto$Mnregister:Lgnu/lists/LList;
 
 .field public form$Mndo$Mnafter$Mncreation:Lgnu/lists/LList;
@@ -300,6 +306,8 @@
 .field public form$Mnenvironment:Lgnu/mapping/Environment;
 
 .field public form$Mnname$Mnsymbol:Lgnu/mapping/Symbol;
+
+.field public final get$Mnsimple$Mnname:Lgnu/expr/ModuleMethod;
 
 .field public global$Mnvar$Mnenvironment:Lgnu/mapping/Environment;
 
@@ -334,7 +342,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit126:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -348,7 +356,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -362,7 +370,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -376,7 +384,21 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit121:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+
+    new-instance v0, Lgnu/mapping/SimpleSymbol;
+
+    const-string v1, "dispatchGenericEvent"
+
+    invoke-direct {v0, v1}, Lgnu/mapping/SimpleSymbol;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lgnu/mapping/SimpleSymbol;->readResolve()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgnu/mapping/SimpleSymbol;
+
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -390,7 +412,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit120:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit121:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -404,7 +426,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit119:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit120:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -418,7 +440,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit118:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit119:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -432,7 +454,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit117:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit118:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -446,7 +468,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit116:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit117:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -460,7 +482,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit115:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit116:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -474,7 +496,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit114:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit115:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -488,7 +510,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit113:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit114:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -502,7 +524,7 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit112:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit113:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
@@ -516,11 +538,25 @@
 
     check-cast v0, Lgnu/mapping/SimpleSymbol;
 
-    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit111:Lgnu/mapping/SimpleSymbol;
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit112:Lgnu/mapping/SimpleSymbol;
 
     new-instance v0, Lgnu/mapping/SimpleSymbol;
 
     const-string v1, "android-log-form"
+
+    invoke-direct {v0, v1}, Lgnu/mapping/SimpleSymbol;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lgnu/mapping/SimpleSymbol;->readResolve()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgnu/mapping/SimpleSymbol;
+
+    sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit111:Lgnu/mapping/SimpleSymbol;
+
+    new-instance v0, Lgnu/mapping/SimpleSymbol;
+
+    const-string v1, "get-simple-name"
 
     invoke-direct {v0, v1}, Lgnu/mapping/SimpleSymbol;-><init>(Ljava/lang/String;)V
 
@@ -616,15 +652,15 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit104:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
+    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit126:Lgnu/mapping/SimpleSymbol;
 
     sget-object v3, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v4, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v4, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v5, 0x91fd
 
@@ -632,7 +668,7 @@
 
     move-result-object v2
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x91f6
 
@@ -640,7 +676,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x91f0
 
@@ -650,75 +686,75 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit103:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v4, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v4, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v5, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v5, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v6, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v6, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v7, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v7, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v8, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v8, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v9, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v9, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v10, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v10, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v11, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v11, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v12, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v12, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v13, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v13, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v14, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v14, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v15, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v15, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v16, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v16, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v17, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v17, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v18, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v18, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v19, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v19, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v20, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v20, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v21, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v21, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v23, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v23, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v24, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v24, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v25, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v25, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v26, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v26, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v27, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v27, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v28, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v28, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v29, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v29, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v30, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v30, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v31, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v31, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v32, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v32, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v33, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v34, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v34, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v35, 0x91e0
 
@@ -726,7 +762,7 @@
 
     move-result-object v32
 
-    const-string v33, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v33, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v34, 0x91d9
 
@@ -734,7 +770,7 @@
 
     move-result-object v31
 
-    const-string v32, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v32, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v33, 0x91d2
 
@@ -742,7 +778,7 @@
 
     move-result-object v30
 
-    const-string v31, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v31, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v32, 0x91cb
 
@@ -750,7 +786,7 @@
 
     move-result-object v29
 
-    const-string v30, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v30, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v31, 0x91c4
 
@@ -758,7 +794,7 @@
 
     move-result-object v28
 
-    const-string v29, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v29, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v30, 0x91bd
 
@@ -766,7 +802,7 @@
 
     move-result-object v27
 
-    const-string v28, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v28, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v29, 0x91b6
 
@@ -774,7 +810,7 @@
 
     move-result-object v26
 
-    const-string v27, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v27, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v28, 0x91af
 
@@ -782,7 +818,7 @@
 
     move-result-object v25
 
-    const-string v26, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v26, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v27, 0x91a8
 
@@ -790,7 +826,7 @@
 
     move-result-object v24
 
-    const-string v25, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v25, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v26, 0x91a1
 
@@ -798,7 +834,7 @@
 
     move-result-object v23
 
-    const-string v24, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v24, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v25, 0x919a
 
@@ -806,7 +842,7 @@
 
     move-result-object v22
 
-    const-string v23, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v23, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v24, 0x9193
 
@@ -814,7 +850,7 @@
 
     move-result-object v21
 
-    const-string v22, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v22, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v23, 0x918c
 
@@ -822,7 +858,7 @@
 
     move-result-object v20
 
-    const-string v21, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v21, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v22, 0x9185
 
@@ -830,7 +866,7 @@
 
     move-result-object v19
 
-    const-string v20, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v20, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v21, 0x917e
 
@@ -838,7 +874,7 @@
 
     move-result-object v18
 
-    const-string v19, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v19, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v20, 0x9177
 
@@ -846,7 +882,7 @@
 
     move-result-object v17
 
-    const-string v18, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v18, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v19, 0x9170
 
@@ -854,7 +890,7 @@
 
     move-result-object v16
 
-    const-string v17, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v17, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v18, 0x9169
 
@@ -862,7 +898,7 @@
 
     move-result-object v15
 
-    const-string v16, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v16, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v17, 0x9162
 
@@ -870,7 +906,7 @@
 
     move-result-object v14
 
-    const-string v15, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v15, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v16, 0x915b
 
@@ -878,7 +914,7 @@
 
     move-result-object v13
 
-    const-string v14, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v14, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v15, 0x9154
 
@@ -886,7 +922,7 @@
 
     move-result-object v12
 
-    const-string v13, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v13, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v14, 0x914d
 
@@ -894,7 +930,7 @@
 
     move-result-object v11
 
-    const-string v12, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v12, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v13, 0x9146
 
@@ -902,7 +938,7 @@
 
     move-result-object v10
 
-    const-string v11, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v11, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v12, 0x913f
 
@@ -910,7 +946,7 @@
 
     move-result-object v9
 
-    const-string v10, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v10, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v11, 0x9138
 
@@ -918,7 +954,7 @@
 
     move-result-object v8
 
-    const-string v9, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v9, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v10, 0x9131
 
@@ -926,7 +962,7 @@
 
     move-result-object v7
 
-    const-string v8, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v8, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v9, 0x912a
 
@@ -934,7 +970,7 @@
 
     move-result-object v6
 
-    const-string v7, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v7, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v8, 0x9123
 
@@ -942,7 +978,7 @@
 
     move-result-object v5
 
-    const-string v6, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v6, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v7, 0x911c
 
@@ -950,7 +986,7 @@
 
     move-result-object v4
 
-    const-string v5, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v5, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v6, 0x9115
 
@@ -958,7 +994,7 @@
 
     move-result-object v3
 
-    const-string v4, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v4, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v5, 0x910e
 
@@ -966,7 +1002,7 @@
 
     move-result-object v2
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x9107
 
@@ -974,7 +1010,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x90ff
 
@@ -984,13 +1020,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit102:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x90dc
 
@@ -998,7 +1034,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x90d6
 
@@ -1008,13 +1044,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit101:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x9056
 
@@ -1022,7 +1058,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x9050
 
@@ -1032,13 +1068,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit100:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8fd0
 
@@ -1046,7 +1082,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8fca
 
@@ -1056,13 +1092,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit99:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8f4a
 
@@ -1070,7 +1106,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8f44
 
@@ -1080,13 +1116,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit98:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8ec4
 
@@ -1094,7 +1130,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8ebe
 
@@ -1104,13 +1140,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit97:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8e3e
 
@@ -1118,7 +1154,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8e38
 
@@ -1128,13 +1164,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit96:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8db8
 
@@ -1142,7 +1178,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8db2
 
@@ -1152,13 +1188,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit95:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8d32
 
@@ -1166,7 +1202,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8d2c
 
@@ -1176,13 +1212,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit94:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8cac
 
@@ -1190,7 +1226,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8ca6
 
@@ -1200,13 +1236,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit93:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8c26
 
@@ -1214,7 +1250,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8c20
 
@@ -1224,13 +1260,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit92:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8b9f
 
@@ -1238,7 +1274,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8b99
 
@@ -1248,13 +1284,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit91:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8b18
 
@@ -1262,7 +1298,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8b12
 
@@ -1272,13 +1308,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit90:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8a91
 
@@ -1286,7 +1322,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8a8b
 
@@ -1296,13 +1332,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit89:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8a0a
 
@@ -1310,7 +1346,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8a04
 
@@ -1320,13 +1356,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit88:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8983
 
@@ -1334,7 +1370,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x897d
 
@@ -1344,13 +1380,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit87:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x88fc
 
@@ -1358,7 +1394,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x88f6
 
@@ -1368,13 +1404,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit86:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8875
 
@@ -1382,7 +1418,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x886f
 
@@ -1392,13 +1428,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit85:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x87ee
 
@@ -1406,7 +1442,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x87e8
 
@@ -1416,13 +1452,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit84:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8767
 
@@ -1430,7 +1466,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8761
 
@@ -1440,13 +1476,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit83:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x86e0
 
@@ -1454,7 +1490,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x86da
 
@@ -1464,13 +1500,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit82:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8659
 
@@ -1478,7 +1514,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8653
 
@@ -1488,13 +1524,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit81:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x85d2
 
@@ -1502,7 +1538,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x85cc
 
@@ -1512,13 +1548,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit80:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x854b
 
@@ -1526,7 +1562,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8545
 
@@ -1536,13 +1572,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit79:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x84c4
 
@@ -1550,7 +1586,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x84be
 
@@ -1560,13 +1596,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit78:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x843d
 
@@ -1574,7 +1610,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8437
 
@@ -1584,13 +1620,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit77:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x83b6
 
@@ -1598,7 +1634,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x83b0
 
@@ -1608,13 +1644,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit76:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x832f
 
@@ -1622,7 +1658,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8329
 
@@ -1632,13 +1668,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit75:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x82a8
 
@@ -1646,7 +1682,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x82a2
 
@@ -1656,13 +1692,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit74:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8221
 
@@ -1670,7 +1706,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x821b
 
@@ -1680,13 +1716,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit73:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x819a
 
@@ -1694,7 +1730,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8194
 
@@ -1704,13 +1740,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit72:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8113
 
@@ -1718,7 +1754,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x810d
 
@@ -1728,15 +1764,15 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit71:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
+    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit126:Lgnu/mapping/SimpleSymbol;
 
     sget-object v3, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v4, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v4, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v5, 0x91fd
 
@@ -1744,7 +1780,7 @@
 
     move-result-object v2
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x91f6
 
@@ -1752,7 +1788,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x91f0
 
@@ -1762,75 +1798,75 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit70:Lgnu/lists/PairWithPosition;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v4, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v4, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v5, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v5, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v6, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v6, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v7, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v7, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v8, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v8, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v9, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v9, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v10, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v10, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v11, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v11, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v12, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v12, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v13, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v13, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v14, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v14, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v15, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v15, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v16, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v16, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v17, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v17, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v18, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v18, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v19, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v19, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v20, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v20, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v21, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v21, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v23, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v23, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v24, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v24, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v25, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v25, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v26, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v26, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v27, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v27, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v28, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v28, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v29, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v29, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v30, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v30, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v31, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v31, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v32, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v32, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v33, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v34, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v34, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v35, 0x91e0
 
@@ -1838,7 +1874,7 @@
 
     move-result-object v32
 
-    const-string v33, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v33, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v34, 0x91d9
 
@@ -1846,7 +1882,7 @@
 
     move-result-object v31
 
-    const-string v32, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v32, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v33, 0x91d2
 
@@ -1854,7 +1890,7 @@
 
     move-result-object v30
 
-    const-string v31, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v31, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v32, 0x91cb
 
@@ -1862,7 +1898,7 @@
 
     move-result-object v29
 
-    const-string v30, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v30, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v31, 0x91c4
 
@@ -1870,7 +1906,7 @@
 
     move-result-object v28
 
-    const-string v29, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v29, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v30, 0x91bd
 
@@ -1878,7 +1914,7 @@
 
     move-result-object v27
 
-    const-string v28, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v28, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v29, 0x91b6
 
@@ -1886,7 +1922,7 @@
 
     move-result-object v26
 
-    const-string v27, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v27, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v28, 0x91af
 
@@ -1894,7 +1930,7 @@
 
     move-result-object v25
 
-    const-string v26, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v26, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v27, 0x91a8
 
@@ -1902,7 +1938,7 @@
 
     move-result-object v24
 
-    const-string v25, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v25, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v26, 0x91a1
 
@@ -1910,7 +1946,7 @@
 
     move-result-object v23
 
-    const-string v24, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v24, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v25, 0x919a
 
@@ -1918,7 +1954,7 @@
 
     move-result-object v22
 
-    const-string v23, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v23, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v24, 0x9193
 
@@ -1926,7 +1962,7 @@
 
     move-result-object v21
 
-    const-string v22, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v22, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v23, 0x918c
 
@@ -1934,7 +1970,7 @@
 
     move-result-object v20
 
-    const-string v21, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v21, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v22, 0x9185
 
@@ -1942,7 +1978,7 @@
 
     move-result-object v19
 
-    const-string v20, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v20, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v21, 0x917e
 
@@ -1950,7 +1986,7 @@
 
     move-result-object v18
 
-    const-string v19, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v19, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v20, 0x9177
 
@@ -1958,7 +1994,7 @@
 
     move-result-object v17
 
-    const-string v18, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v18, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v19, 0x9170
 
@@ -1966,7 +2002,7 @@
 
     move-result-object v16
 
-    const-string v17, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v17, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v18, 0x9169
 
@@ -1974,7 +2010,7 @@
 
     move-result-object v15
 
-    const-string v16, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v16, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v17, 0x9162
 
@@ -1982,7 +2018,7 @@
 
     move-result-object v14
 
-    const-string v15, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v15, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v16, 0x915b
 
@@ -1990,7 +2026,7 @@
 
     move-result-object v13
 
-    const-string v14, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v14, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v15, 0x9154
 
@@ -1998,7 +2034,7 @@
 
     move-result-object v12
 
-    const-string v13, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v13, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v14, 0x914d
 
@@ -2006,7 +2042,7 @@
 
     move-result-object v11
 
-    const-string v12, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v12, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v13, 0x9146
 
@@ -2014,7 +2050,7 @@
 
     move-result-object v10
 
-    const-string v11, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v11, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v12, 0x913f
 
@@ -2022,7 +2058,7 @@
 
     move-result-object v9
 
-    const-string v10, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v10, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v11, 0x9138
 
@@ -2030,7 +2066,7 @@
 
     move-result-object v8
 
-    const-string v9, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v9, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v10, 0x9131
 
@@ -2038,7 +2074,7 @@
 
     move-result-object v7
 
-    const-string v8, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v8, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v9, 0x912a
 
@@ -2046,7 +2082,7 @@
 
     move-result-object v6
 
-    const-string v7, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v7, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v8, 0x9123
 
@@ -2054,7 +2090,7 @@
 
     move-result-object v5
 
-    const-string v6, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v6, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v7, 0x911c
 
@@ -2062,7 +2098,7 @@
 
     move-result-object v4
 
-    const-string v5, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v5, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v6, 0x9115
 
@@ -2070,7 +2106,7 @@
 
     move-result-object v3
 
-    const-string v4, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v4, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v5, 0x910e
 
@@ -2078,7 +2114,7 @@
 
     move-result-object v2
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x9107
 
@@ -2086,7 +2122,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x90ff
 
@@ -2104,13 +2140,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit68:Lgnu/math/IntNum;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x90dc
 
@@ -2118,7 +2154,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x90d6
 
@@ -2142,13 +2178,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit66:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x9056
 
@@ -2156,7 +2192,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x9050
 
@@ -2180,13 +2216,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit64:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8fd0
 
@@ -2194,7 +2230,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8fca
 
@@ -2218,13 +2254,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit62:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8f4a
 
@@ -2232,7 +2268,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8f44
 
@@ -2256,13 +2292,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit60:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8ec4
 
@@ -2270,7 +2306,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8ebe
 
@@ -2294,13 +2330,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit58:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8e3e
 
@@ -2308,7 +2344,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8e38
 
@@ -2332,13 +2368,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit56:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8db8
 
@@ -2346,7 +2382,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8db2
 
@@ -2370,13 +2406,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit54:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8d32
 
@@ -2384,7 +2420,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8d2c
 
@@ -2408,13 +2444,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit52:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8cac
 
@@ -2422,7 +2458,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8ca6
 
@@ -2446,13 +2482,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit50:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8c26
 
@@ -2460,7 +2496,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8c20
 
@@ -2484,13 +2520,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit48:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8b9f
 
@@ -2498,7 +2534,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8b99
 
@@ -2522,13 +2558,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit46:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8b18
 
@@ -2536,7 +2572,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8b12
 
@@ -2560,13 +2596,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit44:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8a91
 
@@ -2574,7 +2610,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8a8b
 
@@ -2598,13 +2634,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit42:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8a0a
 
@@ -2612,7 +2648,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8a04
 
@@ -2636,13 +2672,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit40:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8983
 
@@ -2650,7 +2686,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x897d
 
@@ -2674,13 +2710,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit38:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x88fc
 
@@ -2688,7 +2724,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x88f6
 
@@ -2712,13 +2748,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit36:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8875
 
@@ -2726,7 +2762,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x886f
 
@@ -2750,13 +2786,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit34:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x87ee
 
@@ -2764,7 +2800,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x87e8
 
@@ -2788,13 +2824,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit32:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8767
 
@@ -2802,7 +2838,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8761
 
@@ -2826,13 +2862,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit30:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x86e0
 
@@ -2840,7 +2876,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x86da
 
@@ -2864,13 +2900,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit28:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8659
 
@@ -2878,7 +2914,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8653
 
@@ -2902,13 +2938,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit26:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x85d2
 
@@ -2916,7 +2952,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x85cc
 
@@ -2940,13 +2976,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit24:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x854b
 
@@ -2954,7 +2990,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8545
 
@@ -2978,13 +3014,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit22:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x84c4
 
@@ -2992,7 +3028,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x84be
 
@@ -3016,13 +3052,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit20:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x843d
 
@@ -3030,7 +3066,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8437
 
@@ -3054,13 +3090,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit18:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x83b6
 
@@ -3068,7 +3104,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x83b0
 
@@ -3092,13 +3128,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit16:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x832f
 
@@ -3106,7 +3142,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8329
 
@@ -3130,13 +3166,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit14:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x82a8
 
@@ -3144,7 +3180,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x82a2
 
@@ -3168,13 +3204,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit12:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8221
 
@@ -3182,7 +3218,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x821b
 
@@ -3206,13 +3242,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit10:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x819a
 
@@ -3220,7 +3256,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x8194
 
@@ -3244,13 +3280,13 @@
 
     sput-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit8:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
+    sget-object v0, Lcom/lyw514549/school_vote/Screen2;->Lit125:Lgnu/mapping/SimpleSymbol;
 
-    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+    sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit124:Lgnu/mapping/SimpleSymbol;
 
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    const-string v3, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v3, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v4, 0x8113
 
@@ -3258,7 +3294,7 @@
 
     move-result-object v1
 
-    const-string v2, "/tmp/1564375554404_0.26252704755860323-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
+    const-string v2, "/tmp/1564726565996_0.9833410868554088-0/youngandroidproject/../src/com/lyw514549/school_vote/Screen2.yail"
 
     const v3, 0x810d
 
@@ -3396,6 +3432,16 @@
 
     const/4 v2, 0x1
 
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit110:Lgnu/mapping/SimpleSymbol;
+
+    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->get$Mnsimple$Mnname:Lgnu/expr/ModuleMethod;
+
+    new-instance v0, Lgnu/expr/ModuleMethod;
+
+    const/4 v2, 0x2
+
     const-string v3, "onCreate"
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
@@ -3404,9 +3450,9 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit110:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit111:Lgnu/mapping/SimpleSymbol;
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3414,9 +3460,9 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit111:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit112:Lgnu/mapping/SimpleSymbol;
 
     invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3424,9 +3470,9 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x5
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit112:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit113:Lgnu/mapping/SimpleSymbol;
 
     const/16 v4, 0x2001
 
@@ -3436,23 +3482,13 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/4 v2, 0x6
-
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit113:Lgnu/mapping/SimpleSymbol;
-
-    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
-
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->is$Mnbound$Mnin$Mnform$Mnenvironment:Lgnu/expr/ModuleMethod;
-
-    new-instance v0, Lgnu/expr/ModuleMethod;
-
     const/4 v2, 0x7
 
     sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit114:Lgnu/mapping/SimpleSymbol;
 
-    invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnglobal$Mnvar$Mnenvironment:Lgnu/expr/ModuleMethod;
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->is$Mnbound$Mnin$Mnform$Mnenvironment:Lgnu/expr/ModuleMethod;
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
@@ -3462,7 +3498,7 @@
 
     invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnevents:Lgnu/expr/ModuleMethod;
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnglobal$Mnvar$Mnenvironment:Lgnu/expr/ModuleMethod;
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
@@ -3470,9 +3506,9 @@
 
     sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit116:Lgnu/mapping/SimpleSymbol;
 
-    invoke-direct {v0, v1, v2, v3, v9}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+    invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mncomponents:Lgnu/expr/ModuleMethod;
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnevents:Lgnu/expr/ModuleMethod;
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
@@ -3480,9 +3516,9 @@
 
     sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit117:Lgnu/mapping/SimpleSymbol;
 
-    invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+    invoke-direct {v0, v1, v2, v3, v9}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnglobal$Mnvars:Lgnu/expr/ModuleMethod;
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mncomponents:Lgnu/expr/ModuleMethod;
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
@@ -3490,9 +3526,9 @@
 
     sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit118:Lgnu/mapping/SimpleSymbol;
 
-    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+    invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnform$Mndo$Mnafter$Mncreation:Lgnu/expr/ModuleMethod;
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnglobal$Mnvars:Lgnu/expr/ModuleMethod;
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
@@ -3502,11 +3538,21 @@
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
-    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->send$Mnerror:Lgnu/expr/ModuleMethod;
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->add$Mnto$Mnform$Mndo$Mnafter$Mncreation:Lgnu/expr/ModuleMethod;
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
     const/16 v2, 0xd
+
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit120:Lgnu/mapping/SimpleSymbol;
+
+    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->send$Mnerror:Lgnu/expr/ModuleMethod;
+
+    new-instance v0, Lgnu/expr/ModuleMethod;
+
+    const/16 v2, 0xe
 
     const-string v3, "process-exception"
 
@@ -3516,9 +3562,9 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0xe
+    const/16 v2, 0xf
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit120:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit121:Lgnu/mapping/SimpleSymbol;
 
     invoke-direct {v0, v1, v2, v3, v9}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3526,9 +3572,19 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0xf
+    const/16 v2, 0x10
 
-    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit121:Lgnu/mapping/SimpleSymbol;
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit122:Lgnu/mapping/SimpleSymbol;
+
+    invoke-direct {v0, v1, v2, v3, v9}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
+
+    iput-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->dispatchGenericEvent:Lgnu/expr/ModuleMethod;
+
+    new-instance v0, Lgnu/expr/ModuleMethod;
+
+    const/16 v2, 0x11
+
+    sget-object v3, Lcom/lyw514549/school_vote/Screen2;->Lit123:Lgnu/mapping/SimpleSymbol;
 
     invoke-direct {v0, v1, v2, v3, v6}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3536,13 +3592,13 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0x10
+    const/16 v2, 0x12
 
     invoke-direct {v0, v1, v2, v7, v8}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
     const-string v2, "source-location"
 
-    const-string v3, "/tmp/runtime2488080796344481662.scm:581"
+    const-string v3, "/tmp/runtime8190366956081803226.scm:622"
 
     invoke-virtual {v0, v2, v3}, Lgnu/mapping/PropertySet;->setProperty(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -3550,7 +3606,7 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0x11
+    const/16 v2, 0x13
 
     const-string v3, "$define"
 
@@ -3560,7 +3616,7 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0x12
+    const/16 v2, 0x14
 
     invoke-direct {v0, v1, v2, v7, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3568,7 +3624,7 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0x13
+    const/16 v2, 0x15
 
     invoke-direct {v0, v1, v2, v7, v5}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3576,7 +3632,7 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0x14
+    const/16 v2, 0x16
 
     invoke-direct {v0, v1, v2, v7, v8}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3584,7 +3640,7 @@
 
     new-instance v0, Lgnu/expr/ModuleMethod;
 
-    const/16 v2, 0x15
+    const/16 v2, 0x17
 
     invoke-direct {v0, v1, v2, v7, v8}, Lgnu/expr/ModuleMethod;-><init>(Lgnu/expr/ModuleBody;ILjava/lang/Object;I)V
 
@@ -3600,21 +3656,21 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 10238
+    .line 10279
     const/4 v4, 0x0
 
     invoke-static {p0, v4}, Lgnu/lists/LList;->makeList([Ljava/lang/Object;I)Lgnu/lists/LList;
 
     move-result-object v3
 
-    .line 10239
+    .line 10280
     .local v3, "symbols":Lgnu/lists/LList;
     sget-object v5, Lkawa/standard/Scheme;->apply:Lgnu/kawa/functions/Apply;
 
-    .line 10240
+    .line 10281
     sget-object v6, Lkawa/lib/strings;->string$Mnappend:Lgnu/expr/ModuleMethod;
 
-    .line 10241
+    .line 10282
     sget-object v2, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
     move-object v0, v3
@@ -3706,7 +3762,7 @@
 
     throw v6
 
-    .line 10240
+    .line 10281
     .end local v0    # "arg0":Lgnu/lists/Pair;
     :catch_2
     move-exception v5
@@ -3724,7 +3780,7 @@
     .locals 1
 
     .prologue
-    .line 10271
+    .line 10312
     const/4 v0, 0x0
 
     return-object v0
@@ -8262,191 +8318,200 @@
 
 # virtual methods
 .method public $define()V
-    .locals 26
+    .locals 27
 
     .prologue
-    .line 10175
+    .line 10220
     invoke-static {}, Lkawa/standard/Scheme;->getInstance()Lkawa/standard/Scheme;
 
-    move-result-object v21
+    move-result-object v22
 
-    invoke-static/range {v21 .. v21}, Lgnu/expr/Language;->setDefaults(Lgnu/expr/Language;)V
+    invoke-static/range {v22 .. v22}, Lgnu/expr/Language;->setDefaults(Lgnu/expr/Language;)V
 
-    .line 10255
+    .line 10296
     :try_start_0
     invoke-virtual/range {p0 .. p0}, Lcom/lyw514549/school_vote/Screen2;->run()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 10258
+    .line 10299
     :goto_0
     sput-object p0, Lcom/lyw514549/school_vote/Screen2;->Screen2:Lcom/lyw514549/school_vote/Screen2;
 
-    sget-object v21, Lcom/lyw514549/school_vote/Screen2;->Lit0:Lgnu/mapping/SimpleSymbol;
+    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->Lit0:Lgnu/mapping/SimpleSymbol;
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
     move-object/from16 v2, p0
 
     invoke-virtual {v0, v1, v2}, Lcom/lyw514549/school_vote/Screen2;->addToFormEnvironment(Lgnu/mapping/Symbol;Ljava/lang/Object;)V
 
-    .line 10263
+    .line 10304
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/lyw514549/school_vote/Screen2;->events$Mnto$Mnregister:Lgnu/lists/LList;
+    iget-object v15, v0, Lcom/lyw514549/school_vote/Screen2;->events$Mnto$Mnregister:Lgnu/lists/LList;
 
-    .line 10179
-    .local v14, "events":Lgnu/lists/LList;
-    move-object v5, v14
+    .line 10224
+    .local v15, "events":Lgnu/lists/LList;
+    move-object v5, v15
 
     :goto_1
-    sget-object v21, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+    sget-object v22, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     if-ne v5, v0, :cond_0
 
-    .line 10266
+    .line 10307
     :try_start_1
-    sget-object v21, Lcom/lyw514549/school_vote/Screen2;->Lit2:Lgnu/mapping/SimpleSymbol;
-
-    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->lambda$Fn1:Lgnu/expr/ModuleMethod;
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v21
-
-    move-object/from16 v2, v22
-
-    invoke-virtual {v0, v1, v2}, Lcom/lyw514549/school_vote/Screen2;->addToGlobalVars(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 10277
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/lyw514549/school_vote/Screen2;->global$Mnvars$Mnto$Mncreate:Lgnu/lists/LList;
-
-    move-object/from16 v21, v0
-
-    invoke-static/range {v21 .. v21}, Lkawa/lib/lists;->reverse(Lgnu/lists/LList;)Lgnu/lists/LList;
-
-    move-result-object v20
-
-    .line 10190
-    .local v20, "var$Mnval$Mnpairs":Lgnu/lists/LList;
-    move-object/from16 v6, p0
-
-    .line 10196
-    .local v6, "closureEnv":Lcom/lyw514549/school_vote/Screen2;
-    move-object/from16 v5, v20
-
-    :goto_2
-    sget-object v21, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
-
-    move-object/from16 v0, v21
-
-    if-ne v5, v0, :cond_3
-
-    .line 10278
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/lyw514549/school_vote/Screen2;->form$Mndo$Mnafter$Mncreation:Lgnu/lists/LList;
-
-    move-object/from16 v21, v0
-
-    invoke-static/range {v21 .. v21}, Lkawa/lib/lists;->reverse(Lgnu/lists/LList;)Lgnu/lists/LList;
-
-    move-result-object v5
-
-    :goto_3
-    sget-object v21, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
-
-    move-object/from16 v0, v21
-
-    if-ne v5, v0, :cond_4
-
-    .line 10279
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/lyw514549/school_vote/Screen2;->components$Mnto$Mncreate:Lgnu/lists/LList;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    invoke-static/range {v21 .. v21}, Lkawa/lib/lists;->reverse(Lgnu/lists/LList;)Lgnu/lists/LList;
+    invoke-static/range {v22 .. v22}, Lkawa/lib/lists;->reverse(Lgnu/lists/LList;)Lgnu/lists/LList;
 
-    move-result-object v8
+    move-result-object v13
 
-    .line 10199
+    .line 10312
+    .local v13, "components":Lgnu/lists/LList;
+    sget-object v22, Lcom/lyw514549/school_vote/Screen2;->Lit2:Lgnu/mapping/SimpleSymbol;
+
+    sget-object v23, Lcom/lyw514549/school_vote/Screen2;->lambda$Fn1:Lgnu/expr/ModuleMethod;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v22
+
+    move-object/from16 v2, v23
+
+    invoke-virtual {v0, v1, v2}, Lcom/lyw514549/school_vote/Screen2;->addToGlobalVars(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 10316
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/lyw514549/school_vote/Screen2;->form$Mndo$Mnafter$Mncreation:Lgnu/lists/LList;
+
+    move-object/from16 v22, v0
+
+    invoke-static/range {v22 .. v22}, Lkawa/lib/lists;->reverse(Lgnu/lists/LList;)Lgnu/lists/LList;
+
+    move-result-object v5
+
+    :goto_2
+    sget-object v22, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+
+    move-object/from16 v0, v22
+
+    if-ne v5, v0, :cond_3
+
+    .line 10244
+    move-object v8, v13
+
     .local v8, "component$Mndescriptors":Lgnu/lists/LList;
     move-object/from16 v6, p0
 
-    .line 10200
+    .line 10259
+    .local v6, "closureEnv":Lcom/lyw514549/school_vote/Screen2;
     move-object v5, v8
 
-    :goto_4
-    sget-object v21, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+    :goto_3
+    sget-object v22, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    if-ne v5, v0, :cond_5
+    if-ne v5, v0, :cond_4
 
-    .line 10228
-    move-object v5, v8
+    .line 10323
+    move-object/from16 v0, p0
 
-    :goto_5
-    sget-object v21, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+    iget-object v0, v0, Lcom/lyw514549/school_vote/Screen2;->global$Mnvars$Mnto$Mncreate:Lgnu/lists/LList;
 
-    move-object/from16 v0, v21
+    move-object/from16 v22, v0
 
-    if-ne v5, v0, :cond_6
-
-    .line 10235
-    move-object v5, v8
-
-    :goto_6
-    sget-object v21, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
-    :try_end_1
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_1 .. :try_end_1} :catch_2
-
-    move-object/from16 v0, v21
-
-    if-ne v5, v0, :cond_8
-
-    .line 10282
-    .end local v6    # "closureEnv":Lcom/lyw514549/school_vote/Screen2;
-    .end local v8    # "component$Mndescriptors":Lgnu/lists/LList;
-    .end local v20    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
-    :goto_7
-    return-void
-
-    .line 10255
-    .end local v14    # "events":Lgnu/lists/LList;
-    :catch_0
-    move-exception v15
-
-    .line 10257
-    .local v15, "exception":Ljava/lang/Exception;
-    invoke-virtual {v15}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-static/range {v22 .. v22}, Lkawa/lib/lists;->reverse(Lgnu/lists/LList;)Lgnu/lists/LList;
 
     move-result-object v21
 
+    .line 10235
+    .local v21, "var$Mnval$Mnpairs":Lgnu/lists/LList;
+    move-object/from16 v6, p0
+
+    .line 10241
+    move-object/from16 v5, v21
+
+    :goto_4
+    sget-object v22, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+
+    move-object/from16 v0, v22
+
+    if-ne v5, v0, :cond_5
+
+    .line 10262
+    move-object v8, v13
+
+    .line 10264
+    move-object v5, v8
+
+    :goto_5
+    sget-object v22, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+
+    move-object/from16 v0, v22
+
+    if-ne v5, v0, :cond_6
+
+    .line 10276
+    move-object v5, v8
+
+    :goto_6
+    sget-object v22, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
+    :try_end_1
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_1 .. :try_end_1} :catch_2
+
+    move-object/from16 v0, v22
+
+    if-ne v5, v0, :cond_8
+
+    .line 10333
+    .end local v6    # "closureEnv":Lcom/lyw514549/school_vote/Screen2;
+    .end local v8    # "component$Mndescriptors":Lgnu/lists/LList;
+    .end local v13    # "components":Lgnu/lists/LList;
+    .end local v21    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
+    :goto_7
+    return-void
+
+    .line 10296
+    .end local v15    # "events":Lgnu/lists/LList;
+    :catch_0
+    move-exception v16
+
+    .line 10298
+    .local v16, "exception":Ljava/lang/Exception;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v22
+
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Lcom/lyw514549/school_vote/Screen2;->androidLogForm(Ljava/lang/Object;)V
 
-    .line 10258
+    .line 10299
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v15}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 10179
-    .end local v15    # "exception":Ljava/lang/Exception;
-    .restart local v14    # "events":Lgnu/lists/LList;
+    .line 10224
+    .end local v16    # "exception":Ljava/lang/Exception;
+    .restart local v15    # "events":Lgnu/lists/LList;
     :cond_0
     :try_start_2
     check-cast v5, Lgnu/lists/Pair;
@@ -8456,43 +8521,43 @@
     .local v5, "arg0":Lgnu/lists/Pair;
     invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v14
 
-    .line 10183
-    .local v13, "event$Mninfo":Ljava/lang/Object;
-    sget-object v21, Lkawa/lib/lists;->car:Lgnu/expr/GenericProc;
+    .line 10228
+    .local v14, "event$Mninfo":Ljava/lang/Object;
+    sget-object v22, Lkawa/lib/lists;->car:Lgnu/expr/GenericProc;
 
-    .line 10185
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v13}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v21
-
-    if-nez v21, :cond_1
-
-    const/16 v21, 0x0
-
-    :goto_8
-    sget-object v22, Lkawa/lib/lists;->cdr:Lgnu/expr/GenericProc;
-
-    .line 10186
+    .line 10230
     move-object/from16 v0, v22
 
-    invoke-virtual {v0, v13}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v22
 
-    if-nez v22, :cond_2
+    if-nez v22, :cond_1
 
     const/16 v22, 0x0
+
+    :goto_8
+    sget-object v23, Lkawa/lib/lists;->cdr:Lgnu/expr/GenericProc;
+
+    .line 10231
+    move-object/from16 v0, v23
+
+    invoke-virtual {v0, v14}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v23
+
+    if-nez v23, :cond_2
+
+    const/16 v23, 0x0
 
     :goto_9
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
-    move-object/from16 v2, v22
+    move-object/from16 v2, v23
 
     invoke-static {v0, v1, v2}, Lcom/google/appinventor/components/runtime/EventDispatcher;->registerEventForDelegation(Lcom/google/appinventor/components/runtime/HandlesEventDispatching;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -8503,28 +8568,27 @@
     .local v5, "arg0":Ljava/lang/Object;
     goto/16 :goto_1
 
-    .line 10185
+    .line 10230
     .local v5, "arg0":Lgnu/lists/Pair;
     :cond_1
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    goto :goto_8
-
-    .line 10186
-    :cond_2
     invoke-virtual/range {v22 .. v22}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v22
 
+    goto :goto_8
+
+    .line 10231
+    :cond_2
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v23
+
     goto :goto_9
 
-    .line 10196
+    .line 10316
     .end local v5    # "arg0":Lgnu/lists/Pair;
-    .end local v13    # "event$Mninfo":Ljava/lang/Object;
-    .restart local v6    # "closureEnv":Lcom/lyw514549/school_vote/Screen2;
-    .restart local v20    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
+    .end local v14    # "event$Mninfo":Ljava/lang/Object;
+    .restart local v13    # "components":Lgnu/lists/LList;
     :cond_3
     :try_start_3
     check-cast v5, Lgnu/lists/Pair;
@@ -8532,66 +8596,14 @@
     .catch Ljava/lang/ClassCastException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 10277
+    .line 10312
     .restart local v5    # "arg0":Lgnu/lists/Pair;
     :try_start_4
     invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
 
-    move-result-object v19
+    move-result-object v22
 
-    .line 10193
-    .local v19, "var$Mnval":Ljava/lang/Object;
-    sget-object v21, Lkawa/lib/lists;->car:Lgnu/expr/GenericProc;
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v18
-
-    .line 10194
-    sget-object v21, Lkawa/lib/lists;->cadr:Lgnu/expr/GenericProc;
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_4
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_4 .. :try_end_4} :catch_2
-
-    move-result-object v17
-
-    .line 10195
-    .local v17, "val$Mnthunk":Ljava/lang/Object;
-    .local v18, "var":Ljava/lang/Object;
-    :try_start_5
-    check-cast v18, Lgnu/mapping/Symbol;
-    :try_end_5
-    .catch Ljava/lang/ClassCastException; {:try_start_5 .. :try_end_5} :catch_3
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_5 .. :try_end_5} :catch_2
-
-    .end local v18    # "var":Ljava/lang/Object;
-    :try_start_6
-    sget-object v21, Lkawa/standard/Scheme;->applyToArgs:Lgnu/kawa/functions/ApplyToArgs;
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v18
-
-    move-object/from16 v2, v21
-
-    invoke-virtual {v0, v1, v2}, Lcom/lyw514549/school_vote/Screen2;->addToGlobalVarEnvironment(Lgnu/mapping/Symbol;Ljava/lang/Object;)V
+    invoke-static/range {v22 .. v22}, Lkawa/lib/misc;->force(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v5}, Lgnu/lists/Pair;->getCdr()Ljava/lang/Object;
 
@@ -8600,233 +8612,149 @@
     .local v5, "arg0":Ljava/lang/Object;
     goto/16 :goto_2
 
-    .line 10277
     .end local v5    # "arg0":Ljava/lang/Object;
-    .end local v17    # "val$Mnthunk":Ljava/lang/Object;
-    .end local v19    # "var$Mnval":Ljava/lang/Object;
     :catch_1
-    move-exception v21
+    move-exception v22
 
-    new-instance v22, Lgnu/mapping/WrongType;
+    new-instance v23, Lgnu/mapping/WrongType;
 
-    const-string v23, "arg0"
+    const-string v24, "arg0"
 
-    const/16 v24, -0x2
+    const/16 v25, -0x2
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
-    move-object/from16 v2, v23
+    move-object/from16 v2, v24
 
-    move/from16 v3, v24
+    move/from16 v3, v25
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    throw v22
-    :try_end_6
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_6 .. :try_end_6} :catch_2
+    throw v23
+    :try_end_4
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 10234
-    .end local v6    # "closureEnv":Lcom/lyw514549/school_vote/Screen2;
-    .end local v20    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
+    .line 10275
+    .end local v13    # "components":Lgnu/lists/LList;
     :catch_2
-    move-exception v15
+    move-exception v16
 
-    .line 10282
-    .local v15, "exception":Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
+    .line 10333
+    .local v16, "exception":Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v15}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
+    move-object/from16 v1, v16
 
-    goto/16 :goto_7
+    invoke-virtual {v0, v1}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
 
-    .line 10195
-    .end local v15    # "exception":Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
-    .local v5, "arg0":Lgnu/lists/Pair;
+    goto :goto_7
+
+    .line 10259
+    .end local v16    # "exception":Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
     .restart local v6    # "closureEnv":Lcom/lyw514549/school_vote/Screen2;
-    .restart local v17    # "val$Mnthunk":Ljava/lang/Object;
-    .restart local v18    # "var":Ljava/lang/Object;
-    .restart local v19    # "var$Mnval":Ljava/lang/Object;
-    .restart local v20    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
-    :catch_3
-    move-exception v21
-
-    :try_start_7
-    new-instance v22, Lgnu/mapping/WrongType;
-
-    const-string v23, "add-to-global-var-environment"
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v21
-
-    move-object/from16 v2, v23
-
-    move/from16 v3, v24
-
-    move-object/from16 v4, v18
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
-
-    throw v22
-    :try_end_7
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_7 .. :try_end_7} :catch_2
-
-    .line 10278
-    .end local v5    # "arg0":Lgnu/lists/Pair;
-    .end local v17    # "val$Mnthunk":Ljava/lang/Object;
-    .end local v18    # "var":Ljava/lang/Object;
-    .end local v19    # "var$Mnval":Ljava/lang/Object;
-    :cond_4
-    :try_start_8
-    check-cast v5, Lgnu/lists/Pair;
-    :try_end_8
-    .catch Ljava/lang/ClassCastException; {:try_start_8 .. :try_end_8} :catch_4
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_8 .. :try_end_8} :catch_2
-
-    .line 10266
-    .restart local v5    # "arg0":Lgnu/lists/Pair;
-    :try_start_9
-    invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
-
-    move-result-object v21
-
-    invoke-static/range {v21 .. v21}, Lkawa/lib/misc;->force(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v5}, Lgnu/lists/Pair;->getCdr()Ljava/lang/Object;
-
-    move-result-object v5
-
-    .local v5, "arg0":Ljava/lang/Object;
-    goto/16 :goto_3
-
-    .end local v5    # "arg0":Ljava/lang/Object;
-    :catch_4
-    move-exception v21
-
-    new-instance v22, Lgnu/mapping/WrongType;
-
-    const-string v23, "arg0"
-
-    const/16 v24, -0x2
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v21
-
-    move-object/from16 v2, v23
-
-    move/from16 v3, v24
-
-    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
-
-    throw v22
-    :try_end_9
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_9 .. :try_end_9} :catch_2
-
-    .line 10200
     .restart local v8    # "component$Mndescriptors":Lgnu/lists/LList;
-    :cond_5
-    :try_start_a
+    .restart local v13    # "components":Lgnu/lists/LList;
+    :cond_4
+    :try_start_5
     check-cast v5, Lgnu/lists/Pair;
-    :try_end_a
-    .catch Ljava/lang/ClassCastException; {:try_start_a .. :try_end_a} :catch_5
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_a .. :try_end_a} :catch_2
+    :try_end_5
+    .catch Ljava/lang/ClassCastException; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_5 .. :try_end_5} :catch_2
 
+    .line 10317
     .local v5, "arg0":Lgnu/lists/Pair;
-    :try_start_b
+    :try_start_6
     invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 10201
+    .line 10246
     .local v9, "component$Mninfo":Ljava/lang/Object;
-    sget-object v21, Lkawa/lib/lists;->caddr:Lgnu/expr/GenericProc;
+    sget-object v22, Lkawa/lib/lists;->caddr:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v10
 
-    .line 10202
-    sget-object v21, Lkawa/lib/lists;->cadddr:Lgnu/expr/GenericProc;
+    .line 10247
+    sget-object v22, Lkawa/lib/lists;->cadddr:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10203
-    sget-object v21, Lkawa/lib/lists;->cadr:Lgnu/expr/GenericProc;
+    .line 10248
+    sget-object v22, Lkawa/lib/lists;->cadr:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v12
 
-    .line 10204
-    sget-object v21, Lkawa/lib/lists;->car:Lgnu/expr/GenericProc;
+    .line 10249
+    sget-object v22, Lkawa/lib/lists;->car:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_b .. :try_end_b} :catch_2
+    :try_end_6
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_6 .. :try_end_6} :catch_2
 
-    move-result-object v21
+    move-result-object v22
 
-    :try_start_c
-    check-cast v21, Lgnu/mapping/Symbol;
-    :try_end_c
-    .catch Ljava/lang/ClassCastException; {:try_start_c .. :try_end_c} :catch_6
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_c .. :try_end_c} :catch_2
+    :try_start_7
+    check-cast v22, Lgnu/mapping/Symbol;
+    :try_end_7
+    .catch Ljava/lang/ClassCastException; {:try_start_7 .. :try_end_7} :catch_4
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_7 .. :try_end_7} :catch_2
 
-    :try_start_d
+    :try_start_8
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Lcom/lyw514549/school_vote/Screen2;->lookupInFormEnvironment(Lgnu/mapping/Symbol;)Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 10208
+    .line 10253
     .local v7, "component$Mncontainer":Ljava/lang/Object;
     .local v10, "component$Mnname":Ljava/lang/Object;
     .local v12, "component$Mntype":Ljava/lang/Object;
-    sget-object v21, Lgnu/kawa/reflect/Invoke;->make:Lgnu/kawa/reflect/Invoke;
+    sget-object v22, Lgnu/kawa/reflect/Invoke;->make:Lgnu/kawa/reflect/Invoke;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v12, v7}, Lgnu/mapping/Procedure;->apply2(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v11
 
-    .line 10210
+    .line 10255
     .local v11, "component$Mnobject":Ljava/lang/Object;
-    sget-object v21, Lgnu/kawa/reflect/SlotSet;->set$Mnfield$Ex:Lgnu/kawa/reflect/SlotSet;
+    sget-object v22, Lgnu/kawa/reflect/SlotSet;->set$Mnfield$Ex:Lgnu/kawa/reflect/SlotSet;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1, v10, v11}, Lgnu/mapping/Procedure;->apply3(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_d
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_d .. :try_end_d} :catch_2
+    :try_end_8
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_8 .. :try_end_8} :catch_2
 
-    .line 10213
-    :try_start_e
+    .line 10258
+    :try_start_9
     check-cast v10, Lgnu/mapping/Symbol;
-    :try_end_e
-    .catch Ljava/lang/ClassCastException; {:try_start_e .. :try_end_e} :catch_7
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_e .. :try_end_e} :catch_2
+    :try_end_9
+    .catch Ljava/lang/ClassCastException; {:try_start_9 .. :try_end_9} :catch_5
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_9 .. :try_end_9} :catch_2
 
     .end local v10    # "component$Mnname":Ljava/lang/Object;
-    :try_start_f
+    :try_start_a
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v10, v11}, Lcom/lyw514549/school_vote/Screen2;->addToFormEnvironment(Lgnu/mapping/Symbol;Ljava/lang/Object;)V
@@ -8836,44 +8764,72 @@
     move-result-object v5
 
     .local v5, "arg0":Ljava/lang/Object;
-    goto/16 :goto_4
+    goto/16 :goto_3
 
-    .line 10200
+    .line 10317
     .end local v5    # "arg0":Ljava/lang/Object;
     .end local v7    # "component$Mncontainer":Ljava/lang/Object;
     .end local v9    # "component$Mninfo":Ljava/lang/Object;
     .end local v11    # "component$Mnobject":Ljava/lang/Object;
     .end local v12    # "component$Mntype":Ljava/lang/Object;
-    :catch_5
-    move-exception v21
-
-    new-instance v22, Lgnu/mapping/WrongType;
-
-    const-string v23, "arg0"
-
-    const/16 v24, -0x2
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v21
-
-    move-object/from16 v2, v23
-
-    move/from16 v3, v24
-
-    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
-
-    throw v22
-
-    .line 10204
-    .local v5, "arg0":Lgnu/lists/Pair;
-    .restart local v9    # "component$Mninfo":Ljava/lang/Object;
-    :catch_6
+    :catch_3
     move-exception v22
 
     new-instance v23, Lgnu/mapping/WrongType;
 
-    const-string v24, "lookup-in-form-environment"
+    const-string v24, "arg0"
+
+    const/16 v25, -0x2
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v22
+
+    move-object/from16 v2, v24
+
+    move/from16 v3, v25
+
+    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v23
+
+    .line 10249
+    .local v5, "arg0":Lgnu/lists/Pair;
+    .restart local v9    # "component$Mninfo":Ljava/lang/Object;
+    :catch_4
+    move-exception v23
+
+    new-instance v24, Lgnu/mapping/WrongType;
+
+    const-string v25, "lookup-in-form-environment"
+
+    const/16 v26, 0x0
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v23
+
+    move-object/from16 v2, v25
+
+    move/from16 v3, v26
+
+    move-object/from16 v4, v22
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v24
+
+    .line 10258
+    .restart local v7    # "component$Mncontainer":Ljava/lang/Object;
+    .restart local v10    # "component$Mnname":Ljava/lang/Object;
+    .restart local v11    # "component$Mnobject":Ljava/lang/Object;
+    .restart local v12    # "component$Mntype":Ljava/lang/Object;
+    :catch_5
+    move-exception v22
+
+    new-instance v23, Lgnu/mapping/WrongType;
+
+    const-string v24, "add-to-form-environment"
 
     const/16 v25, 0x0
 
@@ -8885,93 +8841,200 @@
 
     move/from16 v3, v25
 
-    move-object/from16 v4, v21
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
-
-    throw v23
-
-    .line 10213
-    .restart local v7    # "component$Mncontainer":Ljava/lang/Object;
-    .restart local v10    # "component$Mnname":Ljava/lang/Object;
-    .restart local v11    # "component$Mnobject":Ljava/lang/Object;
-    .restart local v12    # "component$Mntype":Ljava/lang/Object;
-    :catch_7
-    move-exception v21
-
-    new-instance v22, Lgnu/mapping/WrongType;
-
-    const-string v23, "add-to-form-environment"
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v21
-
-    move-object/from16 v2, v23
-
-    move/from16 v3, v24
-
     invoke-direct {v0, v1, v2, v3, v10}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    throw v22
-    :try_end_f
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_f .. :try_end_f} :catch_2
+    throw v23
+    :try_end_a
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_a .. :try_end_a} :catch_2
 
-    .line 10228
+    .line 10241
     .end local v5    # "arg0":Lgnu/lists/Pair;
     .end local v7    # "component$Mncontainer":Ljava/lang/Object;
     .end local v9    # "component$Mninfo":Ljava/lang/Object;
     .end local v10    # "component$Mnname":Ljava/lang/Object;
     .end local v11    # "component$Mnobject":Ljava/lang/Object;
     .end local v12    # "component$Mntype":Ljava/lang/Object;
-    :cond_6
-    :try_start_10
+    .restart local v21    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
+    :cond_5
+    :try_start_b
     check-cast v5, Lgnu/lists/Pair;
-    :try_end_10
-    .catch Ljava/lang/ClassCastException; {:try_start_10 .. :try_end_10} :catch_8
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_10 .. :try_end_10} :catch_2
+    :try_end_b
+    .catch Ljava/lang/ClassCastException; {:try_start_b .. :try_end_b} :catch_6
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_b .. :try_end_b} :catch_2
 
-    .line 10200
+    .line 10323
     .restart local v5    # "arg0":Lgnu/lists/Pair;
-    :try_start_11
+    :try_start_c
+    invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
+
+    move-result-object v20
+
+    .line 10238
+    .local v20, "var$Mnval":Ljava/lang/Object;
+    sget-object v22, Lkawa/lib/lists;->car:Lgnu/expr/GenericProc;
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v19
+
+    .line 10239
+    sget-object v22, Lkawa/lib/lists;->cadr:Lgnu/expr/GenericProc;
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_c
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_c .. :try_end_c} :catch_2
+
+    move-result-object v18
+
+    .line 10240
+    .local v18, "val$Mnthunk":Ljava/lang/Object;
+    .local v19, "var":Ljava/lang/Object;
+    :try_start_d
+    check-cast v19, Lgnu/mapping/Symbol;
+    :try_end_d
+    .catch Ljava/lang/ClassCastException; {:try_start_d .. :try_end_d} :catch_7
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_d .. :try_end_d} :catch_2
+
+    .end local v19    # "var":Ljava/lang/Object;
+    :try_start_e
+    sget-object v22, Lkawa/standard/Scheme;->applyToArgs:Lgnu/kawa/functions/ApplyToArgs;
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v22
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v22
+
+    invoke-virtual {v0, v1, v2}, Lcom/lyw514549/school_vote/Screen2;->addToGlobalVarEnvironment(Lgnu/mapping/Symbol;Ljava/lang/Object;)V
+
+    invoke-virtual {v5}, Lgnu/lists/Pair;->getCdr()Ljava/lang/Object;
+
+    move-result-object v5
+
+    .local v5, "arg0":Ljava/lang/Object;
+    goto/16 :goto_4
+
+    .line 10323
+    .end local v5    # "arg0":Ljava/lang/Object;
+    .end local v18    # "val$Mnthunk":Ljava/lang/Object;
+    .end local v20    # "var$Mnval":Ljava/lang/Object;
+    :catch_6
+    move-exception v22
+
+    new-instance v23, Lgnu/mapping/WrongType;
+
+    const-string v24, "arg0"
+
+    const/16 v25, -0x2
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v22
+
+    move-object/from16 v2, v24
+
+    move/from16 v3, v25
+
+    invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v23
+
+    .line 10240
+    .local v5, "arg0":Lgnu/lists/Pair;
+    .restart local v18    # "val$Mnthunk":Ljava/lang/Object;
+    .restart local v19    # "var":Ljava/lang/Object;
+    .restart local v20    # "var$Mnval":Ljava/lang/Object;
+    :catch_7
+    move-exception v22
+
+    new-instance v23, Lgnu/mapping/WrongType;
+
+    const-string v24, "add-to-global-var-environment"
+
+    const/16 v25, 0x0
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v22
+
+    move-object/from16 v2, v24
+
+    move/from16 v3, v25
+
+    move-object/from16 v4, v19
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v23
+    :try_end_e
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_e .. :try_end_e} :catch_2
+
+    .line 10264
+    .end local v5    # "arg0":Lgnu/lists/Pair;
+    .end local v18    # "val$Mnthunk":Ljava/lang/Object;
+    .end local v19    # "var":Ljava/lang/Object;
+    .end local v20    # "var$Mnval":Ljava/lang/Object;
+    :cond_6
+    :try_start_f
+    check-cast v5, Lgnu/lists/Pair;
+    :try_end_f
+    .catch Ljava/lang/ClassCastException; {:try_start_f .. :try_end_f} :catch_8
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_f .. :try_end_f} :catch_2
+
+    .restart local v5    # "arg0":Lgnu/lists/Pair;
+    :try_start_10
     invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 10224
+    .line 10265
     .restart local v9    # "component$Mninfo":Ljava/lang/Object;
-    sget-object v21, Lkawa/lib/lists;->caddr:Lgnu/expr/GenericProc;
+    sget-object v22, Lkawa/lib/lists;->caddr:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
-
-    invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 10225
-    sget-object v21, Lkawa/lib/lists;->cadddr:Lgnu/expr/GenericProc;
-
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v16
+    .line 10266
+    sget-object v22, Lkawa/lib/lists;->cadddr:Lgnu/expr/GenericProc;
 
-    .line 10227
-    .local v16, "init$Mnthunk":Ljava/lang/Object;
-    sget-object v21, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-object/from16 v0, v22
 
-    move-object/from16 v0, v16
+    invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v1, v21
+    move-result-object v17
+
+    .line 10268
+    .local v17, "init$Mnthunk":Ljava/lang/Object;
+    sget-object v22, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v22
 
     if-eq v0, v1, :cond_7
 
-    sget-object v21, Lkawa/standard/Scheme;->applyToArgs:Lgnu/kawa/functions/ApplyToArgs;
+    sget-object v22, Lkawa/standard/Scheme;->applyToArgs:Lgnu/kawa/functions/ApplyToArgs;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v16
+    move-object/from16 v1, v17
 
     invoke-virtual {v0, v1}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8983,80 +9046,80 @@
     .local v5, "arg0":Ljava/lang/Object;
     goto/16 :goto_5
 
-    .line 10200
+    .line 10264
     .end local v5    # "arg0":Ljava/lang/Object;
     .end local v9    # "component$Mninfo":Ljava/lang/Object;
-    .end local v16    # "init$Mnthunk":Ljava/lang/Object;
+    .end local v17    # "init$Mnthunk":Ljava/lang/Object;
     :catch_8
-    move-exception v21
+    move-exception v22
 
-    new-instance v22, Lgnu/mapping/WrongType;
+    new-instance v23, Lgnu/mapping/WrongType;
 
-    const-string v23, "arg0"
+    const-string v24, "arg0"
 
-    const/16 v24, -0x2
+    const/16 v25, -0x2
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
-    move-object/from16 v2, v23
+    move-object/from16 v2, v24
 
-    move/from16 v3, v24
+    move/from16 v3, v25
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    throw v22
+    throw v23
+    :try_end_10
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_10 .. :try_end_10} :catch_2
+
+    .line 10276
+    :cond_8
+    :try_start_11
+    check-cast v5, Lgnu/lists/Pair;
     :try_end_11
+    .catch Ljava/lang/ClassCastException; {:try_start_11 .. :try_end_11} :catch_9
     .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_11 .. :try_end_11} :catch_2
 
-    .line 10235
-    :cond_8
-    :try_start_12
-    check-cast v5, Lgnu/lists/Pair;
-    :try_end_12
-    .catch Ljava/lang/ClassCastException; {:try_start_12 .. :try_end_12} :catch_9
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_12 .. :try_end_12} :catch_2
-
-    .line 10200
+    .line 10264
     .local v5, "arg0":Lgnu/lists/Pair;
-    :try_start_13
+    :try_start_12
     invoke-virtual {v5}, Lgnu/lists/Pair;->getCar()Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 10231
+    .line 10272
     .restart local v9    # "component$Mninfo":Ljava/lang/Object;
-    sget-object v21, Lkawa/lib/lists;->caddr:Lgnu/expr/GenericProc;
+    sget-object v22, Lkawa/lib/lists;->caddr:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v10
 
-    .line 10232
-    sget-object v21, Lkawa/lib/lists;->cadddr:Lgnu/expr/GenericProc;
+    .line 10273
+    sget-object v22, Lkawa/lib/lists;->cadddr:Lgnu/expr/GenericProc;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v9}, Lgnu/mapping/Procedure;->apply1(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10234
+    .line 10275
     .restart local v10    # "component$Mnname":Ljava/lang/Object;
-    sget-object v21, Lgnu/kawa/reflect/SlotGet;->field:Lgnu/kawa/reflect/SlotGet;
+    sget-object v22, Lgnu/kawa/reflect/SlotGet;->field:Lgnu/kawa/reflect/SlotGet;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1, v10}, Lgnu/mapping/Procedure;->apply2(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v21
+    move-result-object v22
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Lcom/lyw514549/school_vote/Screen2;->callInitialize(Ljava/lang/Object;)V
 
@@ -9067,57 +9130,58 @@
     .local v5, "arg0":Ljava/lang/Object;
     goto/16 :goto_6
 
-    .line 10200
+    .line 10264
     .end local v5    # "arg0":Ljava/lang/Object;
     .end local v9    # "component$Mninfo":Ljava/lang/Object;
     .end local v10    # "component$Mnname":Ljava/lang/Object;
     :catch_9
-    move-exception v21
+    move-exception v22
 
-    new-instance v22, Lgnu/mapping/WrongType;
+    new-instance v23, Lgnu/mapping/WrongType;
 
-    const-string v23, "arg0"
+    const-string v24, "arg0"
 
-    const/16 v24, -0x2
+    const/16 v25, -0x2
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
-    move-object/from16 v2, v23
+    move-object/from16 v2, v24
 
-    move/from16 v3, v24
+    move/from16 v3, v25
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    throw v22
-    :try_end_13
-    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_13 .. :try_end_13} :catch_2
+    throw v23
+    :try_end_12
+    .catch Lcom/google/appinventor/components/runtime/errors/YailRuntimeError; {:try_start_12 .. :try_end_12} :catch_2
 
-    .line 10179
+    .line 10224
     .end local v6    # "closureEnv":Lcom/lyw514549/school_vote/Screen2;
     .end local v8    # "component$Mndescriptors":Lgnu/lists/LList;
-    .end local v20    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
+    .end local v13    # "components":Lgnu/lists/LList;
+    .end local v21    # "var$Mnval$Mnpairs":Lgnu/lists/LList;
     :catch_a
-    move-exception v21
+    move-exception v22
 
-    new-instance v22, Lgnu/mapping/WrongType;
+    new-instance v23, Lgnu/mapping/WrongType;
 
-    const-string v23, "arg0"
+    const-string v24, "arg0"
 
-    const/16 v24, -0x2
+    const/16 v25, -0x2
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
-    move-object/from16 v2, v23
+    move-object/from16 v2, v24
 
-    move/from16 v3, v24
+    move/from16 v3, v25
 
     invoke-direct {v0, v1, v2, v3, v5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    throw v22
+    throw v23
 .end method
 
 .method public addToComponents(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
@@ -9128,7 +9192,7 @@
     .param p4, "init$Mnthunk"    # Ljava/lang/Object;
 
     .prologue
-    .line 10062
+    .line 10065
     invoke-static {p1, p2, p3, p4}, Lgnu/lists/LList;->list4(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lgnu/lists/Pair;
 
     move-result-object v0
@@ -9150,7 +9214,7 @@
     .param p2, "event$Mnname"    # Ljava/lang/Object;
 
     .prologue
-    .line 10055
+    .line 10058
     invoke-static {p1, p2}, Lkawa/lib/lists;->cons(Ljava/lang/Object;Ljava/lang/Object;)Lgnu/lists/Pair;
 
     move-result-object v0
@@ -9171,7 +9235,7 @@
     .param p1, "thunk"    # Ljava/lang/Object;
 
     .prologue
-    .line 10081
+    .line 10084
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mndo$Mnafter$Mncreation:Lgnu/lists/LList;
 
     invoke-static {p1, v0}, Lkawa/lib/lists;->cons(Ljava/lang/Object;Ljava/lang/Object;)Lgnu/lists/Pair;
@@ -9191,7 +9255,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 10016
+    .line 10019
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -9220,7 +9284,7 @@
 
     invoke-virtual {p0, v0}, Lcom/lyw514549/school_vote/Screen2;->androidLogForm(Ljava/lang/Object;)V
 
-    .line 10018
+    .line 10021
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mnenvironment:Lgnu/mapping/Environment;
 
     invoke-virtual {v0, p1, p2}, Lgnu/mapping/Environment;->put(Lgnu/mapping/Symbol;Ljava/lang/Object;)V
@@ -9236,7 +9300,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 10034
+    .line 10037
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -9265,7 +9329,7 @@
 
     invoke-virtual {p0, v0}, Lcom/lyw514549/school_vote/Screen2;->androidLogForm(Ljava/lang/Object;)V
 
-    .line 10036
+    .line 10039
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->global$Mnvar$Mnenvironment:Lgnu/mapping/Environment;
 
     invoke-virtual {v0, p1, p2}, Lgnu/mapping/Environment;->put(Lgnu/mapping/Symbol;Ljava/lang/Object;)V
@@ -9279,7 +9343,7 @@
     .param p2, "val$Mnthunk"    # Ljava/lang/Object;
 
     .prologue
-    .line 10071
+    .line 10074
     invoke-static {p1, p2}, Lgnu/lists/LList;->list2(Ljava/lang/Object;Ljava/lang/Object;)Lgnu/lists/Pair;
 
     move-result-object v0
@@ -9300,7 +9364,7 @@
     .param p1, "message"    # Ljava/lang/Object;
 
     .prologue
-    .line 10007
+    .line 10010
     return-void
 .end method
 
@@ -9316,12 +9380,12 @@
 
     const/4 v5, 0x0
 
-    .line 10108
+    .line 10111
     invoke-static {p2}, Lkawa/lib/misc;->string$To$Symbol(Ljava/lang/CharSequence;)Lgnu/mapping/SimpleSymbol;
 
     move-result-object v2
 
-    .line 10118
+    .line 10121
     .local v2, "registeredObject":Lgnu/mapping/SimpleSymbol;
     invoke-virtual {p0, v2}, Lcom/lyw514549/school_vote/Screen2;->isBoundInFormEnvironment(Lgnu/mapping/Symbol;)Z
 
@@ -9329,19 +9393,19 @@
 
     if-eqz v6, :cond_5
 
-    .line 10119
+    .line 10122
     invoke-virtual {p0, v2}, Lcom/lyw514549/school_vote/Screen2;->lookupInFormEnvironment(Lgnu/mapping/Symbol;)Ljava/lang/Object;
 
     move-result-object v6
 
     if-ne v6, p1, :cond_4
 
-    .line 10120
+    .line 10123
     invoke-virtual {p0, p2, p3}, Lcom/lyw514549/school_vote/Screen2;->lookupHandler(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 10127
+    .line 10130
     .local v1, "handler":Ljava/lang/Object;
     :try_start_0
     sget-object v6, Lkawa/standard/Scheme;->apply:Lgnu/kawa/functions/Apply;
@@ -9357,21 +9421,21 @@
     .catch Lcom/google/appinventor/components/runtime/errors/PermissionException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 10161
+    .line 10164
     .end local v1    # "handler":Ljava/lang/Object;
     :goto_0
     return v4
 
-    .line 10127
+    .line 10130
     .restart local v1    # "handler":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 10138
+    .line 10141
     .local v0, "exception":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/errors/PermissionException;->printStackTrace()V
 
-    .line 10143
+    .line 10146
     if-ne p0, p1, :cond_1
 
     move v3, v4
@@ -9388,28 +9452,28 @@
 
     if-eqz v4, :cond_3
 
-    .line 10148
+    .line 10151
     :cond_0
     invoke-virtual {p0, v0}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
 
     :goto_2
     move v4, v5
 
-    .line 10149
+    .line 10152
     goto :goto_0
 
     .end local v3    # "x":Z
     :cond_1
     move v3, v5
 
-    .line 10143
+    .line 10146
     goto :goto_1
 
     .restart local v3    # "x":Z
     :cond_2
     if-nez v3, :cond_0
 
-    .line 10149
+    .line 10152
     :cond_3
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/errors/PermissionException;->getPermissionNeeded()Ljava/lang/String;
 
@@ -9424,7 +9488,7 @@
     :catch_1
     move-exception v0
 
-    .line 10153
+    .line 10156
     .local v0, "exception":Ljava/lang/Throwable;
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
@@ -9432,10 +9496,10 @@
 
     invoke-virtual {p0, v4}, Lcom/lyw514549/school_vote/Screen2;->androidLogForm(Ljava/lang/Object;)V
 
-    .line 10156
+    .line 10159
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 10157
+    .line 10160
     invoke-virtual {p0, v0}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
 
     move v4, v5
@@ -9449,7 +9513,7 @@
 
     goto :goto_0
 
-    .line 10161
+    .line 10164
     :cond_5
     invoke-static {p0, p2, p3}, Lcom/google/appinventor/components/runtime/EventDispatcher;->unregisterEventForDelegation(Lcom/google/appinventor/components/runtime/HandlesEventDispatching;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -9458,12 +9522,196 @@
     goto :goto_0
 .end method
 
+.method public dispatchGenericEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Z[Ljava/lang/Object;)V
+    .locals 8
+    .param p1, "componentObject"    # Lcom/google/appinventor/components/runtime/Component;
+    .param p2, "eventName"    # Ljava/lang/String;
+    .param p3, "notAlreadyHandled"    # Z
+    .param p4, "args"    # [Ljava/lang/Object;
+
+    .prologue
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    .line 10170
+    const/4 v5, 0x4
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const-string v6, "any$"
+
+    aput-object v6, v5, v4
+
+    invoke-virtual {p0, p1}, Lcom/lyw514549/school_vote/Screen2;->getSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, v5, v3
+
+    const/4 v6, 0x2
+
+    const-string v7, "$"
+
+    aput-object v7, v5, v6
+
+    const/4 v6, 0x3
+
+    aput-object p2, v5, v6
+
+    invoke-static {v5}, Lkawa/lib/strings;->stringAppend([Ljava/lang/Object;)Lgnu/lists/FString;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lkawa/lib/misc;->string$To$Symbol(Ljava/lang/CharSequence;)Lgnu/mapping/SimpleSymbol;
+
+    move-result-object v2
+
+    .line 10183
+    .local v2, "handler$Mnsymbol":Lgnu/mapping/SimpleSymbol;
+    invoke-virtual {p0, v2}, Lcom/lyw514549/school_vote/Screen2;->lookupInFormEnvironment(Lgnu/mapping/Symbol;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 10184
+    .local v1, "handler":Ljava/lang/Object;
+    sget-object v5, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    if-eq v1, v5, :cond_0
+
+    .line 10185
+    :try_start_0
+    sget-object v6, Lkawa/standard/Scheme;->apply:Lgnu/kawa/functions/Apply;
+
+    if-eqz p3, :cond_1
+
+    sget-object v5, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    :goto_0
+    const/4 v7, 0x0
+
+    invoke-static {p4, v7}, Lgnu/lists/LList;->makeList([Ljava/lang/Object;I)Lgnu/lists/LList;
+
+    move-result-object v7
+
+    invoke-static {v5, v7}, Lkawa/lib/lists;->cons(Ljava/lang/Object;Ljava/lang/Object;)Lgnu/lists/Pair;
+
+    move-result-object v5
+
+    invoke-static {p1, v5}, Lkawa/lib/lists;->cons(Ljava/lang/Object;Ljava/lang/Object;)Lgnu/lists/Pair;
+
+    move-result-object v5
+
+    invoke-virtual {v6, v1, v5}, Lgnu/mapping/Procedure;->apply2(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 10209
+    :cond_0
+    :goto_1
+    return-void
+
+    .line 10185
+    :cond_1
+    sget-object v5, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    :try_end_0
+    .catch Lcom/google/appinventor/components/runtime/errors/PermissionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    .line 10190
+    .local v0, "exception":Lcom/google/appinventor/components/runtime/errors/PermissionException;
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/errors/PermissionException;->printStackTrace()V
+
+    .line 10195
+    if-ne p0, p1, :cond_3
+
+    .local v3, "x":Z
+    :goto_2
+    if-eqz v3, :cond_4
+
+    const-string v4, "PermissionNeeded"
+
+    invoke-static {p2, v4}, Lgnu/kawa/functions/IsEqual;->apply(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    .line 10200
+    :cond_2
+    invoke-virtual {p0, v0}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .end local v3    # "x":Z
+    :cond_3
+    move v3, v4
+
+    .line 10195
+    goto :goto_2
+
+    .restart local v3    # "x":Z
+    :cond_4
+    if-nez v3, :cond_2
+
+    .line 10201
+    :cond_5
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/errors/PermissionException;->getPermissionNeeded()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p0, p1, p2, v4}, Lcom/lyw514549/school_vote/Screen2;->PermissionDenied(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .end local v0    # "exception":Lcom/google/appinventor/components/runtime/errors/PermissionException;
+    .end local v3    # "x":Z
+    :catch_1
+    move-exception v0
+
+    .line 10205
+    .local v0, "exception":Ljava/lang/Throwable;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v4}, Lcom/lyw514549/school_vote/Screen2;->androidLogForm(Ljava/lang/Object;)V
+
+    .line 10208
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+
+    .line 10209
+    invoke-virtual {p0, v0}, Lcom/lyw514549/school_vote/Screen2;->processException(Ljava/lang/Object;)V
+
+    goto :goto_1
+.end method
+
+.method public getSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+    .locals 1
+    .param p1, "object"    # Ljava/lang/Object;
+
+    .prologue
+    .line 10000
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public isBoundInFormEnvironment(Lgnu/mapping/Symbol;)Z
     .locals 1
     .param p1, "name"    # Lgnu/mapping/Symbol;
 
     .prologue
-    .line 10026
+    .line 10029
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mnenvironment:Lgnu/mapping/Environment;
 
     invoke-virtual {v0, p1}, Lgnu/mapping/Environment;->isBound(Lgnu/mapping/Symbol;)Z
@@ -9481,7 +9729,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10167
+    .line 10212
     if-nez p1, :cond_0
 
     move-object v1, v0
@@ -9537,7 +9785,7 @@
     .param p2, "default$Mnvalue"    # Ljava/lang/Object;
 
     .prologue
-    .line 10020
+    .line 10023
     iget-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mnenvironment:Lgnu/mapping/Environment;
 
     if-nez v1, :cond_1
@@ -9560,7 +9808,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 10023
+    .line 10026
     :goto_1
     iget-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mnenvironment:Lgnu/mapping/Environment;
 
@@ -9568,12 +9816,12 @@
 
     move-result-object p2
 
-    .line 10021
+    .line 10024
     .end local p2    # "default$Mnvalue":Ljava/lang/Object;
     :cond_0
     return-object p2
 
-    .line 10020
+    .line 10023
     .end local v0    # "x":Z
     .restart local p2    # "default$Mnvalue":Ljava/lang/Object;
     :cond_1
@@ -9593,7 +9841,7 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 10000
+    .line 10003
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/AppInventorCompatActivity;->setClassicModeFromYail(Z)V
@@ -9608,10 +9856,10 @@
     .param p1, "ex"    # Ljava/lang/Object;
 
     .prologue
-    .line 10089
+    .line 10092
     sget-object v0, Lkawa/standard/Scheme;->applyToArgs:Lgnu/kawa/functions/ApplyToArgs;
 
-    .line 10102
+    .line 10105
     sget-object v1, Lgnu/kawa/functions/GetNamedPart;->getNamedPart:Lgnu/kawa/functions/GetNamedPart;
 
     sget-object v2, Lcom/lyw514549/school_vote/Screen2;->Lit1:Lgnu/mapping/SimpleSymbol;
@@ -9633,7 +9881,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 10103
+    .line 10106
     check-cast p1, Lcom/google/appinventor/components/runtime/errors/YailRuntimeError;
 
     .end local p1    # "ex":Ljava/lang/Object;
@@ -9648,7 +9896,7 @@
 
     return-void
 
-    .line 10102
+    .line 10105
     .restart local p1    # "ex":Ljava/lang/Object;
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -9657,7 +9905,7 @@
 
     goto :goto_0
 
-    .line 10103
+    .line 10106
     :cond_1
     const-string v1, "Runtime Error"
 
@@ -9721,12 +9969,12 @@
 
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 10005
+    .line 10000
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->$Stdebug$Mnform$St:Ljava/lang/Boolean;
 
-    .line 10007
+    .line 10010
     sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit0:Lgnu/mapping/SimpleSymbol;
 
     invoke-static {v1}, Lkawa/lib/misc;->symbol$To$String(Lgnu/mapping/Symbol;)Ljava/lang/String;
@@ -9739,7 +9987,7 @@
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mnenvironment:Lgnu/mapping/Environment;
 
-    .line 10016
+    .line 10019
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -9773,34 +10021,34 @@
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->global$Mnvar$Mnenvironment:Lgnu/mapping/Environment;
 
-    .line 10034
+    .line 10037
     sput-object v2, Lcom/lyw514549/school_vote/Screen2;->Screen2:Lcom/lyw514549/school_vote/Screen2;
 
     sget-object v1, Lcom/lyw514549/school_vote/Screen2;->Lit0:Lgnu/mapping/SimpleSymbol;
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mnname$Mnsymbol:Lgnu/mapping/Symbol;
 
-    .line 10046
+    .line 10049
     sget-object v1, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->events$Mnto$Mnregister:Lgnu/lists/LList;
 
-    .line 10051
+    .line 10054
     sget-object v1, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->components$Mnto$Mncreate:Lgnu/lists/LList;
 
-    .line 10055
+    .line 10058
     sget-object v1, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->global$Mnvars$Mnto$Mncreate:Lgnu/lists/LList;
 
-    .line 10071
+    .line 10074
     sget-object v1, Lgnu/lists/LList;->Empty:Lgnu/lists/LList;
 
     iput-object v1, p0, Lcom/lyw514549/school_vote/Screen2;->form$Mndo$Mnafter$Mncreation:Lgnu/lists/LList;
 
-    .line 10081
+    .line 10084
     const-string v1, "com.google.youngandroid.runtime"
 
     invoke-static {v1}, Lkawa/standard/require;->find(Ljava/lang/String;)Ljava/lang/Object;
@@ -9892,7 +10140,7 @@
 
     return-void
 
-    .line 10016
+    .line 10019
     :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -9952,7 +10200,7 @@
     .param p1, "error"    # Ljava/lang/Object;
 
     .prologue
-    .line 10086
+    .line 10089
     if-nez p1, :cond_0
 
     const/4 v0, 0x0

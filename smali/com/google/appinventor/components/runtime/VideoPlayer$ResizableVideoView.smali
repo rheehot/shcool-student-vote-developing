@@ -35,13 +35,13 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 593
+    .line 605
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->this$0:Lcom/google/appinventor/components/runtime/VideoPlayer;
 
-    .line 594
+    .line 606
     invoke-direct {p0, p2}, Landroid/widget/VideoView;-><init>(Landroid/content/Context;)V
 
-    .line 579
+    .line 591
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -50,13 +50,13 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->mFoundMediaPlayer:Ljava/lang/Boolean;
 
-    .line 585
+    .line 597
     iput v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedWidth:I
 
-    .line 591
+    .line 603
     iput v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedHeight:I
 
-    .line 595
+    .line 607
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .param p3, "x3"    # I
 
     .prologue
-    .line 571
+    .line 583
     invoke-direct {p0, p1, p2, p3}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->onMeasure(III)V
 
     return-void
@@ -81,14 +81,14 @@
     .param p3, "trycount"    # I
 
     .prologue
-    .line 611
+    .line 623
     const/4 v11, 0x0
 
-    .line 612
+    .line 624
     .local v11, "scaleHeight":Z
     const/4 v12, 0x0
 
-    .line 613
+    .line 625
     .local v12, "scaleWidth":Z
     move-object/from16 v0, p0
 
@@ -104,7 +104,7 @@
 
     move-result v7
 
-    .line 614
+    .line 626
     .local v7, "deviceDensity":F
     const-string v14, "VideoPlayer..onMeasure"
 
@@ -128,7 +128,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 615
+    .line 627
     const-string v14, "VideoPlayer..onMeasure"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -173,7 +173,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 617
+    .line 629
     const-string v14, "VideoPlayer..onMeasure"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -186,7 +186,7 @@
 
     move-result-object v15
 
-    .line 618
+    .line 630
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v16
@@ -201,7 +201,7 @@
 
     move-result-object v15
 
-    .line 619
+    .line 631
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v16
@@ -214,17 +214,17 @@
 
     move-result-object v15
 
-    .line 617
+    .line 629
     invoke-static {v14, v15}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 622
+    .line 634
     const/16 v13, 0xb0
 
-    .line 623
+    .line 635
     .local v13, "width":I
     const/16 v8, 0x90
 
-    .line 625
+    .line 637
     .local v8, "height":I
     move-object/from16 v0, p0
 
@@ -232,15 +232,15 @@
 
     packed-switch v14, :pswitch_data_0
 
-    .line 659
+    .line 671
     const/4 v12, 0x1
 
-    .line 660
+    .line 672
     move-object/from16 v0, p0
 
     iget v13, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedWidth:I
 
-    .line 663
+    .line 675
     :cond_0
     :goto_0
     move-object/from16 v0, p0
@@ -251,7 +251,7 @@
 
     if-gt v14, v15, :cond_4
 
-    .line 664
+    .line 676
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->this$0:Lcom/google/appinventor/components/runtime/VideoPlayer;
@@ -266,7 +266,7 @@
 
     move-result v5
 
-    .line 665
+    .line 677
     .local v5, "cWidth":I
     if-nez v5, :cond_1
 
@@ -276,7 +276,7 @@
 
     if-ge v0, v14, :cond_1
 
-    .line 666
+    .line 678
     const-string v14, "VideoPlayer...onMeasure"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -307,7 +307,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 667
+    .line 679
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->this$0:Lcom/google/appinventor/components/runtime/VideoPlayer;
@@ -332,7 +332,7 @@
 
     invoke-virtual/range {v14 .. v17}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 673
+    .line 685
     const/16 v14, 0x64
 
     const/16 v15, 0x64
@@ -341,12 +341,12 @@
 
     invoke-virtual {v0, v14, v15}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->setMeasuredDimension(II)V
 
-    .line 739
+    .line 751
     .end local v5    # "cWidth":I
     :goto_1
     return-void
 
-    .line 627
+    .line 639
     :pswitch_0
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -356,16 +356,16 @@
 
     goto :goto_0
 
-    .line 630
+    .line 642
     :sswitch_0
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v13
 
-    .line 631
+    .line 643
     goto :goto_0
 
-    .line 634
+    .line 646
     :sswitch_1
     :try_start_0
     invoke-virtual/range {p0 .. p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->getParent()Landroid/view/ViewParent;
@@ -383,29 +383,29 @@
 
     goto :goto_0
 
-    .line 635
+    .line 647
     :catch_0
     move-exception v6
 
-    .line 636
+    .line 648
     .local v6, "cast":Ljava/lang/ClassCastException;
     const/16 v13, 0xb0
 
-    .line 639
+    .line 651
     goto :goto_0
 
-    .line 637
+    .line 649
     .end local v6    # "cast":Ljava/lang/ClassCastException;
     :catch_1
     move-exception v9
 
-    .line 638
+    .line 650
     .local v9, "nullParent":Ljava/lang/NullPointerException;
     const/16 v13, 0xb0
 
     goto :goto_0
 
-    .line 643
+    .line 655
     .end local v9    # "nullParent":Ljava/lang/NullPointerException;
     :pswitch_1
     move-object/from16 v0, p0
@@ -418,7 +418,7 @@
 
     if-eqz v14, :cond_0
 
-    .line 645
+    .line 657
     :try_start_1
     move-object/from16 v0, p0
 
@@ -428,7 +428,7 @@
 
     move-result v13
 
-    .line 646
+    .line 658
     const-string v14, "VideoPlayer.onMeasure"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -455,11 +455,11 @@
 
     goto/16 :goto_0
 
-    .line 648
+    .line 660
     :catch_2
     move-exception v10
 
-    .line 649
+    .line 661
     .local v10, "nullVideoPlayer":Ljava/lang/NullPointerException;
     const-string v14, "VideoPlayer..onMeasure"
 
@@ -473,7 +473,7 @@
 
     move-result-object v15
 
-    .line 652
+    .line 664
     invoke-virtual {v10}, Ljava/lang/NullPointerException;->getMessage()Ljava/lang/String;
 
     move-result-object v16
@@ -486,16 +486,16 @@
 
     move-result-object v15
 
-    .line 649
+    .line 661
     invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 653
+    .line 665
     const/16 v13, 0xb0
 
-    .line 654
+    .line 666
     goto/16 :goto_0
 
-    .line 676
+    .line 688
     .end local v10    # "nullVideoPlayer":Ljava/lang/NullPointerException;
     .restart local v5    # "cWidth":I
     :cond_1
@@ -513,7 +513,7 @@
 
     float-to-int v13, v14
 
-    .line 681
+    .line 693
     .end local v5    # "cWidth":I
     :cond_2
     :goto_2
@@ -523,15 +523,15 @@
 
     packed-switch v14, :pswitch_data_1
 
-    .line 710
+    .line 722
     const/4 v11, 0x1
 
-    .line 711
+    .line 723
     move-object/from16 v0, p0
 
     iget v8, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedHeight:I
 
-    .line 714
+    .line 726
     :cond_3
     :goto_3
     move-object/from16 v0, p0
@@ -542,7 +542,7 @@
 
     if-gt v14, v15, :cond_7
 
-    .line 715
+    .line 727
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->this$0:Lcom/google/appinventor/components/runtime/VideoPlayer;
@@ -557,7 +557,7 @@
 
     move-result v4
 
-    .line 716
+    .line 728
     .local v4, "cHeight":I
     if-nez v4, :cond_5
 
@@ -567,7 +567,7 @@
 
     if-ge v0, v14, :cond_5
 
-    .line 717
+    .line 729
     const-string v14, "VideoPlayer...onMeasure"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -598,7 +598,7 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 718
+    .line 730
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->this$0:Lcom/google/appinventor/components/runtime/VideoPlayer;
@@ -623,7 +623,7 @@
 
     invoke-virtual/range {v14 .. v17}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 724
+    .line 736
     const/16 v14, 0x64
 
     const/16 v15, 0x64
@@ -634,12 +634,12 @@
 
     goto/16 :goto_1
 
-    .line 677
+    .line 689
     .end local v4    # "cHeight":I
     :cond_4
     if-eqz v12, :cond_2
 
-    .line 678
+    .line 690
     int-to-float v14, v13
 
     mul-float/2addr v14, v7
@@ -648,7 +648,7 @@
 
     goto :goto_2
 
-    .line 683
+    .line 695
     :pswitch_2
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -658,16 +658,16 @@
 
     goto :goto_3
 
-    .line 686
+    .line 698
     :sswitch_2
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v8
 
-    .line 687
+    .line 699
     goto :goto_3
 
-    .line 695
+    .line 707
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -679,7 +679,7 @@
 
     if-eqz v14, :cond_3
 
-    .line 697
+    .line 709
     :try_start_2
     move-object/from16 v0, p0
 
@@ -689,7 +689,7 @@
 
     move-result v8
 
-    .line 698
+    .line 710
     const-string v14, "VideoPlayer.onMeasure"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -716,11 +716,11 @@
 
     goto/16 :goto_3
 
-    .line 700
+    .line 712
     :catch_3
     move-exception v10
 
-    .line 701
+    .line 713
     .restart local v10    # "nullVideoPlayer":Ljava/lang/NullPointerException;
     const-string v14, "VideoPlayer..onMeasure"
 
@@ -734,7 +734,7 @@
 
     move-result-object v15
 
-    .line 704
+    .line 716
     invoke-virtual {v10}, Ljava/lang/NullPointerException;->getMessage()Ljava/lang/String;
 
     move-result-object v16
@@ -747,16 +747,16 @@
 
     move-result-object v15
 
-    .line 701
+    .line 713
     invoke-static {v14, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 705
+    .line 717
     const/16 v8, 0x90
 
-    .line 706
+    .line 718
     goto/16 :goto_3
 
-    .line 727
+    .line 739
     .end local v10    # "nullVideoPlayer":Ljava/lang/NullPointerException;
     .restart local v4    # "cHeight":I
     :cond_5
@@ -774,7 +774,7 @@
 
     float-to-int v8, v14
 
-    .line 734
+    .line 746
     .end local v4    # "cHeight":I
     :cond_6
     :goto_4
@@ -810,25 +810,25 @@
 
     invoke-static {v14, v15}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 736
+    .line 748
     invoke-virtual/range {p0 .. p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v14
 
     invoke-interface {v14, v13, v8}, Landroid/view/SurfaceHolder;->setFixedSize(II)V
 
-    .line 738
+    .line 750
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v13, v8}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->setMeasuredDimension(II)V
 
     goto/16 :goto_1
 
-    .line 728
+    .line 740
     :cond_7
     if-eqz v11, :cond_6
 
-    .line 729
+    .line 741
     int-to-float v14, v8
 
     mul-float/2addr v14, v7
@@ -837,14 +837,14 @@
 
     goto :goto_4
 
-    .line 625
+    .line 637
     :pswitch_data_0
     .packed-switch -0x2
         :pswitch_0
         :pswitch_1
     .end packed-switch
 
-    .line 627
+    .line 639
     :sswitch_data_0
     .sparse-switch
         -0x80000000 -> :sswitch_0
@@ -852,14 +852,14 @@
         0x40000000 -> :sswitch_0
     .end sparse-switch
 
-    .line 681
+    .line 693
     :pswitch_data_1
     .packed-switch -0x2
         :pswitch_2
         :pswitch_3
     .end packed-switch
 
-    .line 683
+    .line 695
     :sswitch_data_1
     .sparse-switch
         -0x80000000 -> :sswitch_2
@@ -875,19 +875,19 @@
     .param p2, "newHeight"    # I
 
     .prologue
-    .line 745
+    .line 757
     iput p1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedWidth:I
 
-    .line 746
+    .line 758
     iput p2, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedHeight:I
 
-    .line 748
+    .line 760
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forceLayout()V
 
-    .line 749
+    .line 761
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->invalidate()V
 
-    .line 750
+    .line 762
     return-void
 .end method
 
@@ -896,7 +896,7 @@
     .param p1, "triggerRedraw"    # Z
 
     .prologue
-    .line 756
+    .line 768
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -905,21 +905,21 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->mFoundMediaPlayer:Ljava/lang/Boolean;
 
-    .line 757
+    .line 769
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->mVideoPlayer:Landroid/media/MediaPlayer;
 
-    .line 759
+    .line 771
     if-eqz p1, :cond_0
 
-    .line 760
+    .line 772
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forceLayout()V
 
-    .line 761
+    .line 773
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->invalidate()V
 
-    .line 763
+    .line 775
     :cond_0
     return-void
 .end method
@@ -930,12 +930,12 @@
     .param p2, "specheight"    # I
 
     .prologue
-    .line 598
+    .line 610
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->onMeasure(III)V
 
-    .line 599
+    .line 611
     return-void
 .end method
 
@@ -945,10 +945,10 @@
     .param p2, "triggerRedraw"    # Z
 
     .prologue
-    .line 767
+    .line 779
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->mVideoPlayer:Landroid/media/MediaPlayer;
 
-    .line 768
+    .line 780
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -957,16 +957,16 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->mFoundMediaPlayer:Ljava/lang/Boolean;
 
-    .line 770
+    .line 782
     if-eqz p2, :cond_0
 
-    .line 771
+    .line 783
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forceLayout()V
 
-    .line 772
+    .line 784
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->invalidate()V
 
-    .line 774
+    .line 786
     :cond_0
     return-void
 .end method
