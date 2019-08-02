@@ -1,6 +1,6 @@
 # shcool-vote-developing(KR)
-학생용을 개발을 완료 했습니다
-추후 선생님용과 서버관리자용 파일을 업로드 하겟습니다
+학생용을 개발을 완료 했습니다.
+선생님용:https://github.com/INMD1/school-vote-teacher
 ## thunakable
 저희 앱은 비전공자들을 위해서 thunkable기반으로 했기떄문에 aia를 파일을 다운받은후 thunkable에 적용하면 쉽게 조작이 가능합니다.
 
@@ -12,7 +12,7 @@
  *앱인벤터는 thunkable과 매우 비슷합니다.
 
 ## aia링크
-http://bitly.kr/Zwqi4v 
+https://github.com/INMD1/shcool-vote-developing/raw/master/student_vote.aia
 
 ## 업데이트
 2019/08/02 update note
