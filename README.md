@@ -13,8 +13,7 @@
  
  *앱인벤터는 thunkable과 매우 비슷합니다.
 
-## aia링크
-https://github.com/INMD1/shcool-vote-developing/raw/master/student_vote.aia
+## URL
 
 ## 업데이트
 2019/08/02 update note
