@@ -6,18 +6,18 @@
 ## thunakable
 저희 앱은 비전공자들을 위해서 thunkable기반으로 했기떄문에 aia를 파일을 다운받은후 thunkable에 적용하면 쉽게 조작이 가능합니다.
 
-## DB
-저희 앱은 Firebase로 DB서버를 운영하기 때문에 자신이 직접 fireabse 프로젝트를 만들어서 api값이랑 url를 가져오면 됨니다
- 
- 튜토리얼 링크: https://m.blog.naver.com/PostView.nhn?blogId=111days&logNo=221034492031&proxyReferer=https%3A%2F%2Fwww.google.com%2F
- 
- *앱인벤터는 thunkable과 매우 비슷합니다.
+## 사용법
+참조바람니다
+https://github.com/INMD1/shcool-vote-developing.wiki.git
 
 ## URL
 
 ## 업데이트
 2019/08/02 update note
 기타 오류를 수정했습니다
+
+2019/08/04 update note
+각 컴포넌트 이름을 수정했습니다.
 
 ## Copyright (c) 2019 INMD1
 
