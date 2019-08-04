@@ -8,8 +8,7 @@
 
 ## 사용법
 참조바람니다
-
-https://github.com/INMD1/shcool-vote-developing.wiki.git
+https://github.com/INMD1/shcool-vote-developing/wiki
 
 ## URL
 
