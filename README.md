@@ -16,9 +16,11 @@ https://github.com/INMD1/shcool-vote-developing/raw/master/school_vote.aia
 
 ## 업데이트
 2019/08/02 update note
+
 기타 오류를 수정했습니다
 
 2019/08/04 update note
+
 각 컴포넌트 이름을 수정했습니다.
 
 ## Copyright (c) 2019 INMD1
