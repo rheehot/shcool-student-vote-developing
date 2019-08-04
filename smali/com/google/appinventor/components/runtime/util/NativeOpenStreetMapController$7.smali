@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 637
+    .line 642
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->val$component:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
@@ -46,7 +46,7 @@
     .param p1, "polygon"    # Lorg/osmdroid/views/overlay/Polygon;
 
     .prologue
-    .line 647
+    .line 652
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Ljava/util/Set;
@@ -70,7 +70,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 648
+    .line 653
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->val$component:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 650
+    .line 655
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     return-void
@@ -89,7 +89,7 @@
     .param p1, "polygon"    # Lorg/osmdroid/views/overlay/Polygon;
 
     .prologue
-    .line 654
+    .line 659
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->val$component:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
@@ -98,13 +98,13 @@
 
     if-eqz v5, :cond_2
 
-    .line 655
+    .line 660
     const-wide/16 v18, 0x0
 
     .local v18, "latitude":D
     const-wide/16 v22, 0x0
 
-    .line 656
+    .line 661
     .local v22, "longitude":D
     invoke-virtual/range {p1 .. p1}, Lorg/osmdroid/views/overlay/Polygon;->getPoints()Ljava/util/List;
 
@@ -114,7 +114,7 @@
 
     move-result v4
 
-    .line 658
+    .line 663
     .local v4, "count":I
     invoke-virtual/range {p1 .. p1}, Lorg/osmdroid/views/overlay/Polygon;->getPoints()Ljava/util/List;
 
@@ -137,7 +137,7 @@
 
     check-cast v24, Lorg/osmdroid/util/GeoPoint;
 
-    .line 659
+    .line 664
     .local v24, "p":Lorg/osmdroid/util/GeoPoint;
     invoke-virtual/range {v24 .. v24}, Lorg/osmdroid/util/GeoPoint;->getLatitude()D
 
@@ -145,22 +145,22 @@
 
     add-double v18, v18, v26
 
-    .line 660
+    .line 665
     invoke-virtual/range {v24 .. v24}, Lorg/osmdroid/util/GeoPoint;->getLongitude()D
 
     move-result-wide v26
 
     add-double v22, v22, v26
 
-    .line 661
+    .line 666
     goto :goto_0
 
-    .line 662
+    .line 667
     .end local v24    # "p":Lorg/osmdroid/util/GeoPoint;
     :cond_0
     if-lez v4, :cond_1
 
-    .line 663
+    .line 668
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->val$component:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
@@ -185,7 +185,7 @@
 
     invoke-interface {v5, v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapCircle;->updateCenter(DD)V
 
-    .line 684
+    .line 689
     .end local v4    # "count":I
     .end local v18    # "latitude":D
     .end local v22    # "longitude":D
@@ -215,7 +215,7 @@
 
     check-cast v15, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 685
+    .line 690
     .local v15, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     move-object/from16 v0, p0
 
@@ -229,7 +229,7 @@
 
     goto :goto_2
 
-    .line 665
+    .line 670
     .end local v15    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     .restart local v4    # "count":I
     .restart local v18    # "latitude":D
@@ -253,7 +253,7 @@
 
     goto :goto_1
 
-    .line 667
+    .line 672
     .end local v4    # "count":I
     .end local v18    # "latitude":D
     .end local v22    # "longitude":D
@@ -266,7 +266,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 668
+    .line 673
     const-wide v6, -0x3fa9800000000000L    # -90.0
 
     .local v6, "north":D
@@ -278,7 +278,7 @@
     .local v8, "west":D
     const-wide v10, 0x4056800000000000L    # 90.0
 
-    .line 669
+    .line 674
     .local v10, "south":D
     invoke-virtual/range {p1 .. p1}, Lorg/osmdroid/views/overlay/Polygon;->getPoints()Ljava/util/List;
 
@@ -301,19 +301,19 @@
 
     check-cast v24, Lorg/osmdroid/util/GeoPoint;
 
-    .line 670
+    .line 675
     .restart local v24    # "p":Lorg/osmdroid/util/GeoPoint;
     invoke-virtual/range {v24 .. v24}, Lorg/osmdroid/util/GeoPoint;->getLatitude()D
 
     move-result-wide v16
 
-    .line 671
+    .line 676
     .local v16, "lat":D
     invoke-virtual/range {v24 .. v24}, Lorg/osmdroid/util/GeoPoint;->getLongitude()D
 
     move-result-wide v20
 
-    .line 672
+    .line 677
     .local v20, "lng":D
     move-wide/from16 v0, v16
 
@@ -321,31 +321,31 @@
 
     move-result-wide v6
 
-    .line 673
+    .line 678
     move-wide/from16 v0, v16
 
     invoke-static {v10, v11, v0, v1}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide v10
 
-    .line 674
+    .line 679
     move-wide/from16 v0, v20
 
     invoke-static {v12, v13, v0, v1}, Ljava/lang/Math;->max(DD)D
 
     move-result-wide v12
 
-    .line 675
+    .line 680
     move-wide/from16 v0, v20
 
     invoke-static {v8, v9, v0, v1}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide v8
 
-    .line 676
+    .line 681
     goto :goto_3
 
-    .line 677
+    .line 682
     .end local v16    # "lat":D
     .end local v20    # "lng":D
     .end local v24    # "p":Lorg/osmdroid/util/GeoPoint;
@@ -360,7 +360,7 @@
 
     goto/16 :goto_1
 
-    .line 679
+    .line 684
     .end local v6    # "north":D
     .end local v8    # "west":D
     .end local v10    # "south":D
@@ -384,12 +384,12 @@
 
     invoke-interface {v5, v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;->updatePoints(Ljava/util/List;)V
 
-    .line 680
+    .line 685
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
-    .line 681
+    .line 686
     .local v14, "holes":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;"
     invoke-virtual/range {p1 .. p1}, Lorg/osmdroid/views/overlay/Polygon;->getHoles()Ljava/util/List;
 
@@ -397,7 +397,7 @@
 
     invoke-interface {v14, v5}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 682
+    .line 687
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->val$component:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
@@ -414,7 +414,7 @@
 
     goto/16 :goto_1
 
-    .line 687
+    .line 692
     .end local v14    # "holes":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;"
     :cond_5
     return-void
@@ -425,7 +425,7 @@
     .param p1, "polygon"    # Lorg/osmdroid/views/overlay/Polygon;
 
     .prologue
-    .line 640
+    .line 645
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Ljava/util/Set;
@@ -449,7 +449,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 641
+    .line 646
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$7;->val$component:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;
 
@@ -457,7 +457,7 @@
 
     goto :goto_0
 
-    .line 643
+    .line 648
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     return-void

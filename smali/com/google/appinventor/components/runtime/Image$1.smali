@@ -25,7 +25,7 @@
     .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 64
+    .line 66
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Image$1;->this$0:Lcom/google/appinventor/components/runtime/Image;
 
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -40,10 +40,10 @@
     .param p1, "dr"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 67
+    .line 69
     invoke-super {p0, p1}, Landroid/widget/ImageView;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
-    .line 69
+    .line 71
     const/4 v0, 0x1
 
     return v0

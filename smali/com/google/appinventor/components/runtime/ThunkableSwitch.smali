@@ -8,7 +8,7 @@
 
 # annotations
 .annotation runtime Lcom/google/appinventor/components/annotations/DesignerComponent;
-    category = .enum Lcom/google/appinventor/components/common/ComponentCategory;->USERINTERFACE:Lcom/google/appinventor/components/common/ComponentCategory;
+    category = .enum Lcom/google/appinventor/components/common/ComponentCategory;->DEPRECATED:Lcom/google/appinventor/components/common/ComponentCategory;
     description = "Switch with the ability to detect clicks.  Many aspects of its appearance can be changed, as well as whether it is clickable (<code>Enabled</code>), can be changed in the Designer or in the Blocks Editor."
     docUri = "user-interface/switch-+-toggle"
     version = 0x6

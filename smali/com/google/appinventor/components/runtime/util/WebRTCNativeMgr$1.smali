@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
 
     .prologue
-    .line 86
+    .line 88
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;->this$0:Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "str"    # Ljava/lang/String;
 
     .prologue
-    .line 88
+    .line 90
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "sessionDescription"    # Lorg/webrtc/SessionDescription;
 
     .prologue
-    .line 92
+    .line 95
     :try_start_0
     const-string v4, "AppInvWebRTC"
 
@@ -81,7 +81,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 93
+    .line 96
     const-string v4, "AppInvWebRTC"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -106,12 +106,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
+    .line 98
     new-instance v1, Lorg/webrtc/DataChannel$Init;
 
     invoke-direct {v1}, Lorg/webrtc/DataChannel$Init;-><init>()V
 
-    .line 95
+    .line 99
     .local v1, "init":Lorg/webrtc/DataChannel$Init;
     iget-object v4, p1, Lorg/webrtc/SessionDescription;->type:Lorg/webrtc/SessionDescription$Type;
 
@@ -119,7 +119,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 96
+    .line 100
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;->this$0:Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
 
     invoke-static {v4}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->access$000(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Lorg/webrtc/PeerConnection;
@@ -132,13 +132,13 @@
 
     invoke-virtual {v4, v5, p1}, Lorg/webrtc/PeerConnection;->setRemoteDescription(Lorg/webrtc/SdpObserver;Lorg/webrtc/SessionDescription;)V
 
-    .line 113
+    .line 114
     .end local v1    # "init":Lorg/webrtc/DataChannel$Init;
     :cond_0
     :goto_0
     return-void
 
-    .line 97
+    .line 101
     .restart local v1    # "init":Lorg/webrtc/DataChannel$Init;
     :cond_1
     iget-object v4, p1, Lorg/webrtc/SessionDescription;->type:Lorg/webrtc/SessionDescription$Type;
@@ -147,7 +147,7 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 98
+    .line 102
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;->this$0:Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
 
     invoke-static {v4}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->access$000(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Lorg/webrtc/PeerConnection;
@@ -160,12 +160,12 @@
 
     invoke-virtual {v4, v5, p1}, Lorg/webrtc/PeerConnection;->setLocalDescription(Lorg/webrtc/SdpObserver;Lorg/webrtc/SessionDescription;)V
 
-    .line 100
+    .line 104
     new-instance v2, Lorg/json/JSONObject;
 
     invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
 
-    .line 101
+    .line 105
     .local v2, "offer":Lorg/json/JSONObject;
     const-string v4, "type"
 
@@ -173,25 +173,25 @@
 
     invoke-virtual {v2, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 102
+    .line 106
     const-string v4, "sdp"
 
     iget-object v5, p1, Lorg/webrtc/SessionDescription;->description:Ljava/lang/String;
 
     invoke-virtual {v2, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 103
+    .line 107
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
 
-    .line 104
+    .line 108
     .local v3, "response":Lorg/json/JSONObject;
     const-string v4, "offer"
 
     invoke-virtual {v3, v4, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 105
+    .line 109
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;->this$0:Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
 
     invoke-static {v4, v3}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->access$100(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;Lorg/json/JSONObject;)V
@@ -200,14 +200,14 @@
 
     goto :goto_0
 
-    .line 110
+    .line 111
     .end local v1    # "init":Lorg/webrtc/DataChannel$Init;
     .end local v2    # "offer":Lorg/json/JSONObject;
     .end local v3    # "response":Lorg/json/JSONObject;
     :catch_0
     move-exception v0
 
-    .line 111
+    .line 112
     .local v0, "e":Ljava/lang/Exception;
     const-string v4, "AppInvWebRTC"
 
@@ -223,7 +223,7 @@
     .param p1, "str"    # Ljava/lang/String;
 
     .prologue
-    .line 116
+    .line 117
     return-void
 .end method
 
@@ -231,6 +231,6 @@
     .locals 0
 
     .prologue
-    .line 119
+    .line 120
     return-void
 .end method

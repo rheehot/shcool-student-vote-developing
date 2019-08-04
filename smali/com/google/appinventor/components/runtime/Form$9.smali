@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 2187
+    .line 2213
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$9;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Form$9;->val$component:Lcom/google/appinventor/components/runtime/AndroidViewComponent;
@@ -49,14 +49,14 @@
     .locals 3
 
     .prologue
-    .line 2190
+    .line 2216
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     const-string v1, "(Form)Width not stable yet... trying again"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 2191
+    .line 2217
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$9;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$9;->val$component:Lcom/google/appinventor/components/runtime/AndroidViewComponent;
@@ -65,6 +65,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/appinventor/components/runtime/Form;->setChildWidth(Lcom/google/appinventor/components/runtime/AndroidViewComponent;I)V
 
-    .line 2192
+    .line 2218
     return-void
 .end method

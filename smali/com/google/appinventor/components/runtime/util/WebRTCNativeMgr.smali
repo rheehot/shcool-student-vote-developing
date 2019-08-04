@@ -4,14 +4,14 @@
 
 
 # static fields
+.field private static final DEBUG:Z = true
+
 .field private static final LOG_TAG:Ljava/lang/String; = "AppInvWebRTC"
 
 .field private static final utf8Decoder:Ljava/nio/charset/CharsetDecoder;
 
 
 # instance fields
-.field private volatile background:Ljava/util/concurrent/ExecutorService;
-
 .field private dataChannel:Lorg/webrtc/DataChannel;
 
 .field dataObserver:Lorg/webrtc/DataChannel$Observer;
@@ -21,6 +21,17 @@
 .field private form:Lcom/google/appinventor/components/runtime/ReplForm;
 
 .field private haveOffer:Z
+
+.field private iceServers:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lorg/webrtc/PeerConnection$IceServer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private volatile keepPolling:Z
 
@@ -33,6 +44,8 @@
 .field private random:Ljava/util/Random;
 
 .field private rendezvousServer:Ljava/lang/String;
+
+.field private rendezvousServer2:Ljava/lang/String;
 
 .field sdpObserver:Lorg/webrtc/SdpObserver;
 
@@ -55,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 67
     const-string v0, "UTF-8"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -71,108 +84,1253 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 9
     .param p1, "rendezvousServer"    # Ljava/lang/String;
+    .param p2, "rendezvousResult"    # Ljava/lang/String;
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v8, 0x1
 
-    .line 199
+    const/4 v7, 0x0
+
+    .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+    .line 74
+    new-instance v6, Ljava/util/TreeSet;
+
+    invoke-direct {v6}, Ljava/util/TreeSet;-><init>()V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->seenNonces:Ljava/util/TreeSet;
+
+    .line 75
+    const/4 v6, 0x0
+
+    iput-boolean v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->haveOffer:Z
+
+    .line 77
+    iput-boolean v8, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->keepPolling:Z
+
+    .line 78
+    iput-boolean v8, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->first:Z
+
+    .line 79
+    new-instance v6, Ljava/util/Random;
+
+    invoke-direct {v6}, Ljava/util/Random;-><init>()V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->random:Ljava/util/Random;
+
+    .line 80
+    iput-object v7, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataChannel:Lorg/webrtc/DataChannel;
+
+    .line 81
+    iput-object v7, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer:Ljava/lang/String;
+
+    .line 82
+    iput-object v7, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer2:Ljava/lang/String;
+
+    .line 83
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->iceServers:Ljava/util/List;
+
+    .line 85
+    new-instance v6, Ljava/util/Timer;
+
+    invoke-direct {v6}, Ljava/util/Timer;-><init>()V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->timer:Ljava/util/Timer;
+
+    .line 88
+    new-instance v6, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;
+
+    invoke-direct {v6, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->sdpObserver:Lorg/webrtc/SdpObserver;
+
+    .line 124
+    new-instance v6, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$2;
+
+    invoke-direct {v6, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$2;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->observer:Lorg/webrtc/PeerConnection$Observer;
+
+    .line 188
+    new-instance v6, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$3;
+
+    invoke-direct {v6, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$3;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataObserver:Lorg/webrtc/DataChannel$Observer;
+
+    .line 211
+    iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer:Ljava/lang/String;
+
+    .line 212
+    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    const-string v6, "OK"
+
+    invoke-virtual {p2, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    .line 214
+    :cond_0
+    const-string p2, "{\"rendezvous2\" : \"rendezvous.thunkable.com\",\"iceservers\" : [{ \"server\" : \"turn:turn.appinventor.mit.edu:3478\",\"username\" : \"oh\",\"password\" : \"boy\"}]}"
+
+    .line 221
+    :cond_1
+    :try_start_0
+    new-instance v5, Lorg/json/JSONObject;
+
+    invoke-direct {v5, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 222
+    .local v5, "resultJson":Lorg/json/JSONObject;
+    const-string v6, "rendezvous2"
+
+    invoke-virtual {v5, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer2:Ljava/lang/String;
+
+    .line 223
+    const-string v6, "iceservers"
+
+    invoke-virtual {v5, v6}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v3
+
+    .line 224
+    .local v3, "iceServerArray":Lorg/json/JSONArray;
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
+
+    move-result v7
+
+    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->iceServers:Ljava/util/List;
+
+    .line 225
+    const/4 v2, 0x0
+
+    .local v2, "i":I
+    :goto_0
+    invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
+
+    move-result v6
+
+    if-ge v2, v6, :cond_4
+
+    .line 226
+    invoke-virtual {v3, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+
+    move-result-object v4
+
+    .line 227
+    .local v4, "jsonServer":Lorg/json/JSONObject;
+    const-string v6, "server"
+
+    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lorg/webrtc/PeerConnection$IceServer;->builder(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->background:Ljava/util/concurrent/ExecutorService;
+    .line 229
+    .local v0, "builder":Lorg/webrtc/PeerConnection$IceServer$Builder;
+    const-string v6, "AppInvWebRTC"
 
-    .line 74
-    new-instance v0, Ljava/util/TreeSet;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->seenNonces:Ljava/util/TreeSet;
+    const-string v8, "Adding iceServer = "
 
-    .line 75
-    const/4 v0, 0x0
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->haveOffer:Z
+    move-result-object v7
 
-    .line 77
-    iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->keepPolling:Z
+    const-string v8, "server"
 
-    .line 78
-    iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->first:Z
+    invoke-virtual {v4, v8}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 79
-    new-instance v0, Ljava/util/Random;
+    move-result-object v8
 
-    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->random:Ljava/util/Random;
+    move-result-object v7
 
-    .line 80
-    const/4 v0, 0x0
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataChannel:Lorg/webrtc/DataChannel;
+    move-result-object v7
 
-    .line 81
-    const-string v0, "rendezvous.appinventor.mit.edu"
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer:Ljava/lang/String;
+    .line 231
+    const-string v6, "username"
 
-    .line 83
-    new-instance v0, Ljava/util/Timer;
+    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    invoke-direct {v0}, Ljava/util/Timer;-><init>()V
+    move-result v6
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->timer:Ljava/util/Timer;
+    if-eqz v6, :cond_2
 
-    .line 86
-    new-instance v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;
+    .line 232
+    const-string v6, "username"
 
-    invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$1;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->sdpObserver:Lorg/webrtc/SdpObserver;
+    move-result-object v6
 
-    .line 123
-    new-instance v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$2;
+    invoke-virtual {v0, v6}, Lorg/webrtc/PeerConnection$IceServer$Builder;->setUsername(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;
 
-    invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$2;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+    .line 234
+    :cond_2
+    const-string v6, "password"
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->observer:Lorg/webrtc/PeerConnection$Observer;
+    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    .line 179
-    new-instance v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$3;
+    move-result v6
 
-    invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$3;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+    if-eqz v6, :cond_3
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataObserver:Lorg/webrtc/DataChannel$Observer;
+    .line 235
+    const-string v6, "password"
 
-    .line 200
-    iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer:Ljava/lang/String;
+    invoke-virtual {v4, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 201
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Lorg/webrtc/PeerConnection$IceServer$Builder;->setPassword(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;
+
+    .line 237
+    :cond_3
+    iget-object v6, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->iceServers:Ljava/util/List;
+
+    invoke-virtual {v0}, Lorg/webrtc/PeerConnection$IceServer$Builder;->createIceServer()Lorg/webrtc/PeerConnection$IceServer;
+
+    move-result-object v7
+
+    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 225
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 239
+    .end local v0    # "builder":Lorg/webrtc/PeerConnection$IceServer$Builder;
+    .end local v2    # "i":I
+    .end local v3    # "iceServerArray":Lorg/json/JSONArray;
+    .end local v4    # "jsonServer":Lorg/json/JSONObject;
+    .end local v5    # "resultJson":Lorg/json/JSONObject;
+    :catch_0
+    move-exception v1
+
+    .line 240
+    .local v1, "e":Lorg/json/JSONException;
+    const-string v6, "AppInvWebRTC"
+
+    const-string v7, "parsing iceServers:"
+
+    invoke-static {v6, v7, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 242
+    .end local v1    # "e":Lorg/json/JSONException;
+    :cond_4
     return-void
 .end method
 
 .method private Poller()V
-    .locals 2
+    .locals 28
 
     .prologue
-    .line 233
-    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->background:Ljava/util/concurrent/ExecutorService;
+    .line 272
+    :try_start_0
+    move-object/from16 v0, p0
 
-    new-instance v1, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$4;
+    iget-boolean v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->keepPolling:Z
 
-    invoke-direct {v1, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$4;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+    move/from16 v24, v0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    if-nez v24, :cond_0
 
-    .line 319
+    .line 393
+    :goto_0
     return-void
+
+    .line 277
+    :cond_0
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "Poller() Called"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 278
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "Poller: rendezvousServer2 = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer2:Ljava/lang/String;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 280
+    new-instance v4, Lorg/apache/http/impl/client/DefaultHttpClient;
+
+    invoke-direct {v4}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
+
+    .line 281
+    .local v4, "client":Lorg/apache/http/client/HttpClient;
+    new-instance v15, Lorg/apache/http/client/methods/HttpGet;
+
+    new-instance v24, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v24 .. v24}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v25, "http://"
+
+    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v24
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer2:Ljava/lang/String;
+
+    move-object/from16 v25, v0
+
+    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v24
+
+    const-string v25, "/rendezvous2/"
+
+    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v24
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rCode:Ljava/lang/String;
+
+    move-object/from16 v25, v0
+
+    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v24
+
+    const-string v25, "-s"
+
+    invoke-virtual/range {v24 .. v25}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v24
+
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v24
+
+    move-object/from16 v0, v24
+
+    invoke-direct {v15, v0}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
+
+    .line 282
+    .local v15, "request":Lorg/apache/http/client/methods/HttpGet;
+    invoke-interface {v4, v15}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
+
+    move-result-object v16
+
+    .line 283
+    .local v16, "response":Lorg/apache/http/HttpResponse;
+    new-instance v18, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+
+    .line 285
+    .local v18, "sb":Ljava/lang/StringBuilder;
+    const/4 v13, 0x0
+
+    .line 287
+    .local v13, "rd":Ljava/io/BufferedReader;
+    :try_start_1
+    new-instance v14, Ljava/io/BufferedReader;
+
+    new-instance v24, Ljava/io/InputStreamReader;
+
+    .line 289
+    invoke-interface/range {v16 .. v16}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+
+    move-result-object v25
+
+    invoke-interface/range {v25 .. v25}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
+
+    move-result-object v25
+
+    invoke-direct/range {v24 .. v25}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+
+    move-object/from16 v0, v24
+
+    invoke-direct {v14, v0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    .line 290
+    .end local v13    # "rd":Ljava/io/BufferedReader;
+    .local v14, "rd":Ljava/io/BufferedReader;
+    :try_start_2
+    const-string v10, ""
+
+    .line 291
+    .local v10, "line":Ljava/lang/String;
+    :goto_1
+    invoke-virtual {v14}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_2
+
+    .line 292
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
+
+    .line 295
+    .end local v10    # "line":Ljava/lang/String;
+    :catchall_0
+    move-exception v24
+
+    move-object v13, v14
+
+    .end local v14    # "rd":Ljava/io/BufferedReader;
+    .restart local v13    # "rd":Ljava/io/BufferedReader;
+    :goto_2
+    if-eqz v13, :cond_1
+
+    .line 296
+    :try_start_3
+    invoke-virtual {v13}, Ljava/io/BufferedReader;->close()V
+
+    .line 298
+    :cond_1
+    throw v24
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+
+    .line 386
+    .end local v4    # "client":Lorg/apache/http/client/HttpClient;
+    .end local v13    # "rd":Ljava/io/BufferedReader;
+    .end local v15    # "request":Lorg/apache/http/client/methods/HttpGet;
+    .end local v16    # "response":Lorg/apache/http/HttpResponse;
+    .end local v18    # "sb":Ljava/lang/StringBuilder;
+    :catch_0
+    move-exception v5
+
+    .line 387
+    .local v5, "e":Ljava/io/IOException;
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "Caught IOException: "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual {v5}, Ljava/io/IOException;->toString()Ljava/lang/String;
+
+    move-result-object v26
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v25
+
+    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto/16 :goto_0
+
+    .line 295
+    .end local v5    # "e":Ljava/io/IOException;
+    .restart local v4    # "client":Lorg/apache/http/client/HttpClient;
+    .restart local v10    # "line":Ljava/lang/String;
+    .restart local v14    # "rd":Ljava/io/BufferedReader;
+    .restart local v15    # "request":Lorg/apache/http/client/methods/HttpGet;
+    .restart local v16    # "response":Lorg/apache/http/HttpResponse;
+    .restart local v18    # "sb":Ljava/lang/StringBuilder;
+    :cond_2
+    if-eqz v14, :cond_3
+
+    .line 296
+    :try_start_4
+    invoke-virtual {v14}, Ljava/io/BufferedReader;->close()V
+
+    .line 300
+    :cond_3
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->keepPolling:Z
+
+    move/from16 v24, v0
+
+    if-nez v24, :cond_4
+
+    .line 302
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "keepPolling is false, we\'re done!"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Lorg/json/JSONException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
+
+    goto/16 :goto_0
+
+    .line 388
+    .end local v4    # "client":Lorg/apache/http/client/HttpClient;
+    .end local v10    # "line":Ljava/lang/String;
+    .end local v14    # "rd":Ljava/io/BufferedReader;
+    .end local v15    # "request":Lorg/apache/http/client/methods/HttpGet;
+    .end local v16    # "response":Lorg/apache/http/HttpResponse;
+    .end local v18    # "sb":Ljava/lang/StringBuilder;
+    :catch_1
+    move-exception v5
+
+    .line 389
+    .local v5, "e":Lorg/json/JSONException;
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "Caught JSONException: "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual {v5}, Lorg/json/JSONException;->toString()Ljava/lang/String;
+
+    move-result-object v26
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v25
+
+    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto/16 :goto_0
+
+    .line 307
+    .end local v5    # "e":Lorg/json/JSONException;
+    .restart local v4    # "client":Lorg/apache/http/client/HttpClient;
+    .restart local v10    # "line":Ljava/lang/String;
+    .restart local v14    # "rd":Ljava/io/BufferedReader;
+    .restart local v15    # "request":Lorg/apache/http/client/methods/HttpGet;
+    .restart local v16    # "response":Lorg/apache/http/HttpResponse;
+    .restart local v18    # "sb":Ljava/lang/StringBuilder;
+    :cond_4
+    :try_start_5
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v17
+
+    .line 310
+    .local v17, "responseText":Ljava/lang/String;
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "response = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    move-object/from16 v0, v25
+
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 313
+    const-string v24, ""
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v24
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v24
+
+    if-eqz v24, :cond_5
+
+    .line 315
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "Received an empty response"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Lorg/json/JSONException; {:try_start_5 .. :try_end_5} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
+
+    goto/16 :goto_0
+
+    .line 390
+    .end local v4    # "client":Lorg/apache/http/client/HttpClient;
+    .end local v10    # "line":Ljava/lang/String;
+    .end local v14    # "rd":Ljava/io/BufferedReader;
+    .end local v15    # "request":Lorg/apache/http/client/methods/HttpGet;
+    .end local v16    # "response":Lorg/apache/http/HttpResponse;
+    .end local v17    # "responseText":Ljava/lang/String;
+    .end local v18    # "sb":Ljava/lang/StringBuilder;
+    :catch_2
+    move-exception v5
+
+    .line 391
+    .local v5, "e":Ljava/lang/Exception;
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "Caught Exception: "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual {v5}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v26
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v25
+
+    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto/16 :goto_0
+
+    .line 321
+    .end local v5    # "e":Ljava/lang/Exception;
+    .restart local v4    # "client":Lorg/apache/http/client/HttpClient;
+    .restart local v10    # "line":Ljava/lang/String;
+    .restart local v14    # "rd":Ljava/io/BufferedReader;
+    .restart local v15    # "request":Lorg/apache/http/client/methods/HttpGet;
+    .restart local v16    # "response":Lorg/apache/http/HttpResponse;
+    .restart local v17    # "responseText":Ljava/lang/String;
+    .restart local v18    # "sb":Ljava/lang/StringBuilder;
+    :cond_5
+    :try_start_6
+    new-instance v9, Lorg/json/JSONArray;
+
+    move-object/from16 v0, v17
+
+    invoke-direct {v9, v0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+
+    .line 323
+    .local v9, "jsonArray":Lorg/json/JSONArray;
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "jsonArray.length() = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual {v9}, Lorg/json/JSONArray;->length()I
+
+    move-result v26
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 325
+    const/4 v7, 0x0
+
+    .line 326
+    .local v7, "i":I
+    :goto_3
+    invoke-virtual {v9}, Lorg/json/JSONArray;->length()I
+
+    move-result v24
+
+    move/from16 v0, v24
+
+    if-ge v7, v0, :cond_a
+
+    .line 328
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "i = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    move-object/from16 v0, v25
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 329
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "element = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual {v9, v7}, Lorg/json/JSONArray;->optString(I)Ljava/lang/String;
+
+    move-result-object v26
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 331
+    invoke-virtual {v9, v7}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lorg/json/JSONObject;
+
+    .line 332
+    .local v6, "element":Lorg/json/JSONObject;
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->haveOffer:Z
+
+    move/from16 v24, v0
+
+    if-nez v24, :cond_8
+
+    .line 333
+    const-string v24, "offer"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v6, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v24
+
+    if-nez v24, :cond_6
+
+    .line 334
+    add-int/lit8 v7, v7, 0x1
+
+    .line 335
+    goto :goto_3
+
+    .line 337
+    :cond_6
+    const-string v24, "offer"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v6, v0}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lorg/json/JSONObject;
+
+    .line 338
+    .local v12, "offer":Lorg/json/JSONObject;
+    const-string v24, "sdp"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v12, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v19
+
+    .line 339
+    .local v19, "sdp":Ljava/lang/String;
+    const-string v24, "type"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v12, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v23
+
+    .line 340
+    .local v23, "type":Ljava/lang/String;
+    const/16 v24, 0x1
+
+    move/from16 v0, v24
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->haveOffer:Z
+
+    .line 342
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "sdb = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    move-object/from16 v0, v25
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 343
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "type = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    move-object/from16 v0, v25
+
+    move-object/from16 v1, v23
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 344
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "About to set remote offer"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 346
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->peerConnection:Lorg/webrtc/PeerConnection;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->sdpObserver:Lorg/webrtc/SdpObserver;
+
+    move-object/from16 v25, v0
+
+    new-instance v26, Lorg/webrtc/SessionDescription;
+
+    sget-object v27, Lorg/webrtc/SessionDescription$Type;->OFFER:Lorg/webrtc/SessionDescription$Type;
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, v27
+
+    move-object/from16 v2, v19
+
+    invoke-direct {v0, v1, v2}, Lorg/webrtc/SessionDescription;-><init>(Lorg/webrtc/SessionDescription$Type;Ljava/lang/String;)V
+
+    invoke-virtual/range {v24 .. v26}, Lorg/webrtc/PeerConnection;->setRemoteDescription(Lorg/webrtc/SdpObserver;Lorg/webrtc/SessionDescription;)V
+
+    .line 348
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->peerConnection:Lorg/webrtc/PeerConnection;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->sdpObserver:Lorg/webrtc/SdpObserver;
+
+    move-object/from16 v25, v0
+
+    new-instance v26, Lorg/webrtc/MediaConstraints;
+
+    invoke-direct/range {v26 .. v26}, Lorg/webrtc/MediaConstraints;-><init>()V
+
+    invoke-virtual/range {v24 .. v26}, Lorg/webrtc/PeerConnection;->createAnswer(Lorg/webrtc/SdpObserver;Lorg/webrtc/MediaConstraints;)V
+
+    .line 350
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "createAnswer returned"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 352
+    const/4 v7, -0x1
+
+    .line 381
+    .end local v12    # "offer":Lorg/json/JSONObject;
+    .end local v19    # "sdp":Ljava/lang/String;
+    .end local v23    # "type":Ljava/lang/String;
+    :cond_7
+    :goto_4
+    add-int/lit8 v7, v7, 0x1
+
+    .line 382
+    goto/16 :goto_3
+
+    .line 353
+    :cond_8
+    const-string v24, "nonce"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v6, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v24
+
+    if-eqz v24, :cond_7
+
+    .line 354
+    const-string v24, "candidate"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v6, v0}, Lorg/json/JSONObject;->isNull(Ljava/lang/String;)Z
+
+    move-result v24
+
+    if-eqz v24, :cond_9
+
+    .line 356
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "Received a null candidate, skipping..."
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 358
+    add-int/lit8 v7, v7, 0x1
+
+    .line 359
+    goto/16 :goto_3
+
+    .line 361
+    :cond_9
+    const-string v24, "nonce"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v6, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 362
+    .local v11, "nonce":Ljava/lang/String;
+    const-string v24, "candidate"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v6, v0}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/json/JSONObject;
+
+    .line 363
+    .local v3, "candidate":Lorg/json/JSONObject;
+    const-string v24, "candidate"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v22
+
+    .line 364
+    .local v22, "sdpcandidate":Ljava/lang/String;
+    const-string v24, "sdpMid"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v21
+
+    .line 365
+    .local v21, "sdpMid":Ljava/lang/String;
+    const-string v24, "sdpMLineIndex"
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v3, v0}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+
+    move-result v20
+
+    .line 367
+    .local v20, "sdpMLineIndex":I
+    const-string v24, "AppInvWebRTC"
+
+    new-instance v25, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v25 .. v25}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v26, "candidate = "
+
+    invoke-virtual/range {v25 .. v26}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    move-object/from16 v0, v25
+
+    move-object/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v25
+
+    invoke-virtual/range {v25 .. v25}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v25
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 369
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->seenNonces:Ljava/util/TreeSet;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v0, v11}, Ljava/util/TreeSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v24
+
+    if-nez v24, :cond_7
+
+    .line 370
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->seenNonces:Ljava/util/TreeSet;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v0, v11}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    .line 372
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "new nonce, about to add candidate!"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 374
+    new-instance v8, Lorg/webrtc/IceCandidate;
+
+    move-object/from16 v0, v21
+
+    move/from16 v1, v20
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v8, v0, v1, v2}, Lorg/webrtc/IceCandidate;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    .line 375
+    .local v8, "iceCandidate":Lorg/webrtc/IceCandidate;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->peerConnection:Lorg/webrtc/PeerConnection;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v0, v8}, Lorg/webrtc/PeerConnection;->addIceCandidate(Lorg/webrtc/IceCandidate;)Z
+
+    .line 377
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "addIceCandidate returned"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_4
+
+    .line 384
+    .end local v3    # "candidate":Lorg/json/JSONObject;
+    .end local v6    # "element":Lorg/json/JSONObject;
+    .end local v8    # "iceCandidate":Lorg/webrtc/IceCandidate;
+    .end local v11    # "nonce":Ljava/lang/String;
+    .end local v20    # "sdpMLineIndex":I
+    .end local v21    # "sdpMid":Ljava/lang/String;
+    .end local v22    # "sdpcandidate":Ljava/lang/String;
+    :cond_a
+    const-string v24, "AppInvWebRTC"
+
+    const-string v25, "exited loop"
+
+    invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
+    .catch Lorg/json/JSONException; {:try_start_6 .. :try_end_6} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
+
+    goto/16 :goto_0
+
+    .line 295
+    .end local v7    # "i":I
+    .end local v9    # "jsonArray":Lorg/json/JSONArray;
+    .end local v10    # "line":Ljava/lang/String;
+    .end local v14    # "rd":Ljava/io/BufferedReader;
+    .end local v17    # "responseText":Ljava/lang/String;
+    .restart local v13    # "rd":Ljava/io/BufferedReader;
+    :catchall_1
+    move-exception v24
+
+    goto/16 :goto_2
 .end method
 
 .method static synthetic access$000(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Lorg/webrtc/PeerConnection;
@@ -198,40 +1356,6 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
-
-    .prologue
-    .line 62
-    iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->haveOffer:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1002(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;Z)Z
-    .locals 0
-    .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
-    .param p1, "x1"    # Z
-
-    .prologue
-    .line 62
-    iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->haveOffer:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1100(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
-
-    .prologue
-    .line 62
-    invoke-direct {p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->Poller()V
-
-    return-void
-.end method
-
 .method static synthetic access$202(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;Lorg/webrtc/DataChannel;)Lorg/webrtc/DataChannel;
     .locals 0
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
@@ -242,17 +1366,6 @@
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataChannel:Lorg/webrtc/DataChannel;
 
     return-object p1
-.end method
-
-.method static synthetic access$300(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
-
-    .prologue
-    .line 62
-    iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->keepPolling:Z
-
-    return v0
 .end method
 
 .method static synthetic access$302(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;Z)Z
@@ -310,26 +1423,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Ljava/lang/String;
-    .locals 1
+.method static synthetic access$800(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+    .locals 0
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer:Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->Poller()V
 
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)Ljava/lang/String;
-    .locals 1
-    .param p0, "x0"    # Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
-
-    .prologue
-    .line 62
-    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rCode:Ljava/lang/String;
-
-    return-object v0
+    return-void
 .end method
 
 .method private sendRendezvous(Lorg/json/JSONObject;)V
@@ -337,7 +1439,7 @@
     .param p1, "data"    # Lorg/json/JSONObject;
 
     .prologue
-    .line 323
+    .line 397
     :try_start_0
     const-string v3, "first"
 
@@ -345,14 +1447,14 @@
 
     invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    .line 324
+    .line 398
     const-string v3, "webrtc"
 
     const/4 v4, 0x1
 
     invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    .line 325
+    .line 399
     const-string v3, "key"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -377,17 +1479,17 @@
 
     invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 326
+    .line 400
     iget-boolean v3, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->first:Z
 
     if-eqz v3, :cond_0
 
-    .line 327
+    .line 401
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->first:Z
 
-    .line 328
+    .line 402
     const-string v3, "apiversion"
 
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/SdkLevel;->getLevel()I
@@ -396,13 +1498,13 @@
 
     invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 330
+    .line 404
     :cond_0
     new-instance v0, Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-direct {v0}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
 
-    .line 331
+    .line 405
     .local v0, "client":Lorg/apache/http/client/HttpClient;
     new-instance v2, Lorg/apache/http/client/methods/HttpPost;
 
@@ -416,7 +1518,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer:Ljava/lang/String;
+    iget-object v4, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rendezvousServer2:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -436,7 +1538,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 333
+    .line 408
     .local v2, "post":Lorg/apache/http/client/methods/HttpPost;
     :try_start_1
     const-string v3, "AppInvWebRTC"
@@ -465,7 +1567,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
+    .line 410
     new-instance v3, Lorg/apache/http/entity/StringEntity;
 
     invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
@@ -476,65 +1578,45 @@
 
     invoke-virtual {v2, v3}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    .line 335
+    .line 411
     invoke-interface {v0, v2}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 342
+    .line 418
     .end local v0    # "client":Lorg/apache/http/client/HttpClient;
     .end local v2    # "post":Lorg/apache/http/client/methods/HttpPost;
     :goto_0
     return-void
 
-    .line 336
+    .line 412
     .restart local v0    # "client":Lorg/apache/http/client/HttpClient;
     .restart local v2    # "post":Lorg/apache/http/client/methods/HttpPost;
     :catch_0
     move-exception v1
 
-    .line 337
+    .line 413
     .local v1, "e":Ljava/io/IOException;
     :try_start_2
     const-string v3, "AppInvWebRTC"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string v4, "sendRedezvous IOException"
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "sendRedezvous IOException = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v1}, Ljava/io/IOException;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_0
 
-    .line 339
+    .line 415
     .end local v0    # "client":Lorg/apache/http/client/HttpClient;
     .end local v1    # "e":Ljava/io/IOException;
     .end local v2    # "post":Lorg/apache/http/client/methods/HttpPost;
     :catch_1
     move-exception v1
 
-    .line 340
+    .line 416
     .local v1, "e":Ljava/lang/Exception;
     const-string v3, "AppInvWebRTC"
 
@@ -548,83 +1630,64 @@
 
 # virtual methods
 .method public initiate(Lcom/google/appinventor/components/runtime/ReplForm;Landroid/content/Context;Ljava/lang/String;)V
-    .locals 6
+    .locals 8
     .param p1, "form"    # Lcom/google/appinventor/components/runtime/ReplForm;
     .param p2, "context"    # Landroid/content/Context;
     .param p3, "code"    # Ljava/lang/String;
 
     .prologue
-    .line 205
+    .line 246
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->form:Lcom/google/appinventor/components/runtime/ReplForm;
 
-    .line 206
+    .line 247
     iput-object p3, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->rCode:Ljava/lang/String;
 
-    .line 208
-    const/4 v3, 0x0
+    .line 249
+    const/4 v0, 0x0
 
-    invoke-static {p2, v3}, Lorg/webrtc/PeerConnectionFactory;->initializeAndroidGlobals(Landroid/content/Context;Z)V
+    invoke-static {p2, v0}, Lorg/webrtc/PeerConnectionFactory;->initializeAndroidGlobals(Landroid/content/Context;Z)V
 
-    .line 210
-    new-instance v2, Lorg/webrtc/PeerConnectionFactory$Options;
+    .line 251
+    new-instance v7, Lorg/webrtc/PeerConnectionFactory$Options;
 
-    invoke-direct {v2}, Lorg/webrtc/PeerConnectionFactory$Options;-><init>()V
+    invoke-direct {v7}, Lorg/webrtc/PeerConnectionFactory$Options;-><init>()V
 
-    .line 212
-    .local v2, "options":Lorg/webrtc/PeerConnectionFactory$Options;
-    new-instance v0, Lorg/webrtc/PeerConnectionFactory;
+    .line 253
+    .local v7, "options":Lorg/webrtc/PeerConnectionFactory$Options;
+    new-instance v6, Lorg/webrtc/PeerConnectionFactory;
 
-    invoke-direct {v0, v2}, Lorg/webrtc/PeerConnectionFactory;-><init>(Lorg/webrtc/PeerConnectionFactory$Options;)V
+    invoke-direct {v6, v7}, Lorg/webrtc/PeerConnectionFactory;-><init>(Lorg/webrtc/PeerConnectionFactory$Options;)V
 
-    .line 214
-    .local v0, "factory":Lorg/webrtc/PeerConnectionFactory;
-    const-string v3, "turn:turn.appinventor.mit.edu:3478"
+    .line 255
+    .local v6, "factory":Lorg/webrtc/PeerConnectionFactory;
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->iceServers:Ljava/util/List;
 
-    invoke-static {v3}, Lorg/webrtc/PeerConnection$IceServer;->builder(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;
+    new-instance v1, Lorg/webrtc/MediaConstraints;
 
-    move-result-object v3
+    invoke-direct {v1}, Lorg/webrtc/MediaConstraints;-><init>()V
 
-    const-string v4, "oh"
+    iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->observer:Lorg/webrtc/PeerConnection$Observer;
 
-    .line 215
-    invoke-virtual {v3, v4}, Lorg/webrtc/PeerConnection$IceServer$Builder;->setUsername(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;
+    invoke-virtual {v6, v0, v1, v2}, Lorg/webrtc/PeerConnectionFactory;->createPeerConnection(Ljava/util/List;Lorg/webrtc/MediaConstraints;Lorg/webrtc/PeerConnection$Observer;)Lorg/webrtc/PeerConnection;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string v4, "boy"
+    iput-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->peerConnection:Lorg/webrtc/PeerConnection;
 
-    .line 216
-    invoke-virtual {v3, v4}, Lorg/webrtc/PeerConnection$IceServer$Builder;->setPassword(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;
+    .line 257
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->timer:Ljava/util/Timer;
 
-    move-result-object v3
+    new-instance v1, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$4;
 
-    .line 217
-    invoke-virtual {v3}, Lorg/webrtc/PeerConnection$IceServer$Builder;->createIceServer()Lorg/webrtc/PeerConnection$IceServer;
+    invoke-direct {v1, p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr$4;-><init>(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
 
-    move-result-object v1
+    const-wide/16 v2, 0x0
 
-    .line 220
-    .local v1, "iceServer":Lorg/webrtc/PeerConnection$IceServer;
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    const-wide/16 v4, 0x3e8
 
-    move-result-object v3
+    invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
 
-    new-instance v4, Lorg/webrtc/MediaConstraints;
-
-    invoke-direct {v4}, Lorg/webrtc/MediaConstraints;-><init>()V
-
-    iget-object v5, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->observer:Lorg/webrtc/PeerConnection$Observer;
-
-    invoke-virtual {v0, v3, v4, v5}, Lorg/webrtc/PeerConnectionFactory;->createPeerConnection(Ljava/util/List;Lorg/webrtc/MediaConstraints;Lorg/webrtc/PeerConnection$Observer;)Lorg/webrtc/PeerConnection;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->peerConnection:Lorg/webrtc/PeerConnection;
-
-    .line 223
-    invoke-direct {p0}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->Poller()V
-
-    .line 225
+    .line 263
     return-void
 .end method
 
@@ -633,24 +1696,24 @@
     .param p1, "output"    # Ljava/lang/String;
 
     .prologue
-    .line 346
+    .line 422
     :try_start_0
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataChannel:Lorg/webrtc/DataChannel;
 
     if-nez v3, :cond_0
 
-    .line 347
+    .line 423
     const-string v3, "AppInvWebRTC"
 
     const-string v4, "No Data Channel in Send"
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 356
+    .line 432
     :goto_0
     return-void
 
-    .line 350
+    .line 426
     :cond_0
     const-string v3, "UTF-8"
 
@@ -662,7 +1725,7 @@
 
     move-result-object v0
 
-    .line 351
+    .line 427
     .local v0, "bbuffer":Ljava/nio/ByteBuffer;
     new-instance v1, Lorg/webrtc/DataChannel$Buffer;
 
@@ -670,7 +1733,7 @@
 
     invoke-direct {v1, v0, v3}, Lorg/webrtc/DataChannel$Buffer;-><init>(Ljava/nio/ByteBuffer;Z)V
 
-    .line 352
+    .line 428
     .local v1, "buffer":Lorg/webrtc/DataChannel$Buffer;
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->dataChannel:Lorg/webrtc/DataChannel;
 
@@ -680,13 +1743,13 @@
 
     goto :goto_0
 
-    .line 353
+    .line 429
     .end local v0    # "bbuffer":Ljava/nio/ByteBuffer;
     .end local v1    # "buffer":Lorg/webrtc/DataChannel$Buffer;
     :catch_0
     move-exception v2
 
-    .line 354
+    .line 430
     .local v2, "e":Ljava/io/UnsupportedEncodingException;
     const-string v3, "AppInvWebRTC"
 

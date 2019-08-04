@@ -32,7 +32,7 @@
 
     move-result-object v0
 
-    .line 10374
+    .line 10412
     :goto_0
     return-object v0
 
@@ -43,7 +43,7 @@
 
     goto :goto_0
 
-    .line 10278
+    .line 10320
     :pswitch_2
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
@@ -3411,144 +3411,112 @@
     goto/16 :goto_0
 
     :pswitch_1d2
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda423()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda423()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d3
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda424()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda424()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d4
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda425()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda425()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d5
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda426()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda426()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d6
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda427()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda427()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d7
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda428()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda428()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d8
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda429()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda429()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1d9
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda430()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda430()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1da
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda431()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda431()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1db
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda432()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda432()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1dc
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda433()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda433()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1dd
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda434()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda434()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1de
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda435()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda435()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1df
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda436()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda436()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e0
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda437()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda437()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e1
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda438()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda438()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -3569,252 +3537,196 @@
     goto/16 :goto_0
 
     :pswitch_1e4
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda441()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda441()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e5
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda442()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda442()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e6
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda443()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda443()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e7
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda444()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda444()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e8
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda445()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda445()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1e9
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda446()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda446()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1ea
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda447()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda447()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1eb
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda448()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda448()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1ec
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda449()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda449()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1ed
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda450()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda450()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1ee
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda451()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda451()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1ef
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda452()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda452()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f0
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda453()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda453()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f1
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda454()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda454()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f2
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda455()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda455()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f3
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda456()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda456()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f4
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda457()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda457()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f5
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda458()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda458()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f6
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda459()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda459()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f7
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda460()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda460()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f8
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda461()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda461()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1f9
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda462()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda462()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1fa
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda463()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda463()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1fb
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda464()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda464()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1fc
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda465()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda465()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1fd
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda466()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda466()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1fe
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda467()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda467()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_1ff
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda468()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda468()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -3830,18 +3742,14 @@
     goto/16 :goto_0
 
     :pswitch_201
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda469()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda469()Ljava/lang/Object;
 
     move-result-object v0
 
     goto/16 :goto_0
 
     :pswitch_202
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
-
-    invoke-virtual {v0}, Lcom/lyw514549/school_vote/Screen1;->lambda470()Ljava/lang/Object;
+    invoke-static {}, Lcom/lyw514549/school_vote/Screen1;->lambda470()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -3849,7 +3757,7 @@
 
     .line 4294967295
     :pswitch_data_0
-    .packed-switch 0x10
+    .packed-switch 0x12
         :pswitch_1
         :pswitch_2
         :pswitch_3
@@ -4417,8 +4325,18 @@
     :goto_0
     return-object v0
 
-    .line 10103
+    .line 10100
     :sswitch_0
+    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
+
+    invoke-virtual {v0, p2}, Lcom/lyw514549/school_vote/Screen1;->getSimpleName(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 10103
+    :sswitch_1
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     :try_start_0
@@ -4433,7 +4351,7 @@
     goto :goto_0
 
     .line 10110
-    :sswitch_1
+    :sswitch_2
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     invoke-virtual {v0, p2}, Lcom/lyw514549/school_vote/Screen1;->androidLogForm(Ljava/lang/Object;)V
@@ -4443,7 +4361,7 @@
     goto :goto_0
 
     .line 10123
-    :sswitch_2
+    :sswitch_3
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     :try_start_1
@@ -4458,7 +4376,7 @@
     goto :goto_0
 
     .line 10129
-    :sswitch_3
+    :sswitch_4
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     :try_start_2
@@ -4482,7 +4400,7 @@
     goto :goto_0
 
     .line 10184
-    :sswitch_4
+    :sswitch_5
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     invoke-virtual {v0, p2}, Lcom/lyw514549/school_vote/Screen1;->addToFormDoAfterCreation(Ljava/lang/Object;)V
@@ -4492,7 +4410,7 @@
     goto :goto_0
 
     .line 10189
-    :sswitch_5
+    :sswitch_6
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     invoke-virtual {v0, p2}, Lcom/lyw514549/school_vote/Screen1;->sendError(Ljava/lang/Object;)V
@@ -4502,7 +4420,7 @@
     goto :goto_0
 
     .line 10192
-    :sswitch_6
+    :sswitch_7
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     invoke-virtual {v0, p2}, Lcom/lyw514549/school_vote/Screen1;->processException(Ljava/lang/Object;)V
@@ -4511,21 +4429,21 @@
 
     goto :goto_0
 
-    :sswitch_7
+    :sswitch_8
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda15(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     goto :goto_0
 
-    :sswitch_8
+    :sswitch_9
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda18(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     goto :goto_0
 
-    :sswitch_9
+    :sswitch_a
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda37(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4533,14 +4451,14 @@
     goto :goto_0
 
     .line 30
-    :sswitch_a
+    :sswitch_b
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda39(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     goto :goto_0
 
-    :sswitch_b
+    :sswitch_c
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda80(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4548,14 +4466,14 @@
     goto :goto_0
 
     .line 59
-    :sswitch_c
+    :sswitch_d
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda82(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     goto :goto_0
 
-    :sswitch_d
+    :sswitch_e
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda86(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4563,14 +4481,14 @@
     goto :goto_0
 
     .line 61
-    :sswitch_e
+    :sswitch_f
     invoke-static {p2}, Lcom/lyw514549/school_vote/Screen1;->lambda88(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     goto :goto_0
 
-    :sswitch_f
+    :sswitch_10
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     invoke-virtual {v0, p2}, Lcom/lyw514549/school_vote/Screen1;->Notifier1$AfterChoosing(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4616,24 +4534,27 @@
     throw v1
 
     .line 4294967295
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
         0x2 -> :sswitch_1
-        0x4 -> :sswitch_2
-        0x6 -> :sswitch_3
-        0xb -> :sswitch_4
+        0x3 -> :sswitch_2
+        0x5 -> :sswitch_3
+        0x7 -> :sswitch_4
         0xc -> :sswitch_5
         0xd -> :sswitch_6
-        0x1d -> :sswitch_7
+        0xe -> :sswitch_7
         0x1f -> :sswitch_8
-        0x34 -> :sswitch_9
-        0x35 -> :sswitch_a
-        0x5f -> :sswitch_b
-        0x60 -> :sswitch_c
-        0x65 -> :sswitch_d
-        0x66 -> :sswitch_e
-        0x1e9 -> :sswitch_f
+        0x21 -> :sswitch_9
+        0x36 -> :sswitch_a
+        0x37 -> :sswitch_b
+        0x61 -> :sswitch_c
+        0x62 -> :sswitch_d
+        0x67 -> :sswitch_e
+        0x68 -> :sswitch_f
+        0x1eb -> :sswitch_10
     .end sparse-switch
 .end method
 
@@ -4647,7 +4568,7 @@
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 10270
+    .line 10312
     invoke-super {p0, p1, p2, p3}, Lgnu/expr/ModuleBody;->apply2(Lgnu/expr/ModuleMethod;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -4720,7 +4641,7 @@
 
     goto :goto_0
 
-    .line 10270
+    .line 10312
     :sswitch_5
     iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
@@ -4976,47 +4897,55 @@
     .line 4294967295
     :sswitch_data_0
     .sparse-switch
-        0x3 -> :sswitch_0
-        0x4 -> :sswitch_1
-        0x7 -> :sswitch_2
-        0x8 -> :sswitch_3
-        0xa -> :sswitch_4
-        0xf -> :sswitch_5
-        0x1ee -> :sswitch_6
-        0x1f1 -> :sswitch_7
-        0x1f4 -> :sswitch_8
-        0x1f7 -> :sswitch_9
-        0x1fa -> :sswitch_a
-        0x1fd -> :sswitch_b
-        0x200 -> :sswitch_c
-        0x203 -> :sswitch_d
-        0x206 -> :sswitch_e
-        0x209 -> :sswitch_f
-        0x20c -> :sswitch_10
-        0x20f -> :sswitch_11
-        0x212 -> :sswitch_12
-        0x215 -> :sswitch_13
-        0x218 -> :sswitch_14
-        0x21b -> :sswitch_15
-        0x21e -> :sswitch_16
-        0x221 -> :sswitch_17
-        0x224 -> :sswitch_18
-        0x227 -> :sswitch_19
-        0x22a -> :sswitch_1a
-        0x22d -> :sswitch_1b
-        0x231 -> :sswitch_1c
+        0x4 -> :sswitch_0
+        0x5 -> :sswitch_1
+        0x8 -> :sswitch_2
+        0x9 -> :sswitch_3
+        0xb -> :sswitch_4
+        0x11 -> :sswitch_5
+        0x1f0 -> :sswitch_6
+        0x1f3 -> :sswitch_7
+        0x1f6 -> :sswitch_8
+        0x1f9 -> :sswitch_9
+        0x1fc -> :sswitch_a
+        0x1ff -> :sswitch_b
+        0x202 -> :sswitch_c
+        0x205 -> :sswitch_d
+        0x208 -> :sswitch_e
+        0x20b -> :sswitch_f
+        0x20e -> :sswitch_10
+        0x211 -> :sswitch_11
+        0x214 -> :sswitch_12
+        0x217 -> :sswitch_13
+        0x21a -> :sswitch_14
+        0x21d -> :sswitch_15
+        0x220 -> :sswitch_16
+        0x223 -> :sswitch_17
+        0x226 -> :sswitch_18
+        0x229 -> :sswitch_19
+        0x22c -> :sswitch_1a
+        0x22f -> :sswitch_1b
+        0x233 -> :sswitch_1c
     .end sparse-switch
 .end method
 
 .method public apply4(Lgnu/expr/ModuleMethod;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 6
 
     .prologue
-    iget v0, p1, Lgnu/expr/ModuleMethod;->selector:I
+    const/4 v5, 0x4
 
-    sparse-switch v0, :sswitch_data_0
+    const/4 v4, 0x3
 
-    .line 10211
+    const/4 v3, 0x2
+
+    const/4 v0, 0x1
+
+    iget v1, p1, Lgnu/expr/ModuleMethod;->selector:I
+
+    sparse-switch v1, :sswitch_data_0
+
+    .line 10270
     invoke-super/range {p0 .. p5}, Lgnu/expr/ModuleBody;->apply4(Lgnu/expr/ModuleMethod;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -5036,7 +4965,7 @@
 
     .line 10211
     :sswitch_1
-    iget-object v0, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
+    iget-object v1, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
 
     :try_start_0
     check-cast p2, Lcom/google/appinventor/components/runtime/Component;
@@ -5058,7 +4987,7 @@
     :try_end_3
     .catch Ljava/lang/ClassCastException; {:try_start_3 .. :try_end_3} :catch_3
 
-    invoke-virtual {v0, p2, p3, p4, p5}, Lcom/lyw514549/school_vote/Screen1;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2, p3, p4, p5}, Lcom/lyw514549/school_vote/Screen1;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -5073,18 +5002,55 @@
 
     goto :goto_0
 
+    .line 10270
+    :sswitch_2
+    iget-object v1, p0, Lcom/lyw514549/school_vote/Screen1$frame;->$main:Lcom/lyw514549/school_vote/Screen1;
+
+    :try_start_4
+    check-cast p2, Lcom/google/appinventor/components/runtime/Component;
+    :try_end_4
+    .catch Ljava/lang/ClassCastException; {:try_start_4 .. :try_end_4} :catch_4
+
+    :try_start_5
+    check-cast p3, Ljava/lang/String;
+    :try_end_5
+    .catch Ljava/lang/ClassCastException; {:try_start_5 .. :try_end_5} :catch_5
+
+    :try_start_6
+    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    :try_end_6
+    .catch Ljava/lang/ClassCastException; {:try_start_6 .. :try_end_6} :catch_6
+
+    if-eq p4, v2, :cond_1
+
+    :goto_1
+    :try_start_7
+    check-cast p5, [Ljava/lang/Object;
+    :try_end_7
+    .catch Ljava/lang/ClassCastException; {:try_start_7 .. :try_end_7} :catch_7
+
+    invoke-virtual {v1, p2, p3, v0, p5}, Lcom/lyw514549/school_vote/Screen1;->dispatchGenericEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Z[Ljava/lang/Object;)V
+
+    sget-object v0, Lgnu/mapping/Values;->empty:Lgnu/mapping/Values;
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    .line 10211
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    new-instance v1, Lgnu/mapping/WrongType;
+    new-instance v2, Lgnu/mapping/WrongType;
 
-    const-string v2, "dispatchEvent"
+    const-string v3, "dispatchEvent"
 
-    const/4 v3, 0x1
+    invoke-direct {v2, v1, v3, v0, p2}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    invoke-direct {v1, v0, v2, v3, p2}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
-
-    throw v1
+    throw v2
 
     .line 10212
     :catch_1
@@ -5093,8 +5059,6 @@
     new-instance v1, Lgnu/mapping/WrongType;
 
     const-string v2, "dispatchEvent"
-
-    const/4 v3, 0x2
 
     invoke-direct {v1, v0, v2, v3, p3}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
@@ -5108,9 +5072,7 @@
 
     const-string v2, "dispatchEvent"
 
-    const/4 v3, 0x3
-
-    invoke-direct {v1, v0, v2, v3, p4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+    invoke-direct {v1, v0, v2, v4, p4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
     throw v1
 
@@ -5122,17 +5084,64 @@
 
     const-string v2, "dispatchEvent"
 
-    const/4 v3, 0x4
+    invoke-direct {v1, v0, v2, v5, p5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
-    invoke-direct {v1, v0, v2, v3, p5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+    throw v1
+
+    .line 10270
+    :catch_4
+    move-exception v1
+
+    new-instance v2, Lgnu/mapping/WrongType;
+
+    const-string v3, "dispatchGenericEvent"
+
+    invoke-direct {v2, v1, v3, v0, p2}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v2
+
+    .line 10271
+    :catch_5
+    move-exception v0
+
+    new-instance v1, Lgnu/mapping/WrongType;
+
+    const-string v2, "dispatchGenericEvent"
+
+    invoke-direct {v1, v0, v2, v3, p3}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v1
+
+    .line 10272
+    :catch_6
+    move-exception v0
+
+    new-instance v1, Lgnu/mapping/WrongType;
+
+    const-string v2, "dispatchGenericEvent"
+
+    invoke-direct {v1, v0, v2, v4, p4}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
+
+    throw v1
+
+    .line 10273
+    :catch_7
+    move-exception v0
+
+    new-instance v1, Lgnu/mapping/WrongType;
+
+    const-string v2, "dispatchGenericEvent"
+
+    invoke-direct {v1, v0, v2, v5, p5}, Lgnu/mapping/WrongType;-><init>(Ljava/lang/ClassCastException;Ljava/lang/String;ILjava/lang/Object;)V
 
     throw v1
 
     .line 4294967295
     :sswitch_data_0
     .sparse-switch
-        0x9 -> :sswitch_0
-        0xe -> :sswitch_1
+        0xa -> :sswitch_0
+        0xf -> :sswitch_1
+        0x10 -> :sswitch_2
     .end sparse-switch
 .end method
 
@@ -5146,7 +5155,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 10096
+    .line 10092
     :pswitch_0
     invoke-super {p0, p1, p2}, Lgnu/expr/ModuleBody;->match0(Lgnu/expr/ModuleMethod;Lgnu/mapping/CallContext;)I
 
@@ -8762,7 +8771,7 @@
 
     goto/16 :goto_0
 
-    .line 10096
+    .line 10092
     :pswitch_202
     iput-object p1, p2, Lgnu/mapping/CallContext;->proc:Lgnu/mapping/Procedure;
 
@@ -8772,7 +8781,7 @@
 
     .line 4294967295
     :pswitch_data_0
-    .packed-switch 0x10
+    .packed-switch 0x12
         :pswitch_202
         :pswitch_201
         :pswitch_200
@@ -9335,7 +9344,7 @@
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 10103
+    .line 10100
     invoke-super {p0, p1, p2, p3}, Lgnu/expr/ModuleBody;->match1(Lgnu/expr/ModuleMethod;Ljava/lang/Object;Lgnu/mapping/CallContext;)I
 
     move-result v0
@@ -9428,7 +9437,7 @@
 
     goto :goto_0
 
-    .line 10097
+    .line 10093
     :sswitch_9
     instance-of v2, p2, Lcom/lyw514549/school_vote/Screen1;
 
@@ -9447,7 +9456,7 @@
 
     goto :goto_0
 
-    .line 10098
+    .line 10094
     :sswitch_a
     iput-object p2, p3, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
 
@@ -9457,7 +9466,7 @@
 
     goto :goto_0
 
-    .line 10099
+    .line 10095
     :sswitch_b
     iput-object p2, p3, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
 
@@ -9467,7 +9476,7 @@
 
     goto :goto_0
 
-    .line 10100
+    .line 10096
     :sswitch_c
     instance-of v2, p2, Lgnu/mapping/Symbol;
 
@@ -9486,7 +9495,7 @@
 
     goto :goto_0
 
-    .line 10101
+    .line 10097
     :sswitch_d
     instance-of v2, p2, Lgnu/mapping/Symbol;
 
@@ -9505,7 +9514,7 @@
 
     goto :goto_0
 
-    .line 10102
+    .line 10098
     :sswitch_e
     iput-object p2, p3, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
 
@@ -9515,7 +9524,7 @@
 
     goto :goto_0
 
-    .line 10103
+    .line 10099
     :sswitch_f
     instance-of v2, p2, Lcom/lyw514549/school_vote/Screen1;
 
@@ -9534,27 +9543,38 @@
 
     goto/16 :goto_0
 
+    .line 10100
+    :sswitch_10
+    iput-object p2, p3, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
+
+    iput-object p1, p3, Lgnu/mapping/CallContext;->proc:Lgnu/mapping/Procedure;
+
+    iput v3, p3, Lgnu/mapping/CallContext;->pc:I
+
+    goto/16 :goto_0
+
     .line 4294967295
     nop
 
     :sswitch_data_0
     .sparse-switch
-        0x1 -> :sswitch_f
-        0x2 -> :sswitch_e
-        0x4 -> :sswitch_d
-        0x6 -> :sswitch_c
-        0xb -> :sswitch_b
-        0xc -> :sswitch_a
-        0xd -> :sswitch_9
-        0x1d -> :sswitch_8
-        0x1f -> :sswitch_7
-        0x34 -> :sswitch_6
-        0x35 -> :sswitch_5
-        0x5f -> :sswitch_4
-        0x60 -> :sswitch_3
-        0x65 -> :sswitch_2
-        0x66 -> :sswitch_1
-        0x1e9 -> :sswitch_0
+        0x1 -> :sswitch_10
+        0x2 -> :sswitch_f
+        0x3 -> :sswitch_e
+        0x5 -> :sswitch_d
+        0x7 -> :sswitch_c
+        0xc -> :sswitch_b
+        0xd -> :sswitch_a
+        0xe -> :sswitch_9
+        0x1f -> :sswitch_8
+        0x21 -> :sswitch_7
+        0x36 -> :sswitch_6
+        0x37 -> :sswitch_5
+        0x61 -> :sswitch_4
+        0x62 -> :sswitch_3
+        0x67 -> :sswitch_2
+        0x68 -> :sswitch_1
+        0x1eb -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -9577,7 +9597,7 @@
 
     move-result v0
 
-    .line 10270
+    .line 10312
     :goto_0
     return v0
 
@@ -9835,7 +9855,7 @@
 
     goto/16 :goto_0
 
-    .line 10270
+    .line 10312
     :sswitch_17
     iput-object p2, p4, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
 
@@ -9937,112 +9957,156 @@
     .line 4294967295
     :sswitch_data_0
     .sparse-switch
-        0x3 -> :sswitch_1c
-        0x4 -> :sswitch_1b
-        0x7 -> :sswitch_1a
-        0x8 -> :sswitch_19
-        0xa -> :sswitch_18
-        0xf -> :sswitch_17
-        0x1ee -> :sswitch_16
-        0x1f1 -> :sswitch_15
-        0x1f4 -> :sswitch_14
-        0x1f7 -> :sswitch_13
-        0x1fa -> :sswitch_12
-        0x1fd -> :sswitch_11
-        0x200 -> :sswitch_10
-        0x203 -> :sswitch_f
-        0x206 -> :sswitch_e
-        0x209 -> :sswitch_d
-        0x20c -> :sswitch_c
-        0x20f -> :sswitch_b
-        0x212 -> :sswitch_a
-        0x215 -> :sswitch_9
-        0x218 -> :sswitch_8
-        0x21b -> :sswitch_7
-        0x21e -> :sswitch_6
-        0x221 -> :sswitch_5
-        0x224 -> :sswitch_4
-        0x227 -> :sswitch_3
-        0x22a -> :sswitch_2
-        0x22d -> :sswitch_1
-        0x231 -> :sswitch_0
+        0x4 -> :sswitch_1c
+        0x5 -> :sswitch_1b
+        0x8 -> :sswitch_1a
+        0x9 -> :sswitch_19
+        0xb -> :sswitch_18
+        0x11 -> :sswitch_17
+        0x1f0 -> :sswitch_16
+        0x1f3 -> :sswitch_15
+        0x1f6 -> :sswitch_14
+        0x1f9 -> :sswitch_13
+        0x1fc -> :sswitch_12
+        0x1ff -> :sswitch_11
+        0x202 -> :sswitch_10
+        0x205 -> :sswitch_f
+        0x208 -> :sswitch_e
+        0x20b -> :sswitch_d
+        0x20e -> :sswitch_c
+        0x211 -> :sswitch_b
+        0x214 -> :sswitch_a
+        0x217 -> :sswitch_9
+        0x21a -> :sswitch_8
+        0x21d -> :sswitch_7
+        0x220 -> :sswitch_6
+        0x223 -> :sswitch_5
+        0x226 -> :sswitch_4
+        0x229 -> :sswitch_3
+        0x22c -> :sswitch_2
+        0x22f -> :sswitch_1
+        0x233 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public match4(Lgnu/expr/ModuleMethod;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lgnu/mapping/CallContext;)I
-    .locals 3
+    .locals 6
 
     .prologue
-    const/4 v2, 0x4
+    const v2, -0xbfffd
 
-    const/4 v0, 0x0
+    const v1, -0xbfffe
 
-    iget v1, p1, Lgnu/expr/ModuleMethod;->selector:I
+    const v0, -0xbffff
 
-    sparse-switch v1, :sswitch_data_0
+    const/4 v5, 0x4
+
+    const/4 v3, 0x0
+
+    iget v4, p1, Lgnu/expr/ModuleMethod;->selector:I
+
+    sparse-switch v4, :sswitch_data_0
 
     .line 10165
     invoke-super/range {p0 .. p6}, Lgnu/expr/ModuleBody;->match4(Lgnu/expr/ModuleMethod;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lgnu/mapping/CallContext;)I
 
     move-result v0
 
-    .line 10211
+    .line 10270
+    :cond_0
     :goto_0
     return v0
 
     :sswitch_0
-    instance-of v1, p2, Lcom/lyw514549/school_vote/Screen1;
+    instance-of v4, p2, Lcom/lyw514549/school_vote/Screen1;
 
-    if-nez v1, :cond_0
+    if-eqz v4, :cond_0
 
-    const v0, -0xbffff
-
-    goto :goto_0
-
-    :cond_0
     iput-object p2, p6, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
 
-    instance-of v1, p3, Lcom/google/appinventor/components/runtime/Component;
+    instance-of v0, p3, Lcom/google/appinventor/components/runtime/Component;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    const v0, -0xbfffe
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
     iput-object p3, p6, Lgnu/mapping/CallContext;->value2:Ljava/lang/Object;
 
-    instance-of v1, p4, Ljava/lang/String;
+    instance-of v0, p4, Ljava/lang/String;
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    const v0, -0xbfffd
+    move v0, v2
 
     goto :goto_0
 
     :cond_2
     iput-object p4, p6, Lgnu/mapping/CallContext;->value3:Ljava/lang/Object;
 
-    instance-of v1, p5, Ljava/lang/String;
+    iput-object p5, p6, Lgnu/mapping/CallContext;->value4:Ljava/lang/Object;
 
-    if-nez v1, :cond_3
+    iput-object p1, p6, Lgnu/mapping/CallContext;->proc:Lgnu/mapping/Procedure;
+
+    iput v5, p6, Lgnu/mapping/CallContext;->pc:I
+
+    move v0, v3
+
+    goto :goto_0
+
+    .line 10211
+    :sswitch_1
+    instance-of v4, p2, Lcom/lyw514549/school_vote/Screen1;
+
+    if-eqz v4, :cond_0
+
+    iput-object p2, p6, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
+
+    instance-of v0, p3, Lcom/google/appinventor/components/runtime/Component;
+
+    if-nez v0, :cond_3
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    iput-object p3, p6, Lgnu/mapping/CallContext;->value2:Ljava/lang/Object;
+
+    instance-of v0, p4, Ljava/lang/String;
+
+    if-nez v0, :cond_4
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_4
+    iput-object p4, p6, Lgnu/mapping/CallContext;->value3:Ljava/lang/Object;
+
+    instance-of v0, p5, Ljava/lang/String;
+
+    if-nez v0, :cond_5
 
     const v0, -0xbfffc
 
     goto :goto_0
 
-    :cond_3
+    :cond_5
     iput-object p5, p6, Lgnu/mapping/CallContext;->value4:Ljava/lang/Object;
 
     iput-object p1, p6, Lgnu/mapping/CallContext;->proc:Lgnu/mapping/Procedure;
 
-    iput v2, p6, Lgnu/mapping/CallContext;->pc:I
+    iput v5, p6, Lgnu/mapping/CallContext;->pc:I
+
+    move v0, v3
 
     goto :goto_0
 
     .line 10165
-    :sswitch_1
+    :sswitch_2
     iput-object p2, p6, Lgnu/mapping/CallContext;->value1:Ljava/lang/Object;
 
     iput-object p3, p6, Lgnu/mapping/CallContext;->value2:Ljava/lang/Object;
@@ -10053,14 +10117,19 @@
 
     iput-object p1, p6, Lgnu/mapping/CallContext;->proc:Lgnu/mapping/Procedure;
 
-    iput v2, p6, Lgnu/mapping/CallContext;->pc:I
+    iput v5, p6, Lgnu/mapping/CallContext;->pc:I
+
+    move v0, v3
 
     goto :goto_0
 
     .line 4294967295
+    nop
+
     :sswitch_data_0
     .sparse-switch
-        0x9 -> :sswitch_1
-        0xe -> :sswitch_0
+        0xa -> :sswitch_2
+        0xf -> :sswitch_1
+        0x10 -> :sswitch_0
     .end sparse-switch
 .end method

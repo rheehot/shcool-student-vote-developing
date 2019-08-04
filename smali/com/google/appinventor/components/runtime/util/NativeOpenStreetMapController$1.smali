@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 283
+    .line 288
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .param p4, "longitude"    # D
 
     .prologue
-    .line 293
+    .line 298
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Ljava/util/Set;
@@ -68,13 +68,13 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 294
+    .line 299
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     invoke-interface {v0, p2, p3, p4, p5}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;->onDoubleTap(DD)V
 
     goto :goto_0
 
-    .line 296
+    .line 301
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     return-void
@@ -87,7 +87,7 @@
     .param p4, "longitude"    # D
 
     .prologue
-    .line 286
+    .line 291
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$1;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Ljava/util/Set;
@@ -111,13 +111,13 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 287
+    .line 292
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     invoke-interface {v0, p2, p3, p4, p5}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;->onSingleTap(DD)V
 
     goto :goto_0
 
-    .line 289
+    .line 294
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     return-void

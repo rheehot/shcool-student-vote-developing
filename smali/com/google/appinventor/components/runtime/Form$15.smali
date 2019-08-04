@@ -33,7 +33,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 2723
+    .line 2749
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$15;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Form$15;->val$permission:Ljava/lang/String;
@@ -53,20 +53,20 @@
     .locals 5
 
     .prologue
-    .line 2726
+    .line 2752
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$15;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/Form;->access$1000(Lcom/google/appinventor/components/runtime/Form;)Ljava/util/Random;
 
     move-result-object v1
 
-    const v2, 0x8000
+    const v2, 0xffff
 
     invoke-virtual {v1, v2}, Ljava/util/Random;->nextInt(I)I
 
     move-result v0
 
-    .line 2727
+    .line 2753
     .local v0, "nonce":I
     const-string v1, "Form"
 
@@ -102,7 +102,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2729
+    .line 2755
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$15;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/Form;->access$1100(Lcom/google/appinventor/components/runtime/Form;)Ljava/util/HashMap;
@@ -117,7 +117,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2730
+    .line 2756
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$15;->val$form:Lcom/google/appinventor/components/runtime/Form;
 
     const/4 v2, 0x1
@@ -132,6 +132,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/support/v4/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
 
-    .line 2732
+    .line 2758
     return-void
 .end method

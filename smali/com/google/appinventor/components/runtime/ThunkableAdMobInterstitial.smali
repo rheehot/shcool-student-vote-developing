@@ -10,7 +10,7 @@
 # annotations
 .annotation runtime Lcom/google/appinventor/components/annotations/DesignerComponent;
     category = .enum Lcom/google/appinventor/components/common/ComponentCategory;->EXPERIMENTAL:Lcom/google/appinventor/components/common/ComponentCategory;
-    description = "AdMob component allows you to displayAd. You need have a valid AdMob account and an AdUnitId. You should in thetestmode when you are still developing the app."
+    description = "Interstitial Ad by Google AdMob. AdMob component allows you to displayAd. You need have a valid AdMob account and an AdUnitId. You should in thetestmode when you are still developing the app."
     docUri = "monetisation/admob"
     iconName = "images/adMob2.png"
     nonVisible = true
@@ -67,51 +67,51 @@
 
     const/4 v1, 0x0
 
-    .line 52
+    .line 53
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidNonvisibleComponent;-><init>(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 39
+    .line 40
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adEnabled:Z
 
-    .line 40
-    iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->isTestMode:Z
-
     .line 41
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adUnitID:Ljava/lang/String;
+    iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->isTestMode:Z
 
     .line 42
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->ThunkableAdUnitID:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adUnitID:Ljava/lang/String;
 
     .line 43
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->currentInUseAdUnitID:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->ThunkableAdUnitID:Ljava/lang/String;
 
     .line 44
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->currentInUseAdUnitID:Ljava/lang/String;
+
+    .line 45
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->setAdUnitID:Ljava/lang/Boolean;
 
-    .line 48
+    .line 49
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->hasLoaded:Z
 
-    .line 49
+    .line 50
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->takeChance:Z
 
-    .line 53
+    .line 54
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
-    .line 54
+    .line 55
     new-instance v0, Lcom/google/android/gms/ads/InterstitialAd;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
@@ -124,7 +124,7 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->mInterstitialAd:Lcom/google/android/gms/ads/InterstitialAd;
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->mInterstitialAd:Lcom/google/android/gms/ads/InterstitialAd;
 
     new-instance v1, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial$1;
@@ -133,10 +133,10 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/ads/InterstitialAd;->setAdListener(Lcom/google/android/gms/ads/AdListener;)V
 
-    .line 67
+    .line 68
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adEnabled:Z
 
-    .line 68
+    .line 69
     return-void
 .end method
 
@@ -146,7 +146,7 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->tracking(Ljava/lang/String;)V
 
     return-void
@@ -157,12 +157,12 @@
     .param p1, "eventName"    # Ljava/lang/String;
 
     .prologue
-    .line 172
+    .line 173
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->isTestMode:Z
 
     if-nez v1, :cond_0
 
-    .line 173
+    .line 174
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
@@ -173,18 +173,18 @@
 
     move-result-object v0
 
-    .line 174
+    .line 175
     .local v0, "packageName":Ljava/lang/String;
     invoke-static {v0, p1}, Lcom/google/appinventor/components/runtime/util/MobileAnalytics;->fabricTracking(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 175
+    .line 176
     const/4 v1, 0x0
 
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->takeChance:Z
 
     invoke-static {v0, p1, v1, v2}, Lcom/google/appinventor/components/runtime/util/MobileAnalytics;->amplitudeTracking(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 177
+    .line 178
     .end local v0    # "packageName":Ljava/lang/String;
     :cond_0
     return-void
@@ -200,7 +200,7 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 145
     const-string v0, "AdFailedToLoad"
 
     const/4 v1, 0x1
@@ -217,7 +217,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 145
+    .line 146
     return-void
 .end method
 
@@ -228,10 +228,10 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 139
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->ShowAd()V
 
-    .line 139
+    .line 140
     const-string v0, "AdLoaded"
 
     const/4 v1, 0x0
@@ -240,7 +240,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 140
+    .line 141
     return-void
 .end method
 
@@ -251,7 +251,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 78
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adUnitID:Ljava/lang/String;
 
     return-object v0
@@ -266,10 +266,10 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 73
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adUnitID:Ljava/lang/String;
 
-    .line 73
+    .line 74
     return-void
 .end method
 
@@ -280,10 +280,10 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 109
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/AdmobUtil;->loadWhenReady(Lcom/google/appinventor/components/runtime/util/AdmobUtil$AdmobLoader;)V
 
-    .line 109
+    .line 110
     return-void
 .end method
 
@@ -300,23 +300,23 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 95
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->personalized:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 95
+    .line 96
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->personalized:Z
 
-    .line 96
+    .line 97
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->hasLoaded:Z
 
     if-eqz v0, :cond_0
 
-    .line 98
+    .line 99
     invoke-static {p0}, Lcom/google/appinventor/components/runtime/util/AdmobUtil;->loadWhenReady(Lcom/google/appinventor/components/runtime/util/AdmobUtil$AdmobLoader;)V
 
-    .line 101
+    .line 102
     :cond_0
     return-void
 .end method
@@ -328,7 +328,7 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 105
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->personalized:Z
 
     return v0
@@ -338,12 +338,12 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 149
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->mInterstitialAd:Lcom/google/android/gms/ads/InterstitialAd;
 
     invoke-virtual {v0}, Lcom/google/android/gms/ads/InterstitialAd;->isLoaded()Z
@@ -352,12 +352,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 150
+    .line 151
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->mInterstitialAd:Lcom/google/android/gms/ads/InterstitialAd;
 
     invoke-virtual {v0}, Lcom/google/android/gms/ads/InterstitialAd;->show()V
 
-    .line 154
+    .line 155
     :cond_0
     return-void
 .end method
@@ -371,10 +371,10 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 84
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->isTestMode:Z
 
-    .line 84
+    .line 85
     return-void
 .end method
 
@@ -385,7 +385,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 89
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->isTestMode:Z
 
     return v0
@@ -397,7 +397,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 114
+    .line 115
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
@@ -410,17 +410,17 @@
 
     if-nez v1, :cond_1
 
-    .line 115
+    .line 116
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adEnabled:Z
 
-    .line 134
+    .line 135
     :cond_0
     :goto_0
     return-void
 
-    .line 118
+    .line 119
     :cond_1
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->setAdUnitID:Ljava/lang/Boolean;
 
@@ -430,17 +430,17 @@
 
     if-nez v1, :cond_2
 
-    .line 119
+    .line 120
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->setUnitId()V
 
-    .line 120
+    .line 121
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->setAdUnitID:Ljava/lang/Boolean;
 
-    .line 122
+    .line 123
     :cond_2
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adEnabled:Z
 
@@ -454,36 +454,36 @@
 
     if-nez v1, :cond_0
 
-    .line 123
+    .line 124
     new-instance v0, Lcom/google/android/gms/ads/AdRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/android/gms/ads/AdRequest$Builder;-><init>()V
 
-    .line 124
+    .line 125
     .local v0, "builder":Lcom/google/android/gms/ads/AdRequest$Builder;
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->personalized:Z
 
     if-nez v1, :cond_3
 
-    .line 125
+    .line 126
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/AdmobUtil;->addNPA(Lcom/google/android/gms/ads/AdRequest$Builder;)Lcom/google/android/gms/ads/AdRequest$Builder;
 
     move-result-object v0
 
-    .line 127
+    .line 128
     :cond_3
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->isTestMode:Z
 
     if-eqz v1, :cond_4
 
-    .line 128
+    .line 129
     const-string v1, "B3EEABB8EE11C2BE770B684D95219ECB"
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/ads/AdRequest$Builder;->addTestDevice(Ljava/lang/String;)Lcom/google/android/gms/ads/AdRequest$Builder;
 
     move-result-object v0
 
-    .line 130
+    .line 131
     :cond_4
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->mInterstitialAd:Lcom/google/android/gms/ads/InterstitialAd;
 
@@ -493,10 +493,10 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/ads/InterstitialAd;->loadAd(Lcom/google/android/gms/ads/AdRequest;)V
 
-    .line 131
+    .line 132
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->hasLoaded:Z
 
-    .line 132
+    .line 133
     const-string v1, "ThunkableAdMobInterstitial LoadAd"
 
     invoke-direct {p0, v1}, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->tracking(Ljava/lang/String;)V
@@ -508,7 +508,7 @@
     .locals 2
 
     .prologue
-    .line 157
+    .line 158
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
@@ -521,7 +521,7 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->ThunkableAdUnitID:Ljava/lang/String;
 
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adUnitID:Ljava/lang/String;
 
     const-string v1, ""
@@ -532,11 +532,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 169
+    .line 170
     :goto_0
     return-void
 
-    .line 161
+    .line 162
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -552,17 +552,17 @@
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->takeChance:Z
 
-    .line 162
+    .line 163
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->takeChance:Z
 
     if-eqz v0, :cond_1
 
-    .line 163
+    .line 164
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->ThunkableAdUnitID:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->currentInUseAdUnitID:Ljava/lang/String;
 
-    .line 167
+    .line 168
     :goto_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->mInterstitialAd:Lcom/google/android/gms/ads/InterstitialAd;
 
@@ -572,7 +572,7 @@
 
     goto :goto_0
 
-    .line 165
+    .line 166
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobInterstitial;->adUnitID:Ljava/lang/String;
 

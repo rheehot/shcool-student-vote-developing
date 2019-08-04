@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 1665
+    .line 1774
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Canvas$FlingGestureListener;->this$0:Lcom/google/appinventor/components/runtime/Canvas;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -42,7 +42,7 @@
     .param p4, "velocityY"    # F
 
     .prologue
-    .line 1669
+    .line 1778
     const/4 v5, 0x0
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
@@ -73,7 +73,7 @@
 
     move/from16 v18, v0
 
-    .line 1670
+    .line 1779
     .local v18, "x":F
     const/4 v5, 0x0
 
@@ -105,19 +105,19 @@
 
     move/from16 v19, v0
 
-    .line 1673
+    .line 1782
     .local v19, "y":F
     const/high16 v5, 0x447a0000    # 1000.0f
 
     div-float v15, p3, v5
 
-    .line 1674
+    .line 1783
     .local v15, "vx":F
     const/high16 v5, 0x447a0000    # 1000.0f
 
     div-float v16, p4, v5
 
-    .line 1676
+    .line 1785
     .local v16, "vy":F
     mul-float v5, v15, v15
 
@@ -133,7 +133,7 @@
 
     double-to-float v14, v6
 
-    .line 1677
+    .line 1786
     .local v14, "speed":F
     move/from16 v0, v16
 
@@ -153,7 +153,7 @@
 
     double-to-float v2, v6
 
-    .line 1679
+    .line 1788
     .local v2, "heading":F
     move-object/from16 v0, p0
 
@@ -163,7 +163,7 @@
 
     move-result v17
 
-    .line 1680
+    .line 1789
     .local v17, "width":I
     move-object/from16 v0, p0
 
@@ -173,7 +173,7 @@
 
     move-result v13
 
-    .line 1684
+    .line 1793
     .local v13, "height":I
     new-instance v3, Lcom/google/appinventor/components/runtime/util/BoundingBox;
 
@@ -185,7 +185,7 @@
 
     add-int/lit8 v6, v6, -0xc
 
-    .line 1685
+    .line 1794
     invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
 
     move-result v5
@@ -200,7 +200,7 @@
 
     add-int/lit8 v7, v7, -0xc
 
-    .line 1686
+    .line 1795
     invoke-static {v6, v7}, Ljava/lang/Math;->max(II)I
 
     move-result v6
@@ -215,7 +215,7 @@
 
     add-int/lit8 v9, v9, 0xc
 
-    .line 1687
+    .line 1796
     invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
 
     move-result v8
@@ -230,7 +230,7 @@
 
     add-int/lit8 v11, v11, 0xc
 
-    .line 1688
+    .line 1797
     invoke-static {v10, v11}, Ljava/lang/Math;->min(II)I
 
     move-result v10
@@ -239,11 +239,11 @@
 
     invoke-direct/range {v3 .. v11}, Lcom/google/appinventor/components/runtime/util/BoundingBox;-><init>(DDDD)V
 
-    .line 1690
+    .line 1799
     .local v3, "rect":Lcom/google/appinventor/components/runtime/util/BoundingBox;
     const/4 v12, 0x0
 
-    .line 1692
+    .line 1801
     .local v12, "spriteHandledFling":Z
     move-object/from16 v0, p0
 
@@ -271,7 +271,7 @@
 
     check-cast v4, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 1693
+    .line 1802
     .local v4, "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     invoke-virtual {v4}, Lcom/google/appinventor/components/runtime/Sprite;->Enabled()Z
 
@@ -285,7 +285,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 1694
+    .line 1803
     invoke-virtual {v4, v3}, Lcom/google/appinventor/components/runtime/Sprite;->intersectsWith(Lcom/google/appinventor/components/runtime/util/BoundingBox;)Z
 
     move-result v5
@@ -304,15 +304,15 @@
 
     move/from16 v10, v16
 
-    .line 1695
+    .line 1804
     invoke-virtual/range {v4 .. v10}, Lcom/google/appinventor/components/runtime/Sprite;->Flung(FFFFFF)V
 
-    .line 1696
+    .line 1805
     const/4 v12, 0x1
 
     goto :goto_0
 
-    .line 1699
+    .line 1808
     .end local v4    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     :cond_1
     move-object/from16 v0, p0
@@ -333,7 +333,7 @@
 
     invoke-virtual/range {v5 .. v12}, Lcom/google/appinventor/components/runtime/Canvas;->Flung(FFFFFFZ)V
 
-    .line 1700
+    .line 1809
     const/4 v5, 0x1
 
     return v5

@@ -56,7 +56,7 @@
     .line 155
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneCall$2;->this$0:Lcom/google/appinventor/components/runtime/PhoneCall;
 
-    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/PhoneCall;->MakePhoneCall()V
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/PhoneCall;->MakePhoneCallDirect()V
 
     .line 160
     :goto_0

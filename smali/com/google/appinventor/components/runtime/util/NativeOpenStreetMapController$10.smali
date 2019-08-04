@@ -39,7 +39,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 879
+    .line 886
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$10;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$10;->val$marker:Lorg/osmdroid/views/overlay/Marker;
@@ -56,7 +56,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 882
+    .line 889
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$900()Ljava/lang/String;
 
     move-result-object v0
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 883
+    .line 890
     return-void
 .end method
 
@@ -90,12 +90,12 @@
     .param p1, "result"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 887
+    .line 894
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$10;->val$marker:Lorg/osmdroid/views/overlay/Marker;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/overlay/Marker;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 888
+    .line 895
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$10;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$300(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Lorg/osmdroid/views/MapView;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 889
+    .line 896
     return-void
 .end method
 
@@ -112,7 +112,7 @@
     .locals 0
 
     .prologue
-    .line 879
+    .line 886
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$10;->onSuccess(Landroid/graphics/drawable/Drawable;)V

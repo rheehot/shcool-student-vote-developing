@@ -11,7 +11,7 @@
     category = .enum Lcom/google/appinventor/components/common/ComponentCategory;->ANIMATION:Lcom/google/appinventor/components/common/ComponentCategory;
     description = "<p>A two-dimensional touch-sensitive rectangular panel on which drawing can be done and sprites can be moved.</p> <p>The <code>BackgroundColor</code>, <code>PaintColor</code>, <code>BackgroundImage</code>, <code>Width</code>, and <code>Height</code> of the Canvas can be set in either the Designer or in the Blocks Editor.  The <code>Width</code> and <code>Height</code> are measured in pixels and must be positive.</p><p>Any location on the Canvas can be specified as a pair of (X, Y) values, where <ul> <li>X is the number of pixels away from the left edge of the Canvas</li><li>Y is the number of pixels away from the top edge of the Canvas</li></ul>.</p> <p>There are events to tell when and where a Canvas has been touched or a <code>Sprite</code> (<code>ImageSprite</code> or <code>Ball</code>) has been dragged.  There are also methods for drawing points, lines, and circles.</p>"
     docUri = "gaming/canvas"
-    version = 0xa
+    version = 0xb
 .end annotation
 
 .annotation runtime Lcom/google/appinventor/components/annotations/SimpleObject;
@@ -107,29 +107,29 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 758
+    .line 760
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;-><init>(Lcom/google/appinventor/components/runtime/ComponentContainer;)V
 
-    .line 117
+    .line 119
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundImagePath:Ljava/lang/String;
 
-    .line 152
+    .line 154
     invoke-static {}, Lcom/google/appinventor/components/runtime/collect/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->extensionGestureDetectors:Ljava/util/Set;
 
-    .line 759
+    .line 761
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
 
-    .line 762
+    .line 764
     new-instance v0, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
@@ -138,71 +138,71 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
-    .line 763
+    .line 765
     invoke-interface {p1, p0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$add(Lcom/google/appinventor/components/runtime/AndroidViewComponent;)V
 
-    .line 765
+    .line 767
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
-    .line 766
+    .line 768
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setFlags(I)V
 
-    .line 769
+    .line 771
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x40000000    # 2.0f
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 770
+    .line 772
     const/high16 v0, -0x1000000
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->PaintColor(I)V
 
-    .line 771
+    .line 773
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->BackgroundColor(I)V
 
-    .line 772
+    .line 774
     invoke-virtual {p0, v2}, Lcom/google/appinventor/components/runtime/Canvas;->TextAlignment(I)V
 
-    .line 773
+    .line 775
     const/high16 v0, 0x41600000    # 14.0f
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->FontSize(F)V
 
-    .line 774
+    .line 776
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
-    .line 775
+    .line 777
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->setFontTypeface(I)V
 
-    .line 777
+    .line 779
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
-    .line 778
+    .line 780
     new-instance v0, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;
 
     invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;-><init>(Lcom/google/appinventor/components/runtime/Canvas;)V
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->motionEventParser:Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;
 
-    .line 779
+    .line 781
     new-instance v0, Landroid/view/GestureDetector;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
@@ -215,14 +215,14 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->mGestureDetector:Landroid/view/GestureDetector;
 
-    .line 780
+    .line 782
     new-instance v0, Lcom/google/appinventor/components/runtime/util/MultiTouchDetector;
 
     invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/util/MultiTouchDetector;-><init>(Lcom/google/appinventor/components/runtime/Canvas;)V
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->multiTouchDetector:Lcom/google/appinventor/components/runtime/util/MultiTouchDetector;
 
-    .line 781
+    .line 783
     return-void
 .end method
 
@@ -231,7 +231,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
     return-object v0
@@ -243,7 +243,7 @@
     .param p1, "x1"    # Z
 
     .prologue
-    .line 103
+    .line 105
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->drawn:Z
 
     return p1
@@ -254,7 +254,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->motionEventParser:Lcom/google/appinventor/components/runtime/Canvas$MotionEventParser;
 
     return-object v0
@@ -265,7 +265,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->mGestureDetector:Landroid/view/GestureDetector;
 
     return-object v0
@@ -276,7 +276,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->extensionGestureDetectors:Ljava/util/Set;
 
     return-object v0
@@ -287,7 +287,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundImagePath:Ljava/lang/String;
 
     return-object v0
@@ -299,7 +299,7 @@
     .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 103
+    .line 105
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundImagePath:Ljava/lang/String;
 
     return-object p1
@@ -310,7 +310,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundColor:I
 
     return v0
@@ -322,7 +322,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 103
+    .line 105
     iput p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundColor:I
 
     return p1
@@ -333,7 +333,7 @@
     .param p0, "x0"    # Lcom/google/appinventor/components/runtime/Canvas;
 
     .prologue
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
     return-object v0
@@ -345,34 +345,365 @@
     .param p2, "argb"    # I
 
     .prologue
-    .line 1089
+    .line 1091
     if-nez p2, :cond_0
 
-    .line 1091
+    .line 1093
     const/high16 v0, -0x1000000
 
     invoke-static {p1, v0}, Lcom/google/appinventor/components/runtime/util/PaintUtil;->changePaint(Landroid/graphics/Paint;I)V
 
-    .line 1097
+    .line 1099
     :goto_0
     return-void
 
-    .line 1092
+    .line 1094
     :cond_0
     const v0, 0xffffff
 
     if-ne p2, v0, :cond_1
 
-    .line 1093
+    .line 1095
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/PaintUtil;->changePaintTransparent(Landroid/graphics/Paint;)V
 
     goto :goto_0
 
-    .line 1095
+    .line 1097
     :cond_1
     invoke-static {p1, p2}, Lcom/google/appinventor/components/runtime/util/PaintUtil;->changePaint(Landroid/graphics/Paint;I)V
 
     goto :goto_0
+.end method
+
+.method private parsePath([[F)Landroid/graphics/Path;
+    .locals 7
+    .param p1, "points"    # [[F
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    .line 1512
+    if-eqz p1, :cond_0
+
+    array-length v3, p1
+
+    if-nez v3, :cond_1
+
+    .line 1513
+    :cond_0
+    new-instance v3, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v3}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v3
+
+    .line 1515
+    :cond_1
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/Form;->deviceDensity()F
+
+    move-result v2
+
+    .line 1517
+    .local v2, "scalingFactor":F
+    new-instance v1, Landroid/graphics/Path;
+
+    invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
+
+    .line 1518
+    .local v1, "path":Landroid/graphics/Path;
+    aget-object v3, p1, v5
+
+    aget v3, v3, v5
+
+    mul-float/2addr v3, v2
+
+    aget-object v4, p1, v5
+
+    aget v4, v4, v6
+
+    mul-float/2addr v4, v2
+
+    invoke-virtual {v1, v3, v4}, Landroid/graphics/Path;->moveTo(FF)V
+
+    .line 1519
+    const/4 v0, 0x1
+
+    .local v0, "i":I
+    :goto_0
+    array-length v3, p1
+
+    if-ge v0, v3, :cond_2
+
+    .line 1520
+    aget-object v3, p1, v0
+
+    aget v3, v3, v5
+
+    mul-float/2addr v3, v2
+
+    aget-object v4, p1, v0
+
+    aget v4, v4, v6
+
+    mul-float/2addr v4, v2
+
+    invoke-virtual {v1, v3, v4}, Landroid/graphics/Path;->lineTo(FF)V
+
+    .line 1519
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 1523
+    :cond_2
+    return-object v1
+.end method
+
+.method private parsePointList(Lcom/google/appinventor/components/runtime/util/YailList;)[[F
+    .locals 12
+    .param p1, "pointList"    # Lcom/google/appinventor/components/runtime/util/YailList;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v11, 0x2
+
+    const/4 v5, 0x0
+
+    .line 1527
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
+
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    .line 1528
+    :cond_0
+    new-instance v5, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v5}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v5
+
+    .line 1530
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
+
+    move-result v6
+
+    filled-new-array {v6, v11}, [I
+
+    move-result-object v6
+
+    sget-object v7, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+
+    invoke-static {v7, v6}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [[F
+
+    .line 1531
+    .local v4, "points":[[F
+    const/4 v1, 0x0
+
+    .line 1533
+    .local v1, "index":I
+    invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/YailList;->toArray()[Ljava/lang/Object;
+
+    move-result-object v6
+
+    array-length v7, v6
+
+    :goto_0
+    if-ge v5, v7, :cond_4
+
+    aget-object v2, v6, v5
+
+    .line 1534
+    .local v2, "pointObject":Ljava/lang/Object;
+    instance-of v8, v2, Lcom/google/appinventor/components/runtime/util/YailList;
+
+    if-eqz v8, :cond_3
+
+    move-object v3, v2
+
+    .line 1535
+    check-cast v3, Lcom/google/appinventor/components/runtime/util/YailList;
+
+    .line 1536
+    .local v3, "pointYailList":Lcom/google/appinventor/components/runtime/util/YailList;
+    invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
+
+    move-result v8
+
+    if-ne v8, v11, :cond_2
+
+    .line 1538
+    :try_start_0
+    aget-object v8, v4, v1
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    invoke-virtual {v3, v10}, Lcom/google/appinventor/components/runtime/util/YailList;->getString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result v10
+
+    aput v10, v8, v9
+
+    .line 1539
+    aget-object v8, v4, v1
+
+    const/4 v9, 0x1
+
+    const/4 v10, 0x1
+
+    invoke-virtual {v3, v10}, Lcom/google/appinventor/components/runtime/util/YailList;->getString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result v10
+
+    aput v10, v8, v9
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 1540
+    add-int/lit8 v1, v1, 0x1
+
+    .line 1533
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 1541
+    :catch_0
+    move-exception v0
+
+    .line 1542
+    .local v0, "e":Ljava/lang/NullPointerException;
+    new-instance v5, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {v0}, Ljava/lang/NullPointerException;->fillInStackTrace()Ljava/lang/Throwable;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v5
+
+    .line 1543
+    .end local v0    # "e":Ljava/lang/NullPointerException;
+    :catch_1
+    move-exception v0
+
+    .line 1544
+    .local v0, "e":Ljava/lang/NumberFormatException;
+    new-instance v5, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {v0}, Ljava/lang/NumberFormatException;->fillInStackTrace()Ljava/lang/Throwable;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v5
+
+    .line 1547
+    .end local v0    # "e":Ljava/lang/NumberFormatException;
+    :cond_2
+    new-instance v5, Ljava/lang/IllegalArgumentException;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "length of item YailList("
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ") is not 2"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+
+    .line 1550
+    .end local v3    # "pointYailList":Lcom/google/appinventor/components/runtime/util/YailList;
+    :cond_3
+    new-instance v5, Ljava/lang/IllegalArgumentException;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "item("
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, ") in YailList is not a YailList"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v5
+
+    .line 1553
+    .end local v2    # "pointObject":Ljava/lang/Object;
+    :cond_4
+    return-object v4
 .end method
 
 .method private saveFile(Ljava/io/File;Landroid/graphics/Bitmap$CompressFormat;Ljava/lang/String;)Ljava/lang/String;
@@ -386,17 +717,17 @@
 
     const/4 v8, 0x0
 
-    .line 1638
+    .line 1747
     const/4 v3, 0x0
 
-    .line 1639
+    .line 1748
     .local v3, "success":Z
     :try_start_0
     new-instance v2, Ljava/io/FileOutputStream;
 
     invoke-direct {v2, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 1641
+    .line 1750
     .local v2, "fos":Ljava/io/FileOutputStream;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -415,7 +746,7 @@
 
     move-result-object v0
 
-    .line 1643
+    .line 1752
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     :goto_0
     const/16 v4, 0x64
@@ -427,25 +758,25 @@
 
     move-result v3
 
-    .line 1647
+    .line 1756
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
 
-    .line 1649
+    .line 1758
     if-eqz v3, :cond_1
 
-    .line 1650
+    .line 1759
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1662
+    .line 1771
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v2    # "fos":Ljava/io/FileOutputStream;
     :goto_1
     return-object v4
 
-    .line 1641
+    .line 1750
     .restart local v2    # "fos":Ljava/io/FileOutputStream;
     :cond_0
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
@@ -456,26 +787,26 @@
 
     goto :goto_0
 
-    .line 1647
+    .line 1756
     .restart local v0    # "bitmap":Landroid/graphics/Bitmap;
     :catchall_0
     move-exception v4
 
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
 
-    .line 1648
+    .line 1757
     throw v4
     :try_end_2
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 1655
+    .line 1764
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v2    # "fos":Ljava/io/FileOutputStream;
     :catch_0
     move-exception v1
 
-    .line 1656
+    .line 1765
     .local v1, "e":Ljava/io/FileNotFoundException;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -487,24 +818,24 @@
 
     new-array v6, v7, [Ljava/lang/Object;
 
-    .line 1657
+    .line 1766
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v6, v8
 
-    .line 1656
+    .line 1765
     invoke-virtual {v4, p0, p3, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1662
+    .line 1771
     .end local v1    # "e":Ljava/io/FileNotFoundException;
     :goto_2
     const-string v4, ""
 
     goto :goto_1
 
-    .line 1652
+    .line 1761
     .restart local v0    # "bitmap":Landroid/graphics/Bitmap;
     .restart local v2    # "fos":Ljava/io/FileOutputStream;
     :cond_1
@@ -528,13 +859,13 @@
 
     goto :goto_2
 
-    .line 1658
+    .line 1767
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v2    # "fos":Ljava/io/FileOutputStream;
     :catch_1
     move-exception v1
 
-    .line 1659
+    .line 1768
     .local v1, "e":Ljava/io/IOException;
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -546,14 +877,14 @@
 
     new-array v6, v7, [Ljava/lang/Object;
 
-    .line 1660
+    .line 1769
     invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v6, v8
 
-    .line 1659
+    .line 1768
     invoke-virtual {v4, p0, p3, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_2
@@ -566,7 +897,7 @@
     .param p1, "component"    # Lcom/google/appinventor/components/runtime/AndroidViewComponent;
 
     .prologue
-    .line 875
+    .line 877
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Canvas.$add() called"
@@ -580,7 +911,7 @@
     .locals 1
 
     .prologue
-    .line 865
+    .line 867
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
 
     return-object v0
@@ -590,7 +921,7 @@
     .locals 1
 
     .prologue
-    .line 870
+    .line 872
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -608,7 +939,7 @@
     .end annotation
 
     .prologue
-    .line 1011
+    .line 1013
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundColor:I
 
     return v0
@@ -626,12 +957,12 @@
     .end annotation
 
     .prologue
-    .line 1027
+    .line 1029
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->setBackgroundColor(I)V
 
-    .line 1028
+    .line 1030
     return-void
 .end method
 
@@ -643,7 +974,7 @@
     .end annotation
 
     .prologue
-    .line 1039
+    .line 1041
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->backgroundImagePath:Ljava/lang/String;
 
     return-object v0
@@ -661,12 +992,12 @@
     .end annotation
 
     .prologue
-    .line 1054
+    .line 1056
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->setBackgroundImage(Ljava/lang/String;)V
 
-    .line 1055
+    .line 1057
     return-void
 .end method
 
@@ -677,12 +1008,12 @@
     .end annotation
 
     .prologue
-    .line 1425
+    .line 1427
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->access$800(Lcom/google/appinventor/components/runtime/Canvas$CanvasView;)V
 
-    .line 1426
+    .line 1428
     return-void
 .end method
 
@@ -699,7 +1030,7 @@
     .end annotation
 
     .prologue
-    .line 1405
+    .line 1407
     const-string v0, "Dragged"
 
     const/4 v1, 0x7
@@ -724,7 +1055,7 @@
 
     const/4 v2, 0x2
 
-    .line 1406
+    .line 1408
     invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v3
@@ -763,11 +1094,102 @@
 
     aput-object v3, v1, v2
 
-    .line 1405
+    .line 1407
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1407
+    .line 1409
     return-void
+.end method
+
+.method public DrawArc(IIIIFFZZ)V
+    .locals 8
+    .param p1, "left"    # I
+    .param p2, "top"    # I
+    .param p3, "right"    # I
+    .param p4, "bottom"    # I
+    .param p5, "startAngle"    # F
+    .param p6, "sweepAngle"    # F
+    .param p7, "useCenter"    # Z
+    .param p8, "fill"    # Z
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Draw an arc on Canvas, by drawing an arc from a specified oval (specified by left, top, right & bottom). Start angle is 0 when heading to the right, and increase when rotate clockwise. When useCenter is true, a sector will be drawed instead of an arc. When fill is true, a filled arc (or sector) will be drawed instead of just an outline."
+    .end annotation
+
+    .prologue
+    .line 1578
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Form;->deviceDensity()F
+
+    move-result v6
+
+    .line 1579
+    .local v6, "scalingFactor":F
+    new-instance v5, Landroid/graphics/Paint;
+
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
+
+    invoke-direct {v5, v0}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
+
+    .line 1580
+    .local v5, "p":Landroid/graphics/Paint;
+    if-eqz p8, :cond_0
+
+    sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    :goto_0
+    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 1581
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
+
+    invoke-static {v0}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->access$900(Lcom/google/appinventor/components/runtime/Canvas$CanvasView;)Landroid/graphics/Canvas;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/graphics/RectF;
+
+    int-to-float v2, p1
+
+    mul-float/2addr v2, v6
+
+    int-to-float v3, p2
+
+    mul-float/2addr v3, v6
+
+    int-to-float v4, p3
+
+    mul-float/2addr v4, v6
+
+    int-to-float v7, p4
+
+    mul-float/2addr v7, v6
+
+    invoke-direct {v1, v2, v3, v4, v7}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    move v2, p5
+
+    move v3, p6
+
+    move v4, p7
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+
+    .line 1585
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
+
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
+
+    .line 1586
+    return-void
+
+    .line 1580
+    :cond_0
+    sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    goto :goto_0
 .end method
 
 .method public DrawCircle(IIFZ)V
@@ -780,7 +1202,7 @@
     .end annotation
 
     .prologue
-    .line 1452
+    .line 1454
     int-to-float v4, p1
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -793,7 +1215,7 @@
 
     mul-float v1, v4, v5
 
-    .line 1453
+    .line 1455
     .local v1, "correctedX":F
     int-to-float v4, p2
 
@@ -807,7 +1229,7 @@
 
     mul-float v2, v4, v5
 
-    .line 1454
+    .line 1456
     .local v2, "correctedY":F
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
 
@@ -819,7 +1241,7 @@
 
     mul-float v0, p3, v4
 
-    .line 1455
+    .line 1457
     .local v0, "correctedR":F
     new-instance v3, Landroid/graphics/Paint;
 
@@ -827,7 +1249,7 @@
 
     invoke-direct {v3, v4}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
 
-    .line 1456
+    .line 1458
     .local v3, "p":Landroid/graphics/Paint;
     if-eqz p4, :cond_0
 
@@ -836,7 +1258,7 @@
     :goto_0
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1457
+    .line 1459
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-static {v4}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->access$900(Lcom/google/appinventor/components/runtime/Canvas$CanvasView;)Landroid/graphics/Canvas;
@@ -845,15 +1267,15 @@
 
     invoke-virtual {v4, v1, v2, v0, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1458
+    .line 1460
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v4}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 1459
+    .line 1461
     return-void
 
-    .line 1456
+    .line 1458
     :cond_0
     sget-object v4, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
@@ -870,7 +1292,7 @@
     .end annotation
 
     .prologue
-    .line 1471
+    .line 1473
     int-to-float v0, p1
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -883,7 +1305,7 @@
 
     mul-float v1, v0, v5
 
-    .line 1472
+    .line 1474
     .local v1, "correctedX1":F
     int-to-float v0, p2
 
@@ -897,7 +1319,7 @@
 
     mul-float v2, v0, v5
 
-    .line 1473
+    .line 1475
     .local v2, "correctedY1":F
     int-to-float v0, p3
 
@@ -911,7 +1333,7 @@
 
     mul-float v3, v0, v5
 
-    .line 1474
+    .line 1476
     .local v3, "correctedX2":F
     int-to-float v0, p4
 
@@ -925,7 +1347,7 @@
 
     mul-float v4, v0, v5
 
-    .line 1475
+    .line 1477
     .local v4, "correctedY2":F
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -937,12 +1359,12 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 1476
+    .line 1478
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 1477
+    .line 1479
     return-void
 .end method
 
@@ -954,7 +1376,7 @@
     .end annotation
 
     .prologue
-    .line 1436
+    .line 1438
     int-to-float v2, p1
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -967,7 +1389,7 @@
 
     mul-float v0, v2, v3
 
-    .line 1437
+    .line 1439
     .local v0, "correctedX":F
     int-to-float v2, p2
 
@@ -981,7 +1403,7 @@
 
     mul-float v1, v2, v3
 
-    .line 1438
+    .line 1440
     .local v1, "correctedY":F
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -993,13 +1415,106 @@
 
     invoke-virtual {v2, v0, v1, v3}, Landroid/graphics/Canvas;->drawPoint(FFLandroid/graphics/Paint;)V
 
-    .line 1439
+    .line 1441
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 1440
+    .line 1442
     return-void
+.end method
+
+.method public DrawShape(Lcom/google/appinventor/components/runtime/util/YailList;Z)V
+    .locals 7
+    .param p1, "pointList"    # Lcom/google/appinventor/components/runtime/util/YailList;
+    .param p2, "fill"    # Z
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Draws a shape on the canvas. pointList should be a list contains sub-lists with two number which represents a coordinate. The first point and last point does not need to be the same. e.g. ((x1 y1) (x2 y2) (x3 y3)) When fill is true, the shape will be filled."
+    .end annotation
+
+    .prologue
+    .line 1499
+    :try_start_0
+    invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/Canvas;->parsePointList(Lcom/google/appinventor/components/runtime/util/YailList;)[[F
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Lcom/google/appinventor/components/runtime/Canvas;->parsePath([[F)Landroid/graphics/Path;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v2
+
+    .line 1504
+    .local v2, "path":Landroid/graphics/Path;
+    invoke-virtual {v2}, Landroid/graphics/Path;->close()V
+
+    .line 1505
+    new-instance v1, Landroid/graphics/Paint;
+
+    iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
+
+    invoke-direct {v1, v3}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
+
+    .line 1506
+    .local v1, "p":Landroid/graphics/Paint;
+    if-eqz p2, :cond_0
+
+    sget-object v3, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    :goto_0
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 1507
+    iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
+
+    invoke-static {v3}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->access$900(Lcom/google/appinventor/components/runtime/Canvas$CanvasView;)Landroid/graphics/Canvas;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 1508
+    iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
+
+    invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
+
+    .line 1509
+    .end local v1    # "p":Landroid/graphics/Paint;
+    .end local v2    # "path":Landroid/graphics/Path;
+    :goto_1
+    return-void
+
+    .line 1500
+    :catch_0
+    move-exception v0
+
+    .line 1501
+    .local v0, "e":Ljava/lang/IllegalArgumentException;
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v3
+
+    const-string v4, "DrawShape"
+
+    const/16 v5, 0x3ec
+
+    const/4 v6, 0x0
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    invoke-virtual {v3, p0, v4, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    .line 1506
+    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
+    .restart local v1    # "p":Landroid/graphics/Paint;
+    .restart local v2    # "path":Landroid/graphics/Path;
+    :cond_0
+    sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    goto :goto_0
 .end method
 
 .method public DrawText(Ljava/lang/String;II)V
@@ -1012,7 +1527,7 @@
     .end annotation
 
     .prologue
-    .line 1491
+    .line 1600
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v3
@@ -1021,19 +1536,19 @@
 
     move-result v2
 
-    .line 1492
+    .line 1601
     .local v2, "fontScalingFactor":F
     int-to-float v3, p2
 
     mul-float v0, v3, v2
 
-    .line 1493
+    .line 1602
     .local v0, "correctedX":F
     int-to-float v3, p3
 
     mul-float v1, v3, v2
 
-    .line 1494
+    .line 1603
     .local v1, "correctedY":F
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -1045,12 +1560,12 @@
 
     invoke-virtual {v3, p1, v0, v1, v4}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1495
+    .line 1604
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 1496
+    .line 1605
     return-void
 .end method
 
@@ -1065,7 +1580,7 @@
     .end annotation
 
     .prologue
-    .line 1511
+    .line 1620
     int-to-float v2, p2
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -1080,7 +1595,7 @@
 
     float-to-int v0, v2
 
-    .line 1512
+    .line 1621
     .local v0, "correctedX":I
     int-to-float v2, p3
 
@@ -1096,13 +1611,13 @@
 
     float-to-int v1, v2
 
-    .line 1513
+    .line 1622
     .local v1, "correctedY":I
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-static {v2, p1, v0, v1, p4}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->access$1000(Lcom/google/appinventor/components/runtime/Canvas$CanvasView;Ljava/lang/String;IIF)V
 
-    .line 1514
+    .line 1623
     return-void
 .end method
 
@@ -1119,7 +1634,7 @@
     .end annotation
 
     .prologue
-    .line 1382
+    .line 1384
     const-string v0, "Flung"
 
     const/4 v1, 0x7
@@ -1184,7 +1699,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1383
+    .line 1385
     return-void
 .end method
 
@@ -1201,15 +1716,15 @@
     .end annotation
 
     .prologue
-    .line 1140
+    .line 1142
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->bold:Z
 
-    .line 1141
+    .line 1143
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->setFontTypeface(I)V
 
-    .line 1142
+    .line 1144
     return-void
 .end method
 
@@ -1221,7 +1736,7 @@
     .end annotation
 
     .prologue
-    .line 1126
+    .line 1128
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->bold:Z
 
     return v0
@@ -1240,15 +1755,15 @@
     .end annotation
 
     .prologue
-    .line 1169
+    .line 1171
     iput-boolean p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->italic:Z
 
-    .line 1170
+    .line 1172
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->setFontTypeface(I)V
 
-    .line 1171
+    .line 1173
     return-void
 .end method
 
@@ -1260,7 +1775,7 @@
     .end annotation
 
     .prologue
-    .line 1155
+    .line 1157
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->italic:Z
 
     return v0
@@ -1274,7 +1789,7 @@
     .end annotation
 
     .prologue
-    .line 1103
+    .line 1105
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v1
@@ -1283,7 +1798,7 @@
 
     move-result v0
 
-    .line 1104
+    .line 1106
     .local v0, "scale":F
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -1308,7 +1823,7 @@
     .end annotation
 
     .prologue
-    .line 1111
+    .line 1113
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v1
@@ -1317,7 +1832,7 @@
 
     move-result v0
 
-    .line 1112
+    .line 1114
     .local v0, "scale":F
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -1325,7 +1840,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 1113
+    .line 1115
     return-void
 .end method
 
@@ -1337,7 +1852,7 @@
     .end annotation
 
     .prologue
-    .line 1188
+    .line 1190
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
     return v0
@@ -1356,15 +1871,15 @@
     .end annotation
 
     .prologue
-    .line 1207
+    .line 1209
     iput p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
-    .line 1208
+    .line 1210
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->fontTypeface:I
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/Canvas;->setFontTypeface(I)V
 
-    .line 1209
+    .line 1211
     return-void
 .end method
 
@@ -1380,22 +1895,22 @@
     .end annotation
 
     .prologue
-    .line 1223
+    .line 1225
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
 
-    .line 1224
+    .line 1226
     .local v0, "ct":Landroid/content/Context;
     if-nez p1, :cond_0
 
     const-string p1, ""
 
-    .line 1225
+    .line 1227
     :cond_0
     const-string v4, ""
 
     if-eq p1, v4, :cond_4
 
-    .line 1227
+    .line 1229
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v4}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -1406,7 +1921,7 @@
 
     move-result-object v3
 
-    .line 1228
+    .line 1230
     .local v3, "typefacePath":Ljava/lang/String;
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
@@ -1422,35 +1937,35 @@
 
     if-eqz v4, :cond_3
 
-    .line 1229
+    .line 1231
     invoke-static {v3}, Landroid/graphics/Typeface;->createFromFile(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v2
 
-    .line 1233
+    .line 1235
     .local v2, "tf":Landroid/graphics/Typeface;
     :goto_0
     const/4 v1, 0x0
 
-    .line 1234
+    .line 1236
     .local v1, "style":I
     iget-boolean v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->bold:Z
 
     if-eqz v4, :cond_1
 
-    .line 1235
+    .line 1237
     or-int/lit8 v1, v1, 0x1
 
-    .line 1237
+    .line 1239
     :cond_1
     iget-boolean v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->italic:Z
 
     if-eqz v4, :cond_2
 
-    .line 1238
+    .line 1240
     or-int/lit8 v1, v1, 0x2
 
-    .line 1240
+    .line 1242
     :cond_2
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -1460,14 +1975,14 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 1244
+    .line 1246
     .end local v1    # "style":I
     .end local v2    # "tf":Landroid/graphics/Typeface;
     .end local v3    # "typefacePath":Ljava/lang/String;
     :goto_1
     return-void
 
-    .line 1231
+    .line 1233
     .restart local v3    # "typefacePath":Ljava/lang/String;
     :cond_3
     invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -1481,7 +1996,7 @@
     .restart local v2    # "tf":Landroid/graphics/Typeface;
     goto :goto_0
 
-    .line 1242
+    .line 1244
     .end local v2    # "tf":Landroid/graphics/Typeface;
     .end local v3    # "typefacePath":Ljava/lang/String;
     :cond_4
@@ -1519,7 +2034,7 @@
     .end annotation
 
     .prologue
-    .line 1528
+    .line 1637
     int-to-float v2, p1
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -1534,7 +2049,7 @@
 
     float-to-int v0, v2
 
-    .line 1529
+    .line 1638
     .local v0, "correctedX":I
     int-to-float v2, p2
 
@@ -1550,7 +2065,7 @@
 
     float-to-int v1, v2
 
-    .line 1530
+    .line 1639
     .local v1, "correctedY":I
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -1570,7 +2085,7 @@
     .end annotation
 
     .prologue
-    .line 1562
+    .line 1671
     int-to-float v2, p1
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -1585,7 +2100,7 @@
 
     float-to-int v0, v2
 
-    .line 1563
+    .line 1672
     .local v0, "correctedX":I
     int-to-float v2, p2
 
@@ -1601,7 +2116,7 @@
 
     float-to-int v1, v2
 
-    .line 1564
+    .line 1673
     .local v1, "correctedY":I
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -1619,7 +2134,7 @@
     .end annotation
 
     .prologue
-    .line 988
+    .line 990
     if-gtz p1, :cond_0
 
     const/4 v0, -0x2
@@ -1634,15 +2149,15 @@
 
     if-gt p1, v0, :cond_1
 
-    .line 990
+    .line 992
     :cond_0
     invoke-super {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height(I)V
 
-    .line 996
+    .line 998
     :goto_0
     return-void
 
-    .line 993
+    .line 995
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -1671,7 +2186,7 @@
     .end annotation
 
     .prologue
-    .line 1254
+    .line 1256
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getStrokeWidth()F
@@ -1703,7 +2218,7 @@
     .end annotation
 
     .prologue
-    .line 1266
+    .line 1268
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -1718,7 +2233,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1267
+    .line 1269
     return-void
 .end method
 
@@ -1730,7 +2245,7 @@
     .end annotation
 
     .prologue
-    .line 1069
+    .line 1071
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paintColor:I
 
     return v0
@@ -1748,15 +2263,15 @@
     .end annotation
 
     .prologue
-    .line 1084
+    .line 1086
     iput p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->paintColor:I
 
-    .line 1085
+    .line 1087
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
     invoke-direct {p0, v0, p1}, Lcom/google/appinventor/components/runtime/Canvas;->changePaint(Landroid/graphics/Paint;I)V
 
-    .line 1086
+    .line 1088
     return-void
 .end method
 
@@ -1769,7 +2284,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1579
+    .line 1688
     :try_start_0
     const-string v2, "png"
 
@@ -1777,7 +2292,7 @@
 
     move-result-object v1
 
-    .line 1580
+    .line 1689
     .local v1, "file":Ljava/io/File;
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -1791,16 +2306,16 @@
 
     move-result-object v2
 
-    .line 1590
+    .line 1699
     .end local v1    # "file":Ljava/io/File;
     :goto_0
     return-object v2
 
-    .line 1581
+    .line 1690
     :catch_0
     move-exception v0
 
-    .line 1582
+    .line 1691
     .local v0, "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -1812,18 +2327,18 @@
 
     invoke-virtual {v2, p0, v3, v0}, Lcom/google/appinventor/components/runtime/Form;->dispatchPermissionDeniedEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Lcom/google/appinventor/components/runtime/errors/PermissionException;)V
 
-    .line 1590
+    .line 1699
     .end local v0    # "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     :goto_1
     const-string v2, ""
 
     goto :goto_0
 
-    .line 1583
+    .line 1692
     :catch_1
     move-exception v0
 
-    .line 1584
+    .line 1693
     .local v0, "e":Ljava/io/IOException;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -1839,24 +2354,24 @@
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    .line 1585
+    .line 1694
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v6
 
     aput-object v6, v5, v7
 
-    .line 1584
+    .line 1693
     invoke-virtual {v2, p0, v3, v4, v5}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_1
 
-    .line 1586
+    .line 1695
     .end local v0    # "e":Ljava/io/IOException;
     :catch_2
     move-exception v0
 
-    .line 1587
+    .line 1696
     .local v0, "e":Lcom/google/appinventor/components/runtime/util/FileUtil$FileException;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -1866,14 +2381,14 @@
 
     const-string v3, "Save"
 
-    .line 1588
+    .line 1697
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/util/FileUtil$FileException;->getErrorMessageNumber()I
 
     move-result v4
 
     new-array v5, v7, [Ljava/lang/Object;
 
-    .line 1587
+    .line 1696
     invoke-virtual {v2, p0, v3, v4, v5}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_1
@@ -1889,7 +2404,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 1608
+    .line 1717
     const-string v3, ".jpg"
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -1906,11 +2421,11 @@
 
     if-eqz v3, :cond_1
 
-    .line 1609
+    .line 1718
     :cond_0
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
-    .line 1621
+    .line 1730
     .local v2, "format":Landroid/graphics/Bitmap$CompressFormat;
     :goto_0
     :try_start_0
@@ -1918,7 +2433,7 @@
 
     move-result-object v1
 
-    .line 1622
+    .line 1731
     .local v1, "file":Ljava/io/File;
     const-string v3, "SaveAs"
 
@@ -1930,13 +2445,13 @@
 
     move-result-object v3
 
-    .line 1632
+    .line 1741
     .end local v1    # "file":Ljava/io/File;
     .end local v2    # "format":Landroid/graphics/Bitmap$CompressFormat;
     :goto_1
     return-object v3
 
-    .line 1610
+    .line 1719
     :cond_1
     const-string v3, ".png"
 
@@ -1946,13 +2461,13 @@
 
     if-eqz v3, :cond_2
 
-    .line 1611
+    .line 1720
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     .restart local v2    # "format":Landroid/graphics/Bitmap$CompressFormat;
     goto :goto_0
 
-    .line 1612
+    .line 1721
     .end local v2    # "format":Landroid/graphics/Bitmap$CompressFormat;
     :cond_2
     const-string v3, "."
@@ -1963,7 +2478,7 @@
 
     if-nez v3, :cond_3
 
-    .line 1613
+    .line 1722
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1982,13 +2497,13 @@
 
     move-result-object p1
 
-    .line 1614
+    .line 1723
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     .restart local v2    # "format":Landroid/graphics/Bitmap$CompressFormat;
     goto :goto_0
 
-    .line 1616
+    .line 1725
     .end local v2    # "format":Landroid/graphics/Bitmap$CompressFormat;
     :cond_3
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
@@ -2005,17 +2520,17 @@
 
     invoke-virtual {v3, p0, v4, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 1618
+    .line 1727
     const-string v3, ""
 
     goto :goto_1
 
-    .line 1623
+    .line 1732
     .restart local v2    # "format":Landroid/graphics/Bitmap$CompressFormat;
     :catch_0
     move-exception v0
 
-    .line 1624
+    .line 1733
     .local v0, "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -2027,18 +2542,18 @@
 
     invoke-virtual {v3, p0, v4, v0}, Lcom/google/appinventor/components/runtime/Form;->dispatchPermissionDeniedEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Lcom/google/appinventor/components/runtime/errors/PermissionException;)V
 
-    .line 1632
+    .line 1741
     .end local v0    # "e":Lcom/google/appinventor/components/runtime/errors/PermissionException;
     :goto_2
     const-string v3, ""
 
     goto :goto_1
 
-    .line 1625
+    .line 1734
     :catch_1
     move-exception v0
 
-    .line 1626
+    .line 1735
     .local v0, "e":Ljava/io/IOException;
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -2054,24 +2569,24 @@
 
     new-array v6, v6, [Ljava/lang/Object;
 
-    .line 1627
+    .line 1736
     invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v6, v8
 
-    .line 1626
+    .line 1735
     invoke-virtual {v3, p0, v4, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_2
 
-    .line 1628
+    .line 1737
     .end local v0    # "e":Ljava/io/IOException;
     :catch_2
     move-exception v0
 
-    .line 1629
+    .line 1738
     .local v0, "e":Lcom/google/appinventor/components/runtime/util/FileUtil$FileException;
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -2081,14 +2596,14 @@
 
     const-string v4, "SaveAs"
 
-    .line 1630
+    .line 1739
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/util/FileUtil$FileException;->getErrorMessageNumber()I
 
     move-result v5
 
     new-array v6, v8, [Ljava/lang/Object;
 
-    .line 1629
+    .line 1738
     invoke-virtual {v3, p0, v4, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_2
@@ -2102,7 +2617,7 @@
     .end annotation
 
     .prologue
-    .line 1413
+    .line 1415
     const-string v0, "Scale"
 
     const/4 v1, 0x1
@@ -2119,7 +2634,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1414
+    .line 1416
     return-void
 .end method
 
@@ -2133,16 +2648,16 @@
     .end annotation
 
     .prologue
-    .line 1544
+    .line 1653
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1545
+    .line 1654
     .local v2, "pixelPaint":Landroid/graphics/Paint;
     invoke-static {v2, p3}, Lcom/google/appinventor/components/runtime/util/PaintUtil;->changePaint(Landroid/graphics/Paint;I)V
 
-    .line 1546
+    .line 1655
     int-to-float v3, p1
 
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Canvas;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -2157,7 +2672,7 @@
 
     float-to-int v0, v3
 
-    .line 1547
+    .line 1656
     .local v0, "correctedX":I
     int-to-float v3, p2
 
@@ -2173,7 +2688,7 @@
 
     float-to-int v1, v3
 
-    .line 1548
+    .line 1657
     .local v1, "correctedY":I
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
@@ -2187,12 +2702,12 @@
 
     invoke-virtual {v3, v4, v5, v2}, Landroid/graphics/Canvas;->drawPoint(FFLandroid/graphics/Paint;)V
 
-    .line 1549
+    .line 1658
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 1550
+    .line 1659
     return-void
 .end method
 
@@ -2205,7 +2720,7 @@
     .end annotation
 
     .prologue
-    .line 1286
+    .line 1288
     iget v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->textAlignment:I
 
     return v0
@@ -2224,17 +2739,17 @@
     .end annotation
 
     .prologue
-    .line 1303
+    .line 1305
     iput p1, p0, Lcom/google/appinventor/components/runtime/Canvas;->textAlignment:I
 
-    .line 1304
+    .line 1306
     packed-switch p1, :pswitch_data_0
 
-    .line 1315
+    .line 1317
     :goto_0
     return-void
 
-    .line 1306
+    .line 1308
     :pswitch_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -2244,7 +2759,7 @@
 
     goto :goto_0
 
-    .line 1309
+    .line 1311
     :pswitch_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -2254,7 +2769,7 @@
 
     goto :goto_0
 
-    .line 1312
+    .line 1314
     :pswitch_2
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -2264,7 +2779,7 @@
 
     goto :goto_0
 
-    .line 1304
+    .line 1306
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2281,7 +2796,7 @@
     .end annotation
 
     .prologue
-    .line 1345
+    .line 1347
     const-string v0, "TouchDown"
 
     const/4 v1, 0x2
@@ -2306,7 +2821,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1346
+    .line 1348
     return-void
 .end method
 
@@ -2318,7 +2833,7 @@
     .end annotation
 
     .prologue
-    .line 1358
+    .line 1360
     const-string v0, "TouchUp"
 
     const/4 v1, 0x2
@@ -2343,7 +2858,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1359
+    .line 1361
     return-void
 .end method
 
@@ -2356,7 +2871,7 @@
     .end annotation
 
     .prologue
-    .line 1332
+    .line 1334
     const-string v0, "Touched"
 
     const/4 v1, 0x3
@@ -2389,7 +2904,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 1333
+    .line 1335
     return-void
 .end method
 
@@ -2400,7 +2915,7 @@
     .end annotation
 
     .prologue
-    .line 965
+    .line 967
     if-gtz p1, :cond_0
 
     const/4 v0, -0x2
@@ -2415,15 +2930,15 @@
 
     if-gt p1, v0, :cond_1
 
-    .line 967
+    .line 969
     :cond_0
     invoke-super {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width(I)V
 
-    .line 973
+    .line 975
     :goto_0
     return-void
 
-    .line 970
+    .line 972
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -2449,7 +2964,7 @@
     .param p1, "sprite"    # Lcom/google/appinventor/components/runtime/Sprite;
 
     .prologue
-    .line 831
+    .line 833
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -2462,7 +2977,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 832
+    .line 834
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2483,22 +2998,22 @@
 
     if-lez v1, :cond_0
 
-    .line 833
+    .line 835
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
     invoke-interface {v1, v0, p1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 840
+    .line 842
     :goto_1
     return-void
 
-    .line 831
+    .line 833
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 839
+    .line 841
     :cond_1
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
@@ -2512,18 +3027,18 @@
     .param p1, "sprite"    # Lcom/google/appinventor/components/runtime/Sprite;
 
     .prologue
-    .line 858
+    .line 860
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/Canvas;->removeSprite(Lcom/google/appinventor/components/runtime/Sprite;)V
 
-    .line 859
+    .line 861
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/Canvas;->addSprite(Lcom/google/appinventor/components/runtime/Sprite;)V
 
-    .line 860
+    .line 862
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 861
+    .line 863
     return-void
 .end method
 
@@ -2532,7 +3047,7 @@
     .param p1, "movedSprite"    # Lcom/google/appinventor/components/runtime/Sprite;
 
     .prologue
-    .line 920
+    .line 922
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2553,18 +3068,18 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/Sprite;
 
-    .line 921
+    .line 923
     .local v0, "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     if-eq v0, p1, :cond_0
 
-    .line 923
+    .line 925
     invoke-virtual {p1, v0}, Lcom/google/appinventor/components/runtime/Sprite;->CollidingWith(Lcom/google/appinventor/components/runtime/Sprite;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 925
+    .line 927
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/Sprite;->Visible()Z
 
     move-result v2
@@ -2577,7 +3092,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 926
+    .line 928
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Sprite;->Visible()Z
 
     move-result v2
@@ -2590,23 +3105,23 @@
 
     if-eqz v2, :cond_1
 
-    .line 927
+    .line 929
     invoke-static {v0, p1}, Lcom/google/appinventor/components/runtime/Sprite;->colliding(Lcom/google/appinventor/components/runtime/Sprite;Lcom/google/appinventor/components/runtime/Sprite;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 928
+    .line 930
     :cond_1
     invoke-virtual {p1, v0}, Lcom/google/appinventor/components/runtime/Sprite;->NoLongerCollidingWith(Lcom/google/appinventor/components/runtime/Sprite;)V
 
-    .line 929
+    .line 931
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/Sprite;->NoLongerCollidingWith(Lcom/google/appinventor/components/runtime/Sprite;)V
 
     goto :goto_0
 
-    .line 935
+    .line 937
     :cond_2
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/Sprite;->Visible()Z
 
@@ -2620,7 +3135,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 936
+    .line 938
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Sprite;->Visible()Z
 
     move-result v2
@@ -2633,22 +3148,22 @@
 
     if-eqz v2, :cond_0
 
-    .line 937
+    .line 939
     invoke-static {v0, p1}, Lcom/google/appinventor/components/runtime/Sprite;->colliding(Lcom/google/appinventor/components/runtime/Sprite;Lcom/google/appinventor/components/runtime/Sprite;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 939
+    .line 941
     invoke-virtual {p1, v0}, Lcom/google/appinventor/components/runtime/Sprite;->CollidedWith(Lcom/google/appinventor/components/runtime/Sprite;)V
 
-    .line 940
+    .line 942
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/Sprite;->CollidedWith(Lcom/google/appinventor/components/runtime/Sprite;)V
 
     goto :goto_0
 
-    .line 947
+    .line 949
     .end local v0    # "sprite":Lcom/google/appinventor/components/runtime/Sprite;
     :cond_3
     return-void
@@ -2658,7 +3173,7 @@
     .locals 1
 
     .prologue
-    .line 789
+    .line 791
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
 
     return-object v0
@@ -2668,7 +3183,7 @@
     .locals 1
 
     .prologue
-    .line 785
+    .line 787
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     return-object v0
@@ -2678,7 +3193,7 @@
     .locals 1
 
     .prologue
-    .line 813
+    .line 815
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->drawn:Z
 
     return v0
@@ -2689,15 +3204,15 @@
     .param p1, "sprite"    # Lcom/google/appinventor/components/runtime/Sprite;
 
     .prologue
-    .line 897
+    .line 899
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->view:Lcom/google/appinventor/components/runtime/Canvas$CanvasView;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Canvas$CanvasView;->invalidate()V
 
-    .line 898
+    .line 900
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/Canvas;->findSpriteCollisions(Lcom/google/appinventor/components/runtime/Sprite;)V
 
-    .line 899
+    .line 901
     return-void
 .end method
 
@@ -2706,12 +3221,12 @@
     .param p1, "detector"    # Lcom/google/appinventor/components/runtime/Canvas$ExtensionGestureDetector;
 
     .prologue
-    .line 795
+    .line 797
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->extensionGestureDetectors:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 796
+    .line 798
     return-void
 .end method
 
@@ -2720,12 +3235,12 @@
     .param p1, "detector"    # Ljava/lang/Object;
 
     .prologue
-    .line 799
+    .line 801
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->extensionGestureDetectors:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 800
+    .line 802
     return-void
 .end method
 
@@ -2734,12 +3249,12 @@
     .param p1, "sprite"    # Lcom/google/appinventor/components/runtime/Sprite;
 
     .prologue
-    .line 848
+    .line 850
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Canvas;->sprites:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 849
+    .line 851
     return-void
 .end method
 
@@ -2749,7 +3264,7 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 885
+    .line 887
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Canvas.setChildHeight() called"
@@ -2765,7 +3280,7 @@
     .param p2, "width"    # I
 
     .prologue
-    .line 880
+    .line 882
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Canvas.setChildWidth() called"
@@ -2780,44 +3295,44 @@
     .param p1, "typeface"    # I
 
     .prologue
-    .line 718
+    .line 720
     packed-switch p1, :pswitch_data_0
 
-    .line 720
+    .line 722
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v2
 
-    .line 723
+    .line 725
     :pswitch_0
     sget-object v1, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
-    .line 747
+    .line 749
     .local v1, "tf":Landroid/graphics/Typeface;
     :goto_0
     const/4 v0, 0x0
 
-    .line 748
+    .line 750
     .local v0, "style":I
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->bold:Z
 
     if-eqz v2, :cond_0
 
-    .line 749
+    .line 751
     or-int/lit8 v0, v0, 0x1
 
-    .line 751
+    .line 753
     :cond_0
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->italic:Z
 
     if-eqz v2, :cond_1
 
-    .line 752
+    .line 754
     or-int/lit8 v0, v0, 0x2
 
-    .line 754
+    .line 756
     :cond_1
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->paint:Landroid/graphics/Paint;
 
@@ -2827,38 +3342,38 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 755
+    .line 757
     return-void
 
-    .line 727
+    .line 729
     .end local v0    # "style":I
     .end local v1    # "tf":Landroid/graphics/Typeface;
     :pswitch_1
     sget-object v1, Landroid/graphics/Typeface;->SERIF:Landroid/graphics/Typeface;
 
-    .line 728
+    .line 730
     .restart local v1    # "tf":Landroid/graphics/Typeface;
     goto :goto_0
 
-    .line 731
+    .line 733
     .end local v1    # "tf":Landroid/graphics/Typeface;
     :pswitch_2
     sget-object v1, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
-    .line 732
+    .line 734
     .restart local v1    # "tf":Landroid/graphics/Typeface;
     goto :goto_0
 
-    .line 735
+    .line 737
     .end local v1    # "tf":Landroid/graphics/Typeface;
     :pswitch_3
     sget-object v1, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
 
-    .line 736
+    .line 738
     .restart local v1    # "tf":Landroid/graphics/Typeface;
     goto :goto_0
 
-    .line 739
+    .line 741
     .end local v1    # "tf":Landroid/graphics/Typeface;
     :pswitch_4
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
@@ -2873,11 +3388,11 @@
 
     move-result-object v1
 
-    .line 740
+    .line 742
     .restart local v1    # "tf":Landroid/graphics/Typeface;
     goto :goto_0
 
-    .line 743
+    .line 745
     .end local v1    # "tf":Landroid/graphics/Typeface;
     :pswitch_5
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Canvas;->context:Landroid/app/Activity;
@@ -2895,7 +3410,7 @@
     .restart local v1    # "tf":Landroid/graphics/Typeface;
     goto :goto_0
 
-    .line 718
+    .line 720
     nop
 
     :pswitch_data_0

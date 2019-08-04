@@ -35,7 +35,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 1156
+    .line 1182
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$6;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iput p2, p0, Lcom/google/appinventor/components/runtime/Form$6;->val$errorNumber:I
@@ -57,7 +57,7 @@
     .locals 7
 
     .prologue
-    .line 1158
+    .line 1184
     iget v0, p0, Lcom/google/appinventor/components/runtime/Form$6;->val$errorNumber:I
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$6;->val$messageArgs:[Ljava/lang/Object;
@@ -66,7 +66,7 @@
 
     move-result-object v4
 
-    .line 1159
+    .line 1185
     .local v4, "message":Ljava/lang/String;
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$6;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
@@ -100,6 +100,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/google/appinventor/components/runtime/Form;->ErrorOccurredDialog(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1166
+    .line 1192
     return-void
 .end method

@@ -15,7 +15,7 @@
     category = .enum Lcom/google/appinventor/components/common/ComponentCategory;->MEDIA:Lcom/google/appinventor/components/common/ComponentCategory;
     description = "A multimedia component capable of playing videos. When the application is run, the VideoPlayer will be displayed as a rectangle on-screen.  If the user touches the rectangle, controls will appear to play/pause, skip ahead, and skip backward within the video.  The application can also control behavior by calling the <code>Start</code>, <code>Pause</code>, and <code>SeekTo</code> methods.  <p>Video files should be in 3GPP (.3gp) or MPEG-4 (.mp4) formats.  For more details about legal formats, see <a href=\"http://developer.android.com/guide/appendix/media-formats.html\" target=\"_blank\">Android Supported Media Formats</a>.</p><p>App Inventor for Android only permits video files under 1 MB and limits the total size of an application to 5 MB, not all of which is available for media (video, audio, and sound) files.  If your media files are too large, you may get errors when packaging or installing your application, in which case you should reduce the number of media files or their sizes.  Most video editing software, such as Windows Movie Maker and Apple iMovie, can help you decrease the size of videos by shortening them or re-encoding the video into a more compact format.</p><p>You can also set the media source to a URL that points to a streaming video, but the URL must point to the video file itself, not to a program that plays the video."
     docUri = "image/video-player"
-    version = 0x5
+    version = 0x6
 .end annotation
 
 .annotation runtime Lcom/google/appinventor/components/annotations/SimpleObject;
@@ -169,7 +169,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 395
+    .line 407
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->isPlaying()Z
@@ -178,12 +178,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 396
+    .line 408
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->stopPlayback()V
 
-    .line 398
+    .line 410
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
@@ -191,34 +191,34 @@
 
     invoke-virtual {v1, v2}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->setVideoURI(Landroid/net/Uri;)V
 
-    .line 399
+    .line 411
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->clearAnimation()V
 
-    .line 401
+    .line 413
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->delayedStart:Z
 
-    .line 402
+    .line 414
     iput-boolean v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->mediaReady:Z
 
-    .line 404
+    .line 416
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
     if-eqz v1, :cond_1
 
-    .line 405
+    .line 417
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 406
+    .line 418
     .local v0, "data":Landroid/os/Bundle;
     const-string v1, "FullScreenKey"
 
     invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 407
+    .line 419
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -229,7 +229,7 @@
 
     invoke-virtual {v1, v2, p0, v0}, Lcom/google/appinventor/components/runtime/Form;->fullScreenVideoAction(ILcom/google/appinventor/components/runtime/VideoPlayer;Ljava/lang/Object;)Landroid/os/Bundle;
 
-    .line 410
+    .line 422
     .end local v0    # "data":Landroid/os/Bundle;
     :cond_1
     return-void
@@ -243,7 +243,7 @@
     .end annotation
 
     .prologue
-    .line 335
+    .line 347
     const-string v0, "Completed"
 
     const/4 v1, 0x0
@@ -252,7 +252,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 336
+    .line 348
     return-void
 .end method
 
@@ -270,7 +270,7 @@
 
     const/4 v8, 0x0
 
-    .line 487
+    .line 499
     if-eqz p1, :cond_1
 
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/SdkLevel;->getLevel()I
@@ -281,7 +281,7 @@
 
     if-gt v3, v4, :cond_1
 
-    .line 488
+    .line 500
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v3}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -296,70 +296,70 @@
 
     invoke-virtual {v3, p0, v4, v5, v6}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 527
+    .line 539
     :cond_0
     :goto_0
     return-void
 
-    .line 493
+    .line 505
     :cond_1
     iget-boolean v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
     if-eq p1, v3, :cond_0
 
-    .line 494
+    .line 506
     if-eqz p1, :cond_3
 
-    .line 495
+    .line 507
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 496
+    .line 508
     .local v0, "data":Landroid/os/Bundle;
     const-string v3, "PositionKey"
 
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
-    .line 497
+    .line 509
     invoke-virtual {v4}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->getCurrentPosition()I
 
     move-result v4
 
-    .line 496
+    .line 508
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 498
+    .line 510
     const-string v3, "PlayingKey"
 
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
-    .line 499
+    .line 511
     invoke-virtual {v4}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->isPlaying()Z
 
     move-result v4
 
-    .line 498
+    .line 510
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 500
+    .line 512
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v3}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->pause()V
 
-    .line 501
+    .line 513
     const-string v3, "FullScreenKey"
 
     invoke-virtual {v0, v3, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 502
+    .line 514
     const-string v3, "SourceKey"
 
     iget-object v4, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->sourcePath:Ljava/lang/String;
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 503
+    .line 515
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v3}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -370,7 +370,7 @@
 
     move-result-object v1
 
-    .line 505
+    .line 517
     .local v1, "result":Landroid/os/Bundle;
     const-string v3, "ActionSuccess"
 
@@ -380,16 +380,16 @@
 
     if-eqz v3, :cond_2
 
-    .line 506
+    .line 518
     iput-boolean v6, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
     goto :goto_0
 
-    .line 508
+    .line 520
     :cond_2
     iput-boolean v8, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
-    .line 509
+    .line 521
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v3}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -410,7 +410,7 @@
 
     goto :goto_0
 
-    .line 513
+    .line 525
     .end local v0    # "data":Landroid/os/Bundle;
     .end local v1    # "result":Landroid/os/Bundle;
     :cond_3
@@ -418,13 +418,13 @@
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 514
+    .line 526
     .local v2, "values":Landroid/os/Bundle;
     const-string v3, "FullScreenKey"
 
     invoke-virtual {v2, v3, v8}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 515
+    .line 527
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v3}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -435,7 +435,7 @@
 
     move-result-object v1
 
-    .line 518
+    .line 530
     .restart local v1    # "result":Landroid/os/Bundle;
     const-string v3, "ActionSuccess"
 
@@ -445,16 +445,16 @@
 
     if-eqz v3, :cond_4
 
-    .line 519
+    .line 531
     invoke-virtual {p0, v1}, Lcom/google/appinventor/components/runtime/VideoPlayer;->fullScreenKilled(Landroid/os/Bundle;)V
 
     goto :goto_0
 
-    .line 521
+    .line 533
     :cond_4
     iput-boolean v6, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
-    .line 522
+    .line 534
     iget-object v3, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v3}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -482,7 +482,7 @@
     .end annotation
 
     .prologue
-    .line 473
+    .line 485
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
     return v0
@@ -495,19 +495,19 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 321
     const-string v1, "VideoPlayer"
 
     const-string v2, "Calling GetDuration"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 310
+    .line 322
     iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
     if-eqz v1, :cond_1
 
-    .line 311
+    .line 323
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -522,7 +522,7 @@
 
     move-result-object v0
 
-    .line 313
+    .line 325
     .local v0, "result":Landroid/os/Bundle;
     const-string v1, "ActionSuccess"
 
@@ -532,26 +532,26 @@
 
     if-eqz v1, :cond_0
 
-    .line 314
+    .line 326
     const-string v1, "ActionData"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 319
+    .line 331
     .end local v0    # "result":Landroid/os/Bundle;
     :goto_0
     return v1
 
-    .line 316
+    .line 328
     .restart local v0    # "result":Landroid/os/Bundle;
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 319
+    .line 331
     .end local v0    # "result":Landroid/os/Bundle;
     :cond_1
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
@@ -569,7 +569,7 @@
     .end annotation
 
     .prologue
-    .line 448
+    .line 460
     invoke-super {p0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height()I
 
     move-result v0
@@ -585,10 +585,10 @@
     .end annotation
 
     .prologue
-    .line 460
+    .line 472
     invoke-super {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height(I)V
 
-    .line 463
+    .line 475
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
@@ -597,7 +597,7 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->changeVideoSize(II)V
 
-    .line 464
+    .line 476
     return-void
 .end method
 
@@ -662,26 +662,26 @@
     .end annotation
 
     .prologue
-    .line 293
+    .line 305
     const-string v0, "VideoPlayer"
 
     const-string v1, "Calling SeekTo"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 294
+    .line 306
     if-gez p1, :cond_0
 
-    .line 295
+    .line 307
     const/4 p1, 0x0
 
-    .line 297
+    .line 309
     :cond_0
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
     if-eqz v0, :cond_1
 
-    .line 298
+    .line 310
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -690,19 +690,19 @@
 
     const/16 v1, 0xbe
 
-    .line 299
+    .line 311
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 298
+    .line 310
     invoke-virtual {v0, v1, p0, v2}, Lcom/google/appinventor/components/runtime/Form;->fullScreenVideoAction(ILcom/google/appinventor/components/runtime/VideoPlayer;Ljava/lang/Object;)Landroid/os/Bundle;
 
-    .line 304
+    .line 316
     :goto_0
     return-void
 
-    .line 302
+    .line 314
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
@@ -963,6 +963,35 @@
     goto :goto_0
 .end method
 
+.method public Stop()V
+    .locals 2
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Resets to start of video and pauses it if video was playing."
+    .end annotation
+
+    .prologue
+    .line 290
+    const-string v0, "VideoPlayer"
+
+    const-string v1, "Calling Stop"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 294
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Start()V
+
+    .line 295
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->SeekTo(I)V
+
+    .line 296
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Pause()V
+
+    .line 297
+    return-void
+.end method
+
 .method public VideoPlayerError(Ljava/lang/String;)V
     .locals 0
     .param p1, "message"    # Ljava/lang/String;
@@ -972,7 +1001,7 @@
     .end annotation
 
     .prologue
-    .line 378
+    .line 390
     return-void
 .end method
 
@@ -1034,7 +1063,7 @@
     .end annotation
 
     .prologue
-    .line 421
+    .line 433
     invoke-super {p0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width()I
 
     move-result v0
@@ -1050,10 +1079,10 @@
     .end annotation
 
     .prologue
-    .line 433
+    .line 445
     invoke-super {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width(I)V
 
-    .line 436
+    .line 448
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
@@ -1062,7 +1091,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->changeVideoSize(II)V
 
-    .line 437
+    .line 449
     return-void
 .end method
 
@@ -1089,17 +1118,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 536
+    .line 548
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->inFullScreen:Z
 
-    .line 537
+    .line 549
     const-string v1, "SourceKey"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 538
+    .line 550
     .local v0, "newSource":Ljava/lang/String;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->sourcePath:Ljava/lang/String;
 
@@ -1109,21 +1138,21 @@
 
     if-nez v1, :cond_0
 
-    .line 539
+    .line 551
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Source(Ljava/lang/String;)V
 
-    .line 541
+    .line 553
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v1, v2}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->setVisibility(I)V
 
-    .line 542
+    .line 554
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->requestLayout()V
 
-    .line 543
+    .line 555
     const-string v1, "PositionKey"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1132,7 +1161,7 @@
 
     invoke-virtual {p0, v1}, Lcom/google/appinventor/components/runtime/VideoPlayer;->SeekTo(I)V
 
-    .line 544
+    .line 556
     const-string v1, "PlayingKey"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1141,10 +1170,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 545
+    .line 557
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Start()V
 
-    .line 547
+    .line 559
     :cond_1
     return-void
 .end method
@@ -1153,7 +1182,7 @@
     .locals 1
 
     .prologue
-    .line 562
+    .line 574
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iget v0, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedHeight:I
@@ -1165,7 +1194,7 @@
     .locals 1
 
     .prologue
-    .line 554
+    .line 566
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iget v0, v0, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->forcedWidth:I
@@ -1188,10 +1217,10 @@
     .param p1, "m"    # Landroid/media/MediaPlayer;
 
     .prologue
-    .line 327
+    .line 339
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Completed()V
 
-    .line 328
+    .line 340
     return-void
 .end method
 
@@ -1199,10 +1228,10 @@
     .locals 0
 
     .prologue
-    .line 391
+    .line 403
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->prepareToDie()V
 
-    .line 392
+    .line 404
     return-void
 .end method
 
@@ -1210,10 +1239,10 @@
     .locals 0
 
     .prologue
-    .line 384
+    .line 396
     invoke-direct {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->prepareToDie()V
 
-    .line 385
+    .line 397
     return-void
 .end method
 
@@ -1228,18 +1257,18 @@
 
     const/4 v5, 0x0
 
-    .line 350
+    .line 362
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     invoke-virtual {v0, v6}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->invalidateMediaPlayer(Z)V
 
-    .line 352
+    .line 364
     iput-boolean v5, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->delayedStart:Z
 
-    .line 353
+    .line 365
     iput-boolean v5, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->mediaReady:Z
 
-    .line 355
+    .line 367
     const-string v0, "VideoPlayer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1262,7 +1291,7 @@
 
     move-result-object v1
 
-    .line 356
+    .line 368
     invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -1287,7 +1316,7 @@
 
     move-result-object v1
 
-    .line 357
+    .line 369
     invoke-static {p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -1300,10 +1329,10 @@
 
     move-result-object v1
 
-    .line 355
+    .line 367
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 358
+    .line 370
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -1322,7 +1351,7 @@
 
     invoke-virtual {v0, p0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 360
+    .line 372
     return v6
 .end method
 
@@ -1333,33 +1362,33 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 365
+    .line 377
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->mediaReady:Z
 
-    .line 366
+    .line 378
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->delayedStart:Z
 
-    .line 367
+    .line 379
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->mPlayer:Landroid/media/MediaPlayer;
 
-    .line 368
+    .line 380
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->videoView:Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0, v1, v2}, Lcom/google/appinventor/components/runtime/VideoPlayer$ResizableVideoView;->setMediaPlayer(Landroid/media/MediaPlayer;Z)V
 
-    .line 369
+    .line 381
     iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/VideoPlayer;->delayedStart:Z
 
     if-eqz v0, :cond_0
 
-    .line 370
+    .line 382
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/VideoPlayer;->Start()V
 
-    .line 372
+    .line 384
     :cond_0
     return-void
 .end method

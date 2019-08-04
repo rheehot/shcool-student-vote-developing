@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
     .prologue
-    .line 508
+    .line 513
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .param p2, "mapView"    # Lorg/osmdroid/views/MapView;
 
     .prologue
-    .line 511
+    .line 516
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
     iget-object v1, v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
@@ -69,7 +69,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 512
+    .line 517
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 514
+    .line 519
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
@@ -92,10 +92,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 515
+    .line 520
     invoke-virtual {p1}, Lorg/osmdroid/views/overlay/Marker;->showInfoWindow()V
 
-    .line 517
+    .line 522
     :cond_1
     const/4 v1, 0x0
 
@@ -108,7 +108,7 @@
     .param p2, "mapView"    # Lorg/osmdroid/views/MapView;
 
     .prologue
-    .line 521
+    .line 526
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
     iget-object v1, v1, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
@@ -134,7 +134,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 522
+    .line 527
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;->this$1:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;
 
@@ -144,7 +144,7 @@
 
     goto :goto_0
 
-    .line 524
+    .line 529
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     const/4 v1, 0x0

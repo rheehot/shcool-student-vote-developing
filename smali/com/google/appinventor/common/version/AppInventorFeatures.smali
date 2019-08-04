@@ -55,16 +55,6 @@
     return v0
 .end method
 
-.method public static limitPermissions()Z
-    .locals 1
-
-    .prologue
-    .line 136
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method public static requireOneLogin()Z
     .locals 1
 

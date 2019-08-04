@@ -27,7 +27,7 @@
     .locals 3
 
     .prologue
-    .line 1262
+    .line 1269
     invoke-static {}, Lorg/osmdroid/views/overlay/ScaleBarOverlay$UnitsOfMeasure;->values()[Lorg/osmdroid/views/overlay/ScaleBarOverlay$UnitsOfMeasure;
 
     move-result-object v0
@@ -69,7 +69,7 @@
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_6
 
-    .line 1247
+    .line 1254
     :goto_1
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapScaleUnits;->values()[Lcom/google/appinventor/components/runtime/util/MapFactory$MapScaleUnits;
 
@@ -112,7 +112,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_4
 
-    .line 359
+    .line 364
     :goto_3
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;->values()[Lcom/google/appinventor/components/runtime/util/MapFactory$MapType;
 
@@ -210,7 +210,7 @@
 
     goto :goto_4
 
-    .line 1247
+    .line 1254
     :catch_4
     move-exception v0
 
@@ -221,7 +221,7 @@
 
     goto :goto_2
 
-    .line 1262
+    .line 1269
     :catch_6
     move-exception v0
 

@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 782
+    .line 789
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;
@@ -46,7 +46,7 @@
     .param p1, "marker"    # Lorg/osmdroid/views/overlay/Marker;
 
     .prologue
-    .line 785
+    .line 792
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;
@@ -59,7 +59,7 @@
 
     invoke-static {v1, v0, v2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$1000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
-    .line 797
+    .line 804
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .param p1, "polygon"    # Lorg/osmdroid/views/overlay/Polygon;
 
     .prologue
-    .line 806
+    .line 813
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasFill;->FillColor()I
@@ -77,7 +77,7 @@
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Polygon;->setFillColor(I)V
 
-    .line 807
+    .line 814
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$8;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$300(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Lorg/osmdroid/views/MapView;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 808
+    .line 815
     return-void
 .end method
 
@@ -95,6 +95,6 @@
     .param p1, "polyline"    # Lorg/osmdroid/views/overlay/Polyline;
 
     .prologue
-    .line 802
+    .line 809
     return-void
 .end method

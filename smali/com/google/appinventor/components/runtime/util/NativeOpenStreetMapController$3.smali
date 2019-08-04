@@ -39,7 +39,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 500
+    .line 505
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->val$aiMarker:Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
@@ -56,7 +56,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 503
+    .line 508
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$900()Ljava/lang/String;
 
     move-result-object v0
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 504
+    .line 509
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .locals 0
 
     .prologue
-    .line 500
+    .line 505
     check-cast p1, Lorg/osmdroid/views/overlay/Marker;
 
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->onSuccess(Lorg/osmdroid/views/overlay/Marker;)V
@@ -102,21 +102,21 @@
     .param p1, "overlay"    # Lorg/osmdroid/views/overlay/Marker;
 
     .prologue
-    .line 508
+    .line 513
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;
 
     invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$1;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;)V
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Marker;->setOnMarkerClickListener(Lorg/osmdroid/views/overlay/Marker$OnMarkerClickListener;)V
 
-    .line 527
+    .line 532
     new-instance v0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$2;
 
     invoke-direct {v0, p0}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3$2;-><init>(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;)V
 
     invoke-virtual {p1, v0}, Lorg/osmdroid/views/overlay/Marker;->setOnMarkerDragListener(Lorg/osmdroid/views/overlay/Marker$OnMarkerDragListener;)V
 
-    .line 551
+    .line 556
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->val$aiMarker:Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;->Visible()Z
@@ -125,16 +125,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 552
+    .line 557
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->showOverlay(Lorg/osmdroid/views/overlay/OverlayWithIW;)V
 
-    .line 556
+    .line 561
     :goto_0
     return-void
 
-    .line 554
+    .line 559
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$3;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 

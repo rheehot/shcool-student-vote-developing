@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 1320
+    .line 1346
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 1322
+    .line 1348
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/Form;->access$200(Lcom/google/appinventor/components/runtime/Form;)Landroid/widget/FrameLayout;
@@ -74,38 +74,38 @@
 
     if-eqz v0, :cond_1
 
-    .line 1323
+    .line 1349
     invoke-static {}, Lcom/google/appinventor/components/runtime/Form;->access$400()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1324
+    .line 1350
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     const-string v1, "Fixed"
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/Form;->Sizing(Ljava/lang/String;)V
 
-    .line 1328
+    .line 1354
     :goto_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Form;->ReplayFormOrientation()V
 
-    .line 1330
+    .line 1356
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iget-object v0, v0, Lcom/google/appinventor/components/runtime/Form;->frameWithTitle:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->requestLayout()V
 
-    .line 1335
+    .line 1361
     :goto_1
     return-void
 
-    .line 1326
+    .line 1352
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 1333
+    .line 1359
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$8;->this$0:Lcom/google/appinventor/components/runtime/Form;
 

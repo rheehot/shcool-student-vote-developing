@@ -75,11 +75,11 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 219
     .local p1, "eventClosures":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;>;"
     const/4 v0, 0x0
 
-    .line 219
+    .line 220
     .local v0, "dispatched":Z
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -99,30 +99,30 @@
 
     check-cast v1, Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;
 
-    .line 221
+    .line 222
     .local v1, "eventClosure":Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;->access$200(Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 222
+    .line 223
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;->access$300(Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 220
+    .line 221
     invoke-interface {p0, p2, v3, v4, p3}, Lcom/google/appinventor/components/runtime/HandlesEventDispatching;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 228
+    .line 229
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 231
+    .line 232
     .end local v1    # "eventClosure":Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;
     :cond_1
     return v0
@@ -150,7 +150,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     .line 195
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/EventDispatcher;->getEventRegistry(Lcom/google/appinventor/components/runtime/HandlesEventDispatching;)Lcom/google/appinventor/components/runtime/EventDispatcher$EventRegistry;
@@ -184,11 +184,28 @@
 
     move-result v1
 
-    .line 201
+    .line 200
+    :cond_0
+    if-nez v1, :cond_2
+
+    const/4 v4, 0x1
+
+    :goto_0
+    invoke-interface {v0, p0, p1, v4, p2}, Lcom/google/appinventor/components/runtime/HandlesEventDispatching;->dispatchGenericEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;Z[Ljava/lang/Object;)V
+
+    .line 202
     .end local v2    # "er":Lcom/google/appinventor/components/runtime/EventDispatcher$EventRegistry;
     .end local v3    # "eventClosures":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;>;"
-    :cond_0
+    :cond_1
     return v1
+
+    .line 200
+    .restart local v2    # "er":Lcom/google/appinventor/components/runtime/EventDispatcher$EventRegistry;
+    .restart local v3    # "eventClosures":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/appinventor/components/runtime/EventDispatcher$EventClosure;>;"
+    :cond_2
+    const/4 v4, 0x0
+
+    goto :goto_0
 .end method
 
 .method private static getEventRegistry(Lcom/google/appinventor/components/runtime/HandlesEventDispatching;)Lcom/google/appinventor/components/runtime/EventDispatcher$EventRegistry;
@@ -232,7 +249,7 @@
     .param p1, "eventName"    # Ljava/lang/String;
 
     .prologue
-    .line 240
+    .line 241
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

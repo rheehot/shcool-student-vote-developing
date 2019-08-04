@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;
 
     .prologue
-    .line 187
+    .line 188
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner$1;->this$0:Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;
 
     invoke-direct {p0}, Lcom/google/android/gms/ads/AdListener;-><init>()V
@@ -38,14 +38,14 @@
     .locals 2
 
     .prologue
-    .line 190
+    .line 191
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner$1;->this$0:Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;
 
     const-string v1, "ThunkableAdMobBanner onAdClosed"
 
     invoke-static {v0, v1}, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;->access$000(Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;Ljava/lang/String;)V
 
-    .line 191
+    .line 192
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .param p1, "errorCode"    # I
 
     .prologue
-    .line 199
+    .line 200
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner$1;->this$0:Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;->AdFailedToLoad(I)V
 
-    .line 200
+    .line 201
     const-string v0, "ThunkableAdMobBanner"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -82,7 +82,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 201
+    .line 202
     return-void
 .end method
 
@@ -90,18 +90,18 @@
     .locals 2
 
     .prologue
-    .line 194
+    .line 195
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner$1;->this$0:Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;->AdLoaded()V
 
-    .line 195
+    .line 196
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner$1;->this$0:Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;
 
     const-string v1, "ThunkableAdMobBanner onAdLoaded"
 
     invoke-static {v0, v1}, Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;->access$000(Lcom/google/appinventor/components/runtime/ThunkableAdMobBanner;Ljava/lang/String;)V
 
-    .line 196
+    .line 197
     return-void
 .end method

@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 2212
+    .line 2238
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$10;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/Form$10;->val$component:Lcom/google/appinventor/components/runtime/AndroidViewComponent;
@@ -49,14 +49,14 @@
     .locals 3
 
     .prologue
-    .line 2215
+    .line 2241
     sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     const-string v1, "(Form)Height not stable yet... trying again"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 2216
+    .line 2242
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$10;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Form$10;->val$component:Lcom/google/appinventor/components/runtime/AndroidViewComponent;
@@ -65,6 +65,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/appinventor/components/runtime/Form;->setChildHeight(Lcom/google/appinventor/components/runtime/AndroidViewComponent;I)V
 
-    .line 2217
+    .line 2243
     return-void
 .end method

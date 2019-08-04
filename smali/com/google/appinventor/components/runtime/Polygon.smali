@@ -48,6 +48,8 @@
     .end annotation
 .end field
 
+.field private initialized:Z
+
 .field private multipolygon:Z
 
 .field private points:Ljava/util/List;
@@ -69,7 +71,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 45
     const-class v0, Lcom/google/appinventor/components/runtime/Polygon;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -78,7 +80,7 @@
 
     sput-object v0, Lcom/google/appinventor/components/runtime/Polygon;->TAG:Ljava/lang/String;
 
-    .line 50
+    .line 52
     new-instance v0, Lcom/google/appinventor/components/runtime/Polygon$1;
 
     invoke-direct {v0}, Lcom/google/appinventor/components/runtime/Polygon$1;-><init>()V
@@ -89,38 +91,41 @@
 .end method
 
 .method public constructor <init>(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;)V
-    .locals 1
+    .locals 2
     .param p1, "container"    # Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;
 
     .prologue
-    .line 98
+    const/4 v1, 0x0
+
+    .line 100
     sget-object v0, Lcom/google/appinventor/components/runtime/Polygon;->distanceComputation:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureVisitor;
 
     invoke-direct {p0, p1, v0}, Lcom/google/appinventor/components/runtime/PolygonBase;-><init>(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureVisitor;)V
-
-    .line 46
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     .line 47
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     .line 48
-    const/4 v0, 0x0
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 99
+    iput-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
+
+    .line 49
+    iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
+
+    .line 50
+    iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    .line 101
     invoke-interface {p1, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;->addFeature(Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeature;)V
 
-    .line 100
+    .line 102
     return-void
 .end method
 
@@ -133,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 249
+    .line 267
     invoke-super {p0}, Lcom/google/appinventor/components/runtime/PolygonBase;->Centroid()Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v0
@@ -147,7 +152,7 @@
     .end annotation
 
     .prologue
-    .line 183
+    .line 196
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
@@ -156,27 +161,27 @@
 
     if-eqz v2, :cond_0
 
-    .line 184
+    .line 197
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/YailList;->makeEmptyList()Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v2
 
-    .line 192
+    .line 205
     :goto_0
     return-object v2
 
-    .line 185
+    .line 198
     :cond_0
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
     if-eqz v2, :cond_2
 
-    .line 186
+    .line 199
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
-    .line 187
+    .line 200
     .local v1, "result":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
@@ -197,7 +202,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 188
+    .line 201
     .local v0, "polyholes":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;"
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->multiPolygonToYailList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
 
@@ -207,7 +212,7 @@
 
     goto :goto_1
 
-    .line 190
+    .line 203
     .end local v0    # "polyholes":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;"
     :cond_1
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
@@ -216,7 +221,7 @@
 
     goto :goto_0
 
-    .line 192
+    .line 205
     .end local v1    # "result":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     :cond_2
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
@@ -243,26 +248,31 @@
     .end annotation
 
     .prologue
-    .line 200
+    .line 213
     :try_start_0
     invoke-virtual {p1}, Lcom/google/appinventor/components/runtime/util/YailList;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_0
+    if-nez v2, :cond_1
 
-    .line 201
+    .line 214
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
-    .line 212
+    .line 225
     :goto_0
+    iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    if-eqz v2, :cond_0
+
+    .line 226
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
 
-    .line 213
+    .line 227
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -271,17 +281,18 @@
 
     invoke-interface {v2, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeatureHoles(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 218
+    .line 233
+    :cond_0
     :goto_1
     return-void
 
-    .line 202
-    :cond_0
+    .line 215
+    :cond_1
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
-    .line 203
+    .line 216
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->multiPolygonHolesFromYailList(Lcom/google/appinventor/components/runtime/util/YailList;)Ljava/util/List;
 
     move-result-object v2
@@ -292,11 +303,11 @@
 
     goto :goto_0
 
-    .line 214
+    .line 229
     :catch_0
     move-exception v0
 
-    .line 215
+    .line 230
     .local v0, "e":Lcom/google/appinventor/components/runtime/errors/DispatchableError;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->container:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;
 
@@ -306,7 +317,7 @@
 
     const-string v3, "HolePoints"
 
-    .line 216
+    .line 231
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/errors/DispatchableError;->getErrorCode()I
 
     move-result v4
@@ -315,27 +326,27 @@
 
     move-result-object v5
 
-    .line 215
+    .line 230
     invoke-virtual {v2, p0, v3, v4, v5}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_1
 
-    .line 204
+    .line 217
     .end local v0    # "e":Lcom/google/appinventor/components/runtime/errors/DispatchableError;
-    :cond_1
+    :cond_2
     :try_start_1
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->isMultiPolygon(Lcom/google/appinventor/components/runtime/util/YailList;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
-    .line 205
+    .line 218
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 206
+    .line 219
     .local v1, "holes":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;>;"
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->multiPolygonFromYailList(Lcom/google/appinventor/components/runtime/util/YailList;)Ljava/util/List;
 
@@ -343,14 +354,14 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 207
+    .line 220
     iput-object v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
     goto :goto_0
 
-    .line 209
+    .line 222
     .end local v1    # "holes":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;>;"
-    :cond_2
+    :cond_3
     new-instance v2, Lcom/google/appinventor/components/runtime/errors/DispatchableError;
 
     const/16 v3, 0xd4c
@@ -384,21 +395,21 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 239
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 225
+    .line 240
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
-    .line 226
+    .line 241
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -407,18 +418,18 @@
 
     invoke-interface {v2, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeatureHoles(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 244
+    .line 262
     :goto_0
     return-void
 
-    .line 230
+    .line 245
     :cond_0
     :try_start_0
     new-instance v0, Lorg/json/JSONArray;
 
     invoke-direct {v0, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 231
+    .line 246
     .local v0, "content":Lorg/json/JSONArray;
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
@@ -426,14 +437,14 @@
 
     if-nez v2, :cond_1
 
-    .line 232
+    .line 247
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
-    .line 233
+    .line 248
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -446,12 +457,12 @@
 
     goto :goto_0
 
-    .line 239
+    .line 257
     .end local v0    # "content":Lorg/json/JSONArray;
     :catch_0
     move-exception v1
 
-    .line 240
+    .line 258
     .local v1, "e":Lorg/json/JSONException;
     sget-object v2, Lcom/google/appinventor/components/runtime/Polygon;->TAG:Ljava/lang/String;
 
@@ -459,7 +470,7 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 241
+    .line 259
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->container:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;
 
     invoke-interface {v2}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -476,19 +487,19 @@
 
     const/4 v6, 0x0
 
-    .line 242
+    .line 260
     invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v5, v6
 
-    .line 241
+    .line 259
     invoke-virtual {v2, p0, v3, v4, v5}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 236
+    .line 251
     .end local v1    # "e":Lorg/json/JSONException;
     .restart local v0    # "content":Lorg/json/JSONArray;
     :cond_1
@@ -499,7 +510,15 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
-    .line 237
+    .line 252
+    iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    if-eqz v2, :cond_2
+
+    .line 253
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
+
+    .line 254
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -508,7 +527,8 @@
 
     invoke-interface {v2, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeatureHoles(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 238
+    .line 256
+    :cond_2
     sget-object v2, Lcom/google/appinventor/components/runtime/Polygon;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -538,6 +558,40 @@
     goto :goto_0
 .end method
 
+.method public Initialize()V
+    .locals 1
+
+    .prologue
+    .line 105
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    .line 106
+    invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
+
+    .line 107
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
+
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeaturePosition(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
+
+    .line 108
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
+
+    invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeatureHoles(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
+
+    .line 109
+    return-void
+.end method
+
 .method public Points()Lcom/google/appinventor/components/runtime/util/YailList;
     .locals 4
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleProperty;
@@ -546,7 +600,7 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 122
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
@@ -555,27 +609,27 @@
 
     if-eqz v2, :cond_0
 
-    .line 114
+    .line 123
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/YailList;->makeEmptyList()Lcom/google/appinventor/components/runtime/util/YailList;
 
     move-result-object v2
 
-    .line 124
+    .line 133
     :goto_0
     return-object v2
 
-    .line 115
+    .line 124
     :cond_0
     iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
     if-eqz v2, :cond_2
 
-    .line 117
+    .line 126
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
-    .line 118
+    .line 127
     .local v1, "result":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
@@ -596,7 +650,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 119
+    .line 128
     .local v0, "part":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->pointsListToYailList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
 
@@ -606,7 +660,7 @@
 
     goto :goto_1
 
-    .line 121
+    .line 130
     .end local v0    # "part":Ljava/util/List;, "Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;"
     :cond_1
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/YailList;->makeList(Ljava/util/List;)Lcom/google/appinventor/components/runtime/util/YailList;
@@ -615,7 +669,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 133
     .end local v1    # "result":Ljava/util/List;, "Ljava/util/List<Lcom/google/appinventor/components/runtime/util/YailList;>;"
     :cond_2
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
@@ -642,25 +696,25 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 141
     :try_start_0
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->isPolygon(Lcom/google/appinventor/components/runtime/util/YailList;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 133
+    .line 142
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
-    .line 134
+    .line 143
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 135
+    .line 144
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->pointsFromYailList(Lcom/google/appinventor/components/runtime/util/YailList;)Ljava/util/List;
@@ -669,11 +723,16 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 143
+    .line 152
     :goto_0
+    iget-boolean v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    if-eqz v1, :cond_0
+
+    .line 153
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
 
-    .line 144
+    .line 154
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -682,24 +741,25 @@
 
     invoke-interface {v1, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeaturePosition(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 148
+    .line 159
+    :cond_0
     :goto_1
     return-void
 
-    .line 136
-    :cond_0
+    .line 145
+    :cond_1
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->isMultiPolygon(Lcom/google/appinventor/components/runtime/util/YailList;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 137
+    .line 146
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
-    .line 138
+    .line 147
     invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->multiPolygonFromYailList(Lcom/google/appinventor/components/runtime/util/YailList;)Ljava/util/List;
 
     move-result-object v1
@@ -710,11 +770,11 @@
 
     goto :goto_0
 
-    .line 145
+    .line 156
     :catch_0
     move-exception v0
 
-    .line 146
+    .line 157
     .local v0, "e":Lcom/google/appinventor/components/runtime/errors/DispatchableError;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->container:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;
 
@@ -736,9 +796,9 @@
 
     goto :goto_1
 
-    .line 140
+    .line 149
     .end local v0    # "e":Lcom/google/appinventor/components/runtime/errors/DispatchableError;
-    :cond_1
+    :cond_2
     :try_start_1
     new-instance v1, Lcom/google/appinventor/components/runtime/errors/DispatchableError;
 
@@ -777,21 +837,21 @@
 
     const/4 v4, 0x0
 
-    .line 154
+    .line 165
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
-    .line 155
+    .line 166
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
-    .line 156
+    .line 167
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -800,38 +860,39 @@
 
     invoke-interface {v2, p0}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;->updateFeaturePosition(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;)V
 
-    .line 178
+    .line 191
+    :cond_0
     :goto_0
     return-void
 
-    .line 160
-    :cond_0
+    .line 171
+    :cond_1
     :try_start_0
     new-instance v0, Lorg/json/JSONArray;
 
     invoke-direct {v0, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 161
+    .line 172
     .local v0, "content":Lorg/json/JSONArray;
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
-    .line 162
+    .line 173
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
-    .line 163
+    .line 174
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
-    .line 164
+    .line 175
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -845,12 +906,12 @@
 
     goto :goto_0
 
-    .line 171
+    .line 184
     .end local v0    # "content":Lorg/json/JSONArray;
     :catch_0
     move-exception v1
 
-    .line 172
+    .line 185
     .local v1, "e":Lorg/json/JSONException;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->container:Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureContainer;
 
@@ -864,22 +925,22 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 173
+    .line 186
     invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
     move-result-object v7
 
     aput-object v7, v3, v4
 
-    .line 172
+    .line 185
     invoke-virtual {v2, p0, v5, v6, v3}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 167
+    .line 178
     .end local v1    # "e":Lorg/json/JSONException;
     .restart local v0    # "content":Lorg/json/JSONArray;
-    :cond_1
+    :cond_2
     :try_start_1
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/util/GeometryUtil;->multiPolygonToList(Lorg/json/JSONArray;)Ljava/util/List;
 
@@ -887,24 +948,29 @@
 
     iput-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
-    .line 168
+    .line 179
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-le v2, v3, :cond_2
+    if-le v2, v3, :cond_3
 
     move v2, v3
 
     :goto_1
     iput-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->multipolygon:Z
 
-    .line 169
+    .line 180
+    iget-boolean v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    if-eqz v2, :cond_0
+
+    .line 181
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
 
-    .line 170
+    .line 182
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Polygon;->map:Lcom/google/appinventor/components/runtime/Map;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Map;->getController()Lcom/google/appinventor/components/runtime/util/MapFactory$MapController;
@@ -918,12 +984,12 @@
 
     goto :goto_0
 
-    .line 174
+    .line 187
     .end local v0    # "content":Lorg/json/JSONArray;
     :catch_1
     move-exception v1
 
-    .line 175
+    .line 188
     .local v1, "e":Lcom/google/appinventor/components/runtime/errors/DispatchableError;
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->getDispatchDelegate()Lcom/google/appinventor/components/runtime/HandlesEventDispatching;
 
@@ -931,7 +997,7 @@
 
     const-string v3, "PointsFromString"
 
-    .line 176
+    .line 189
     invoke-virtual {v1}, Lcom/google/appinventor/components/runtime/errors/DispatchableError;->getErrorCode()I
 
     move-result v4
@@ -940,17 +1006,17 @@
 
     move-result-object v5
 
-    .line 175
+    .line 188
     invoke-interface {v2, p0, v3, v4, v5}, Lcom/google/appinventor/components/runtime/HandlesEventDispatching;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
     goto :goto_0
 
     .end local v1    # "e":Lcom/google/appinventor/components/runtime/errors/DispatchableError;
     .restart local v0    # "content":Lorg/json/JSONArray;
-    :cond_2
+    :cond_3
     move v2, v4
 
-    .line 168
+    .line 179
     goto :goto_1
 .end method
 
@@ -962,7 +1028,7 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 115
     const-string v0, "Polygon"
 
     return-object v0
@@ -984,7 +1050,7 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 282
     .local p1, "visitor":Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureVisitor;, "Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureVisitor<TT;>;"
     invoke-interface {p1, p0, p2}, Lcom/google/appinventor/components/runtime/util/MapFactory$MapFeatureVisitor;->visit(Lcom/google/appinventor/components/runtime/util/MapFactory$MapPolygon;[Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -997,7 +1063,7 @@
     .locals 2
 
     .prologue
-    .line 269
+    .line 287
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
@@ -1026,7 +1092,7 @@
     .end annotation
 
     .prologue
-    .line 259
+    .line 277
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
     return-object v0
@@ -1047,10 +1113,22 @@
     .end annotation
 
     .prologue
-    .line 254
+    .line 272
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method isInitialized()Z
+    .locals 1
+    .annotation build Landroid/support/annotation/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 306
+    iget-boolean v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->initialized:Z
+
+    return v0
 .end method
 
 .method public updateHolePoints(Ljava/util/List;)V
@@ -1070,21 +1148,21 @@
     .end annotation
 
     .prologue
-    .line 281
+    .line 299
     .local p1, "points":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;>;"
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 282
+    .line 300
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->holePoints:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 283
+    .line 301
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
 
-    .line 284
+    .line 302
     return-void
 .end method
 
@@ -1103,20 +1181,20 @@
     .end annotation
 
     .prologue
-    .line 274
+    .line 292
     .local p1, "points":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Lorg/osmdroid/util/GeoPoint;>;>;"
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 275
+    .line 293
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Polygon;->points:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 276
+    .line 294
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/Polygon;->clearGeometry()V
 
-    .line 277
+    .line 295
     return-void
 .end method

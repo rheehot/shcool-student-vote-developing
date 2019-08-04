@@ -71,7 +71,7 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 237
     iget v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->column:I
 
     return v0
@@ -85,10 +85,10 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 247
     iput p1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->column:I
 
-    .line 242
+    .line 248
     return-void
 .end method
 
@@ -99,12 +99,12 @@
     .end annotation
 
     .prologue
-    .line 221
+    .line 227
     iget v0, p1, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->lastSetHeight:I
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height(I)V
 
-    .line 222
+    .line 228
     return-void
 .end method
 
@@ -115,12 +115,12 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 166
     iget v0, p1, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->lastSetWidth:I
 
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width(I)V
 
-    .line 164
+    .line 167
     return-void
 .end method
 
@@ -130,7 +130,7 @@
     .end annotation
 
     .prologue
-    .line 174
+    .line 177
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->getView()Landroid/view/View;
 
     move-result-object v0
@@ -162,23 +162,24 @@
     .locals 2
     .param p1, "height"    # I
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleProperty;
+        description = "Specifies the component\'s vertical height, measured in pixels."
     .end annotation
 
     .prologue
-    .line 185
+    .line 188
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0, p0, p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->setChildHeight(Lcom/google/appinventor/components/runtime/AndroidViewComponent;I)V
 
-    .line 186
+    .line 189
     iput p1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->lastSetHeight:I
 
-    .line 187
+    .line 190
     const/16 v0, -0x3e8
 
     if-gt p1, v0, :cond_0
 
-    .line 188
+    .line 191
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -189,26 +190,41 @@
 
     invoke-virtual {v0, p0, p1, v1}, Lcom/google/appinventor/components/runtime/Form;->registerPercentLength(Lcom/google/appinventor/components/runtime/AndroidViewComponent;ILcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;)V
 
-    .line 189
-    :cond_0
+    .line 195
+    :goto_0
     return-void
+
+    .line 193
+    :cond_0
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
+
+    invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;->HEIGHT:Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
+
+    invoke-virtual {v0, p0, v1}, Lcom/google/appinventor/components/runtime/Form;->unregisterPercentLength(Lcom/google/appinventor/components/runtime/AndroidViewComponent;Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;)V
+
+    goto :goto_0
 .end method
 
 .method public HeightPercent(I)V
     .locals 7
     .param p1, "pCent"    # I
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleProperty;
+        description = "Specifies the component\'s vertical height as a percentage of the height of its parent Component."
     .end annotation
 
     .prologue
-    .line 201
+    .line 207
     if-ltz p1, :cond_0
 
     const/16 v1, 0x64
 
     if-le p1, v1, :cond_1
 
-    .line 202
+    .line 208
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -226,27 +242,27 @@
 
     const/4 v5, 0x0
 
-    .line 203
+    .line 209
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     aput-object v6, v4, v5
 
-    .line 202
+    .line 208
     invoke-virtual {v1, p0, v2, v3, v4}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 208
+    .line 214
     :goto_0
     return-void
 
-    .line 206
+    .line 212
     :cond_1
     neg-int v1, p1
 
     add-int/lit16 v0, v1, -0x3e8
 
-    .line 207
+    .line 213
     .local v0, "v":I
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height(I)V
 
@@ -260,7 +276,7 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 257
     iget v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->row:I
 
     return v0
@@ -274,10 +290,10 @@
     .end annotation
 
     .prologue
-    .line 261
+    .line 267
     iput p1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->row:I
 
-    .line 262
+    .line 268
     return-void
 .end method
 
@@ -385,6 +401,7 @@
     .locals 2
     .param p1, "width"    # I
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleProperty;
+        description = "Specifies the component\'s horizontal width, measured in pixels."
     .end annotation
 
     .prologue
@@ -412,26 +429,41 @@
 
     invoke-virtual {v0, p0, p1, v1}, Lcom/google/appinventor/components/runtime/Form;->registerPercentLength(Lcom/google/appinventor/components/runtime/AndroidViewComponent;ILcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;)V
 
-    .line 103
-    :cond_0
+    .line 106
+    :goto_0
     return-void
+
+    .line 104
+    :cond_0
+    iget-object v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
+
+    invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;->WIDTH:Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
+
+    invoke-virtual {v0, p0, v1}, Lcom/google/appinventor/components/runtime/Form;->unregisterPercentLength(Lcom/google/appinventor/components/runtime/AndroidViewComponent;Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;)V
+
+    goto :goto_0
 .end method
 
 .method public WidthPercent(I)V
     .locals 7
     .param p1, "pCent"    # I
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleProperty;
+        description = "Specifies the component\'s horizontal width as a percentage of the Width of its parent Component."
     .end annotation
 
     .prologue
-    .line 115
+    .line 118
     if-ltz p1, :cond_0
 
     const/16 v1, 0x64
 
     if-le p1, v1, :cond_1
 
-    .line 116
+    .line 119
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -449,27 +481,27 @@
 
     const/4 v5, 0x0
 
-    .line 117
+    .line 120
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     aput-object v6, v4, v5
 
-    .line 116
+    .line 119
     invoke-virtual {v1, p0, v2, v3, v4}, Lcom/google/appinventor/components/runtime/Form;->dispatchErrorOccurredEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;I[Ljava/lang/Object;)V
 
-    .line 122
+    .line 125
     :goto_0
     return-void
 
-    .line 120
+    .line 123
     :cond_1
     neg-int v1, p1
 
     add-int/lit16 v0, v1, -0x3e8
 
-    .line 121
+    .line 124
     .local v0, "v":I
     invoke-virtual {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width(I)V
 
@@ -480,7 +512,7 @@
     .locals 1
 
     .prologue
-    .line 268
+    .line 274
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -494,19 +526,19 @@
     .locals 2
 
     .prologue
-    .line 145
+    .line 148
     iget v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->percentHeightHolder:I
 
     const/4 v1, -0x3
 
     if-ne v0, v1, :cond_0
 
-    .line 146
+    .line 149
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Height()I
 
     move-result v0
 
-    .line 148
+    .line 151
     :goto_0
     return v0
 
@@ -520,19 +552,19 @@
     .locals 2
 
     .prologue
-    .line 131
+    .line 134
     iget v0, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->percentWidthHolder:I
 
     const/4 v1, -0x3
 
     if-ne v0, v1, :cond_0
 
-    .line 132
+    .line 135
     invoke-virtual {p0}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->Width()I
 
     move-result v0
 
-    .line 134
+    .line 137
     :goto_0
     return v0
 
@@ -550,10 +582,10 @@
     .param p1, "height"    # I
 
     .prologue
-    .line 140
+    .line 143
     iput p1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->percentHeightHolder:I
 
-    .line 141
+    .line 144
     return-void
 .end method
 
@@ -562,9 +594,9 @@
     .param p1, "width"    # I
 
     .prologue
-    .line 126
+    .line 129
     iput p1, p0, Lcom/google/appinventor/components/runtime/AndroidViewComponent;->percentWidthHolder:I
 
-    .line 127
+    .line 130
     return-void
 .end method

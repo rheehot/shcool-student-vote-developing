@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 819
+    .line 826
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
@@ -46,7 +46,7 @@
     .param p1, "marker"    # Lorg/osmdroid/views/overlay/Marker;
 
     .prologue
-    .line 822
+    .line 829
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
@@ -59,7 +59,7 @@
 
     invoke-static {v1, v0, v2}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$1000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;Lcom/google/appinventor/components/runtime/util/MapFactory$MapMarker;Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;)V
 
-    .line 834
+    .line 841
     return-void
 .end method
 
@@ -68,12 +68,12 @@
     .param p1, "polygon"    # Lorg/osmdroid/views/overlay/Polygon;
 
     .prologue
-    .line 847
+    .line 854
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 848
+    .line 855
     .local v0, "metrics":Landroid/util/DisplayMetrics;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -91,7 +91,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 849
+    .line 856
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeColor()I
@@ -100,7 +100,7 @@
 
     invoke-virtual {p1, v1}, Lorg/osmdroid/views/overlay/Polygon;->setStrokeColor(I)V
 
-    .line 850
+    .line 857
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeWidth()I
@@ -115,7 +115,7 @@
 
     invoke-virtual {p1, v1}, Lorg/osmdroid/views/overlay/Polygon;->setStrokeWidth(F)V
 
-    .line 851
+    .line 858
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$300(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Lorg/osmdroid/views/MapView;
@@ -124,7 +124,7 @@
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 852
+    .line 859
     return-void
 .end method
 
@@ -133,12 +133,12 @@
     .param p1, "polyline"    # Lorg/osmdroid/views/overlay/Polyline;
 
     .prologue
-    .line 838
+    .line 845
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 839
+    .line 846
     .local v0, "metrics":Landroid/util/DisplayMetrics;
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -156,7 +156,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 840
+    .line 847
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeColor()I
@@ -165,7 +165,7 @@
 
     invoke-virtual {p1, v1}, Lorg/osmdroid/views/overlay/Polyline;->setColor(I)V
 
-    .line 841
+    .line 848
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->val$aiFeature:Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;
 
     invoke-interface {v1}, Lcom/google/appinventor/components/runtime/util/MapFactory$HasStroke;->StrokeWidth()I
@@ -180,7 +180,7 @@
 
     invoke-virtual {p1, v1}, Lorg/osmdroid/views/overlay/Polyline;->setWidth(F)V
 
-    .line 842
+    .line 849
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$9;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$300(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Lorg/osmdroid/views/MapView;
@@ -189,6 +189,6 @@
 
     invoke-virtual {v1}, Lorg/osmdroid/views/MapView;->invalidate()V
 
-    .line 843
+    .line 850
     return-void
 .end method

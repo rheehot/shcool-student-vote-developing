@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 610
+    .line 617
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iput p2, p0, Lcom/google/appinventor/components/runtime/Form$2;->val$newOrientation:I
@@ -45,10 +45,10 @@
     .locals 6
 
     .prologue
-    .line 612
+    .line 619
     const/4 v0, 0x0
 
-    .line 613
+    .line 620
     .local v0, "dispatchEventNow":Z
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
@@ -58,14 +58,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 614
+    .line 621
     iget v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->val$newOrientation:I
 
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_1
 
-    .line 615
+    .line 622
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v2}, Lcom/google/appinventor/components/runtime/Form;->access$200(Lcom/google/appinventor/components/runtime/Form;)Landroid/widget/FrameLayout;
@@ -88,27 +88,27 @@
 
     if-lt v2, v3, :cond_0
 
-    .line 616
+    .line 623
     const/4 v0, 0x1
 
-    .line 624
+    .line 631
     :cond_0
     :goto_0
     if-eqz v0, :cond_2
 
-    .line 625
+    .line 632
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v2}, Lcom/google/appinventor/components/runtime/Form;->access$300(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 626
+    .line 633
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v2}, Lcom/google/appinventor/components/runtime/Form;->access$200(Lcom/google/appinventor/components/runtime/Form;)Landroid/widget/FrameLayout;
 
     move-result-object v1
 
-    .line 627
+    .line 634
     .local v1, "savedLayout":Landroid/widget/FrameLayout;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
@@ -122,17 +122,17 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 636
+    .line 643
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v2}, Lcom/google/appinventor/components/runtime/Form;->ScreenOrientationChanged()V
 
-    .line 641
+    .line 648
     .end local v1    # "savedLayout":Landroid/widget/FrameLayout;
     :goto_1
     return-void
 
-    .line 619
+    .line 626
     :cond_1
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
@@ -156,12 +156,12 @@
 
     if-lt v2, v3, :cond_0
 
-    .line 620
+    .line 627
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 639
+    .line 646
     :cond_2
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Form$2;->this$0:Lcom/google/appinventor/components/runtime/Form;
 

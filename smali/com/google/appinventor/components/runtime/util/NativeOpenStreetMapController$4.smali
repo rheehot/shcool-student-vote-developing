@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 565
+    .line 570
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     iput-object p2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->val$aiPolyline:Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
@@ -48,7 +48,7 @@
     .param p3, "arg2"    # Lorg/osmdroid/util/GeoPoint;
 
     .prologue
-    .line 568
+    .line 573
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Ljava/util/Set;
@@ -72,7 +72,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 569
+    .line 574
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->val$aiPolyline:Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
 
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 571
+    .line 576
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->val$aiPolyline:Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
@@ -91,10 +91,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 572
+    .line 577
     invoke-virtual {p1, p3}, Lorg/osmdroid/views/overlay/Polyline;->showInfoWindow(Lorg/osmdroid/util/GeoPoint;)V
 
-    .line 574
+    .line 579
     :cond_1
     const/4 v1, 0x1
 
@@ -108,7 +108,7 @@
     .param p3, "arg2"    # Lorg/osmdroid/util/GeoPoint;
 
     .prologue
-    .line 579
+    .line 584
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     invoke-static {v1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;->access$000(Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;)Ljava/util/Set;
@@ -132,7 +132,7 @@
 
     check-cast v0, Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
 
-    .line 580
+    .line 585
     .local v0, "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$4;->val$aiPolyline:Lcom/google/appinventor/components/runtime/util/MapFactory$MapLineString;
 
@@ -140,7 +140,7 @@
 
     goto :goto_0
 
-    .line 582
+    .line 587
     .end local v0    # "listener":Lcom/google/appinventor/components/runtime/util/MapFactory$MapEventListener;
     :cond_0
     const/4 v1, 0x1

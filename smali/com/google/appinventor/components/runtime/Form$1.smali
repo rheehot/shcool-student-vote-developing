@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 417
+    .line 424
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$1;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,19 +43,19 @@
     .param p2, "granted"    # Z
 
     .prologue
-    .line 420
+    .line 427
     if-eqz p2, :cond_0
 
-    .line 421
+    .line 428
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$1;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/Form;->access$100(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 432
+    .line 439
     :goto_0
     return-void
 
-    .line 423
+    .line 430
     :cond_0
     const-string v0, "Form"
 
@@ -63,12 +63,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 424
+    .line 431
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$1;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-static {v0}, Lcom/google/appinventor/components/runtime/Form;->access$100(Lcom/google/appinventor/components/runtime/Form;)V
 
-    .line 425
+    .line 432
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$1;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     iget-object v0, v0, Lcom/google/appinventor/components/runtime/Form;->androidUIHandler:Landroid/os/Handler;

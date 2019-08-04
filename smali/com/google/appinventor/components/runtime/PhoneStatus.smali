@@ -40,6 +40,10 @@
 
 
 # instance fields
+.field private firstHmacSeed:Ljava/lang/String;
+
+.field private firstSeed:Ljava/lang/String;
+
 .field private final form:Lcom/google/appinventor/components/runtime/Form;
 
 
@@ -48,12 +52,12 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 79
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->mainInstance:Lcom/google/appinventor/components/runtime/PhoneStatus;
 
-    .line 78
+    .line 80
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->useWebRTC:Z
@@ -62,40 +66,48 @@
 .end method
 
 .method public constructor <init>(Lcom/google/appinventor/components/runtime/ComponentContainer;)V
-    .locals 1
+    .locals 2
     .param p1, "container"    # Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     .prologue
-    .line 81
+    const/4 v1, 0x0
+
+    .line 85
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/appinventor/components/runtime/AndroidNonvisibleComponent;-><init>(Lcom/google/appinventor/components/runtime/Form;)V
 
+    .line 81
+    iput-object v1, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstSeed:Ljava/lang/String;
+
     .line 82
+    iput-object v1, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstHmacSeed:Ljava/lang/String;
+
+    .line 86
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
-    .line 83
+    .line 87
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->activity:Landroid/app/Activity;
 
-    .line 84
+    .line 88
     sget-object v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->mainInstance:Lcom/google/appinventor/components/runtime/PhoneStatus;
 
     if-nez v0, :cond_0
 
-    .line 85
+    .line 89
     sput-object p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->mainInstance:Lcom/google/appinventor/components/runtime/PhoneStatus;
 
-    .line 87
+    .line 91
     :cond_0
     return-void
 .end method
@@ -107,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 96
     sget-object v4, Lcom/google/appinventor/components/runtime/PhoneStatus;->activity:Landroid/app/Activity;
 
     const-string v5, "wifi"
@@ -116,7 +128,7 @@
 
     move-result-object v3
 
-    .line 93
+    .line 97
     .local v3, "wifiManager":Ljava/lang/Object;
     check-cast v3, Landroid/net/wifi/WifiManager;
 
@@ -125,11 +137,11 @@
 
     move-result-object v0
 
-    .line 94
+    .line 98
     .local v0, "ip":Landroid/net/DhcpInfo;
     iget v2, v0, Landroid/net/DhcpInfo;->ipAddress:I
 
-    .line 96
+    .line 100
     .local v2, "s_ipAddress":I
     invoke-static {}, Lcom/google/appinventor/components/runtime/PhoneStatus;->isConnected()Z
 
@@ -137,17 +149,17 @@
 
     if-eqz v4, :cond_0
 
-    .line 97
+    .line 101
     invoke-static {v2}, Lcom/google/appinventor/components/runtime/PhoneStatus;->intToIp(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 100
+    .line 104
     .local v1, "ipAddress":Ljava/lang/String;
     :goto_0
     return-object v1
 
-    .line 99
+    .line 103
     .end local v1    # "ipAddress":Ljava/lang/String;
     :cond_0
     const-string v1, "Error: No Wifi Connection"
@@ -169,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 233
     new-instance v0, Ljava/lang/Exception;
 
     const-string v1, "doFault called!"
@@ -183,28 +195,28 @@
     .locals 2
 
     .prologue
-    .line 290
+    .line 356
     const-string v0, "PhoneStatus"
 
     const-string v1, "doSettings called."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 291
+    .line 357
     sget-object v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->mainInstance:Lcom/google/appinventor/components/runtime/PhoneStatus;
 
     if-eqz v0, :cond_0
 
-    .line 292
+    .line 358
     sget-object v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->mainInstance:Lcom/google/appinventor/components/runtime/PhoneStatus;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/PhoneStatus;->OnSettings()V
 
-    .line 296
+    .line 362
     :goto_0
     return-void
 
-    .line 294
+    .line 360
     :cond_0
     const-string v0, "PhoneStatus"
 
@@ -219,7 +231,7 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 347
     sget-boolean v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->useWebRTC:Z
 
     return v0
@@ -230,7 +242,7 @@
     .param p0, "i"    # I
 
     .prologue
-    .line 299
+    .line 365
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -297,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 109
     sget-object v2, Lcom/google/appinventor/components/runtime/PhoneStatus;->activity:Landroid/app/Activity;
 
     const-string v3, "connectivity"
@@ -308,23 +320,23 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 106
+    .line 110
     .local v0, "connectivityManager":Landroid/net/ConnectivityManager;
     const/4 v1, 0x0
 
-    .line 107
+    .line 111
     .local v1, "networkInfo":Landroid/net/NetworkInfo;
     if-eqz v0, :cond_0
 
-    .line 108
+    .line 112
     const/4 v2, 0x1
 
-    .line 109
+    .line 113
     invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 111
+    .line 115
     :cond_0
     if-nez v1, :cond_1
 
@@ -350,7 +362,7 @@
     .end annotation
 
     .prologue
-    .line 267
+    .line 333
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/SdkLevel;->getLevel()I
 
     move-result v1
@@ -359,7 +371,7 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 268
+    .line 334
     const-string v1, "com.thunkable.appinventor.aicompanion3"
 
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
@@ -368,14 +380,14 @@
 
     move-result-object v0
 
-    .line 269
+    .line 335
     .local v0, "installer":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 270
+    .line 336
     const-string v0, "sideloaded"
 
-    .line 275
+    .line 341
     .end local v0    # "installer":Ljava/lang/String;
     :cond_0
     :goto_0
@@ -394,7 +406,7 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 323
     :try_start_0
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -402,7 +414,7 @@
 
     move-result-object v1
 
-    .line 258
+    .line 324
     .local v1, "packageName":Ljava/lang/String;
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -420,16 +432,16 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 261
+    .line 327
     .end local v1    # "packageName":Ljava/lang/String;
     :goto_0
     return-object v2
 
-    .line 259
+    .line 325
     :catch_0
     move-exception v0
 
-    .line 260
+    .line 326
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v2, "PhoneStatus"
 
@@ -437,7 +449,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 261
+    .line 327
     const-string v2, "UNKNOWN"
 
     goto :goto_0
@@ -449,7 +461,7 @@
     .end annotation
 
     .prologue
-    .line 204
+    .line 270
     const-string v0, "OnSettings"
 
     const/4 v1, 0x0
@@ -458,7 +470,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/google/appinventor/components/runtime/EventDispatcher;->dispatchEvent(Lcom/google/appinventor/components/runtime/Component;Ljava/lang/String;[Ljava/lang/Object;)Z
 
-    .line 205
+    .line 271
     return-void
 .end method
 
@@ -469,7 +481,7 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 302
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/SdkLevel;->getLevel()I
 
     move-result v0
@@ -489,10 +501,10 @@
     .end annotation
 
     .prologue
-    .line 216
+    .line 282
     sput-boolean p1, Lcom/google/appinventor/components/runtime/PhoneStatus;->useWebRTC:Z
 
-    .line 217
+    .line 283
     return-void
 .end method
 
@@ -504,45 +516,126 @@
     .end annotation
 
     .prologue
-    .line 221
+    .line 287
     sget-boolean v0, Lcom/google/appinventor/components/runtime/PhoneStatus;->useWebRTC:Z
 
     return v0
 .end method
 
 .method public installURL(Ljava/lang/String;)V
-    .locals 4
+    .locals 10
     .param p1, "url"    # Ljava/lang/String;
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
         description = "Downloads the URL and installs it as an Android Package via the installed browser"
     .end annotation
 
     .prologue
-    .line 187
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    .line 246
+    :try_start_0
+    const-string v6, "edu.mit.appinventor.companionextras.CompanionExtras"
 
-    move-result-object v1
-
-    .line 188
-    .local v1, "uri":Landroid/net/Uri;
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "android.intent.action.VIEW"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    invoke-static {v6}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 189
-    .local v0, "intent":Landroid/content/Intent;
-    iget-object v2, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
+    .line 247
+    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    const/4 v6, 0x1
 
-    invoke-virtual {v2, v0}, Lcom/google/appinventor/components/runtime/Form;->startActivity(Landroid/content/Intent;)V
+    new-array v6, v6, [Ljava/lang/Class;
 
-    .line 190
+    const/4 v7, 0x0
+
+    const-class v8, Lcom/google/appinventor/components/runtime/Form;
+
+    aput-object v8, v6, v7
+
+    invoke-virtual {v0, v6}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v6
+
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    const/4 v8, 0x0
+
+    iget-object v9, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    aput-object v9, v7, v8
+
+    invoke-virtual {v6, v7}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    .line 248
+    .local v4, "o":Ljava/lang/Object;
+    const-string v6, "Extra1"
+
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Ljava/lang/Class;
+
+    const/4 v8, 0x0
+
+    const-class v9, Ljava/lang/String;
+
+    aput-object v9, v7, v8
+
+    invoke-virtual {v0, v6, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v3
+
+    .line 249
+    .local v3, "m":Ljava/lang/reflect/Method;
+    const/4 v6, 0x1
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    aput-object p1, v6, v7
+
+    invoke-virtual {v3, v4, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 256
+    .end local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .end local v3    # "m":Ljava/lang/reflect/Method;
+    .end local v4    # "o":Ljava/lang/Object;
+    :goto_0
     return-void
+
+    .line 250
+    :catch_0
+    move-exception v1
+
+    .line 252
+    .local v1, "e":Ljava/lang/Exception;
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v5
+
+    .line 253
+    .local v5, "uri":Landroid/net/Uri;
+    new-instance v6, Landroid/content/Intent;
+
+    const-string v7, "android.intent.action.VIEW"
+
+    invoke-direct {v6, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v5}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    .line 254
+    .local v2, "intent":Landroid/content/Intent;
+    iget-object v6, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    invoke-virtual {v6, v2}, Lcom/google/appinventor/components/runtime/Form;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
 .end method
 
 .method public isDirect()Z
@@ -552,7 +645,7 @@
     .end annotation
 
     .prologue
-    .line 149
+    .line 200
     const-string v0, "PhoneStatus"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -577,7 +670,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 150
+    .line 201
     const-string v0, "PhoneStatus"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -602,21 +695,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
+    .line 202
     invoke-static {}, Lcom/google/appinventor/components/runtime/ReplForm;->isEmulator()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 203
     const/4 v0, 0x1
 
-    .line 157
+    .line 208
     :goto_0
     return v0
 
-    .line 154
+    .line 205
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
@@ -624,7 +717,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 155
+    .line 206
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
     check-cast v0, Lcom/google/appinventor/components/runtime/ReplForm;
@@ -635,7 +728,7 @@
 
     goto :goto_0
 
-    .line 157
+    .line 208
     :cond_1
     const/4 v0, 0x0
 
@@ -649,27 +742,27 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 226
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
     instance-of v0, v0, Lcom/google/appinventor/components/runtime/ReplForm;
 
     if-eqz v0, :cond_0
 
-    .line 169
+    .line 227
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
     check-cast v0, Lcom/google/appinventor/components/runtime/ReplForm;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/ReplForm;->setAssetsLoaded()V
 
-    .line 171
+    .line 229
     :cond_0
     return-void
 .end method
 
 .method public setHmacSeedReturnCode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 13
+    .locals 12
     .param p1, "seed"    # Ljava/lang/String;
     .param p2, "rendezvousServer"    # Ljava/lang/String;
     .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
@@ -677,200 +770,235 @@
     .end annotation
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    .line 121
-    sget-boolean v7, Lcom/google/appinventor/components/runtime/PhoneStatus;->useWebRTC:Z
+    .line 125
+    const-string v6, ""
 
-    if-eqz v7, :cond_0
+    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 122
-    new-instance v6, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
+    move-result v6
 
-    invoke-direct {v6, p2}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;-><init>(Ljava/lang/String;)V
+    if-eqz v6, :cond_0
 
-    .line 123
-    .local v6, "webRTCNativeMgr":Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
-    iget-object v7, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
+    .line 126
+    const-string v6, ""
 
-    check-cast v7, Lcom/google/appinventor/components/runtime/ReplForm;
-
-    sget-object v9, Lcom/google/appinventor/components/runtime/PhoneStatus;->activity:Landroid/app/Activity;
-
-    invoke-virtual {v6, v7, v9, p1}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->initiate(Lcom/google/appinventor/components/runtime/ReplForm;Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 124
-    iget-object v7, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
-
-    check-cast v7, Lcom/google/appinventor/components/runtime/ReplForm;
-
-    invoke-virtual {v7, v6}, Lcom/google/appinventor/components/runtime/ReplForm;->setWebRTCMgr(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
-
-    .line 130
-    .end local v6    # "webRTCNativeMgr":Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
+    .line 195
     :goto_0
-    :try_start_0
-    const-string v7, "SHA1"
+    return-object v6
 
-    invoke-static {v7}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+    .line 144
+    :cond_0
+    iget-object v6, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstSeed:Ljava/lang/String;
+
+    if-eqz v6, :cond_2
+
+    .line 145
+    iget-object v6, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstSeed:Ljava/lang/String;
+
+    invoke-virtual {v6, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    .line 148
+    invoke-static {}, Lcom/google/appinventor/components/runtime/Form;->getActiveForm()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v6
+
+    const-string v7, "You cannot use two codes with one start up of the Companion. You should restart the Companion and try again."
+
+    const-string v8, "Warning"
+
+    const-string v9, "OK"
+
+    new-instance v10, Lcom/google/appinventor/components/runtime/PhoneStatus$1;
+
+    invoke-direct {v10, p0}, Lcom/google/appinventor/components/runtime/PhoneStatus$1;-><init>(Lcom/google/appinventor/components/runtime/PhoneStatus;)V
+
+    invoke-static {v6, v7, v8, v9, v10}, Lcom/google/appinventor/components/runtime/Notifier;->oneButtonAlert(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
+
+    .line 161
+    :cond_1
+    iget-object v6, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstHmacSeed:Ljava/lang/String;
+
+    goto :goto_0
+
+    .line 164
+    :cond_2
+    iput-object p1, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstSeed:Ljava/lang/String;
+
+    .line 174
+    sget-boolean v6, Lcom/google/appinventor/components/runtime/PhoneStatus;->useWebRTC:Z
+
+    if-nez v6, :cond_3
+
+    .line 175
+    invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/AppInvHTTPD;->setHmacKey(Ljava/lang/String;)V
+
+    .line 180
+    :cond_3
+    :try_start_0
+    const-string v6, "SHA1"
+
+    invoke-static {v6}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    .line 135
+    .line 185
     .local v0, "Sha1":Ljava/security/MessageDigest;
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v0, v7}, Ljava/security/MessageDigest;->update([B)V
+    invoke-virtual {v0, v6}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 136
+    .line 186
     invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
 
     move-result-object v4
 
-    .line 137
+    .line 187
     .local v4, "result":[B
     new-instance v5, Ljava/lang/StringBuffer;
 
-    array-length v7, v4
+    array-length v6, v4
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/lit8 v6, v6, 0x2
 
-    invoke-direct {v5, v7}, Ljava/lang/StringBuffer;-><init>(I)V
+    invoke-direct {v5, v6}, Ljava/lang/StringBuffer;-><init>(I)V
 
-    .line 138
+    .line 188
     .local v5, "sb":Ljava/lang/StringBuffer;
     new-instance v3, Ljava/util/Formatter;
 
     invoke-direct {v3, v5}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;)V
 
-    .line 139
+    .line 189
     .local v3, "formatter":Ljava/util/Formatter;
-    array-length v9, v4
+    array-length v8, v4
 
-    move v7, v8
+    move v6, v7
 
     :goto_1
-    if-ge v7, v9, :cond_1
+    if-ge v6, v8, :cond_4
 
-    aget-byte v1, v4, v7
+    aget-byte v1, v4, v6
 
-    .line 140
+    .line 190
     .local v1, "b":B
-    const-string v10, "%02x"
+    const-string v9, "%02x"
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
-    new-array v11, v11, [Ljava/lang/Object;
+    new-array v10, v10, [Ljava/lang/Object;
 
     invoke-static {v1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    move-result-object v12
+    move-result-object v11
 
-    aput-object v12, v11, v8
+    aput-object v11, v10, v7
 
-    invoke-virtual {v3, v10, v11}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
+    invoke-virtual {v3, v9, v10}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    .line 139
-    add-int/lit8 v7, v7, 0x1
+    .line 189
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 126
+    .line 181
     .end local v0    # "Sha1":Ljava/security/MessageDigest;
     .end local v1    # "b":B
     .end local v3    # "formatter":Ljava/util/Formatter;
     .end local v4    # "result":[B
     .end local v5    # "sb":Ljava/lang/StringBuffer;
-    :cond_0
-    invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/AppInvHTTPD;->setHmacKey(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 131
     :catch_0
     move-exception v2
 
-    .line 132
+    .line 182
     .local v2, "e":Ljava/lang/Exception;
-    const-string v7, "PhoneStatus"
+    const-string v6, "PhoneStatus"
 
-    const-string v8, "Exception getting SHA1 Instance"
+    const-string v7, "Exception getting SHA1 Instance"
 
-    invoke-static {v7, v8, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v6, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 133
-    const-string v7, ""
+    .line 183
+    const-string v6, ""
 
-    .line 144
+    goto :goto_0
+
+    .line 192
     .end local v2    # "e":Ljava/lang/Exception;
-    :goto_2
-    return-object v7
-
-    .line 142
     .restart local v0    # "Sha1":Ljava/security/MessageDigest;
     .restart local v3    # "formatter":Ljava/util/Formatter;
     .restart local v4    # "result":[B
     .restart local v5    # "sb":Ljava/lang/StringBuffer;
-    :cond_1
-    const-string v7, "PhoneStatus"
+    :cond_4
+    const-string v6, "PhoneStatus"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Seed = "
+    const-string v8, "Seed = "
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 143
-    const-string v7, "PhoneStatus"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Code = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 144
-    invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    goto :goto_2
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 193
+    const-string v6, "PhoneStatus"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Code = "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 194
+    invoke-virtual {v5}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstHmacSeed:Ljava/lang/String;
+
+    .line 195
+    iget-object v6, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstHmacSeed:Ljava/lang/String;
+
+    goto/16 :goto_0
 .end method
 
 .method public shutdown()V
@@ -880,17 +1008,17 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 260
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Form;->finish()V
 
-    .line 195
+    .line 261
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/System;->exit(I)V
 
-    .line 196
+    .line 262
     return-void
 .end method
 
@@ -902,11 +1030,48 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 221
     sget-object v0, Lcom/google/appinventor/components/runtime/ReplForm;->topform:Lcom/google/appinventor/components/runtime/ReplForm;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/ReplForm;->startHTTPD(Z)V
 
-    .line 164
+    .line 222
+    return-void
+.end method
+
+.method public startWebRTC(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .param p1, "rendezvousServer"    # Ljava/lang/String;
+    .param p2, "iceServers"    # Ljava/lang/String;
+    .annotation runtime Lcom/google/appinventor/components/annotations/SimpleFunction;
+        description = "Start the WebRTC engine"
+    .end annotation
+
+    .prologue
+    .line 214
+    new-instance v0, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
+
+    invoke-direct {v0, p1, p2}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 215
+    .local v0, "webRTCNativeMgr":Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;
+    iget-object v1, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    check-cast v1, Lcom/google/appinventor/components/runtime/ReplForm;
+
+    sget-object v2, Lcom/google/appinventor/components/runtime/PhoneStatus;->activity:Landroid/app/Activity;
+
+    iget-object v3, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->firstSeed:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;->initiate(Lcom/google/appinventor/components/runtime/ReplForm;Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 216
+    iget-object v1, p0, Lcom/google/appinventor/components/runtime/PhoneStatus;->form:Lcom/google/appinventor/components/runtime/Form;
+
+    check-cast v1, Lcom/google/appinventor/components/runtime/ReplForm;
+
+    invoke-virtual {v1, v0}, Lcom/google/appinventor/components/runtime/ReplForm;->setWebRTCMgr(Lcom/google/appinventor/components/runtime/util/WebRTCNativeMgr;)V
+
+    .line 217
     return-void
 .end method

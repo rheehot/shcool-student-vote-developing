@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Form;
 
     .prologue
-    .line 1225
+    .line 1251
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$7;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,19 +43,19 @@
     .param p2, "granted"    # Z
 
     .prologue
-    .line 1228
+    .line 1254
     if-eqz p2, :cond_0
 
-    .line 1229
+    .line 1255
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$7;->this$0:Lcom/google/appinventor/components/runtime/Form;
 
     invoke-virtual {v0, p1}, Lcom/google/appinventor/components/runtime/Form;->PermissionGranted(Ljava/lang/String;)V
 
-    .line 1233
+    .line 1259
     :goto_0
     return-void
 
-    .line 1231
+    .line 1257
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Form$7;->this$0:Lcom/google/appinventor/components/runtime/Form;
 

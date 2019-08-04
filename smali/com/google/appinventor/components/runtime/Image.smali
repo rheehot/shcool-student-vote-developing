@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation runtime Lcom/google/appinventor/components/annotations/UsesPermissions;
-    permissionNames = "android.permission.INTERNET"
+    permissionNames = "android.permission.INTERNET,android.permission.READ_EXTERNAL_STORAGE"
 .end annotation
 
 
@@ -35,25 +35,25 @@
     .param p1, "container"    # Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     .prologue
-    .line 62
+    .line 64
     invoke-direct {p0, p1}, Lcom/google/appinventor/components/runtime/AndroidViewComponent;-><init>(Lcom/google/appinventor/components/runtime/ComponentContainer;)V
 
-    .line 50
+    .line 52
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->picturePath:Ljava/lang/String;
 
-    .line 52
+    .line 54
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/appinventor/components/runtime/Image;->rotationAngle:D
 
-    .line 54
+    .line 56
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/appinventor/components/runtime/Image;->scalingMode:I
 
-    .line 64
+    .line 66
     new-instance v0, Lcom/google/appinventor/components/runtime/Image$1;
 
     invoke-interface {p1}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$context()Landroid/app/Activity;
@@ -64,17 +64,17 @@
 
     iput-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
-    .line 72
+    .line 74
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    .line 75
+    .line 77
     invoke-interface {p1, p0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$add(Lcom/google/appinventor/components/runtime/AndroidViewComponent;)V
 
-    .line 76
+    .line 78
     return-void
 .end method
 
@@ -89,12 +89,12 @@
     .end annotation
 
     .prologue
-    .line 177
+    .line 194
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
     invoke-static {v0, p1}, Lcom/google/appinventor/components/runtime/util/AnimationUtil;->ApplyAnimation(Landroid/view/View;Ljava/lang/String;)V
 
-    .line 178
+    .line 195
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 93
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->picturePath:Ljava/lang/String;
 
     return-object v0
@@ -123,16 +123,60 @@
     .end annotation
 
     .prologue
-    .line 106
-    if-nez p1, :cond_0
+    .line 108
+    invoke-static {p1}, Lcom/google/appinventor/components/runtime/util/MediaUtil;->isExternalFile(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/google/appinventor/components/runtime/Image;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
+
+    .line 109
+    invoke-interface {v2}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v2
+
+    const-string v3, "android.permission.READ_EXTERNAL_STORAGE"
+
+    invoke-virtual {v2, v3}, Lcom/google/appinventor/components/runtime/Form;->isDeniedPermission(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 110
+    iget-object v2, p0, Lcom/google/appinventor/components/runtime/Image;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
+
+    invoke-interface {v2}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
+
+    move-result-object v2
+
+    const-string v3, "android.permission.READ_EXTERNAL_STORAGE"
+
+    new-instance v4, Lcom/google/appinventor/components/runtime/Image$2;
+
+    invoke-direct {v4, p0, p1}, Lcom/google/appinventor/components/runtime/Image$2;-><init>(Lcom/google/appinventor/components/runtime/Image;Ljava/lang/String;)V
+
+    invoke-virtual {v2, v3, v4}, Lcom/google/appinventor/components/runtime/Form;->askPermission(Ljava/lang/String;Lcom/google/appinventor/components/runtime/PermissionResultHandler;)V
+
+    .line 134
+    .end local p1    # "path":Ljava/lang/String;
+    :goto_0
+    return-void
+
+    .line 123
+    .restart local p1    # "path":Ljava/lang/String;
+    :cond_0
+    if-nez p1, :cond_1
 
     const-string p1, ""
 
     .end local p1    # "path":Ljava/lang/String;
-    :cond_0
+    :cond_1
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Image;->picturePath:Ljava/lang/String;
 
-    .line 110
+    .line 127
     :try_start_0
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Image;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
@@ -148,22 +192,21 @@
 
     move-result-object v0
 
-    .line 116
+    .line 133
     .local v0, "drawable":Landroid/graphics/drawable/Drawable;
-    :goto_0
+    :goto_1
     iget-object v2, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
     invoke-static {v2, v0}, Lcom/google/appinventor/components/runtime/util/ViewUtil;->setImage(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
 
-    .line 117
-    return-void
+    goto :goto_0
 
-    .line 111
+    .line 128
     .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
     :catch_0
     move-exception v1
 
-    .line 112
+    .line 129
     .local v1, "ioe":Ljava/io/IOException;
     const-string v2, "Image"
 
@@ -189,11 +232,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
+    .line 130
     const/4 v0, 0x0
 
     .restart local v0    # "drawable":Landroid/graphics/drawable/Drawable;
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public RotationAngle()D
@@ -204,7 +247,7 @@
     .end annotation
 
     .prologue
-    .line 147
+    .line 164
     iget-wide v0, p0, Lcom/google/appinventor/components/runtime/Image;->rotationAngle:D
 
     return-wide v0
@@ -222,18 +265,18 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 146
     iget-wide v0, p0, Lcom/google/appinventor/components/runtime/Image;->rotationAngle:D
 
     cmpl-double v0, v0, p1
 
     if-nez v0, :cond_0
 
-    .line 141
+    .line 158
     :goto_0
     return-void
 
-    .line 134
+    .line 151
     :cond_0
     invoke-static {}, Lcom/google/appinventor/components/runtime/util/SdkLevel;->getLevel()I
 
@@ -243,7 +286,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 135
+    .line 152
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->container:Lcom/google/appinventor/components/runtime/ComponentContainer;
 
     invoke-interface {v0}, Lcom/google/appinventor/components/runtime/ComponentContainer;->$form()Lcom/google/appinventor/components/runtime/Form;
@@ -262,13 +305,13 @@
 
     goto :goto_0
 
-    .line 139
+    .line 156
     :cond_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
     invoke-static {v0, p1, p2}, Lcom/google/appinventor/components/runtime/util/HoneycombUtil;->viewSetRotate(Landroid/view/View;D)V
 
-    .line 140
+    .line 157
     iput-wide p1, p0, Lcom/google/appinventor/components/runtime/Image;->rotationAngle:D
 
     goto :goto_0
@@ -287,21 +330,21 @@
     .end annotation
 
     .prologue
-    .line 155
+    .line 172
     if-eqz p1, :cond_0
 
-    .line 156
+    .line 173
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
     sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 159
+    .line 176
     :goto_0
     return-void
 
-    .line 158
+    .line 175
     :cond_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
@@ -318,7 +361,7 @@
     .end annotation
 
     .prologue
-    .line 203
+    .line 220
     iget v0, p0, Lcom/google/appinventor/components/runtime/Image;->scalingMode:I
 
     return v0
@@ -335,10 +378,10 @@
     .end annotation
 
     .prologue
-    .line 188
+    .line 205
     packed-switch p1, :pswitch_data_0
 
-    .line 196
+    .line 213
     new-instance v0, Lcom/google/appinventor/components/runtime/errors/IllegalArgumentError;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -363,7 +406,7 @@
 
     throw v0
 
-    .line 190
+    .line 207
     :pswitch_0
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
@@ -371,14 +414,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 198
+    .line 215
     :goto_0
     iput p1, p0, Lcom/google/appinventor/components/runtime/Image;->scalingMode:I
 
-    .line 199
+    .line 216
     return-void
 
-    .line 193
+    .line 210
     :pswitch_1
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
@@ -388,7 +431,7 @@
 
     goto :goto_0
 
-    .line 188
+    .line 205
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -400,7 +443,7 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 82
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Image;->view:Landroid/widget/ImageView;
 
     return-object v0

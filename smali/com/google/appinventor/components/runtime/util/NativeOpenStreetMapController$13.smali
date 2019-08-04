@@ -36,7 +36,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
     .prologue
-    .line 1081
+    .line 1088
     .local p2, "target":Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;, "Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair<Lorg/osmdroid/views/overlay/Marker;>;"
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;->this$0:Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController;
 
@@ -54,12 +54,12 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 1084
+    .line 1091
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;->callback:Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;
 
     invoke-interface {v0, p1}, Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;->onFailure(Ljava/lang/String;)V
 
-    .line 1085
+    .line 1092
     return-void
 .end method
 
@@ -68,19 +68,19 @@
     .param p1, "result"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 1089
+    .line 1096
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;->val$osmMarker:Lorg/osmdroid/views/overlay/Marker;
 
     invoke-virtual {v0, p1}, Lorg/osmdroid/views/overlay/Marker;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1090
+    .line 1097
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;->callback:Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;->val$osmMarker:Lorg/osmdroid/views/overlay/Marker;
 
     invoke-interface {v0, v1}, Lcom/google/appinventor/components/runtime/util/AsyncCallbackPair;->onSuccess(Ljava/lang/Object;)V
 
-    .line 1091
+    .line 1098
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .locals 0
 
     .prologue
-    .line 1081
+    .line 1088
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Lcom/google/appinventor/components/runtime/util/NativeOpenStreetMapController$13;->onSuccess(Landroid/graphics/drawable/Drawable;)V

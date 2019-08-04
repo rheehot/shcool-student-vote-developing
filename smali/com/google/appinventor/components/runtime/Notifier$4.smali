@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/google/appinventor/components/runtime/Notifier;
 
     .prologue
-    .line 221
+    .line 236
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Notifier$4;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 3
 
     .prologue
-    .line 223
+    .line 238
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Notifier$4;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     invoke-virtual {v0}, Lcom/google/appinventor/components/runtime/Notifier;->ChoosingCanceled()V
 
-    .line 224
+    .line 239
     iget-object v0, p0, Lcom/google/appinventor/components/runtime/Notifier$4;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
 
     iget-object v1, p0, Lcom/google/appinventor/components/runtime/Notifier$4;->this$0:Lcom/google/appinventor/components/runtime/Notifier;
@@ -63,6 +63,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/appinventor/components/runtime/Notifier;->AfterChoosing(Ljava/lang/String;)V
 
-    .line 225
+    .line 240
     return-void
 .end method

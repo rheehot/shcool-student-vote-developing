@@ -36,18 +36,18 @@
     .param p3, "dim"    # Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
 
     .prologue
-    .line 284
+    .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 285
+    .line 292
     iput-object p1, p0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord;->component:Lcom/google/appinventor/components/runtime/AndroidViewComponent;
 
-    .line 286
+    .line 293
     iput p2, p0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord;->length:I
 
-    .line 287
+    .line 294
     iput-object p3, p0, Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord;->dim:Lcom/google/appinventor/components/runtime/Form$PercentStorageRecord$Dim;
 
-    .line 288
+    .line 295
     return-void
 .end method
