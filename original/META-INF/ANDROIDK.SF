@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android)
-SHA-256-Digest-Manifest: 84AKFw0YqMZue88I6p4reeb8x+aDVvYmh+s54Vf9T6M=
+SHA-256-Digest-Manifest: JFsl3zorgs5qsP47vGhk0ymXMBGIHyNnYN4+wa0jyNo=
 X-Android-APK-Signed: 2, 3
 
 Name: AndroidManifest.xml
@@ -16,10 +16,10 @@ Name: assets/Thunkable-Roboto-Thin.ttf
 SHA-256-Digest: M83ayplEgIPh941ssrGciInTNThnXqHBgew83ZNjO14=
 
 Name: assets/project-info.txt
-SHA-256-Digest: grj6+xTehB2Pqv9qEQMaDACclOBH2cUA1ZNCNhS3scc=
+SHA-256-Digest: HGkrb1qILNQs4fLDgXZR3vPK6vPkWgeCLo+rfki+Q6k=
 
 Name: classes.dex
-SHA-256-Digest: aiuadVQJ55UnQJXwzgA85kW8Ugc9AEWHJJPyAV2wAvU=
+SHA-256-Digest: yEePWCG6UlsHanhyAhbf9xwesnMgs+rw/Vz/3453gVA=
 
 Name: classes2.dex
 SHA-256-Digest: GCyEXYpYSIDVy9xh2LRXuXwJzfM9fnIFnmVjuin7Nlk=

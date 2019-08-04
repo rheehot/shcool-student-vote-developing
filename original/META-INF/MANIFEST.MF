@@ -13,10 +13,10 @@ Name: assets/Thunkable-Roboto-Thin.ttf
 SHA-256-Digest: 2x1GQ0O/eVMHvJDag9Zbk8hB+yDzhmL5Lx5eLFodLsU=
 
 Name: assets/project-info.txt
-SHA-256-Digest: Mso6qyBNVNCe/GhxZ7hHKW0bFas9GSOXDp2tZbeRX84=
+SHA-256-Digest: uV+jnCSm8ByBuzZyYTc5g4dIlzJgGt+Lo5ldpt9H0Jc=
 
 Name: classes.dex
-SHA-256-Digest: w03LQp0WYlDTirXzyZAysp0l5KPPUpYrLLQkzh0FnjQ=
+SHA-256-Digest: sCnEt1w9treV0r5Emq9hghmvdkqpzdWRsPA+lMPcrW0=
 
 Name: classes2.dex
 SHA-256-Digest: nHdbzhBMHprC70/Rxxk5TzQNje5BpUCfvtsQpUrrDY8=
