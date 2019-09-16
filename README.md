@@ -1,5 +1,5 @@
 # shcool-vote-developing(KR)
-학생용을 개발을 완료 했습니다.
+학생용을 개발을 완료 했습니다.<br>
 선생님용:https://github.com/INMD1/school-vote-teacher<br>
 서버관리자용:https://github.com/INMD1/school-server
 ## thunakable
